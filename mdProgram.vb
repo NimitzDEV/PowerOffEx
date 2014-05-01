@@ -6,7 +6,8 @@
     Public Declare Function SetClassLong Lib "user32" Alias "SetClassLongA" (ByVal hwnd As Integer, ByVal nIndex As Integer, ByVal dwNewLong As Integer) As Integer
     '--------电源信息相关
     Public ps As PowerStatus = SystemInformation.PowerStatus
-    Public batteryStatus As String = ps.BatteryChargeStatus.ToString
+    Public batteryStatus As Integer = ps.BatteryChargeStatus
+    '///数值 Charging=8  Critical=4 High=1 Low=2 NoSystemBattery=128 Unknow=255
     Public batteryPercent As Integer
     Public batteryLife As Integer
     Public batteryChargeStatus As Integer
@@ -45,7 +46,7 @@
     Public Function checkIsLaptop() As Boolean
         Try
             If batteryChargeStatus = 255 Then Return False
-            If batteryStatus = "NoSystemBattery" Then
+            If batteryStatus = 255 Then
                 Return False
             Else
                 Return True
@@ -55,7 +56,7 @@
         End Try
     End Function
     Public Sub updateBatteryInfo()
-        batteryStatus = ps.BatteryChargeStatus.ToString
+        batteryStatus = ps.BatteryChargeStatus
         batteryPercent = ps.BatteryLifePercent * 100
         batteryLife = ps.BatteryLifeRemaining
         batteryChargeStatus = ps.PowerLineStatus
@@ -94,7 +95,7 @@
     Public Sub reconstractUi()
         With frmInterface
             '////  检查是否为台式机
-            If batteryStatus = "NoSystemBattery" Then
+            If batteryStatus = 128 Then
                 .pnlBattery.Visible = False
                 .pnlNetworkConnection.Left = (.Width - .pnlNetworkConnection.Width) / 2
             End If

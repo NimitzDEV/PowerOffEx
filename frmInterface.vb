@@ -90,7 +90,7 @@
         End If
         lbConnectStatus.Left = (pnlNetworkConnection.Width - lbConnectStatus.Width) / 2
         '///////////////////////////////////////////////////////////////////////////////////////////
-        If batteryChargeStatus = 1 And batteryStatus = "Charging" Then
+        If batteryChargeStatus = 1 And batteryStatus = 8 Then
             lbBatteryStatus.Text = "正在充电"
             tmrChargeAnimate.Enabled = True
         ElseIf batteryChargeStatus = 0 Then
