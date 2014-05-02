@@ -33,10 +33,10 @@
     Public Function pwmComputer(ByVal actionVal As Short) As Integer
         Return ExitWindowsEx(actionVal, 0)
     End Function
-    Public Sub drawWindowShadowStep1(ByVal formObj As Form)
+    Public Sub drawWindowStep1(ByVal formObj As Form)
         SetClassLong(formObj.Handle, GCL_STYLE, GetClassLong(formObj.Handle, GCL_STYLE) Or CS_DROPSHADOW)
     End Sub
-    Public Sub drawWindowShadowStep2(ByVal formObj As Form, ByVal e As System.Windows.Forms.PaintEventArgs, ByVal colorA As Color, ByVal colorB As Color)
+    Public Sub drawWindowStep2(ByVal formObj As Form, ByVal e As System.Windows.Forms.PaintEventArgs, ByVal colorA As Color, ByVal colorB As Color)
         '界面绘制相关 - 绘制背景渐变效果
         Dim frmRect As New Rectangle(0, 0, formObj.Width, formObj.Height)
         Dim backgroundClrSet As New Drawing2D.LinearGradientBrush(frmRect, colorA, colorB, Drawing2D.LinearGradientMode.Vertical)

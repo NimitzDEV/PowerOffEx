@@ -14,7 +14,7 @@
         Me.Left = (Screen.PrimaryScreen.WorkingArea.Width - Me.Width) / 2
         Me.Top = Screen.PrimaryScreen.WorkingArea.Height - Me.Height
         '绘制阴影
-        drawWindowShadowStep1(Me)
+        drawWindowStep1(Me)
         '动画效果
         showSwipAnimation()
         '开始
@@ -33,7 +33,7 @@
     End Sub
 
     Private Sub frmInterface_Paint(ByVal sender As Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles Me.Paint
-        drawWindowShadowStep2(Me, e, Color.White, Color.DodgerBlue)
+        drawWindowStep2(Me, e, Color.White, Color.DodgerBlue )
     End Sub
 
     Private Sub animationTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles animationTimer.Tick

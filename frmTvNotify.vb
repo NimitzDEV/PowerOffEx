@@ -5,7 +5,8 @@
         Me.Left = 0
         Me.Width = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Width
         Label1.Text = "正在收看 《" & tvTitle & "》" & tvProgress
-        drawWindowShadowStep1(Me)
+        Label1.Left = (Me.Width - Label1.Width) / 2
+        drawWindowStep1(Me)
     End Sub
 
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
@@ -13,6 +14,6 @@
     End Sub
 
     Private Sub frmTvNotify_Paint(ByVal sender As Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles Me.Paint
-        drawWindowShadowStep2(Me, e, Color.DodgerBlue, Color.White)
+        drawWindowStep2(Me, e, Color.Gray, Color.Transparent)
     End Sub
 End Class

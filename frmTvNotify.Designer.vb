@@ -52,9 +52,11 @@ Partial Class frmTvNotify
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmTvNotify"
+        Me.Opacity = 0.9R
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.Text = "frmTvNotify"
+        Me.TopMost = True
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
