@@ -61,16 +61,23 @@
             valSetTime -= 1
             lbInfo.Text = "将在 " & converTime(valSetTime) & " 后关机"
             remainTip.Text = lbInfo.Text
-            If valSetTime = 180 Then
-                showNotify(lbInfo.Text)
-            End If
+            If valSetTime = 180 Then showNotify(lbInfo.Text)
+            If valSetTime = 30 Then showNotify("即将关机")
             If valSetTime = 0 Then
                 mainTick.Enabled = False
                 pwmComputer(EWX_SHUTDOWN)
                 exitProgram(0)
             End If
         ElseIf valBatteryLifeLB > 0 Then
-            '//// TODO: ON BATTERY STATUS
+            lbInfo.Text = "将在电量低于" & batteryPercent & "%时关机"
+            remainTip.Text = lbInfo.Text
+            If batteryPercent - valBatteryLifeLB = 3 Then showNotify("再下降3%的电量将关机")
+            If batteryPercent = valBatteryLifeLB = 0 Then showNotify("即将关机")
+            If batteryPercent < valBatteryLifeLB Then
+                mainTick.Enabled = False
+                pwmComputer(EWX_SHUTDOWN)
+                exitProgram(0)
+            End If
         End If
         '///////////////////////////////////////////////////////////////////////////////////////////
         If networkStatus = True Then
