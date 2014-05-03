@@ -39,7 +39,6 @@ Partial Class frmMain
         Me.cbRecordTvProgress = New System.Windows.Forms.CheckBox()
         Me.btnSet = New System.Windows.Forms.Button()
         Me.llbAbout = New System.Windows.Forms.LinkLabel()
-        Me.llbHelp = New System.Windows.Forms.LinkLabel()
         Me.llbHistory = New System.Windows.Forms.LinkLabel()
         CType(Me.nudHour, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudMinute, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -206,22 +205,12 @@ Partial Class frmMain
         'llbAbout
         '
         Me.llbAbout.AutoSize = True
-        Me.llbAbout.Location = New System.Drawing.Point(292, 180)
+        Me.llbAbout.Location = New System.Drawing.Point(335, 182)
         Me.llbAbout.Name = "llbAbout"
         Me.llbAbout.Size = New System.Drawing.Size(29, 12)
         Me.llbAbout.TabIndex = 9
         Me.llbAbout.TabStop = True
         Me.llbAbout.Text = "关于"
-        '
-        'llbHelp
-        '
-        Me.llbHelp.AutoSize = True
-        Me.llbHelp.Location = New System.Drawing.Point(327, 180)
-        Me.llbHelp.Name = "llbHelp"
-        Me.llbHelp.Size = New System.Drawing.Size(29, 12)
-        Me.llbHelp.TabIndex = 10
-        Me.llbHelp.TabStop = True
-        Me.llbHelp.Text = "帮助"
         '
         'llbHistory
         '
@@ -240,7 +229,6 @@ Partial Class frmMain
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(457, 203)
         Me.Controls.Add(Me.llbHistory)
-        Me.Controls.Add(Me.llbHelp)
         Me.Controls.Add(Me.llbAbout)
         Me.Controls.Add(Me.btnSet)
         Me.Controls.Add(Me.GroupBox1)
@@ -278,7 +266,6 @@ Partial Class frmMain
     Friend WithEvents cbRecordTvProgress As System.Windows.Forms.CheckBox
     Friend WithEvents btnSet As System.Windows.Forms.Button
     Friend WithEvents llbAbout As System.Windows.Forms.LinkLabel
-    Friend WithEvents llbHelp As System.Windows.Forms.LinkLabel
     Friend WithEvents llbHistory As System.Windows.Forms.LinkLabel
 
 End Class

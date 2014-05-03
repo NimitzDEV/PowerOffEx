@@ -86,6 +86,12 @@
     <Import Include="System.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAbout.Designer.vb">
+      <DependentUpon>frmAbout.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAbout.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmInterface.Designer.vb">
       <DependentUpon>frmInterface.vb</DependentUpon>
     </Compile>
@@ -130,6 +136,9 @@
     <Compile Include="tvTracker.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInterface.resx">
       <DependentUpon>frmInterface.vb</DependentUpon>
     </EmbeddedResource>

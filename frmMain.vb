@@ -60,4 +60,8 @@
     Private Sub llbHistory_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles llbHistory.LinkClicked
         MsgBox("上次观看到 " & My.Settings.TvHistory)
     End Sub
+
+    Private Sub llbAbout_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles llbAbout.LinkClicked
+        frmAbout.Show()
+    End Sub
 End Class

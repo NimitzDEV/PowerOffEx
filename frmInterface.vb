@@ -1,7 +1,5 @@
 ﻿Public Class frmInterface
     Dim batteryAnimateStep As Integer
-
-
     Enum originalData As Integer
         oFrmWidth = 533
         oFrmHeight = 211
