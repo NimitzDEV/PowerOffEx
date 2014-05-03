@@ -80,16 +80,8 @@
             If batteryChargeStatus = 1 Then
                 frmMain.Show()
                 .Close()
+                frmMain.Show()
                 MsgBox("已经接通电源，本模式将不再适用")
-            End If
-            '//// 检测电池电量
-            If batteryPercent = valBatteryLifeLB Then
-                '//// TODO: SHOW NOTIFY UI
-            End If
-            If batteryPercent < valBatteryLifeLB Then
-                .mainTick.Enabled = False
-                pwmComputer(EWX_SHUTDOWN)
-                exitProgram(0)
             End If
         End With
     End Sub
