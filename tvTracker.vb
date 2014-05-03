@@ -10,7 +10,6 @@
     Dim signFull As Integer
     Private Declare Function GetWindowText Lib "user32" Alias "GetWindowTextA" (ByVal hwnd As IntPtr, ByVal lpString As String, ByVal cch As Integer) As Integer
     Private Declare Function GetWindowTextLength Lib "user32" Alias "GetWindowTextLengthA" (ByVal hwnd As IntPtr) As Integer
-    Declare Function GetForegroundWindow Lib "user32" () As Integer
     Private Declare Function GetDesktopWindow Lib "user32" () As Integer
     Private Declare Function GetWindow Lib "user32" (ByVal hwnd As Integer, ByVal wCmd As Integer) As Integer
     Private Const GW_CHILD = 5
