@@ -67,7 +67,7 @@
                 exitProgram(0)
             End If
         ElseIf valBatteryLifeLB > 0 Then
-            lbInfo.Text = "将在电量低于" & batteryPercent & "%时关机"
+            lbInfo.Text = "将在电量低于" & valBatteryLifeLB & "%时关机"
             remainTip.Text = lbInfo.Text
             If batteryPercent - valBatteryLifeLB = 3 Then showNotify("再下降3%的电量将关机")
             If batteryPercent = valBatteryLifeLB = 0 Then showNotify("即将关机")
@@ -104,10 +104,14 @@
             tmrChargeAnimate.Enabled = False
             lbBatteryStatus.Text = "电源接通" & vbCrLf & "但未充电"
             pbBattery.Image = My.Resources.nocharging
+        ElseIf batteryChargeStatus = 1 And batteryStatus <> 0 Then
+            lbBatteryStatus.Text = "正在充电"
+            tmrChargeAnimate.Enabled = True
         End If
         lbBatteryStatus.Left = (pnlBattery.Width - lbBatteryStatus.Width) / 2
         '///////////////////////////////////////////////////////////////////////////////////////////
         lbInfo.Left = (Me.Width - lbInfo.Width) / 2
+
     End Sub
 
     Private Sub tmrAutoHide_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmrAutoHide.Tick

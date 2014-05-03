@@ -54,6 +54,7 @@
         End If
         frmInterface.Show()
         Me.Hide()
+        'MsgBox(batteryChargeStatus & vbCrLf & batteryStatus & vbCrLf & batteryLife)
     End Sub
 
 
