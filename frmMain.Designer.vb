@@ -40,6 +40,7 @@ Partial Class frmMain
         Me.btnSet = New System.Windows.Forms.Button()
         Me.llbAbout = New System.Windows.Forms.LinkLabel()
         Me.llbHelp = New System.Windows.Forms.LinkLabel()
+        Me.llbHistory = New System.Windows.Forms.LinkLabel()
         CType(Me.nudHour, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudMinute, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -222,11 +223,23 @@ Partial Class frmMain
         Me.llbHelp.TabStop = True
         Me.llbHelp.Text = "帮助"
         '
+        'llbHistory
+        '
+        Me.llbHistory.AutoSize = True
+        Me.llbHistory.Location = New System.Drawing.Point(169, 180)
+        Me.llbHistory.Name = "llbHistory"
+        Me.llbHistory.Size = New System.Drawing.Size(53, 12)
+        Me.llbHistory.TabIndex = 11
+        Me.llbHistory.TabStop = True
+        Me.llbHistory.Text = "观看记录"
+        Me.llbHistory.Visible = False
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(457, 203)
+        Me.Controls.Add(Me.llbHistory)
         Me.Controls.Add(Me.llbHelp)
         Me.Controls.Add(Me.llbAbout)
         Me.Controls.Add(Me.btnSet)
@@ -266,5 +279,6 @@ Partial Class frmMain
     Friend WithEvents btnSet As System.Windows.Forms.Button
     Friend WithEvents llbAbout As System.Windows.Forms.LinkLabel
     Friend WithEvents llbHelp As System.Windows.Forms.LinkLabel
+    Friend WithEvents llbHistory As System.Windows.Forms.LinkLabel
 
 End Class

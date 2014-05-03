@@ -1,6 +1,4 @@
-#忽略windows生成的缩略图文件
-Thunbs.db
-#忽略Visual Studio生成时的产生的文件
+Thumbs.db
 *.obj
 *.exe
 *.pdb
@@ -12,6 +10,7 @@ Thunbs.db
 *_p.c
 *.ncb
 *.suo
+*.sln.docstates
 *.tlb
 *.tlh
 *.bak
@@ -25,3 +24,16 @@ Thunbs.db
 obj/
 [Rr]elease*/
 _ReSharper*/
+[Tt]est[Rr]esult*
+*.vssscc
+$tf*/
+bin/Debug/定时关机Ex.exe
+bin/Debug/定时关机Ex.vshost.exe.manifest
+bin/Debug/定时关机Ex.exe
+bin/Debug/定时关机Ex.exe.config
+bin/Debug/定时关机Ex.pdb
+bin/Debug/定时关机Ex.vshost.exe.config
+bin/Debug/定时关机Ex.vshost.exe.manifest
+obj/x86/Debug/定时关机Ex.exe
+obj/x86/Debug/定时关机Ex.pdb
+obj/x86/Debug/定时关机Ex.vbproj.GenerateResource.Cache

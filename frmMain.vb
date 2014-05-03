@@ -12,6 +12,7 @@
             rbEvents.Enabled = True
             nudBattery.Maximum = batteryPercent
         End If
+        If My.Settings.TvHistory <> "NONE" Then llbHistory.Visible = True
     End Sub
 
     Private Sub rbEvents_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbEvents.CheckedChanged
@@ -56,4 +57,7 @@
     End Sub
 
 
+    Private Sub llbHistory_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles llbHistory.LinkClicked
+        MsgBox("上次观看到 " & My.Settings.TvHistory)
+    End Sub
 End Class

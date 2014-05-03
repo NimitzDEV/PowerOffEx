@@ -186,7 +186,9 @@
                 oldTvProgress = tvProgress
                 oldTvTitle = tvTitle
                 Dim frmtvnotifyNoFocus As Form = New UnselectableFORM
-                frmtvnotifyNoFocus.Show()
+            frmtvnotifyNoFocus.Show()
+            My.Settings.TvHistory = "《" & tvTitle & "》 - " & tvProgress
+            My.Settings.Save()
             End If
     End Sub
 End Class
