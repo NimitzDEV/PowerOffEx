@@ -70,7 +70,7 @@
             lbInfo.Text = "将在电量低于" & valBatteryLifeLB & "%时关机"
             remainTip.Text = lbInfo.Text
             If batteryPercent - valBatteryLifeLB = 3 Then showNotify("再下降3%的电量将关机")
-            If batteryPercent = valBatteryLifeLB = 0 Then showNotify("即将关机")
+            If batteryPercent - valBatteryLifeLB = 0 Then showNotify("即将关机")
             If batteryPercent < valBatteryLifeLB Then
                 mainTick.Enabled = False
                 pwmComputer(EWX_SHUTDOWN)
