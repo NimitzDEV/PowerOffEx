@@ -11,27 +11,32 @@
     Private Declare Function GetWindowText Lib "user32" Alias "GetWindowTextA" (ByVal hwnd As IntPtr, ByVal lpString As String, ByVal cch As Integer) As Integer
     Private Declare Function GetWindowTextLength Lib "user32" Alias "GetWindowTextLengthA" (ByVal hwnd As IntPtr) As Integer
     Declare Function GetForegroundWindow Lib "user32" () As Integer
+    Private Declare Function GetDesktopWindow Lib "user32" () As Integer
+    Private Declare Function GetWindow Lib "user32" (ByVal hwnd As Integer, ByVal wCmd As Integer) As Integer
+    Private Const GW_CHILD = 5
+    Private Const GW_HWNDNEXT = 2
     Public Function getTitle() As String
-        For Each proc As Process In Process.GetProcesses
-            If proc.MainWindowTitle <> "" Then
-                tmpChar2 = proc.MainWindowTitle
-                Debug.Print("+" & proc.MainWindowTitle)
-                If scanChar(tmpChar2) = 2 Then
-                    Return tmpChar2
-                    Exit Function
+        Dim hwnd As Long
+        '取得桌面窗口
+        hwnd = GetDesktopWindow()
+        '取得桌面窗口的第一个子窗口
+        hwnd = GetWindow(hwnd, GW_CHILD)
+        '通过循环来枚举所有的窗口
+        Do While hwnd <> 0
+            '取得下一个窗口的标题，并写入到列表框中
+            Dim hdl As New IntPtr(hwnd) '获取活动窗口的句柄
+            Dim strTitle As String = Space(GetWindowTextLength(hdl) + 1)     '用来存储窗口的标题
+            GetWindowText(hwnd, strTitle, strTitle.Length)
+            If strTitle <> vbNullString Or strTitle <> "Default IME" Or strTitle <> "GDI+ Window" Then
+                If scanChar(strTitle) = 2 Then
+                    Return strTitle
+                    Exit Do
                 End If
             End If
-        Next
-        Dim hdl As New IntPtr(GetForegroundWindow) '获取活动窗口的句柄
-        Dim strTitle As String = Space(GetWindowTextLength(hdl) + 1) '构造窗口标题字符串缓冲区
-        GetWindowText(hdl, strTitle, strTitle.Length) '获取窗口文字
-        Debug.Print("-" & strTitle)
-        If strTitle <> "" Then
-            If scanChar(strTitle) = 2 Then
-                Return strTitle
-                Exit Function
-            End If
-        End If
+            '调用GetWindow函数，来取得下一个窗口
+            hwnd = GetWindow(hwnd, GW_HWNDNEXT)
+            Application.DoEvents()
+        Loop
         Return ""
     End Function
     Public Function scanChar(ByVal scanStr As String) As Integer
@@ -39,11 +44,9 @@
         signFull = 0
         If InStr(tmpChar, "第") <> 0 Then signFull += 1
         If InStr(tmpChar, "集") <> 0 Then signFull += 1
-        Debug.Print(signFull)
         Return signFull
     End Function
     Public Sub getTvTitleAndPg()
-        'If scanChar() <> 2 Then Exit Sub
         tmpChar = getTitle()
         If tmpChar = "" Then Exit Sub
         tvTitle = tmpChar.Substring(0, InStr(tmpChar, "第") - 1)

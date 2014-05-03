@@ -19,6 +19,7 @@
         showSwipAnimation()
         '开始
         networkStatus = System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable
+        If frmMain.cbRecordTvProgress.Checked Then tmrCheckTv.Enabled = True
     End Sub
 
     Private Sub notifyIcon_MouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles notifyIcon.MouseClick
@@ -55,16 +56,6 @@
 
     Private Sub mainTick_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mainTick.Tick
         updateBatteryInfo()
-        If frmMain.cbRecordTvProgress.Checked = True Then
-            Debug.Print("INIT!!!")
-            getTvTitleAndPg()
-            If oldTvProgress <> tvProgress Or oldTvTitle <> tvTitle Then
-                oldTvProgress = tvProgress
-                oldTvTitle = tvTitle
-                '///// TODO: PROGRESS NOTIFY
-                frmTvNotify.Show()
-            End If
-        End If
         If valSetTime > 0 Then
             valSetTime -= 1
             lbInfo.Text = "将在 " & converTime(valSetTime) & " 后关机"
@@ -179,5 +170,23 @@
 
     Private Sub btnAdd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAdd.Click
         frmTimeAdd.Show(Me)
+    End Sub
+
+    Private Class UnselectableFORM
+        Inherits frmTvNotify
+        Public Sub New()
+            MyBase.New()
+            Me.SetStyle(ControlStyles.Selectable, False)
+        End Sub
+    End Class
+
+    Private Sub tmrCheckTv_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmrCheckTv.Tick
+            getTvTitleAndPg()
+            If oldTvProgress <> tvProgress Or oldTvTitle <> tvTitle Then
+                oldTvProgress = tvProgress
+                oldTvTitle = tvTitle
+                Dim frmtvnotifyNoFocus As Form = New UnselectableFORM
+                frmtvnotifyNoFocus.Show()
+            End If
     End Sub
 End Class

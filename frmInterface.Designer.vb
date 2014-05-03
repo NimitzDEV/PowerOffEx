@@ -55,6 +55,7 @@ Partial Class frmInterface
         Me.tmrConnectionCheck = New System.Windows.Forms.Timer(Me.components)
         Me.btnHide = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
+        Me.tmrCheckTv = New System.Windows.Forms.Timer(Me.components)
         Me.cmsRightClick.SuspendLayout()
         Me.pnlNetworkConnection.SuspendLayout()
         CType(Me.pbConnections, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -282,6 +283,10 @@ Partial Class frmInterface
         Me.btnAdd.Text = "加时"
         Me.btnAdd.UseVisualStyleBackColor = True
         '
+        'tmrCheckTv
+        '
+        Me.tmrCheckTv.Interval = 5000
+        '
         'frmInterface
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -343,4 +348,5 @@ Partial Class frmInterface
     Friend WithEvents tmrConnectionCheck As System.Windows.Forms.Timer
     Friend WithEvents btnHide As System.Windows.Forms.Button
     Friend WithEvents btnAdd As System.Windows.Forms.Button
+    Friend WithEvents tmrCheckTv As System.Windows.Forms.Timer
 End Class
