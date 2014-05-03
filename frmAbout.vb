@@ -21,7 +21,7 @@ Public Class frmAbout
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        Process.Start("https://github.com/nimitzdev/calc4lounger")
+        Process.Start("https://github.com/nimitzdev/PowerOffEx")
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnClose.Click
