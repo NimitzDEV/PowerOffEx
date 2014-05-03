@@ -1,4 +1,5 @@
 ﻿Module mdProgram
+    Public globalNotifyInfo As String
     '绘制阴影
     Public Const CS_DROPSHADOW = &H20000
     Public Const GCL_STYLE = (-26)

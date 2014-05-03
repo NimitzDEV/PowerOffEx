@@ -1,10 +1,10 @@
-﻿Public Class frmTvNotify
+﻿Public Class frmNotify
 
     Private Sub frmTvNotify_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.Top = 0
         Me.Left = 0
         Me.Width = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Width
-        Label1.Text = "正在收看 《" & tvTitle & "》" & tvProgress
+        Label1.Text = globalNotifyInfo
         Label1.Left = (Me.Width - Label1.Width) / 2
         drawWindowStep1(Me)
     End Sub

@@ -1,6 +1,7 @@
 ﻿Public Class frmInterface
     Dim batteryAnimateStep As Integer
 
+
     Enum originalData As Integer
         oFrmWidth = 533
         oFrmHeight = 211
@@ -61,7 +62,7 @@
             lbInfo.Text = "将在 " & converTime(valSetTime) & " 后关机"
             remainTip.Text = lbInfo.Text
             If valSetTime = 180 Then
-                '///// TODO: SHOW NOTIFY
+                showNotify(lbInfo.Text)
             End If
             If valSetTime = 0 Then
                 mainTick.Enabled = False
@@ -173,20 +174,24 @@
     End Sub
 
     Private Class UnselectableFORM
-        Inherits frmTvNotify
+        Inherits frmNotify
         Public Sub New()
             MyBase.New()
             Me.SetStyle(ControlStyles.Selectable, False)
         End Sub
     End Class
+    Private Sub showNotify(ByVal info As String)
+        Dim frmtvnotifyNoFocus As Form = New UnselectableFORM
+        globalNotifyInfo = info
+        frmtvnotifyNoFocus.Show()
+    End Sub
 
     Private Sub tmrCheckTv_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmrCheckTv.Tick
             getTvTitleAndPg()
             If oldTvProgress <> tvProgress Or oldTvTitle <> tvTitle Then
                 oldTvProgress = tvProgress
                 oldTvTitle = tvTitle
-                Dim frmtvnotifyNoFocus As Form = New UnselectableFORM
-            frmtvnotifyNoFocus.Show()
+            showNotify("正在收看《" & tvTitle & "》 - " & tvProgress)
             My.Settings.TvHistory = "《" & tvTitle & "》 - " & tvProgress
             My.Settings.Save()
             End If
