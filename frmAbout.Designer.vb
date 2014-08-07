@@ -34,6 +34,7 @@ Partial Class frmAbout
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.LinkLabel4 = New System.Windows.Forms.LinkLabel()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'LinkLabel10
@@ -120,7 +121,7 @@ Partial Class frmAbout
         '
         'btnClose
         '
-        Me.btnClose.Location = New System.Drawing.Point(176, 246)
+        Me.btnClose.Location = New System.Drawing.Point(176, 258)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(75, 23)
         Me.btnClose.TabIndex = 19
@@ -159,12 +160,22 @@ Partial Class frmAbout
         Me.LinkLabel4.TabStop = True
         Me.LinkLabel4.Text = "百度空间"
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(56, 226)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(317, 12)
+        Me.Label5.TabIndex = 23
+        Me.Label5.Text = "电视剧记录仅限于显示的标题包含""第""以及""集""两个字"
+        '
         'frmAbout
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(430, 280)
+        Me.ClientSize = New System.Drawing.Size(430, 293)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.LinkLabel4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label4)
@@ -198,4 +209,5 @@ Partial Class frmAbout
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents LinkLabel4 As System.Windows.Forms.LinkLabel
+    Friend WithEvents Label5 As System.Windows.Forms.Label
 End Class
