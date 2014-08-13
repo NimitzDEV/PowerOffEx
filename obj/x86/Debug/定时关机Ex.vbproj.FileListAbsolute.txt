@@ -12,4 +12,3 @@ D:\开发\定时关机EX\定时关机Ex\定时关机Ex\obj\x86\Debug\定时关�
 D:\开发\定时关机EX\定时关机Ex\定时关机Ex\bin\Debug\定时关机Ex.exe.config
 D:\开发\定时关机EX\定时关机Ex\定时关机Ex\obj\x86\Debug\定时关机Ex.frmNotify.resources
 D:\开发\定时关机EX\定时关机Ex\定时关机Ex\obj\x86\Debug\定时关机Ex.frmAbout.resources
-D:\开发\定时关机EX\定时关机Ex\定时关机Ex\obj\x86\Debug\定时关机Ex.vbprojResolveAssemblyReference.cache

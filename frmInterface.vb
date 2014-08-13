@@ -4,6 +4,30 @@
         oFrmWidth = 533
         oFrmHeight = 211
     End Enum
+    Private Sub fullUI(ByVal isEnable As Boolean)
+        tmrChargeAnimate.Enabled = isEnable
+        tmrUIFresh.Enabled = isEnable
+    End Sub
+    Private Sub freshUI()
+        If batteryChargeStatus = 0 Then
+            If batteryPercent > 80 Then
+                pbBattery.Image = My.Resources.fullbattery
+            ElseIf batteryPercent > 35 And batteryPercent < 80 Then
+                pbBattery.Image = My.Resources.halfbattery
+            Else
+                pbBattery.Image = My.Resources.lowbattery
+            End If
+        End If
+        networkStatus = System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable
+        If networkStatus = True Then
+            pbConnections.Image = My.Resources.wire
+            lbConnectStatus.Text = " 已连接网络"
+        Else
+            pbConnections.Image = My.Resources.disconnect
+            lbConnectStatus.Text = " 未连接网络"
+        End If
+        lbConnectStatus.Left = (pnlNetworkConnection.Width - lbConnectStatus.Width) / 2
+    End Sub
     Private Sub frmInterface_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         reconstractUi()
         notifyIcon.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info
@@ -19,11 +43,14 @@
         '开始
         networkStatus = System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable
         If frmMain.cbRecordTvProgress.Checked Then tmrCheckTv.Enabled = True
+        updateBatteryInfo()
+        freshUI()
     End Sub
 
     Private Sub notifyIcon_MouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles notifyIcon.MouseClick
         If e.Button = MouseButtons.Left Then
             Me.Visible = Not Me.Visible
+            fullUI(Me.Visible)
             Me.Left = MousePosition.X - Me.Width / 2
             Me.Top = Screen.PrimaryScreen.WorkingArea.Height - Me.Height
             showSwipAnimation()
@@ -33,7 +60,7 @@
     End Sub
 
     Private Sub frmInterface_Paint(ByVal sender As Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles Me.Paint
-        drawWindowStep2(Me, e, Color.White, Color.DodgerBlue )
+        drawWindowStep2(Me, e, Color.White, Color.DodgerBlue)
     End Sub
 
     Private Sub animationTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles animationTimer.Tick
@@ -78,27 +105,13 @@
             End If
         End If
         '///////////////////////////////////////////////////////////////////////////////////////////
-        If networkStatus = True Then
-            pbConnections.Image = My.Resources.wire
-            lbConnectStatus.Text = " 已连接网络"
-        Else
-            pbConnections.Image = My.Resources.disconnect
-            lbConnectStatus.Text = " 未连接网络"
-        End If
-        lbConnectStatus.Left = (pnlNetworkConnection.Width - lbConnectStatus.Width) / 2
+
         '///////////////////////////////////////////////////////////////////////////////////////////
         If batteryChargeStatus = 1 And batteryStatus = 8 Then
             lbBatteryStatus.Text = "正在充电"
             tmrChargeAnimate.Enabled = True
         ElseIf batteryChargeStatus = 0 Then
             tmrChargeAnimate.Enabled = False
-            If batteryPercent > 80 Then
-                pbBattery.Image = My.Resources.fullbattery
-            ElseIf batteryPercent > 35 And batteryPercent < 80 Then
-                pbBattery.Image = My.Resources.halfbattery
-            Else
-                pbBattery.Image = My.Resources.lowbattery
-            End If
             lbBatteryStatus.Text = "电池剩余" & batteryPercent & "%"
         ElseIf batteryChargeStatus = 1 And batteryStatus = 0 Then
             tmrChargeAnimate.Enabled = False
@@ -116,6 +129,7 @@
 
     Private Sub tmrAutoHide_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmrAutoHide.Tick
         Me.Visible = False
+        fullUI(False)
         tmrAutoHide.Enabled = False
     End Sub
 
@@ -170,12 +184,13 @@
         End If
     End Sub
 
-    Private Sub tmrConnectionCheck_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmrConnectionCheck.Tick
-        networkStatus = System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable
+    Private Sub tmrConnectionCheck_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmrUIFresh.Tick
+        freshUI()
     End Sub
 
     Private Sub btnHide_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnHide.Click
         Me.Visible = False
+        fullUI(False)
     End Sub
 
     Private Sub btnAdd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAdd.Click
@@ -205,4 +220,5 @@
             My.Settings.Save()
             End If
     End Sub
+
 End Class

@@ -52,7 +52,7 @@ Partial Class frmInterface
         Me.lbBatteryStatus = New System.Windows.Forms.Label()
         Me.pbBattery = New System.Windows.Forms.PictureBox()
         Me.tmrChargeAnimate = New System.Windows.Forms.Timer(Me.components)
-        Me.tmrConnectionCheck = New System.Windows.Forms.Timer(Me.components)
+        Me.tmrUIFresh = New System.Windows.Forms.Timer(Me.components)
         Me.btnHide = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.tmrCheckTv = New System.Windows.Forms.Timer(Me.components)
@@ -117,65 +117,65 @@ Partial Class frmInterface
         '
         Me.cmsRightClick.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.退出ToolStripMenuItem, Me.ToolStripMenuItem1, Me.延长时间ToolStripMenuItem, Me.remainTip, Me.ToolStripMenuItem2, Me.QqqToolStripMenuItem})
         Me.cmsRightClick.Name = "cmsRightClick"
-        Me.cmsRightClick.Size = New System.Drawing.Size(180, 120)
+        Me.cmsRightClick.Size = New System.Drawing.Size(182, 142)
         '
         '退出ToolStripMenuItem
         '
         Me.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem"
-        Me.退出ToolStripMenuItem.Size = New System.Drawing.Size(179, 26)
+        Me.退出ToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.退出ToolStripMenuItem.Text = "退出"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(176, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(178, 6)
         '
         '延长时间ToolStripMenuItem
         '
         Me.延长时间ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.add10, Me.add20, Me.add50, Me.add1, Me.add2, Me.ToolStripMenuItem3, Me.自定义ToolStripMenuItem})
         Me.延长时间ToolStripMenuItem.Name = "延长时间ToolStripMenuItem"
-        Me.延长时间ToolStripMenuItem.Size = New System.Drawing.Size(179, 26)
+        Me.延长时间ToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.延长时间ToolStripMenuItem.Text = "延长时间"
         '
         'add10
         '
         Me.add10.Name = "add10"
-        Me.add10.Size = New System.Drawing.Size(112, 22)
+        Me.add10.Size = New System.Drawing.Size(114, 22)
         Me.add10.Text = "10分钟"
         '
         'add20
         '
         Me.add20.Name = "add20"
-        Me.add20.Size = New System.Drawing.Size(112, 22)
+        Me.add20.Size = New System.Drawing.Size(114, 22)
         Me.add20.Text = "20分钟"
         '
         'add50
         '
         Me.add50.Name = "add50"
-        Me.add50.Size = New System.Drawing.Size(112, 22)
+        Me.add50.Size = New System.Drawing.Size(114, 22)
         Me.add50.Text = "50分钟"
         '
         'add1
         '
         Me.add1.Name = "add1"
-        Me.add1.Size = New System.Drawing.Size(112, 22)
+        Me.add1.Size = New System.Drawing.Size(114, 22)
         Me.add1.Text = "1小时"
         '
         'add2
         '
         Me.add2.Name = "add2"
-        Me.add2.Size = New System.Drawing.Size(112, 22)
+        Me.add2.Size = New System.Drawing.Size(114, 22)
         Me.add2.Text = "2小时"
         '
         'ToolStripMenuItem3
         '
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(109, 6)
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(111, 6)
         '
         '自定义ToolStripMenuItem
         '
         Me.自定义ToolStripMenuItem.Name = "自定义ToolStripMenuItem"
-        Me.自定义ToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
+        Me.自定义ToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
         Me.自定义ToolStripMenuItem.Text = "自定义"
         '
         'remainTip
@@ -184,18 +184,18 @@ Partial Class frmInterface
         Me.remainTip.Font = New System.Drawing.Font("微软雅黑", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.remainTip.ForeColor = System.Drawing.Color.White
         Me.remainTip.Name = "remainTip"
-        Me.remainTip.Size = New System.Drawing.Size(179, 26)
+        Me.remainTip.Size = New System.Drawing.Size(181, 26)
         Me.remainTip.Text = "当前剩余"
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(176, 6)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(178, 6)
         '
         'QqqToolStripMenuItem
         '
         Me.QqqToolStripMenuItem.Name = "QqqToolStripMenuItem"
-        Me.QqqToolStripMenuItem.Size = New System.Drawing.Size(179, 26)
+        Me.QqqToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.QqqToolStripMenuItem.Text = "显示/隐藏 详细界面"
         '
         'pnlNetworkConnection
@@ -260,10 +260,10 @@ Partial Class frmInterface
         '
         Me.tmrChargeAnimate.Interval = 500
         '
-        'tmrConnectionCheck
+        'tmrUIFresh
         '
-        Me.tmrConnectionCheck.Enabled = True
-        Me.tmrConnectionCheck.Interval = 9000
+        Me.tmrUIFresh.Enabled = True
+        Me.tmrUIFresh.Interval = 9000
         '
         'btnHide
         '
@@ -345,7 +345,7 @@ Partial Class frmInterface
     Friend WithEvents lbBatteryStatus As System.Windows.Forms.Label
     Friend WithEvents pbBattery As System.Windows.Forms.PictureBox
     Friend WithEvents tmrChargeAnimate As System.Windows.Forms.Timer
-    Friend WithEvents tmrConnectionCheck As System.Windows.Forms.Timer
+    Friend WithEvents tmrUIFresh As System.Windows.Forms.Timer
     Friend WithEvents btnHide As System.Windows.Forms.Button
     Friend WithEvents btnAdd As System.Windows.Forms.Button
     Friend WithEvents tmrCheckTv As System.Windows.Forms.Timer
