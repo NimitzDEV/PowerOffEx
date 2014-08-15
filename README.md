@@ -1,13 +1,18 @@
-PowerOffEx 定时关机Ex
+PowerOffEx 
+定时关机Ex
 ==========
-当前版本：BETA
+当前版本：2.x
 
 功能列表
 ==========
 -按照设定时间关机
--按照设定电池剩余电量关机
+-按照设定电池剩余电量关机（笔记本专用）
 -可以记录电视剧观看进度
+-深夜音量自动调整
 
-Credits
+特别感谢
+Special thanks to
 ==========
-哥丽拉琪格拉 for bug report and help to fix ！
+Tail 
+哥丽拉琪格拉 
+
