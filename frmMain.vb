@@ -5,7 +5,11 @@ Public Class frmMain
         SaveSettings()
     End Sub
 
+
+
     Private Sub frmMain_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        EmbeddedAssembly.Load("定时关机Ex.CoreAudioApi.dll", "CoreAudioApi.dll")
+        AddHandler AppDomain.CurrentDomain.AssemblyResolve, New System.ResolveEventHandler(AddressOf assResolve)
         ReadSettings()
         Me.Text = Application.ProductName & " - " & Application.ProductVersion
         If checkIsLaptop() = True Then
@@ -18,7 +22,13 @@ Public Class frmMain
         nudMinute.Value = pref_MIN
         cbRecordTvProgress.Checked = chk_RECORD
         cbVol.Checked = chk_VOLCTRL
+
     End Sub
+
+    Private Function assResolve(ByVal sender As System.Object, ByVal e As System.ResolveEventArgs) As System.Reflection.Assembly
+        Return EmbeddedAssembly.Get(e.Name)
+    End Function
+   
 
     Private Sub rbEvents_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbEvents.CheckedChanged
         updateBatteryInfo()
@@ -59,7 +69,6 @@ Public Class frmMain
         End If
         frmInterface.Show()
         Me.Hide()
-        'MsgBox(batteryChargeStatus & vbCrLf & batteryStatus & vbCrLf & batteryLife)
     End Sub
 
 
@@ -82,4 +91,6 @@ Public Class frmMain
     Private Sub cbVol_CheckedChanged(sender As Object, e As EventArgs) Handles cbVol.CheckedChanged
         chk_VOLCTRL = cbVol.Checked
     End Sub
+
+
 End Class

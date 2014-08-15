@@ -74,6 +74,7 @@
   <ItemGroup>
     <Reference Include="CoreAudioApi">
       <HintPath>.\CoreAudioApi.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
@@ -91,6 +92,7 @@
     <Import Include="System.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmbeddedAssembly.vb" />
     <Compile Include="frmAbout.Designer.vb">
       <DependentUpon>frmAbout.vb</DependentUpon>
     </Compile>

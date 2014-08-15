@@ -13,7 +13,7 @@ Public Class frmVolCtrl
         AddHandler device.AudioEndpointVolume.OnVolumeNotification, New AudioEndpointVolumeNotificationDelegate(AddressOf AudioEndpointVolume_OnVolumeNotification)
     End Sub
 
-
+   
     Private Sub AudioEndpointVolume_OnVolumeNotification(data As AudioVolumeNotificationData)
         If Me.InvokeRequired Then
             Dim Params As Object() = New Object(0) {}
