@@ -178,3 +178,5 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+obj/x86/Debug/定时关机Ex.vbproj.FileListAbsolute.txt
+obj/x86/Debug/定时关机Ex.vbproj.GenerateResource.Cache

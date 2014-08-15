@@ -56,6 +56,7 @@ Partial Class frmInterface
         Me.btnHide = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.tmrCheckTv = New System.Windows.Forms.Timer(Me.components)
+        Me.tmrVol = New System.Windows.Forms.Timer(Me.components)
         Me.cmsRightClick.SuspendLayout()
         Me.pnlNetworkConnection.SuspendLayout()
         CType(Me.pbConnections, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -117,7 +118,7 @@ Partial Class frmInterface
         '
         Me.cmsRightClick.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.退出ToolStripMenuItem, Me.ToolStripMenuItem1, Me.延长时间ToolStripMenuItem, Me.remainTip, Me.ToolStripMenuItem2, Me.QqqToolStripMenuItem})
         Me.cmsRightClick.Name = "cmsRightClick"
-        Me.cmsRightClick.Size = New System.Drawing.Size(182, 142)
+        Me.cmsRightClick.Size = New System.Drawing.Size(182, 120)
         '
         '退出ToolStripMenuItem
         '
@@ -287,6 +288,10 @@ Partial Class frmInterface
         '
         Me.tmrCheckTv.Interval = 5000
         '
+        'tmrVol
+        '
+        Me.tmrVol.Interval = 9000
+        '
         'frmInterface
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -349,4 +354,5 @@ Partial Class frmInterface
     Friend WithEvents btnHide As System.Windows.Forms.Button
     Friend WithEvents btnAdd As System.Windows.Forms.Button
     Friend WithEvents tmrCheckTv As System.Windows.Forms.Timer
+    Friend WithEvents tmrVol As System.Windows.Forms.Timer
 End Class

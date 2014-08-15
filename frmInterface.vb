@@ -1,5 +1,7 @@
-﻿Public Class frmInterface
+﻿Imports CoreAudioApi
+Public Class frmInterface
     Dim batteryAnimateStep As Integer
+    Private device As MMDevice
     Enum originalData As Integer
         oFrmWidth = 533
         oFrmHeight = 211
@@ -42,9 +44,10 @@
         showSwipAnimation()
         '开始
         networkStatus = System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable
-        If frmMain.cbRecordTvProgress.Checked Then tmrCheckTv.Enabled = True
+        tmrCheckTv.Enabled = chk_RECORD
         updateBatteryInfo()
         freshUI()
+        tmrVol.Enabled = chk_VOLCTRL
     End Sub
 
     Private Sub notifyIcon_MouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles notifyIcon.MouseClick
@@ -211,14 +214,22 @@
     End Sub
 
     Private Sub tmrCheckTv_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmrCheckTv.Tick
-            getTvTitleAndPg()
-            If oldTvProgress <> tvProgress Or oldTvTitle <> tvTitle Then
-                oldTvProgress = tvProgress
-                oldTvTitle = tvTitle
+        getTvTitleAndPg()
+        If oldTvProgress <> tvProgress Or oldTvTitle <> tvTitle Then
+            oldTvProgress = tvProgress
+            oldTvTitle = tvTitle
             showNotify("正在收看《" & tvTitle & "》 - " & tvProgress)
-            My.Settings.TvHistory = "《" & tvTitle & "》 - " & tvProgress
-            My.Settings.Save()
-            End If
+            set_TVP = "《" & tvTitle & "》 - " & tvProgress
+            SaveSettings()
+        End If
     End Sub
 
+    Private Sub tmrVol_Tick(sender As Object, e As EventArgs) Handles tmrVol.Tick
+        If Hour(Now) = 23 Then
+            Dim DevEnum As New MMDeviceEnumerator()
+            device = DevEnum.GetDefaultAudioEndpoint(EDataFlow.eRender, ERole.eMultimedia)
+            device.AudioEndpointVolume.MasterVolumeLevelScalar = (CSng(pref_VOL) / 100.0F)
+            tmrVol.Enabled = False
+        End If
+    End Sub
 End Class

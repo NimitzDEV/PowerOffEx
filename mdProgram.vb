@@ -101,19 +101,6 @@
         frmInterface.Close()
         frmMain.Close()
     End Sub
-    Public Sub ReadSettings()
-        With frmMain
-            .cbRecordTvProgress.Checked = My.Settings.isCheckAutoRecord
-            .nudHour.Value = My.Settings.saveHours
-            .nudMinute.Value = My.Settings.saveMinutes
-        End With
-    End Sub
-    Public Sub SaveSettings()
-        With frmMain
-            My.Settings.isCheckAutoRecord = .cbRecordTvProgress.Checked
-            My.Settings.saveHours = .nudHour.Value
-            My.Settings.saveMinutes = .nudMinute.Value
-            My.Settings.Save()
-        End With
-    End Sub
+
+
 End Module

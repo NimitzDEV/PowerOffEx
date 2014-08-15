@@ -53,54 +53,6 @@ Namespace My
                 Return defaultInstance
             End Get
         End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("NONE")>  _
-        Public Property TvHistory() As String
-            Get
-                Return CType(Me("TvHistory"),String)
-            End Get
-            Set
-                Me("TvHistory") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
-        Public Property isCheckAutoRecord() As Boolean
-            Get
-                Return CType(Me("isCheckAutoRecord"),Boolean)
-            End Get
-            Set
-                Me("isCheckAutoRecord") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("2")>  _
-        Public Property saveHours() As Integer
-            Get
-                Return CType(Me("saveHours"),Integer)
-            End Get
-            Set
-                Me("saveHours") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
-        Public Property saveMinutes() As Integer
-            Get
-                Return CType(Me("saveMinutes"),Integer)
-            End Get
-            Set
-                Me("saveMinutes") = value
-            End Set
-        End Property
     End Class
 End Namespace
 

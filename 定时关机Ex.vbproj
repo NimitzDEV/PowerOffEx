@@ -72,6 +72,9 @@
     <ApplicationIcon>appicon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CoreAudioApi">
+      <HintPath>.\CoreAudioApi.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
@@ -88,6 +91,9 @@
     <Import Include="System.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classVerticalProgressbar.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="frmAbout.Designer.vb">
       <DependentUpon>frmAbout.vb</DependentUpon>
     </Compile>
@@ -119,7 +125,14 @@
     <Compile Include="frmNotify.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmVolCtrl.Designer.vb">
+      <DependentUpon>frmVolCtrl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmVolCtrl.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="mdProgram.vb" />
+    <Compile Include="mdSettings.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -152,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNotify.resx">
       <DependentUpon>frmNotify.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVolCtrl.resx">
+      <DependentUpon>frmVolCtrl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
@@ -198,6 +214,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="appicon.ico" />
+    <EmbeddedResource Include="CoreAudioApi.dll" />
     <None Include="res\nocharging.png" />
     <None Include="res\1132605.png" />
     <None Include="res\1132604.png" />

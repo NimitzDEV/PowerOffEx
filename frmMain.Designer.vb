@@ -30,16 +30,19 @@ Partial Class frmMain
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.llbVolume = New System.Windows.Forms.LinkLabel()
+        Me.cbVol = New System.Windows.Forms.CheckBox()
+        Me.llbHistory = New System.Windows.Forms.LinkLabel()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.lbTip2 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.nudBattery = New System.Windows.Forms.NumericUpDown()
+        Me.cbRecordTvProgress = New System.Windows.Forms.CheckBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.rbEvents = New System.Windows.Forms.RadioButton()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.cbRecordTvProgress = New System.Windows.Forms.CheckBox()
         Me.btnSet = New System.Windows.Forms.Button()
         Me.llbAbout = New System.Windows.Forms.LinkLabel()
-        Me.llbHistory = New System.Windows.Forms.LinkLabel()
         CType(Me.nudHour, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudMinute, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -105,9 +108,14 @@ Partial Class frmMain
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.llbVolume)
+        Me.GroupBox1.Controls.Add(Me.cbVol)
+        Me.GroupBox1.Controls.Add(Me.llbHistory)
+        Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.lbTip2)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.nudBattery)
+        Me.GroupBox1.Controls.Add(Me.cbRecordTvProgress)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.rbEvents)
         Me.GroupBox1.Controls.Add(Me.Label3)
@@ -119,9 +127,51 @@ Partial Class frmMain
         Me.GroupBox1.Controls.Add(Me.lbTip1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(433, 168)
+        Me.GroupBox1.Size = New System.Drawing.Size(433, 229)
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
+        '
+        'llbVolume
+        '
+        Me.llbVolume.AutoSize = True
+        Me.llbVolume.Location = New System.Drawing.Point(136, 197)
+        Me.llbVolume.Name = "llbVolume"
+        Me.llbVolume.Size = New System.Drawing.Size(29, 12)
+        Me.llbVolume.TabIndex = 16
+        Me.llbVolume.TabStop = True
+        Me.llbVolume.Text = "设置"
+        '
+        'cbVol
+        '
+        Me.cbVol.AutoSize = True
+        Me.cbVol.Location = New System.Drawing.Point(10, 197)
+        Me.cbVol.Name = "cbVol"
+        Me.cbVol.Size = New System.Drawing.Size(120, 16)
+        Me.cbVol.TabIndex = 15
+        Me.cbVol.Text = "深夜降低电脑音量"
+        Me.cbVol.UseVisualStyleBackColor = True
+        '
+        'llbHistory
+        '
+        Me.llbHistory.AutoSize = True
+        Me.llbHistory.Location = New System.Drawing.Point(172, 175)
+        Me.llbHistory.Name = "llbHistory"
+        Me.llbHistory.Size = New System.Drawing.Size(53, 12)
+        Me.llbHistory.TabIndex = 11
+        Me.llbHistory.TabStop = True
+        Me.llbHistory.Text = "观看记录"
+        Me.llbHistory.Visible = False
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("宋体", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlLight
+        Me.Label6.Location = New System.Drawing.Point(6, 160)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(418, 12)
+        Me.Label6.TabIndex = 14
+        Me.Label6.Text = "-----------------------------------------------------------"
         '
         'lbTip2
         '
@@ -150,6 +200,16 @@ Partial Class frmMain
         Me.nudBattery.Size = New System.Drawing.Size(50, 21)
         Me.nudBattery.TabIndex = 11
         Me.nudBattery.Value = New Decimal(New Integer() {5, 0, 0, 0})
+        '
+        'cbRecordTvProgress
+        '
+        Me.cbRecordTvProgress.AutoSize = True
+        Me.cbRecordTvProgress.Location = New System.Drawing.Point(10, 175)
+        Me.cbRecordTvProgress.Name = "cbRecordTvProgress"
+        Me.cbRecordTvProgress.Size = New System.Drawing.Size(156, 16)
+        Me.cbRecordTvProgress.TabIndex = 6
+        Me.cbRecordTvProgress.Text = "同时记录电视剧观看进度"
+        Me.cbRecordTvProgress.UseVisualStyleBackColor = True
         '
         'Label4
         '
@@ -183,19 +243,9 @@ Partial Class frmMain
         Me.Label3.TabIndex = 8
         Me.Label3.Text = "-----------------------------------------------------------"
         '
-        'cbRecordTvProgress
-        '
-        Me.cbRecordTvProgress.AutoSize = True
-        Me.cbRecordTvProgress.Location = New System.Drawing.Point(12, 176)
-        Me.cbRecordTvProgress.Name = "cbRecordTvProgress"
-        Me.cbRecordTvProgress.Size = New System.Drawing.Size(156, 16)
-        Me.cbRecordTvProgress.TabIndex = 6
-        Me.cbRecordTvProgress.Text = "同时记录电视剧观看进度"
-        Me.cbRecordTvProgress.UseVisualStyleBackColor = True
-        '
         'btnSet
         '
-        Me.btnSet.Location = New System.Drawing.Point(370, 176)
+        Me.btnSet.Location = New System.Drawing.Point(370, 237)
         Me.btnSet.Name = "btnSet"
         Me.btnSet.Size = New System.Drawing.Size(75, 23)
         Me.btnSet.TabIndex = 8
@@ -205,34 +255,21 @@ Partial Class frmMain
         'llbAbout
         '
         Me.llbAbout.AutoSize = True
-        Me.llbAbout.Location = New System.Drawing.Point(335, 182)
+        Me.llbAbout.Location = New System.Drawing.Point(335, 243)
         Me.llbAbout.Name = "llbAbout"
         Me.llbAbout.Size = New System.Drawing.Size(29, 12)
         Me.llbAbout.TabIndex = 9
         Me.llbAbout.TabStop = True
         Me.llbAbout.Text = "关于"
         '
-        'llbHistory
-        '
-        Me.llbHistory.AutoSize = True
-        Me.llbHistory.Location = New System.Drawing.Point(169, 180)
-        Me.llbHistory.Name = "llbHistory"
-        Me.llbHistory.Size = New System.Drawing.Size(53, 12)
-        Me.llbHistory.TabIndex = 11
-        Me.llbHistory.TabStop = True
-        Me.llbHistory.Text = "观看记录"
-        Me.llbHistory.Visible = False
-        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(457, 203)
-        Me.Controls.Add(Me.llbHistory)
+        Me.ClientSize = New System.Drawing.Size(457, 269)
         Me.Controls.Add(Me.llbAbout)
         Me.Controls.Add(Me.btnSet)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.cbRecordTvProgress)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
@@ -240,7 +277,6 @@ Partial Class frmMain
         Me.Name = "frmMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Main"
-        Me.TopMost = True
         CType(Me.nudHour, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudMinute, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
@@ -267,5 +303,8 @@ Partial Class frmMain
     Friend WithEvents btnSet As System.Windows.Forms.Button
     Friend WithEvents llbAbout As System.Windows.Forms.LinkLabel
     Friend WithEvents llbHistory As System.Windows.Forms.LinkLabel
+    Friend WithEvents cbVol As System.Windows.Forms.CheckBox
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents llbVolume As System.Windows.Forms.LinkLabel
 
 End Class

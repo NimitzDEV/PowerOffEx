@@ -1,4 +1,5 @@
-﻿Public Class frmMain
+﻿
+Public Class frmMain
 
     Private Sub frmMain_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         SaveSettings()
@@ -12,7 +13,11 @@
             rbEvents.Enabled = True
             nudBattery.Maximum = batteryPercent
         End If
-        If My.Settings.TvHistory <> "NONE" Then llbHistory.Visible = True
+        If set_TVP <> "" Then llbHistory.Visible = True
+        nudHour.Value = pref_HOUR
+        nudMinute.Value = pref_MIN
+        cbRecordTvProgress.Checked = chk_RECORD
+        cbVol.Checked = chk_VOLCTRL
     End Sub
 
     Private Sub rbEvents_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbEvents.CheckedChanged
@@ -59,10 +64,22 @@
 
 
     Private Sub llbHistory_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles llbHistory.LinkClicked
-        MsgBox("上次观看到 " & My.Settings.TvHistory)
+        MsgBox("上次观看到 " & set_TVP)
     End Sub
 
     Private Sub llbAbout_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles llbAbout.LinkClicked
         frmAbout.Show()
+    End Sub
+
+    Private Sub llbVolume_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llbVolume.LinkClicked
+        frmVolCtrl.ShowDialog()
+    End Sub
+
+    Private Sub cbRecordTvProgress_CheckedChanged(sender As Object, e As EventArgs) Handles cbRecordTvProgress.CheckedChanged
+        chk_RECORD = cbRecordTvProgress.Checked
+    End Sub
+
+    Private Sub cbVol_CheckedChanged(sender As Object, e As EventArgs) Handles cbVol.CheckedChanged
+        chk_VOLCTRL = cbVol.Checked
     End Sub
 End Class
