@@ -44,6 +44,7 @@ Public Class frmVolCtrl
     End Sub
 
     Private Sub btnNo_Click(sender As Object, e As EventArgs) Handles btnNo.Click
+        device.AudioEndpointVolume.MasterVolumeLevelScalar = (CSng(origiVol) / 100.0F)
         Me.Close()
     End Sub
 
