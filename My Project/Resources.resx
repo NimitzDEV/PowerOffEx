@@ -121,19 +121,22 @@
   <data name="wire" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\res\wire.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="nocharging" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\nocharging.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lowbattery" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\1132604.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="halfbattery" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\1132605.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="disconnect" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\res\disconnect.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fullbattery" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\res\1132606.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="halfbattery" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\1132605.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lowbattery" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\1132604.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="nocharging" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\nocharging.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="alipayqrcode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\alipayqrcode.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
