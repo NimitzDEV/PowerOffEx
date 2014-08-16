@@ -138,14 +138,14 @@ Partial Class frmAbout
         Me.Label6.ForeColor = System.Drawing.Color.DodgerBlue
         Me.Label6.Location = New System.Drawing.Point(151, 140)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(49, 28)
+        Me.Label6.Size = New System.Drawing.Size(77, 28)
         Me.Label6.TabIndex = 24
-        Me.Label6.Text = "Tail"
+        Me.Label6.Text = "ImTail"
         '
         'LinkLabel5
         '
         Me.LinkLabel5.AutoSize = True
-        Me.LinkLabel5.Location = New System.Drawing.Point(147, 168)
+        Me.LinkLabel5.Location = New System.Drawing.Point(166, 168)
         Me.LinkLabel5.Name = "LinkLabel5"
         Me.LinkLabel5.Size = New System.Drawing.Size(53, 12)
         Me.LinkLabel5.TabIndex = 25

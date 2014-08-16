@@ -1,6 +1,6 @@
 ﻿
 Public Class frmMain
-
+    Dim os As OperatingSystem = Environment.OSVersion
     Private Sub frmMain_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         SaveSettings()
     End Sub
@@ -17,6 +17,13 @@ Public Class frmMain
             nudBattery.Maximum = batteryPercent
         End If
         If set_TVP <> "" Then llbHistory.Visible = True
+        '是否为XP
+        If os.Version.Major < 6 Then
+            chk_VOLCTRL = False
+            cbVol.Enabled = False
+            cbVol.Text &= "- XP系统暂不支持功能，请等待后续升级"
+            llbVolume.Visible = False
+        End If
         nudHour.Value = pref_HOUR
         nudMinute.Value = pref_MIN
         cbRecordTvProgress.Checked = chk_RECORD
