@@ -160,7 +160,6 @@ Partial Class frmMain
         Me.llbHistory.TabIndex = 11
         Me.llbHistory.TabStop = True
         Me.llbHistory.Text = "观看记录"
-        Me.llbHistory.Visible = False
         '
         'Label6
         '

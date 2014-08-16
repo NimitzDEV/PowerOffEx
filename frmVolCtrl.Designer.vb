@@ -201,7 +201,7 @@ Partial Class frmVolCtrl
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "frmVolCtrl"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "深夜音量调整"
         CType(Me.tbMaster, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

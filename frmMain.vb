@@ -16,7 +16,6 @@ Public Class frmMain
             rbEvents.Enabled = True
             nudBattery.Maximum = batteryPercent
         End If
-        If set_TVP <> "" Then llbHistory.Visible = True
         '是否为XP
         If os.Version.Major < 6 Then
             chk_VOLCTRL = False
@@ -90,7 +89,7 @@ Public Class frmMain
 
 
     Private Sub llbHistory_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles llbHistory.LinkClicked
-        MsgBox("上次观看到 " & set_TVP)
+        frmTVP.ShowDialog()
     End Sub
 
     Private Sub llbAbout_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles llbAbout.LinkClicked

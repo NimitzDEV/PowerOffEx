@@ -45,12 +45,12 @@ Public Class frmVolCtrl
 
     Private Sub btnNo_Click(sender As Object, e As EventArgs) Handles btnNo.Click
         device.AudioEndpointVolume.MasterVolumeLevelScalar = (CSng(origiVol) / 100.0F)
-        Me.Close()
+        Me.Dispose()
     End Sub
 
     Private Sub btnYes_Click(sender As Object, e As EventArgs) Handles btnYes.Click
         device.AudioEndpointVolume.MasterVolumeLevelScalar = (CSng(origiVol) / 100.0F)
         pref_VOL = tbMaster.Value
-        Me.Close()
+        Me.Dispose()
     End Sub
 End Class
