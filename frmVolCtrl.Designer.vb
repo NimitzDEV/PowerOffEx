@@ -102,7 +102,7 @@ Partial Class frmVolCtrl
         'Timer1
         '
         Me.Timer1.Enabled = True
-        Me.Timer1.Interval = 50
+        Me.Timer1.Interval = 10
         '
         'pbMaster
         '

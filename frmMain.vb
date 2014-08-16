@@ -1,4 +1,4 @@
-﻿
+﻿Imports CoreAudioApi
 Public Class frmMain
     Dim os As OperatingSystem = Environment.OSVersion
     Private Sub frmMain_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
@@ -71,6 +71,17 @@ Public Class frmMain
             Else
                 valSetTime = 0
                 valBatteryLifeLB = nudBattery.Value
+            End If
+        End If
+        If cbVol.Checked Then
+            Dim device As MMDevice
+            Dim DevEnum As New MMDeviceEnumerator()
+            device = DevEnum.GetDefaultAudioEndpoint(EDataFlow.eRender, ERole.eMultimedia)
+            Dim vol_n As Integer = CInt(device.AudioEndpointVolume.MasterVolumeLevelScalar * 100)
+            If pref_VOL > vol_n Then
+                MsgBox("当前设置的深夜音量比目前音量还要大，请重新设置后再试吧~")
+                frmVolCtrl.ShowDialog()
+                Exit Sub
             End If
         End If
         frmInterface.Show()
