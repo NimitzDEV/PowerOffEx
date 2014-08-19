@@ -121,6 +121,9 @@
   <data name="wire" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\res\wire.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="new64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\new64px.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="nocharging" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\res\nocharging.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,13 +139,19 @@
   <data name="fullbattery" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\res\1132606.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="btnbg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\btnbg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="uibg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\res\uibg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alipayqrcode" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\res\alipayqrcode.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnbg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\btnbg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="wait64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\wait64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="uptodate64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\uptodate64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

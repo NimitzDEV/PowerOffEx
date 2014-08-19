@@ -43,6 +43,7 @@ Partial Class frmMain
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnSet = New System.Windows.Forms.Button()
         Me.llbAbout = New System.Windows.Forms.LinkLabel()
+        Me.llbUpdate = New System.Windows.Forms.LinkLabel()
         CType(Me.nudHour, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudMinute, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -261,11 +262,22 @@ Partial Class frmMain
         Me.llbAbout.TabStop = True
         Me.llbAbout.Text = "关于"
         '
+        'llbUpdate
+        '
+        Me.llbUpdate.AutoSize = True
+        Me.llbUpdate.Location = New System.Drawing.Point(10, 242)
+        Me.llbUpdate.Name = "llbUpdate"
+        Me.llbUpdate.Size = New System.Drawing.Size(65, 12)
+        Me.llbUpdate.TabIndex = 10
+        Me.llbUpdate.TabStop = True
+        Me.llbUpdate.Text = "查找新版本"
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(457, 269)
+        Me.Controls.Add(Me.llbUpdate)
         Me.Controls.Add(Me.llbAbout)
         Me.Controls.Add(Me.btnSet)
         Me.Controls.Add(Me.GroupBox1)
@@ -305,5 +317,6 @@ Partial Class frmMain
     Friend WithEvents cbVol As System.Windows.Forms.CheckBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents llbVolume As System.Windows.Forms.LinkLabel
+    Friend WithEvents llbUpdate As System.Windows.Forms.LinkLabel
 
 End Class

@@ -130,6 +130,12 @@
     <Compile Include="frmTVP.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmUpdate.Designer.vb">
+      <DependentUpon>frmUpdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUpdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmVolCtrl.Designer.vb">
       <DependentUpon>frmVolCtrl.vb</DependentUpon>
     </Compile>
@@ -173,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTVP.resx">
       <DependentUpon>frmTVP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUpdate.resx">
+      <DependentUpon>frmUpdate.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVolCtrl.resx">
       <DependentUpon>frmVolCtrl.vb</DependentUpon>
@@ -222,6 +231,10 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="appicon.ico" />
+    <None Include="res\uptodate64px.png" />
+    <None Include="res\wait64px.png" />
+    <None Include="res\wait128px.png" />
+    <None Include="res\new64px.ico" />
     <None Include="res\btnbg.jpg" />
     <None Include="res\uibg.jpg" />
     <None Include="res\alipayqrcode.jpg" />

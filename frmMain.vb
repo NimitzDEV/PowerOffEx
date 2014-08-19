@@ -109,4 +109,8 @@ Public Class frmMain
     End Sub
 
 
+    Private Sub llbUpdate_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llbUpdate.LinkClicked
+        frmUpdate.ShowDialog()
+        frmUpdate.Dispose()
+    End Sub
 End Class
