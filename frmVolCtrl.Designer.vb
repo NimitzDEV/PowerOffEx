@@ -54,7 +54,7 @@ Partial Class frmVolCtrl
         Me.lbCurrent.AutoSize = True
         Me.lbCurrent.Font = New System.Drawing.Font("宋体", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.lbCurrent.ForeColor = System.Drawing.Color.ForestGreen
-        Me.lbCurrent.Location = New System.Drawing.Point(232, 167)
+        Me.lbCurrent.Location = New System.Drawing.Point(232, 157)
         Me.lbCurrent.Name = "lbCurrent"
         Me.lbCurrent.Size = New System.Drawing.Size(84, 12)
         Me.lbCurrent.TabIndex = 1
@@ -62,10 +62,10 @@ Partial Class frmVolCtrl
         '
         'tbMaster
         '
-        Me.tbMaster.Location = New System.Drawing.Point(2, 157)
+        Me.tbMaster.Location = New System.Drawing.Point(14, 157)
         Me.tbMaster.Maximum = 100
         Me.tbMaster.Name = "tbMaster"
-        Me.tbMaster.Size = New System.Drawing.Size(224, 45)
+        Me.tbMaster.Size = New System.Drawing.Size(200, 45)
         Me.tbMaster.TabIndex = 2
         Me.tbMaster.TickFrequency = 10
         Me.tbMaster.TickStyle = System.Windows.Forms.TickStyle.Both
@@ -123,7 +123,7 @@ Partial Class frmVolCtrl
         '
         Me.lbFull.AutoSize = True
         Me.lbFull.ForeColor = System.Drawing.Color.Green
-        Me.lbFull.Location = New System.Drawing.Point(232, 139)
+        Me.lbFull.Location = New System.Drawing.Point(232, 128)
         Me.lbFull.Name = "lbFull"
         Me.lbFull.Size = New System.Drawing.Size(41, 12)
         Me.lbFull.TabIndex = 18
@@ -163,7 +163,7 @@ Partial Class frmVolCtrl
         Me.lbOrigi.AutoSize = True
         Me.lbOrigi.Font = New System.Drawing.Font("宋体", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.lbOrigi.ForeColor = System.Drawing.Color.ForestGreen
-        Me.lbOrigi.Location = New System.Drawing.Point(232, 179)
+        Me.lbOrigi.Location = New System.Drawing.Point(232, 181)
         Me.lbOrigi.Name = "lbOrigi"
         Me.lbOrigi.Size = New System.Drawing.Size(84, 12)
         Me.lbOrigi.TabIndex = 22

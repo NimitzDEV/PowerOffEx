@@ -48,6 +48,10 @@ Public Class frmInterface
         updateBatteryInfo()
         freshUI()
         tmrVol.Enabled = chk_VOLCTRL
+        If frmMain.rbSetTime.Checked = False Then
+            延长时间ToolStripMenuItem.Visible = False
+            btnAdd.Visible = False
+        End If
     End Sub
 
     Private Sub notifyIcon_MouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles notifyIcon.MouseClick
@@ -106,6 +110,7 @@ Public Class frmInterface
                 pwmComputer(EWX_SHUTDOWN)
                 exitProgram(0)
             End If
+            batteryStatusMode()
         End If
         '///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -137,7 +142,7 @@ Public Class frmInterface
     End Sub
 
     Private Sub btnBack_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBack.Click
-        Me.Close()
+        Me.Dispose()
         frmMain.Show()
     End Sub
 
