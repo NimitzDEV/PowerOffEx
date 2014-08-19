@@ -40,7 +40,7 @@ Partial Class frmUpdate
         'lbStatus
         '
         Me.lbStatus.AutoSize = True
-        Me.lbStatus.Location = New System.Drawing.Point(82, 12)
+        Me.lbStatus.Location = New System.Drawing.Point(95, 12)
         Me.lbStatus.Name = "lbStatus"
         Me.lbStatus.Size = New System.Drawing.Size(107, 12)
         Me.lbStatus.TabIndex = 1
@@ -48,7 +48,7 @@ Partial Class frmUpdate
         '
         'ProgressBar1
         '
-        Me.ProgressBar1.Location = New System.Drawing.Point(84, 53)
+        Me.ProgressBar1.Location = New System.Drawing.Point(97, 53)
         Me.ProgressBar1.MarqueeAnimationSpeed = 10
         Me.ProgressBar1.Name = "ProgressBar1"
         Me.ProgressBar1.Size = New System.Drawing.Size(348, 23)
@@ -66,7 +66,7 @@ Partial Class frmUpdate
         '
         'txtDetails
         '
-        Me.txtDetails.Location = New System.Drawing.Point(84, 53)
+        Me.txtDetails.Location = New System.Drawing.Point(97, 53)
         Me.txtDetails.Multiline = True
         Me.txtDetails.Name = "txtDetails"
         Me.txtDetails.ReadOnly = True
@@ -87,7 +87,7 @@ Partial Class frmUpdate
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.定时关机Ex.My.Resources.Resources.wait64px
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
+        Me.PictureBox1.Location = New System.Drawing.Point(17, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(64, 64)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -96,7 +96,7 @@ Partial Class frmUpdate
         '
         'btnClose
         '
-        Me.btnClose.Location = New System.Drawing.Point(357, 24)
+        Me.btnClose.Location = New System.Drawing.Point(370, 24)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(75, 23)
         Me.btnClose.TabIndex = 6
@@ -111,7 +111,7 @@ Partial Class frmUpdate
         'btnFeifan
         '
         Me.btnFeifan.Enabled = False
-        Me.btnFeifan.Location = New System.Drawing.Point(357, 180)
+        Me.btnFeifan.Location = New System.Drawing.Point(370, 180)
         Me.btnFeifan.Name = "btnFeifan"
         Me.btnFeifan.Size = New System.Drawing.Size(75, 23)
         Me.btnFeifan.TabIndex = 7
@@ -121,7 +121,7 @@ Partial Class frmUpdate
         'btnBaidu
         '
         Me.btnBaidu.Enabled = False
-        Me.btnBaidu.Location = New System.Drawing.Point(276, 180)
+        Me.btnBaidu.Location = New System.Drawing.Point(289, 180)
         Me.btnBaidu.Name = "btnBaidu"
         Me.btnBaidu.Size = New System.Drawing.Size(75, 23)
         Me.btnBaidu.TabIndex = 8
@@ -132,7 +132,7 @@ Partial Class frmUpdate
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(444, 212)
+        Me.ClientSize = New System.Drawing.Size(457, 212)
         Me.Controls.Add(Me.btnBaidu)
         Me.Controls.Add(Me.btnFeifan)
         Me.Controls.Add(Me.btnClose)
