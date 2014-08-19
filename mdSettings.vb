@@ -14,11 +14,11 @@ Module mdSettings
     Public Sub ReadSettings()
         If DirectoryExists(folderPath) = False Then MkDir(folderPath)
         If FileExists(folderPath & "config.ini") = False Then Exit Sub
-        pref_HOUR = GetINI("pref", "HOUR", "")
-        pref_MIN = GetINI("pref", "MIN", "")
-        pref_VOL = GetINI("pref", "VOL", "")
-        chk_RECORD = GetINI("funcenable", "TVP", "")
-        chk_VOLCTRL = GetINI("funcenable", "VOLC", "")
+        pref_HOUR = GetINI("pref", "HOUR", "2")
+        pref_MIN = GetINI("pref", "MIN", "0")
+        pref_VOL = GetINI("pref", "VOL", "40")
+        chk_RECORD = GetINI("funcenable", "TVP", "False")
+        chk_VOLCTRL = GetINI("funcenable", "VOLC", "True")
         set_TVP = GetINI("set", "TVP", "")
     End Sub
     Public Sub SaveSettings()
