@@ -91,6 +91,7 @@ Module mdProgram
         If askFirst = 1 Then
             If MsgBox("确定要退出吗？", vbOKCancel) <> vbOK Then Exit Sub
         End If
+        SaveSettings()
         frmInterface.Close()
         frmMain.Close()
     End Sub

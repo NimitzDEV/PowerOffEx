@@ -88,6 +88,8 @@ Public Class frmMain
                 Exit Sub
             End If
         End If
+        pref_HOUR = nudHour.Value
+        pref_MIN = nudMinute.Value
         frmInterface.Show()
         Me.Hide()
     End Sub
