@@ -60,6 +60,7 @@
 
     Private Function listLoaded() As Boolean
         Dim downloadList() As String
+        If linkString = "" Then Return False
         Try
             downloadList = linkString.Split(spliter, StringSplitOptions.RemoveEmptyEntries)
             For i = 0 To downloadList.Count - 1
