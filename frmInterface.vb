@@ -98,7 +98,7 @@ Public Class frmInterface
             If valSetTime = 30 Then showNotify("即将关机")
             If valSetTime = 0 Then
                 mainTick.Enabled = False
-                pwmComputer(EWX_SHUTDOWN)
+                shutdownWindows()
                 exitProgram(0)
             End If
         ElseIf valBatteryLifeLB > 0 Then
@@ -108,7 +108,7 @@ Public Class frmInterface
             If batteryPercent - valBatteryLifeLB = 0 Then showNotify("即将关机")
             If batteryPercent < valBatteryLifeLB Then
                 mainTick.Enabled = False
-                pwmComputer(EWX_SHUTDOWN)
+                shutdownWindows()
                 exitProgram(0)
             End If
             batteryStatusMode()

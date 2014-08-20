@@ -1,4 +1,5 @@
-﻿Module mdProgram
+﻿Imports System.Management
+Module mdProgram
     Public globalNotifyInfo As String
     '绘制阴影
     Public Const CS_DROPSHADOW = &H20000
@@ -25,15 +26,7 @@
     Dim hours As Integer
     Dim buildStr As String
     Dim totalTime As Long
-    '----------------执行电源操作
-    Private Declare Function ExitWindowsEx Lib "user32" (ByVal uFlags As Integer, ByVal dwReserved As Integer) As Integer
-    Public Const EWX_FORCE As Short = 4 '强制执行标志，暂不使用
-    Public Const EWX_LOGOFF As Short = 0 '注销标志
-    Public Const EWX_REBOOT As Short = 2 '重启标志
-    Public Const EWX_SHUTDOWN As Short = 1 '关机标志
-    Public Function pwmComputer(ByVal actionVal As Short) As Integer
-        Return ExitWindowsEx(actionVal, 0)
-    End Function
+
     Public Sub drawWindowStep1(ByVal formObj As Form)
         SetClassLong(formObj.Handle, GCL_STYLE, GetClassLong(formObj.Handle, GCL_STYLE) Or CS_DROPSHADOW)
     End Sub
@@ -100,6 +93,19 @@
         End If
         frmInterface.Close()
         frmMain.Close()
+    End Sub
+
+    Public Sub shutdownWindows()
+        Dim mboShutdown As ManagementBaseObject = Nothing
+        Dim mcWin32 As ManagementClass = New ManagementClass("Win32_OperatingSystem")
+
+        mcWin32.Scope.Options.EnablePrivileges = True
+        Dim mboShutdownParams As ManagementBaseObject = mcWin32.GetMethodParameters("Win32Shutdown")
+        mboShutdownParams("Flags") = "1"
+        mboShutdownParams("Reserved") = "0"
+        For Each manObj As ManagementObject In mcWin32.GetInstances()
+            mboShutdown = manObj.InvokeMethod("Win32Shutdown", mboShutdownParams, Nothing)
+        Next
     End Sub
 
 End Module
