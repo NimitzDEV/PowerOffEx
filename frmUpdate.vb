@@ -1,9 +1,9 @@
 ﻿Public Class frmUpdate
     Dim docString As String
     Dim versionString As String
-    Dim linkBaidu As String
-    Dim linkFeifan As String
+    Dim linkString As String
     Dim updateString As String
+    Dim spliter() As String = {"≠"}
     Public timeout As Integer = 20
 
     Private Sub frmUpdate_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -14,15 +14,19 @@
 
     Private Sub wbStart_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles wbStart.DocumentCompleted
         Dim gs() As String = (From mt As HtmlElement In wbStart.Document.Links Select System.Text.RegularExpressions.Regex.Match(mt.OuterHtml, "http://[^\x22 >]+").Value).ToArray
+        If gs.Count = 0 Then
+            MsgBox("噢~真不好意思~服务器打了一下小瞌睡，重新试一次叫醒她")
+            Me.Close()
+            Exit Sub
+        End If
         wbInfo.Navigate(gs(0))
     End Sub
 
     Private Sub wbInfo_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles wbInfo.DocumentCompleted
         docString = wbInfo.DocumentText
-        versionString = Split(docString, "%%%%")(1).Trim
-        linkBaidu = Split(docString, "%%%%")(3).Trim
-        linkFeifan = Split(docString, "%%%%")(4).Trim
-        updateString = Split(docString, "%%%%")(2).Trim
+        versionString = Split(docString, "≡")(1).Trim
+        updateString = Split(docString, "≡")(2).Trim
+        linkString = Split(docString, "≡")(3).Trim
         detectUpdate()
     End Sub
 
@@ -32,13 +36,12 @@
             lbStatus.Text = "当前已经是最新版本 （" & Application.ProductVersion & "）"
             PictureBox1.Image = My.Resources.uptodate64px
         Else
+            If listLoaded() = True Then btnDownload.Enabled = True
             Me.Height = 247
             txtDetails.Visible = True
             txtDetails.Text = updateString
             PictureBox1.Image = My.Resources.new64px
             lbStatus.Text = "检测到新的版本可以下载！" & vbCrLf & "- 新的版本：" & versionString & vbCrLf & "- 当前版本：" & Application.ProductVersion
-            If linkBaidu <> "" Then btnBaidu.Enabled = True
-            If linkFeifan <> "" Then btnFeifan.Enabled = True
         End If
         btnClose.Text = "关闭"
         tmrTimeOut.Enabled = False
@@ -55,6 +58,23 @@
         Return False
     End Function
 
+    Private Function listLoaded() As Boolean
+        Dim downloadList() As String
+        Try
+            downloadList = linkString.Split(spliter, StringSplitOptions.RemoveEmptyEntries)
+            For i = 0 To downloadList.Count - 1
+                cmsDownloadList.Items.Add(Split(downloadList(i), "∫")(0), _
+                               Nothing, AddressOf downloadClickHandler).Tag = Split(downloadList(i), "∫")(1)
+            Next
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
+    Private Sub downloadClickHandler(sender As Object, e As EventArgs)
+        MsgBox(sender.tag)
+    End Sub
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
     End Sub
@@ -70,11 +90,7 @@
         End If
     End Sub
 
-    Private Sub btnBaidu_Click(sender As Object, e As EventArgs) Handles btnBaidu.Click
-        Process.Start(linkBaidu)
-    End Sub
-
-    Private Sub btnFeifan_Click(sender As Object, e As EventArgs) Handles btnFeifan.Click
-        Process.Start(linkFeifan)
+    Private Sub btnDownload_Click(sender As Object, e As EventArgs) Handles btnDownload.Click
+        cmsDownloadList.Show(btnDownload, 0, btnDownload.Height)
     End Sub
 End Class

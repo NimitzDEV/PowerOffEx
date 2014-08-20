@@ -27,7 +27,6 @@ Public Class frmMain
         nudMinute.Value = pref_MIN
         cbRecordTvProgress.Checked = chk_RECORD
         cbVol.Checked = chk_VOLCTRL
-
     End Sub
 
     Private Function assResolve(ByVal sender As System.Object, ByVal e As System.ResolveEventArgs) As System.Reflection.Assembly

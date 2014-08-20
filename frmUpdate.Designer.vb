@@ -32,8 +32,8 @@ Partial Class frmUpdate
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.tmrTimeOut = New System.Windows.Forms.Timer(Me.components)
-        Me.btnFeifan = New System.Windows.Forms.Button()
-        Me.btnBaidu = New System.Windows.Forms.Button()
+        Me.btnDownload = New System.Windows.Forms.Button()
+        Me.cmsDownloadList = New System.Windows.Forms.ContextMenuStrip(Me.components)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -57,9 +57,10 @@ Partial Class frmUpdate
         '
         'wbStart
         '
-        Me.wbStart.Location = New System.Drawing.Point(12, 102)
+        Me.wbStart.Location = New System.Drawing.Point(1, 106)
         Me.wbStart.MinimumSize = New System.Drawing.Size(20, 20)
         Me.wbStart.Name = "wbStart"
+        Me.wbStart.ScriptErrorsSuppressed = True
         Me.wbStart.Size = New System.Drawing.Size(160, 94)
         Me.wbStart.TabIndex = 3
         Me.wbStart.Visible = False
@@ -77,9 +78,10 @@ Partial Class frmUpdate
         '
         'wbInfo
         '
-        Me.wbInfo.Location = New System.Drawing.Point(29, 102)
+        Me.wbInfo.Location = New System.Drawing.Point(176, 106)
         Me.wbInfo.MinimumSize = New System.Drawing.Size(20, 20)
         Me.wbInfo.Name = "wbInfo"
+        Me.wbInfo.ScriptErrorsSuppressed = True
         Me.wbInfo.Size = New System.Drawing.Size(160, 94)
         Me.wbInfo.TabIndex = 5
         Me.wbInfo.Visible = False
@@ -108,40 +110,34 @@ Partial Class frmUpdate
         Me.tmrTimeOut.Enabled = True
         Me.tmrTimeOut.Interval = 1000
         '
-        'btnFeifan
+        'btnDownload
         '
-        Me.btnFeifan.Enabled = False
-        Me.btnFeifan.Location = New System.Drawing.Point(370, 180)
-        Me.btnFeifan.Name = "btnFeifan"
-        Me.btnFeifan.Size = New System.Drawing.Size(75, 23)
-        Me.btnFeifan.TabIndex = 7
-        Me.btnFeifan.Text = "霏凡下载"
-        Me.btnFeifan.UseVisualStyleBackColor = True
+        Me.btnDownload.Enabled = False
+        Me.btnDownload.Location = New System.Drawing.Point(370, 180)
+        Me.btnDownload.Name = "btnDownload"
+        Me.btnDownload.Size = New System.Drawing.Size(75, 23)
+        Me.btnDownload.TabIndex = 7
+        Me.btnDownload.Text = "立即下载"
+        Me.btnDownload.UseVisualStyleBackColor = True
         '
-        'btnBaidu
+        'cmsDownloadList
         '
-        Me.btnBaidu.Enabled = False
-        Me.btnBaidu.Location = New System.Drawing.Point(289, 180)
-        Me.btnBaidu.Name = "btnBaidu"
-        Me.btnBaidu.Size = New System.Drawing.Size(75, 23)
-        Me.btnBaidu.TabIndex = 8
-        Me.btnBaidu.Text = "百度网盘"
-        Me.btnBaidu.UseVisualStyleBackColor = True
+        Me.cmsDownloadList.Name = "cmsDownloadList"
+        Me.cmsDownloadList.Size = New System.Drawing.Size(61, 4)
         '
         'frmUpdate
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(457, 212)
-        Me.Controls.Add(Me.btnBaidu)
-        Me.Controls.Add(Me.btnFeifan)
+        Me.Controls.Add(Me.btnDownload)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.txtDetails)
-        Me.Controls.Add(Me.wbInfo)
-        Me.Controls.Add(Me.wbStart)
         Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.lbStatus)
         Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.wbStart)
+        Me.Controls.Add(Me.wbInfo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
@@ -162,6 +158,6 @@ Partial Class frmUpdate
     Friend WithEvents wbInfo As System.Windows.Forms.WebBrowser
     Friend WithEvents btnClose As System.Windows.Forms.Button
     Friend WithEvents tmrTimeOut As System.Windows.Forms.Timer
-    Friend WithEvents btnFeifan As System.Windows.Forms.Button
-    Friend WithEvents btnBaidu As System.Windows.Forms.Button
+    Friend WithEvents btnDownload As System.Windows.Forms.Button
+    Friend WithEvents cmsDownloadList As System.Windows.Forms.ContextMenuStrip
 End Class
