@@ -22,6 +22,7 @@ Partial Class frmMain
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.rbSetTime = New System.Windows.Forms.RadioButton()
         Me.nudHour = New System.Windows.Forms.NumericUpDown()
@@ -44,10 +45,15 @@ Partial Class frmMain
         Me.btnSet = New System.Windows.Forms.Button()
         Me.llbAbout = New System.Windows.Forms.LinkLabel()
         Me.btnUpdate = New System.Windows.Forms.Button()
+        Me.cmsSelect = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.tsmiRefresh = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.tsmiContinue = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.nudHour, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudMinute, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.nudBattery, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.cmsSelect.SuspendLayout()
         Me.SuspendLayout()
         '
         'rbSetTime
@@ -271,6 +277,29 @@ Partial Class frmMain
         Me.btnUpdate.Text = "查找新版本"
         Me.btnUpdate.UseVisualStyleBackColor = True
         '
+        'cmsSelect
+        '
+        Me.cmsSelect.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiRefresh, Me.ToolStripMenuItem1, Me.tsmiContinue})
+        Me.cmsSelect.Name = "cmsSelect"
+        Me.cmsSelect.Size = New System.Drawing.Size(153, 76)
+        '
+        'tsmiRefresh
+        '
+        Me.tsmiRefresh.Name = "tsmiRefresh"
+        Me.tsmiRefresh.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiRefresh.Text = "重新开始"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(121, 6)
+        '
+        'tsmiContinue
+        '
+        Me.tsmiContinue.Name = "tsmiContinue"
+        Me.tsmiContinue.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiContinue.Text = "继续刚才"
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -292,6 +321,7 @@ Partial Class frmMain
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.nudBattery, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.cmsSelect.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -317,5 +347,9 @@ Partial Class frmMain
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents llbVolume As System.Windows.Forms.LinkLabel
     Friend WithEvents btnUpdate As System.Windows.Forms.Button
+    Friend WithEvents cmsSelect As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents tsmiRefresh As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents tsmiContinue As System.Windows.Forms.ToolStripMenuItem
 
 End Class

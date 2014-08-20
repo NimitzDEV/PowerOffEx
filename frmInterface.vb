@@ -44,7 +44,6 @@ Public Class frmInterface
         '动画效果
         showSwipAnimation()
         '开始
-        networkStatus = System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable
         tmrCheckTv.Enabled = chk_RECORD
         targetTime = pref_VOL_EFF_HOUR * 60 + pref_VOL_EFF_MIN
         updateBatteryInfo()
@@ -185,12 +184,14 @@ Public Class frmInterface
     End Sub
 
     Private Sub tmrChargeAnimate_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmrChargeAnimate.Tick
-        batteryAnimateStep += 1
-        If batteryAnimateStep = 1 Then pbBattery.Image = My.Resources.lowbattery
-        If batteryAnimateStep = 2 Then pbBattery.Image = My.Resources.halfbattery
-        If batteryAnimateStep = 3 Then
-            pbBattery.Image = My.Resources.fullbattery
-            batteryAnimateStep = 0
+        If (batteryChargeStatus = 1 And batteryStatus = 8) Or (batteryChargeStatus = 1 And batteryStatus <> 0) Then
+            batteryAnimateStep += 1
+            If batteryAnimateStep = 1 Then pbBattery.Image = My.Resources.lowbattery
+            If batteryAnimateStep = 2 Then pbBattery.Image = My.Resources.halfbattery
+            If batteryAnimateStep = 3 Then
+                pbBattery.Image = My.Resources.fullbattery
+                batteryAnimateStep = 0
+            End If
         End If
     End Sub
 

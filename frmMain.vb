@@ -27,6 +27,7 @@ Public Class frmMain
         nudMinute.Value = pref_MIN
         cbRecordTvProgress.Checked = chk_RECORD
         cbVol.Checked = chk_VOLCTRL
+        valSetTime = 0
     End Sub
 
     Private Function assResolve(ByVal sender As System.Object, ByVal e As System.ResolveEventArgs) As System.Reflection.Assembly
@@ -57,6 +58,11 @@ Public Class frmMain
                 MsgBox("时间不能为0")
                 Exit Sub
             Else
+                If valSetTime > 0 Then
+                    cmsSelect.Show(btnSet, 0, btnSet.Height)
+                    tsmiContinue.Text = "继续刚才（剩余" & converTime(valSetTime) & ")"
+                    Exit Sub
+                End If
                 valSetTime = nudHour.Value * 3600 + nudMinute.Value * 60
                 valBatteryLifeLB = 0
             End If
@@ -111,5 +117,18 @@ Public Class frmMain
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         frmUpdate.ShowDialog()
         frmUpdate.Dispose()
+    End Sub
+
+    Private Sub tsmiContinue_Click(sender As Object, e As EventArgs) Handles tsmiContinue.Click
+        valBatteryLifeLB = 0
+        frmInterface.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub tsmiRefresh_Click(sender As Object, e As EventArgs) Handles tsmiRefresh.Click
+        valSetTime = nudHour.Value * 3600 + nudMinute.Value * 60
+        valBatteryLifeLB = 0
+        frmInterface.Show()
+        Me.Hide()
     End Sub
 End Class
