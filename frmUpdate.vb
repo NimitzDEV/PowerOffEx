@@ -34,6 +34,8 @@
         If isNew() = False Then
             ProgressBar1.Visible = False
             lbStatus.Text = "当前已经是最新版本 （" & Application.ProductVersion & "）"
+            lbStatus.ForeColor = Color.DodgerBlue
+            btnClose.Top = 51
             PictureBox1.Image = My.Resources.uptodate64px
         Else
             If listLoaded() = True Then btnDownload.Enabled = True
@@ -42,6 +44,7 @@
             txtDetails.Text = updateString
             PictureBox1.Image = My.Resources.new64px
             lbStatus.Text = "检测到新的版本可以下载！" & vbCrLf & "- 新的版本：" & versionString & vbCrLf & "- 当前版本：" & Application.ProductVersion
+            lbStatus.ForeColor = Color.Green
         End If
         btnClose.Text = "关闭"
         tmrTimeOut.Enabled = False
