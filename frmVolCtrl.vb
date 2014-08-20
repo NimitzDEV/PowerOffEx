@@ -10,6 +10,8 @@ Public Class frmVolCtrl
         lbCurrent.Text = "当前音量：" & origiVol & "%"
         lbOrigi.Text = "原始音量：" & origiVol & "%"
         lbLast.Text = "上一次设置为：" & pref_VOL & "%"
+        nudHOUR.Value = pref_VOL_EFF_HOUR
+        nudMIN.Value = pref_VOL_EFF_MIN
         AddHandler device.AudioEndpointVolume.OnVolumeNotification, New AudioEndpointVolumeNotificationDelegate(AddressOf AudioEndpointVolume_OnVolumeNotification)
     End Sub
 
@@ -51,6 +53,8 @@ Public Class frmVolCtrl
     Private Sub btnYes_Click(sender As Object, e As EventArgs) Handles btnYes.Click
         device.AudioEndpointVolume.MasterVolumeLevelScalar = (CSng(origiVol) / 100.0F)
         pref_VOL = tbMaster.Value
+        pref_VOL_EFF_HOUR = nudHOUR.Value
+        pref_VOL_EFF_MIN = nudMIN.Value
         Me.Dispose()
     End Sub
 End Class

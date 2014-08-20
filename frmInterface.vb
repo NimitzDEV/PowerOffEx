@@ -1,6 +1,7 @@
 ﻿Imports CoreAudioApi
 Public Class frmInterface
     Dim batteryAnimateStep As Integer
+    Dim targetTime As Integer
     Private device As MMDevice
     Enum originalData As Integer
         oFrmWidth = 533
@@ -45,6 +46,7 @@ Public Class frmInterface
         '开始
         networkStatus = System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable
         tmrCheckTv.Enabled = chk_RECORD
+        targetTime = pref_VOL_EFF_HOUR * 60 + pref_VOL_EFF_MIN
         updateBatteryInfo()
         freshUI()
         tmrVol.Enabled = chk_VOLCTRL
@@ -230,7 +232,7 @@ Public Class frmInterface
     End Sub
 
     Private Sub tmrVol_Tick(sender As Object, e As EventArgs) Handles tmrVol.Tick
-        If Hour(Now) = 23 Then
+        If Hour(Now) * 60 + Minute(Now) >= targetTime Then
             Dim DevEnum As New MMDeviceEnumerator()
             device = DevEnum.GetDefaultAudioEndpoint(EDataFlow.eRender, ERole.eMultimedia)
             device.AudioEndpointVolume.MasterVolumeLevelScalar = (CSng(pref_VOL) / 100.0F)

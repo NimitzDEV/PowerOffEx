@@ -37,7 +37,7 @@
             PictureBox1.Image = My.Resources.uptodate64px
         Else
             If listLoaded() = True Then btnDownload.Enabled = True
-            Me.Height = 247
+            Me.Height = 260
             txtDetails.Visible = True
             txtDetails.Text = updateString
             PictureBox1.Image = My.Resources.new64px

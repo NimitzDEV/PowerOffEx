@@ -290,7 +290,7 @@ Partial Class frmInterface
         '
         'tmrVol
         '
-        Me.tmrVol.Interval = 9000
+        Me.tmrVol.Interval = 30000
         '
         'frmInterface
         '

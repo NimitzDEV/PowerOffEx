@@ -3,6 +3,8 @@ Module mdSettings
     Public pref_HOUR As Integer = 2
     Public pref_MIN As Integer = 0
     Public pref_VOL As Integer = 40
+    Public pref_VOL_EFF_HOUR As Integer = 23
+    Public pref_VOL_EFF_MIN As Integer = 0
     Public chk_RECORD As Boolean = False
     Public chk_VOLCTRL As Boolean = False
     Public set_TVP As String = ""
@@ -17,6 +19,8 @@ Module mdSettings
         pref_HOUR = GetINI("pref", "HOUR", pref_HOUR)
         pref_MIN = GetINI("pref", "MIN", pref_MIN)
         pref_VOL = GetINI("pref", "VOL", pref_VOL)
+        pref_VOL_EFF_HOUR = GetINI("pref", "VOL_EFF_HOUR", pref_VOL_EFF_HOUR)
+        pref_VOL_EFF_MIN = GetINI("pref", "VOL_EFF_MIN", pref_VOL_EFF_MIN)
         chk_RECORD = GetINI("funcenable", "TVP", chk_RECORD)
         chk_VOLCTRL = GetINI("funcenable", "VOLC", chk_VOLCTRL)
         set_TVP = GetINI("set", "TVP", "")
@@ -26,6 +30,8 @@ Module mdSettings
         WriteINI("pref", "HOUR", pref_HOUR)
         WriteINI("pref", "MIN", pref_MIN)
         WriteINI("pref", "VOL", pref_VOL)
+        WriteINI("pref", "VOL_EFF_HOUR", pref_VOL_EFF_HOUR)
+        WriteINI("pref", "VOL_EFF_MIN", pref_VOL_EFF_MIN)
         WriteINI("funcenable", "TVP", chk_RECORD)
         WriteINI("funcenable", "VOLC", chk_VOLCTRL)
         WriteINI("set", "TVP", set_TVP)

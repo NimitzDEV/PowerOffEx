@@ -72,7 +72,7 @@ Partial Class frmUpdate
         Me.txtDetails.Name = "txtDetails"
         Me.txtDetails.ReadOnly = True
         Me.txtDetails.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtDetails.Size = New System.Drawing.Size(348, 121)
+        Me.txtDetails.Size = New System.Drawing.Size(348, 130)
         Me.txtDetails.TabIndex = 4
         Me.txtDetails.Visible = False
         '
@@ -113,7 +113,7 @@ Partial Class frmUpdate
         'btnDownload
         '
         Me.btnDownload.Enabled = False
-        Me.btnDownload.Location = New System.Drawing.Point(370, 180)
+        Me.btnDownload.Location = New System.Drawing.Point(370, 189)
         Me.btnDownload.Name = "btnDownload"
         Me.btnDownload.Size = New System.Drawing.Size(75, 23)
         Me.btnDownload.TabIndex = 7
@@ -129,7 +129,7 @@ Partial Class frmUpdate
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(457, 212)
+        Me.ClientSize = New System.Drawing.Size(457, 221)
         Me.Controls.Add(Me.btnDownload)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.txtDetails)
