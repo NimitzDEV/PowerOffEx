@@ -69,7 +69,7 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>appicon.ico</ApplicationIcon>
+    <ApplicationIcon>appiconv2.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CoreAudioApi">
@@ -232,6 +232,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="appicon.ico" />
+    <Content Include="appiconv2.ico" />
     <None Include="res\uptodate64px.png" />
     <None Include="res\wait64px.png" />
     <None Include="res\wait128px.png" />

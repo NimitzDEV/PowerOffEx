@@ -281,12 +281,12 @@ Partial Class frmMain
         '
         Me.cmsSelect.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiRefresh, Me.ToolStripMenuItem1, Me.tsmiContinue})
         Me.cmsSelect.Name = "cmsSelect"
-        Me.cmsSelect.Size = New System.Drawing.Size(153, 76)
+        Me.cmsSelect.Size = New System.Drawing.Size(125, 54)
         '
         'tsmiRefresh
         '
         Me.tsmiRefresh.Name = "tsmiRefresh"
-        Me.tsmiRefresh.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiRefresh.Size = New System.Drawing.Size(124, 22)
         Me.tsmiRefresh.Text = "重新开始"
         '
         'ToolStripMenuItem1
@@ -297,7 +297,7 @@ Partial Class frmMain
         'tsmiContinue
         '
         Me.tsmiContinue.Name = "tsmiContinue"
-        Me.tsmiContinue.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiContinue.Size = New System.Drawing.Size(124, 22)
         Me.tsmiContinue.Text = "继续刚才"
         '
         'frmMain
