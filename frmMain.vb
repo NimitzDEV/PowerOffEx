@@ -1,6 +1,7 @@
 ﻿Imports CoreAudioApi
 Public Class frmMain
     Dim os As OperatingSystem = Environment.OSVersion
+    Dim adCounter As Integer
     Private Sub frmMain_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         SaveSettings()
     End Sub
@@ -28,6 +29,8 @@ Public Class frmMain
         cbRecordTvProgress.Checked = chk_RECORD
         cbVol.Checked = chk_VOLCTRL
         valSetTime = 0
+        llbAd.Text = ""
+        getAd()
     End Sub
 
     Private Function assResolve(ByVal sender As System.Object, ByVal e As System.ResolveEventArgs) As System.Reflection.Assembly
@@ -132,5 +135,19 @@ Public Class frmMain
         valBatteryLifeLB = 0
         frmInterface.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub tmrAdPlayer_Tick(sender As Object, e As EventArgs) Handles tmrAdPlayer.Tick
+        If adList Is Nothing Then Exit Sub
+        If adList.Count = 0 Then Exit Sub
+        If adList(0) = "" Then Exit Sub
+        If adCounter = adList.Count Then adCounter = 0
+        llbAd.Text = Split(adList(adCounter), "∫")(0)
+        llbAd.Tag = Split(adList(adCounter), "∫")(1)
+        adCounter += 1
+    End Sub
+
+    Private Sub llbAd_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llbAd.LinkClicked
+        Process.Start(llbAd.Tag)
     End Sub
 End Class
