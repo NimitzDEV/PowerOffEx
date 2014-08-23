@@ -1,6 +1,6 @@
 ﻿Imports CoreAudioApi
 Public Class frmMain
-    Dim os As OperatingSystem = Environment.OSVersion
+
     Dim adCounter As Integer
     Private Sub frmMain_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         SaveSettings()
@@ -16,13 +16,6 @@ Public Class frmMain
             updateBatteryInfo()
             rbEvents.Enabled = True
             nudBattery.Maximum = batteryPercent
-        End If
-        '是否为XP
-        If os.Version.Major < 6 Then
-            chk_VOLCTRL = False
-            cbVol.Enabled = False
-            cbVol.Text &= "- XP系统暂不支持功能，请等待后续升级"
-            llbVolume.Visible = False
         End If
         nudHour.Value = pref_HOUR
         nudMinute.Value = pref_MIN
@@ -81,14 +74,16 @@ Public Class frmMain
             End If
         End If
         If cbVol.Checked Then
-            Dim device As MMDevice
-            Dim DevEnum As New MMDeviceEnumerator()
-            device = DevEnum.GetDefaultAudioEndpoint(EDataFlow.eRender, ERole.eMultimedia)
-            Dim vol_n As Integer = CInt(device.AudioEndpointVolume.MasterVolumeLevelScalar * 100)
-            If pref_VOL > vol_n Then
-                MsgBox("当前设置的深夜音量比目前音量还要大，请重新设置后再试吧~")
-                frmVolCtrl.ShowDialog()
-                Exit Sub
+            If osMajorVersion > 6 Then
+                Dim device As MMDevice
+                Dim DevEnum As New MMDeviceEnumerator()
+                device = DevEnum.GetDefaultAudioEndpoint(EDataFlow.eRender, ERole.eMultimedia)
+                Dim vol_n As Integer = CInt(device.AudioEndpointVolume.MasterVolumeLevelScalar * 100)
+                If pref_VOL > vol_n Then
+                    MsgBox("当前设置的深夜音量比目前音量还要大，请重新设置后再试吧~")
+                    frmVolCtrl.ShowDialog()
+                    Exit Sub
+                End If
             End If
         End If
         pref_HOUR = nudHour.Value
@@ -107,7 +102,11 @@ Public Class frmMain
     End Sub
 
     Private Sub llbVolume_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llbVolume.LinkClicked
-        frmVolCtrl.ShowDialog()
+        If osMajorVersion < 6 Then
+            frmVolCtrl4XP.ShowDialog()
+        Else
+            frmVolCtrl.ShowDialog()
+        End If
     End Sub
 
     Private Sub cbRecordTvProgress_CheckedChanged(sender As Object, e As EventArgs) Handles cbRecordTvProgress.CheckedChanged

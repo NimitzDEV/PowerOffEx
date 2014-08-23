@@ -144,6 +144,12 @@
     <Compile Include="frmVolCtrl.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmVolCtrl4XP.Designer.vb">
+      <DependentUpon>frmVolCtrl4XP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmVolCtrl4XP.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="mdProgram.vb" />
     <Compile Include="mdSettings.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -187,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmVolCtrl.resx">
       <DependentUpon>frmVolCtrl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVolCtrl4XP.resx">
+      <DependentUpon>frmVolCtrl4XP.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>

@@ -5,6 +5,7 @@ Module mdSettings
     Public pref_VOL As Integer = 40
     Public pref_VOL_EFF_HOUR As Integer = 23
     Public pref_VOL_EFF_MIN As Integer = 0
+    Public pref_VOL_XP As Integer = 20
     Public chk_RECORD As Boolean = False
     Public chk_VOLCTRL As Boolean = False
     Public set_TVP As String = ""
@@ -13,7 +14,11 @@ Module mdSettings
     '====
     Private Declare Function GetPrivateProfileString Lib "kernel32" Alias "GetPrivateProfileStringA" (ByVal lpApplicationName As String, ByVal lpKeyName As String, ByVal lpDefault As String, ByVal lpReturnedString As String, ByVal nSize As Int32, ByVal lpFileName As String) As Int32
     Private Declare Function WritePrivateProfileString Lib "kernel32" Alias "WritePrivateProfileStringA" (ByVal lpApplicationName As String, ByVal lpKeyName As String, ByVal lpString As String, ByVal lpFileName As String) As Int32
+    'OSVersion
+    Public osMajorVersion As Integer
+    Dim os As OperatingSystem = Environment.OSVersion
     Public Sub ReadSettings()
+        osMajorVersion = os.Version.Major
         If DirectoryExists(folderPath) = False Then MkDir(folderPath)
         If FileExists(folderPath & "config.ini") = False Then Exit Sub
         pref_HOUR = GetINI("pref", "HOUR", pref_HOUR)
@@ -21,6 +26,7 @@ Module mdSettings
         pref_VOL = GetINI("pref", "VOL", pref_VOL)
         pref_VOL_EFF_HOUR = GetINI("pref", "VOL_EFF_HOUR", pref_VOL_EFF_HOUR)
         pref_VOL_EFF_MIN = GetINI("pref", "VOL_EFF_MIN", pref_VOL_EFF_MIN)
+        pref_VOL_XP = GetINI("pref", "VOL_XP", pref_VOL_XP)
         chk_RECORD = GetINI("funcenable", "TVP", chk_RECORD)
         chk_VOLCTRL = GetINI("funcenable", "VOLC", chk_VOLCTRL)
         set_TVP = GetINI("set", "TVP", "")
@@ -32,6 +38,7 @@ Module mdSettings
         WriteINI("pref", "VOL", pref_VOL)
         WriteINI("pref", "VOL_EFF_HOUR", pref_VOL_EFF_HOUR)
         WriteINI("pref", "VOL_EFF_MIN", pref_VOL_EFF_MIN)
+        WriteINI("pref", "VOL_XP", pref_VOL_XP)
         WriteINI("funcenable", "TVP", chk_RECORD)
         WriteINI("funcenable", "VOLC", chk_VOLCTRL)
         WriteINI("set", "TVP", set_TVP)

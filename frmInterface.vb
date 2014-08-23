@@ -234,10 +234,14 @@ Public Class frmInterface
 
     Private Sub tmrVol_Tick(sender As Object, e As EventArgs) Handles tmrVol.Tick
         If Hour(Now) * 60 + Minute(Now) >= targetTime Then
-            Dim DevEnum As New MMDeviceEnumerator()
-            device = DevEnum.GetDefaultAudioEndpoint(EDataFlow.eRender, ERole.eMultimedia)
-            device.AudioEndpointVolume.MasterVolumeLevelScalar = (CSng(pref_VOL) / 100.0F)
-            tmrVol.Enabled = False
+            If osMajorVersion > 6 Then
+                Dim DevEnum As New MMDeviceEnumerator()
+                device = DevEnum.GetDefaultAudioEndpoint(EDataFlow.eRender, ERole.eMultimedia)
+                device.AudioEndpointVolume.MasterVolumeLevelScalar = (CSng(pref_VOL) / 100.0F)
+                tmrVol.Enabled = False
+            Else
+                changeVolume4XP(True, pref_VOL_XP)
+            End If
         End If
     End Sub
 End Class

@@ -1,4 +1,5 @@
 ﻿Imports System.Management
+Imports System.Runtime.InteropServices
 Module mdProgram
     Public globalNotifyInfo As String
     '绘制阴影
@@ -26,7 +27,13 @@ Module mdProgram
     Dim hours As Integer
     Dim buildStr As String
     Dim totalTime As Long
-
+    'XP音量控制用
+    <DllImport("user32.dll", SetLastError:=True, CharSet:=CharSet.Auto)>
+    Private Function SendMessage(ByVal hWnd As IntPtr, ByVal Msg As UInteger, ByVal wParam As IntPtr, ByVal lParam As IntPtr) As IntPtr
+    End Function
+    Const WM_APPCOMMAND As UInteger = &H319
+    Const APPCOMMAND_VOLUME_UP As UInteger = &HA
+    Const APPCOMMAND_VOLUME_DOWN As UInteger = &H9
     Public Sub drawWindowStep1(ByVal formObj As Form)
         SetClassLong(formObj.Handle, GCL_STYLE, GetClassLong(formObj.Handle, GCL_STYLE) Or CS_DROPSHADOW)
     End Sub
@@ -108,5 +115,10 @@ Module mdProgram
             mboShutdown = manObj.InvokeMethod("Win32Shutdown", mboShutdownParams, Nothing)
         Next
     End Sub
-
+    Public Sub changeVolume4XP(ByVal changeDiretion As Boolean, ByVal changePercent As Integer)
+        If changePercent = 0 Then Exit Sub
+        For i = 0 To changePercent - 1
+            SendMessage(frmMain.Handle, WM_APPCOMMAND, &H30292, IIf(changeDiretion, APPCOMMAND_VOLUME_UP, APPCOMMAND_VOLUME_DOWN) * &H10000)
+        Next
+    End Sub
 End Module
