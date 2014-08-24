@@ -10,7 +10,6 @@ Module mdProgram
     '--------电源信息相关
     Public ps As PowerStatus = SystemInformation.PowerStatus
     Public batteryStatus As Integer = ps.BatteryChargeStatus
-
     '///数值 Charging=8  Critical=4 High=1 Low=2 NoSystemBattery=128 Unknow=255
     Public batteryPercent As Integer
     Public batteryLife As Integer
@@ -33,7 +32,6 @@ Module mdProgram
     Private Function SendMessage(ByVal hWnd As IntPtr, ByVal Msg As UInteger, ByVal wParam As IntPtr, ByVal lParam As IntPtr) As IntPtr
     End Function
     Const WM_APPCOMMAND As UInteger = &H319
-    Const APPCOMMAND_VOLUME_UP As UInteger = &HA
     Const APPCOMMAND_VOLUME_DOWN As UInteger = &H9
     Public Sub drawWindowStep1(ByVal formObj As Form)
         SetClassLong(formObj.Handle, GCL_STYLE, GetClassLong(formObj.Handle, GCL_STYLE) Or CS_DROPSHADOW)
@@ -116,10 +114,10 @@ Module mdProgram
             mboShutdown = manObj.InvokeMethod("Win32Shutdown", mboShutdownParams, Nothing)
         Next
     End Sub
-    Public Sub changeVolume4XP(ByVal changeDiretion As Boolean, ByVal changePercent As Integer)
+    Public Sub changeVolume4XP(ByVal changePercent As Integer)
         If changePercent = 0 Then Exit Sub
         For i = 0 To changePercent - 1
-            SendMessage(frmMain.Handle, WM_APPCOMMAND, &H30292, IIf(changeDiretion, APPCOMMAND_VOLUME_UP, APPCOMMAND_VOLUME_DOWN) * &H10000)
+            SendMessage(frmMain.Handle, WM_APPCOMMAND, &H30292, APPCOMMAND_VOLUME_DOWN * &H10000)
         Next
     End Sub
 End Module

@@ -240,7 +240,7 @@ Public Class frmInterface
                 device.AudioEndpointVolume.MasterVolumeLevelScalar = (CSng(pref_VOL) / 100.0F)
                 tmrVol.Enabled = False
             Else
-                changeVolume4XP(True, pref_VOL_XP)
+                changeVolume4XP(pref_VOL_XP)
             End If
         End If
     End Sub

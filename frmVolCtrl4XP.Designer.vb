@@ -194,6 +194,7 @@ Partial Class frmVolCtrl4XP
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "frmVolCtrl4XP"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "深夜音量控制（XP系统版）"
         CType(Me.nudHOUR, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudMIN, System.ComponentModel.ISupportInitialize).EndInit()
