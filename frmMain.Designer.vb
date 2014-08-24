@@ -143,7 +143,7 @@ Partial Class frmMain
         'llbAd
         '
         Me.llbAd.AutoSize = True
-        Me.llbAd.Location = New System.Drawing.Point(12, 263)
+        Me.llbAd.Location = New System.Drawing.Point(12, 260)
         Me.llbAd.Name = "llbAd"
         Me.llbAd.Size = New System.Drawing.Size(11, 12)
         Me.llbAd.TabIndex = 17
@@ -321,7 +321,7 @@ Partial Class frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(457, 284)
+        Me.ClientSize = New System.Drawing.Size(457, 281)
         Me.Controls.Add(Me.llbAd)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.llbAbout)

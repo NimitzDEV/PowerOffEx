@@ -9,7 +9,6 @@ Public Class frmMain
     End Sub
 
     Private Sub frmMain_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Me.Height = 300
         EmbeddedAssembly.Load("定时关机Ex.CoreAudioApi.dll", "CoreAudioApi.dll")
         AddHandler AppDomain.CurrentDomain.AssemblyResolve, New System.ResolveEventHandler(AddressOf assResolve)
         ReadSettings()
@@ -27,6 +26,7 @@ Public Class frmMain
         llbAd.Text = ""
         getAd()
         startArgsChecking()
+        Me.Height = 300
     End Sub
 
 
@@ -145,14 +145,14 @@ Public Class frmMain
         If adList.Count = 0 Then Exit Sub
         If adList(0) = "" Then Exit Sub
         sixCounter += 1
-        If adCounter = adList.Count Then adCounter = 0
         llbAd.Text = Split(adList(adCounter), "∫")(0)
         llbAd.Tag = Split(adList(adCounter), "∫")(1)
         If sixCounter > 6 Then
             adCounter += 1
+            If adCounter = adList.Count Then adCounter = 0
             sixCounter = 0
         End If
-        Me.Height = 323
+        Me.Height = 315
     End Sub
 
     Private Sub llbAd_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llbAd.LinkClicked
