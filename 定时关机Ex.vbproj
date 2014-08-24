@@ -150,6 +150,7 @@
     <Compile Include="frmVolCtrl4XP.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="mdDebugArgs.vb" />
     <Compile Include="mdProgram.vb" />
     <Compile Include="mdSettings.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

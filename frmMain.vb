@@ -24,17 +24,7 @@ Public Class frmMain
         valSetTime = 0
         llbAd.Text = ""
         getAd()
-        For Each s As String In My.Application.CommandLineArgs
-            If s = "-debug" Then
-                MsgBox("chkISLT:" & checkIsLaptop() & vbCrLf _
-                       & "OMV:" & osMajorVersion & vbCrLf _
-                       & "BSV:" & batteryStatus & vbCrLf _
-                & "BPV:" & batteryPercent & vbCrLf _
-                & "BLV:" & batteryLife & vbCrLf _
-                & "BCSIndex:" & batteryChargeStatus _
-                       , MsgBoxStyle.OkOnly, "NDEV INSIDE TESTER MD B0012")
-            End If
-        Next
+        startArgsChecking()
     End Sub
 
 
