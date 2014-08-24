@@ -48,7 +48,7 @@ Module mdProgram
     Public Function checkIsLaptop() As Boolean
         Try
             If batteryChargeStatus = 255 Then Return False
-            If batteryStatus = 255 Then
+            If batteryStatus = 255 Or batteryStatus = 128 Then
                 Return False
             Else
                 Return True
