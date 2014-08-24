@@ -1,11 +1,11 @@
 ﻿Imports CoreAudioApi
 Public Class frmMain
-
+    Dim inputArgument As String = "/input="
+    Dim inputName As String = ""
     Dim adCounter As Integer
     Private Sub frmMain_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         SaveSettings()
     End Sub
-
 
     Private Sub frmMain_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         EmbeddedAssembly.Load("定时关机Ex.CoreAudioApi.dll", "CoreAudioApi.dll")
@@ -24,7 +24,19 @@ Public Class frmMain
         valSetTime = 0
         llbAd.Text = ""
         getAd()
+        For Each s As String In My.Application.CommandLineArgs
+            If s = "-debug" Then
+                MsgBox("chkISLT:" & checkIsLaptop() & vbCrLf _
+                       & "OMV:" & osMajorVersion & vbCrLf _
+                       & "BSV:" & batteryStatus & vbCrLf _
+                & "BPV:" & batteryPercent & vbCrLf _
+                & "BLV:" & batteryLife & vbCrLf _
+                & "BCSIndex:" & batteryChargeStatus _
+                       , MsgBoxStyle.OkOnly, "NDEV INSIDE TESTER MD B0012")
+            End If
+        Next
     End Sub
+
 
     Private Function assResolve(ByVal sender As System.Object, ByVal e As System.ResolveEventArgs) As System.Reflection.Assembly
         Return EmbeddedAssembly.Get(e.Name)

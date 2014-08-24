@@ -122,7 +122,7 @@ Public Class frmInterface
         ElseIf batteryChargeStatus = 0 Then
             tmrChargeAnimate.Enabled = False
             lbBatteryStatus.Text = "电池剩余" & batteryPercent & "%"
-        ElseIf batteryChargeStatus = 1 And batteryStatus = 0 Then
+        ElseIf (batteryChargeStatus = 1 And batteryStatus = 0) Or (batteryChargeStatus = 1 And batteryStatus = 1 And batteryPercent > 95) Then
             tmrChargeAnimate.Enabled = False
             lbBatteryStatus.Text = "电源接通" & vbCrLf & "但未充电"
             pbBattery.Image = My.Resources.nocharging

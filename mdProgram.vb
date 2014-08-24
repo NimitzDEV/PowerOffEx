@@ -10,6 +10,7 @@ Module mdProgram
     '--------电源信息相关
     Public ps As PowerStatus = SystemInformation.PowerStatus
     Public batteryStatus As Integer = ps.BatteryChargeStatus
+
     '///数值 Charging=8  Critical=4 High=1 Low=2 NoSystemBattery=128 Unknow=255
     Public batteryPercent As Integer
     Public batteryLife As Integer

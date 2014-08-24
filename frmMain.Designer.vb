@@ -31,6 +31,7 @@ Partial Class frmMain
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.llbAd = New System.Windows.Forms.LinkLabel()
         Me.llbVolume = New System.Windows.Forms.LinkLabel()
         Me.cbVol = New System.Windows.Forms.CheckBox()
         Me.llbHistory = New System.Windows.Forms.LinkLabel()
@@ -49,7 +50,6 @@ Partial Class frmMain
         Me.tsmiRefresh = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
         Me.tsmiContinue = New System.Windows.Forms.ToolStripMenuItem()
-        Me.llbAd = New System.Windows.Forms.LinkLabel()
         Me.tmrAdPlayer = New System.Windows.Forms.Timer(Me.components)
         CType(Me.nudHour, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudMinute, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -140,6 +140,16 @@ Partial Class frmMain
         Me.GroupBox1.Size = New System.Drawing.Size(433, 242)
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
+        '
+        'llbAd
+        '
+        Me.llbAd.AutoSize = True
+        Me.llbAd.Location = New System.Drawing.Point(11, 222)
+        Me.llbAd.Name = "llbAd"
+        Me.llbAd.Size = New System.Drawing.Size(11, 12)
+        Me.llbAd.TabIndex = 17
+        Me.llbAd.TabStop = True
+        Me.llbAd.Text = "-"
         '
         'llbVolume
         '
@@ -302,16 +312,6 @@ Partial Class frmMain
         Me.tsmiContinue.Name = "tsmiContinue"
         Me.tsmiContinue.Size = New System.Drawing.Size(124, 22)
         Me.tsmiContinue.Text = "继续刚才"
-        '
-        'llbAd
-        '
-        Me.llbAd.AutoSize = True
-        Me.llbAd.Location = New System.Drawing.Point(11, 222)
-        Me.llbAd.Name = "llbAd"
-        Me.llbAd.Size = New System.Drawing.Size(11, 12)
-        Me.llbAd.TabIndex = 17
-        Me.llbAd.TabStop = True
-        Me.llbAd.Text = "-"
         '
         'tmrAdPlayer
         '
