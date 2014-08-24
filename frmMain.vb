@@ -3,11 +3,13 @@ Public Class frmMain
     Dim inputArgument As String = "/input="
     Dim inputName As String = ""
     Dim adCounter As Integer
+    Dim sixCounter As Integer
     Private Sub frmMain_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         SaveSettings()
     End Sub
 
     Private Sub frmMain_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Me.Height = 300
         EmbeddedAssembly.Load("定时关机Ex.CoreAudioApi.dll", "CoreAudioApi.dll")
         AddHandler AppDomain.CurrentDomain.AssemblyResolve, New System.ResolveEventHandler(AddressOf assResolve)
         ReadSettings()
@@ -100,7 +102,7 @@ Public Class frmMain
     End Sub
 
     Private Sub llbAbout_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles llbAbout.LinkClicked
-        frmAbout.Show()
+        frmAbout.ShowDialog()
     End Sub
 
     Private Sub llbVolume_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llbVolume.LinkClicked
@@ -142,10 +144,15 @@ Public Class frmMain
         If adList Is Nothing Then Exit Sub
         If adList.Count = 0 Then Exit Sub
         If adList(0) = "" Then Exit Sub
+        sixCounter += 1
         If adCounter = adList.Count Then adCounter = 0
         llbAd.Text = Split(adList(adCounter), "∫")(0)
         llbAd.Tag = Split(adList(adCounter), "∫")(1)
-        adCounter += 1
+        If sixCounter > 6 Then
+            adCounter += 1
+            sixCounter = 0
+        End If
+        Me.Height = 323
     End Sub
 
     Private Sub llbAd_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llbAd.LinkClicked

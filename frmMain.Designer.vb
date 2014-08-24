@@ -117,7 +117,6 @@ Partial Class frmMain
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.llbAd)
         Me.GroupBox1.Controls.Add(Me.llbVolume)
         Me.GroupBox1.Controls.Add(Me.cbVol)
         Me.GroupBox1.Controls.Add(Me.llbHistory)
@@ -137,14 +136,14 @@ Partial Class frmMain
         Me.GroupBox1.Controls.Add(Me.lbTip1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(433, 242)
+        Me.GroupBox1.Size = New System.Drawing.Size(433, 223)
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
         '
         'llbAd
         '
         Me.llbAd.AutoSize = True
-        Me.llbAd.Location = New System.Drawing.Point(11, 222)
+        Me.llbAd.Location = New System.Drawing.Point(12, 263)
         Me.llbAd.Name = "llbAd"
         Me.llbAd.Size = New System.Drawing.Size(11, 12)
         Me.llbAd.TabIndex = 17
@@ -264,7 +263,7 @@ Partial Class frmMain
         '
         'btnSet
         '
-        Me.btnSet.Location = New System.Drawing.Point(370, 250)
+        Me.btnSet.Location = New System.Drawing.Point(370, 231)
         Me.btnSet.Name = "btnSet"
         Me.btnSet.Size = New System.Drawing.Size(75, 23)
         Me.btnSet.TabIndex = 8
@@ -274,7 +273,7 @@ Partial Class frmMain
         'llbAbout
         '
         Me.llbAbout.AutoSize = True
-        Me.llbAbout.Location = New System.Drawing.Point(335, 255)
+        Me.llbAbout.Location = New System.Drawing.Point(335, 242)
         Me.llbAbout.Name = "llbAbout"
         Me.llbAbout.Size = New System.Drawing.Size(29, 12)
         Me.llbAbout.TabIndex = 9
@@ -283,7 +282,7 @@ Partial Class frmMain
         '
         'btnUpdate
         '
-        Me.btnUpdate.Location = New System.Drawing.Point(12, 250)
+        Me.btnUpdate.Location = New System.Drawing.Point(12, 231)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(105, 23)
         Me.btnUpdate.TabIndex = 10
@@ -316,13 +315,14 @@ Partial Class frmMain
         'tmrAdPlayer
         '
         Me.tmrAdPlayer.Enabled = True
-        Me.tmrAdPlayer.Interval = 6000
+        Me.tmrAdPlayer.Interval = 1000
         '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(457, 280)
+        Me.ClientSize = New System.Drawing.Size(457, 284)
+        Me.Controls.Add(Me.llbAd)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.llbAbout)
         Me.Controls.Add(Me.btnSet)
