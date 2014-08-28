@@ -36,9 +36,14 @@ Partial Class frmVolCtrl4XP
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btnNo = New System.Windows.Forms.Button()
         Me.btnYes = New System.Windows.Forms.Button()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.nudMsg = New System.Windows.Forms.NumericUpDown()
+        Me.lbMsg = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
         CType(Me.nudHOUR, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudMIN, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbMaster, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudMsg, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'nudHOUR
@@ -148,7 +153,7 @@ Partial Class frmVolCtrl4XP
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("宋体", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ControlLight
-        Me.Label6.Location = New System.Drawing.Point(12, 211)
+        Me.Label6.Location = New System.Drawing.Point(12, 257)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(334, 12)
         Me.Label6.TabIndex = 41
@@ -156,7 +161,7 @@ Partial Class frmVolCtrl4XP
         '
         'btnNo
         '
-        Me.btnNo.Location = New System.Drawing.Point(190, 226)
+        Me.btnNo.Location = New System.Drawing.Point(185, 272)
         Me.btnNo.Name = "btnNo"
         Me.btnNo.Size = New System.Drawing.Size(75, 22)
         Me.btnNo.TabIndex = 43
@@ -165,19 +170,59 @@ Partial Class frmVolCtrl4XP
         '
         'btnYes
         '
-        Me.btnYes.Location = New System.Drawing.Point(271, 226)
+        Me.btnYes.Location = New System.Drawing.Point(266, 272)
         Me.btnYes.Name = "btnYes"
         Me.btnYes.Size = New System.Drawing.Size(75, 22)
         Me.btnYes.TabIndex = 42
         Me.btnYes.Text = "确认"
         Me.btnYes.UseVisualStyleBackColor = True
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(12, 224)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(101, 12)
+        Me.Label9.TabIndex = 44
+        Me.Label9.Text = "消息发送次数比例"
+        '
+        'nudMsg
+        '
+        Me.nudMsg.Location = New System.Drawing.Point(119, 219)
+        Me.nudMsg.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.nudMsg.Name = "nudMsg"
+        Me.nudMsg.Size = New System.Drawing.Size(37, 21)
+        Me.nudMsg.TabIndex = 45
+        Me.nudMsg.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'lbMsg
+        '
+        Me.lbMsg.AutoSize = True
+        Me.lbMsg.Location = New System.Drawing.Point(161, 224)
+        Me.lbMsg.Name = "lbMsg"
+        Me.lbMsg.Size = New System.Drawing.Size(131, 12)
+        Me.lbMsg.TabIndex = 46
+        Me.lbMsg.Text = "，降低0%将发送0次消息"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(12, 245)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(269, 12)
+        Me.Label11.TabIndex = 47
+        Me.Label11.Text = "如果降低的音量和实际需求不符，可以调整此比例"
+        '
         'frmVolCtrl4XP
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(358, 261)
+        Me.ClientSize = New System.Drawing.Size(358, 303)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.lbMsg)
+        Me.Controls.Add(Me.nudMsg)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.btnNo)
         Me.Controls.Add(Me.btnYes)
         Me.Controls.Add(Me.Label6)
@@ -199,6 +244,7 @@ Partial Class frmVolCtrl4XP
         CType(Me.nudHOUR, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudMIN, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbMaster, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudMsg, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -217,4 +263,8 @@ Partial Class frmVolCtrl4XP
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents btnNo As System.Windows.Forms.Button
     Friend WithEvents btnYes As System.Windows.Forms.Button
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents nudMsg As System.Windows.Forms.NumericUpDown
+    Friend WithEvents lbMsg As System.Windows.Forms.Label
+    Friend WithEvents Label11 As System.Windows.Forms.Label
 End Class

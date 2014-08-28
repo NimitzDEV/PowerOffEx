@@ -31,7 +31,6 @@ Partial Class frmMain
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.llbAd = New System.Windows.Forms.LinkLabel()
         Me.llbVolume = New System.Windows.Forms.LinkLabel()
         Me.cbVol = New System.Windows.Forms.CheckBox()
         Me.llbHistory = New System.Windows.Forms.LinkLabel()
@@ -139,16 +138,6 @@ Partial Class frmMain
         Me.GroupBox1.Size = New System.Drawing.Size(433, 223)
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
-        '
-        'llbAd
-        '
-        Me.llbAd.AutoSize = True
-        Me.llbAd.Location = New System.Drawing.Point(12, 260)
-        Me.llbAd.Name = "llbAd"
-        Me.llbAd.Size = New System.Drawing.Size(11, 12)
-        Me.llbAd.TabIndex = 17
-        Me.llbAd.TabStop = True
-        Me.llbAd.Text = "-"
         '
         'llbVolume
         '
@@ -321,8 +310,7 @@ Partial Class frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(457, 281)
-        Me.Controls.Add(Me.llbAd)
+        Me.ClientSize = New System.Drawing.Size(457, 263)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.llbAbout)
         Me.Controls.Add(Me.btnSet)
@@ -369,7 +357,6 @@ Partial Class frmMain
     Friend WithEvents tsmiRefresh As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents tsmiContinue As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents llbAd As System.Windows.Forms.LinkLabel
     Friend WithEvents tmrAdPlayer As System.Windows.Forms.Timer
 
 End Class

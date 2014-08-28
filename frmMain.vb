@@ -2,8 +2,6 @@
 Public Class frmMain
     Dim inputArgument As String = "/input="
     Dim inputName As String = ""
-    Dim adCounter As Integer
-    Dim sixCounter As Integer
     Private Sub frmMain_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         SaveSettings()
     End Sub
@@ -23,10 +21,7 @@ Public Class frmMain
         cbRecordTvProgress.Checked = chk_RECORD
         cbVol.Checked = chk_VOLCTRL
         valSetTime = 0
-        llbAd.Text = ""
-        getAd()
         startArgsChecking()
-        Me.Height = 300
     End Sub
 
 
@@ -140,22 +135,4 @@ Public Class frmMain
         Me.Hide()
     End Sub
 
-    Private Sub tmrAdPlayer_Tick(sender As Object, e As EventArgs) Handles tmrAdPlayer.Tick
-        If adList Is Nothing Then Exit Sub
-        If adList.Count = 0 Then Exit Sub
-        If adList(0) = "" Then Exit Sub
-        sixCounter += 1
-        llbAd.Text = Split(adList(adCounter), "∫")(0)
-        llbAd.Tag = Split(adList(adCounter), "∫")(1)
-        If sixCounter > 6 Then
-            adCounter += 1
-            If adCounter = adList.Count Then adCounter = 0
-            sixCounter = 0
-        End If
-        Me.Height = 315
-    End Sub
-
-    Private Sub llbAd_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llbAd.LinkClicked
-        Process.Start(llbAd.Tag)
-    End Sub
 End Class
