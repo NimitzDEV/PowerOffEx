@@ -1,7 +1,7 @@
 ﻿Public Class frmVolCtrl4XP
 
     Private Sub freshMSG()
-        lbMsg.Text = "，降低" & tbMaster.Value & "%将发送" & tbMaster.Value / nudMsg.Value & "次消息"
+        lbMsg.Text = "，降低" & tbMaster.Value & "%将发送" & Math.Round(tbMaster.Value / nudMsg.Value) & "次消息"
     End Sub
     Private Sub frmVolCtrl4XP_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         nudHOUR.Value = pref_VOL_EFF_HOUR

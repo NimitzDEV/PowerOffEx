@@ -116,6 +116,7 @@ Module mdProgram
     End Sub
     Public Sub changeVolume4XP(ByVal changePercent As Integer)
         If changePercent = 0 Then Exit Sub
+        Math.Round(changePercent)
         For i = 0 To changePercent - 1
             SendMessage(frmMain.Handle, WM_APPCOMMAND, &H30292, APPCOMMAND_VOLUME_DOWN * &H10000)
         Next
