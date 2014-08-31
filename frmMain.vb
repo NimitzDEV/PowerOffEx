@@ -20,6 +20,7 @@ Public Class frmMain
         nudMinute.Value = pref_MIN
         cbRecordTvProgress.Checked = chk_RECORD
         cbVol.Checked = chk_VOLCTRL
+        chkTimeTip.Checked = chk_REMINDER
         valSetTime = 0
         startArgsChecking()
     End Sub
@@ -73,7 +74,7 @@ Public Class frmMain
             End If
         End If
         If cbVol.Checked Then
-            If osMajorVersion > 6 Then
+            If osMajorVersion > 5 Then
                 Dim device As MMDevice
                 Dim DevEnum As New MMDeviceEnumerator()
                 device = DevEnum.GetDefaultAudioEndpoint(EDataFlow.eRender, ERole.eMultimedia)
@@ -135,4 +136,7 @@ Public Class frmMain
         Me.Hide()
     End Sub
 
+    Private Sub chkTimeTip_CheckedChanged(sender As Object, e As EventArgs) Handles chkTimeTip.CheckedChanged
+        chk_REMINDER = chkTimeTip.Checked
+    End Sub
 End Class

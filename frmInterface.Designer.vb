@@ -47,21 +47,22 @@ Partial Class frmInterface
         Me.QqqToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pnlNetworkConnection = New System.Windows.Forms.Panel()
         Me.lbConnectStatus = New System.Windows.Forms.Label()
-        Me.pbConnections = New System.Windows.Forms.PictureBox()
         Me.pnlBattery = New System.Windows.Forms.Panel()
         Me.lbBatteryStatus = New System.Windows.Forms.Label()
-        Me.pbBattery = New System.Windows.Forms.PictureBox()
         Me.tmrChargeAnimate = New System.Windows.Forms.Timer(Me.components)
         Me.tmrUIFresh = New System.Windows.Forms.Timer(Me.components)
         Me.btnHide = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.tmrCheckTv = New System.Windows.Forms.Timer(Me.components)
         Me.tmrVol = New System.Windows.Forms.Timer(Me.components)
+        Me.pbBattery = New System.Windows.Forms.PictureBox()
+        Me.pbConnections = New System.Windows.Forms.PictureBox()
+        Me.tmrReminder = New System.Windows.Forms.Timer(Me.components)
         Me.cmsRightClick.SuspendLayout()
         Me.pnlNetworkConnection.SuspendLayout()
-        CType(Me.pbConnections, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlBattery.SuspendLayout()
         CType(Me.pbBattery, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbConnections, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'notifyIcon
@@ -218,16 +219,6 @@ Partial Class frmInterface
         Me.lbConnectStatus.TabIndex = 1
         Me.lbConnectStatus.Text = "请稍后"
         '
-        'pbConnections
-        '
-        Me.pbConnections.Image = Global.定时关机Ex.My.Resources.Resources.wire
-        Me.pbConnections.Location = New System.Drawing.Point(0, 3)
-        Me.pbConnections.Name = "pbConnections"
-        Me.pbConnections.Size = New System.Drawing.Size(96, 96)
-        Me.pbConnections.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.pbConnections.TabIndex = 0
-        Me.pbConnections.TabStop = False
-        '
         'pnlBattery
         '
         Me.pnlBattery.BackColor = System.Drawing.Color.Transparent
@@ -246,16 +237,6 @@ Partial Class frmInterface
         Me.lbBatteryStatus.Size = New System.Drawing.Size(41, 12)
         Me.lbBatteryStatus.TabIndex = 1
         Me.lbBatteryStatus.Text = "请稍后"
-        '
-        'pbBattery
-        '
-        Me.pbBattery.Image = Global.定时关机Ex.My.Resources.Resources.fullbattery
-        Me.pbBattery.Location = New System.Drawing.Point(0, 3)
-        Me.pbBattery.Name = "pbBattery"
-        Me.pbBattery.Size = New System.Drawing.Size(96, 96)
-        Me.pbBattery.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.pbBattery.TabIndex = 0
-        Me.pbBattery.TabStop = False
         '
         'tmrChargeAnimate
         '
@@ -292,6 +273,30 @@ Partial Class frmInterface
         '
         Me.tmrVol.Interval = 30000
         '
+        'pbBattery
+        '
+        Me.pbBattery.Image = Global.定时关机Ex.My.Resources.Resources.fullbattery
+        Me.pbBattery.Location = New System.Drawing.Point(0, 3)
+        Me.pbBattery.Name = "pbBattery"
+        Me.pbBattery.Size = New System.Drawing.Size(96, 96)
+        Me.pbBattery.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.pbBattery.TabIndex = 0
+        Me.pbBattery.TabStop = False
+        '
+        'pbConnections
+        '
+        Me.pbConnections.Image = Global.定时关机Ex.My.Resources.Resources.wire
+        Me.pbConnections.Location = New System.Drawing.Point(0, 3)
+        Me.pbConnections.Name = "pbConnections"
+        Me.pbConnections.Size = New System.Drawing.Size(96, 96)
+        Me.pbConnections.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.pbConnections.TabIndex = 0
+        Me.pbConnections.TabStop = False
+        '
+        'tmrReminder
+        '
+        Me.tmrReminder.Interval = 5000
+        '
         'frmInterface
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -314,10 +319,10 @@ Partial Class frmInterface
         Me.cmsRightClick.ResumeLayout(False)
         Me.pnlNetworkConnection.ResumeLayout(False)
         Me.pnlNetworkConnection.PerformLayout()
-        CType(Me.pbConnections, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlBattery.ResumeLayout(False)
         Me.pnlBattery.PerformLayout()
         CType(Me.pbBattery, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbConnections, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -355,4 +360,5 @@ Partial Class frmInterface
     Friend WithEvents btnAdd As System.Windows.Forms.Button
     Friend WithEvents tmrCheckTv As System.Windows.Forms.Timer
     Friend WithEvents tmrVol As System.Windows.Forms.Timer
+    Friend WithEvents tmrReminder As System.Windows.Forms.Timer
 End Class

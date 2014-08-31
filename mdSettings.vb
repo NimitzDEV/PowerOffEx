@@ -7,6 +7,7 @@ Module mdSettings
     Public pref_VOL_EFF_MIN As Integer = 0
     Public pref_VOL_XP As Integer = 20
     Public pref_VOL_XP_MSG As Integer = 1
+    Public chk_REMINDER As Boolean = False
     Public chk_RECORD As Boolean = False
     Public chk_VOLCTRL As Boolean = False
     Public set_TVP As String = ""
@@ -29,6 +30,7 @@ Module mdSettings
         pref_VOL_EFF_MIN = GetINI("pref", "VOL_EFF_MIN", pref_VOL_EFF_MIN)
         pref_VOL_XP = GetINI("pref", "VOL_XP", pref_VOL_XP)
         pref_VOL_XP_MSG = GetINI("pref", "VOL_XP_MSG", pref_VOL_XP_MSG)
+        chk_REMINDER = GetINI("funcenable", "REMINDER", chk_REMINDER)
         chk_RECORD = GetINI("funcenable", "TVP", chk_RECORD)
         chk_VOLCTRL = GetINI("funcenable", "VOLC", chk_VOLCTRL)
         set_TVP = GetINI("set", "TVP", "")
@@ -42,6 +44,7 @@ Module mdSettings
         WriteINI("pref", "VOL_EFF_MIN", pref_VOL_EFF_MIN)
         WriteINI("pref", "VOL_XP", pref_VOL_XP)
         WriteINI("pref", "VOL_XP_MSG", pref_VOL_XP_MSG)
+        WriteINI("funcenable", "REMINDER", chk_REMINDER)
         WriteINI("funcenable", "TVP", chk_RECORD)
         WriteINI("funcenable", "VOLC", chk_VOLCTRL)
         WriteINI("set", "TVP", set_TVP)

@@ -113,6 +113,12 @@
       <DependentUpon>frmMain.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmReminder.Designer.vb">
+      <DependentUpon>frmReminder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmReminder.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmTimeAdd.Designer.vb">
       <DependentUpon>frmTimeAdd.vb</DependentUpon>
     </Compile>
@@ -179,6 +185,9 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReminder.resx">
+      <DependentUpon>frmReminder.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTimeAdd.resx">
       <DependentUpon>frmTimeAdd.vb</DependentUpon>
     </EmbeddedResource>
@@ -243,6 +252,7 @@
   <ItemGroup>
     <Content Include="appicon.ico" />
     <Content Include="appiconv2.ico" />
+    <None Include="res\clock.png" />
     <None Include="res\uptodate64px.png" />
     <None Include="res\wait64px.png" />
     <None Include="res\wait128px.png" />

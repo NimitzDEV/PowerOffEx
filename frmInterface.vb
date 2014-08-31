@@ -45,6 +45,7 @@ Public Class frmInterface
         showSwipAnimation()
         '开始
         tmrCheckTv.Enabled = chk_RECORD
+        tmrReminder.Enabled = chk_REMINDER
         targetTime = pref_VOL_EFF_HOUR * 60 + pref_VOL_EFF_MIN
         updateBatteryInfo()
         freshUI()
@@ -53,6 +54,7 @@ Public Class frmInterface
             延长时间ToolStripMenuItem.Visible = False
             btnAdd.Visible = False
         End If
+        SaveSettings()
     End Sub
 
     Private Sub notifyIcon_MouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles notifyIcon.MouseClick
@@ -234,13 +236,23 @@ Public Class frmInterface
 
     Private Sub tmrVol_Tick(sender As Object, e As EventArgs) Handles tmrVol.Tick
         If Hour(Now) * 60 + Minute(Now) >= targetTime Then
-            If osMajorVersion > 6 Then
+            If osMajorVersion > 5 Then
                 Dim DevEnum As New MMDeviceEnumerator()
                 device = DevEnum.GetDefaultAudioEndpoint(EDataFlow.eRender, ERole.eMultimedia)
                 device.AudioEndpointVolume.MasterVolumeLevelScalar = (CSng(pref_VOL) / 100.0F)
                 tmrVol.Enabled = False
             Else
                 changeVolume4XP(pref_VOL_XP / pref_VOL_XP_MSG)
+            End If
+        End If
+        tmrVol.Enabled = False
+    End Sub
+
+    Private Sub tmrReminder_Tick(sender As Object, e As EventArgs) Handles tmrReminder.Tick
+        If Minute(Now) = 29 Or Minute(Now) = 59 Then
+            If Second(Now) > 29 Then
+                frmReminder.Show()
+                tmrReminder.Enabled = False
             End If
         End If
     End Sub
