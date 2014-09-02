@@ -226,8 +226,8 @@ Public Class frmInterface
     Private Sub tmrCheckTv_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmrCheckTv.Tick
         getTvTitleAndPg()
         If oldTvProgress <> tvProgress Or oldTvTitle <> tvTitle Then
-            oldTvProgress = tvProgress
-            oldTvTitle = tvTitle
+            oldTvProgress = tvProgress.Trim
+            oldTvTitle = tvTitle.Trim
             showNotify("正在收看《" & tvTitle & "》 - " & tvProgress)
             set_TVP = "《" & tvTitle & "》 - " & tvProgress
             SaveSettings()
