@@ -252,6 +252,7 @@
   <ItemGroup>
     <Content Include="appicon.ico" />
     <Content Include="appiconv2.ico" />
+    <None Include="res\clock2.png" />
     <None Include="res\clock.png" />
     <None Include="res\uptodate64px.png" />
     <None Include="res\wait64px.png" />

@@ -83,9 +83,9 @@ Namespace My.Resources
         '''<summary>
         '''  查找 System.Drawing.Bitmap 类型的本地化资源。
         '''</summary>
-        Public ReadOnly Property clock() As System.Drawing.Bitmap
+        Public ReadOnly Property clock2() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("clock", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("clock2", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
