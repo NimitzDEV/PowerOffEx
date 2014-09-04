@@ -1,12 +1,12 @@
 ﻿Imports System.Drawing.Drawing2D
 Module mdUIElements
-    Public Function DrawProgressBar(ByVal CurrentAngle As Integer, ByVal changingAngle As Integer, ByVal drawObject As PictureBox, ByVal container As Form, ByVal endColor As Color, ByVal startColor As Color) As Bitmap
-        Dim bmp As New Bitmap(drawObject.ClientRectangle.Width, drawObject.ClientRectangle.Height)
+    Public Function DrawProgressBar(ByVal bgImage As Image, ByVal CurrentAngle As Integer, ByVal changingAngle As Integer, ByVal drawObject As PictureBox, ByVal container As Form, ByVal endColor As Color, ByVal startColor As Color) As Bitmap
+        Dim bmp As New Bitmap(bgImage, drawObject.ClientRectangle.Width, drawObject.ClientRectangle.Height)
         Dim g As Graphics
         CurrentAngle *= 3.2
         g = Graphics.FromImage(bmp)
         Dim path As New GraphicsPath
-        Dim rec As Rectangle = New Rectangle(0, 0, bmp.Width, bmp.Height)
+        Dim rec As Rectangle = New Rectangle((bmp.Width - bmp.Height + 60) / 2, (bmp.Height - bmp.Height + 20) / 2 + 20, bmp.Height - 60, bmp.Height - 60)
         Dim stringformat As New StringFormat
         stringformat.Alignment = StringAlignment.Center
         stringformat.LineAlignment = StringAlignment.Center
