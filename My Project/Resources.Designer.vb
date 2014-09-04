@@ -83,6 +83,36 @@ Namespace My.Resources
         '''<summary>
         '''  查找 System.Drawing.Bitmap 类型的本地化资源。
         '''</summary>
+        Public ReadOnly Property charging() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("charging", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
+        '''</summary>
+        Public ReadOnly Property charging2() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("charging2", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
+        '''</summary>
+        Public ReadOnly Property charging3() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("charging3", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
+        '''</summary>
         Public ReadOnly Property clock2() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("clock2", resourceCulture)
@@ -123,6 +153,26 @@ Namespace My.Resources
         '''<summary>
         '''  查找 System.Drawing.Bitmap 类型的本地化资源。
         '''</summary>
+        Public ReadOnly Property internet_on() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("internet_on", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
+        '''</summary>
+        Public ReadOnly Property internet_on_white() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("internet_on_white", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
+        '''</summary>
         Public ReadOnly Property lowbattery() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("lowbattery", resourceCulture)
@@ -146,6 +196,16 @@ Namespace My.Resources
         Public ReadOnly Property nocharging() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("nocharging", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
+        '''</summary>
+        Public ReadOnly Property res_drawbg_normal() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("res_drawbg_normal", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

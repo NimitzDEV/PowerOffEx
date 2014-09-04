@@ -253,6 +253,13 @@
   <ItemGroup>
     <Content Include="appicon.ico" />
     <Content Include="appiconv2.ico" />
+    <None Include="res\internet_on_white.png" />
+    <None Include="res\charging3.png" />
+    <None Include="res\charging2.png" />
+    <None Include="res\charging.png" />
+    <None Include="res\internet_on2.png" />
+    <None Include="res\internet_on.png" />
+    <None Include="res\res_drawbg_normal.jpg" />
     <None Include="res\clock2.png" />
     <None Include="res\clock.png" />
     <None Include="res\uptodate64px.png" />

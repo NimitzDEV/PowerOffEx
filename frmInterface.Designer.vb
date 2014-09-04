@@ -26,11 +26,9 @@ Partial Class frmInterface
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmInterface))
         Me.notifyIcon = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.animationTimer = New System.Windows.Forms.Timer(Me.components)
-        Me.lbInfo = New System.Windows.Forms.Label()
         Me.mainTick = New System.Windows.Forms.Timer(Me.components)
         Me.tmrAutoHide = New System.Windows.Forms.Timer(Me.components)
-        Me.btnExit = New System.Windows.Forms.Button()
-        Me.btnBack = New System.Windows.Forms.Button()
+        Me.btnMenu = New System.Windows.Forms.Button()
         Me.cmsRightClick = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.退出ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
@@ -45,24 +43,22 @@ Partial Class frmInterface
         Me.remainTip = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator()
         Me.QqqToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.pnlNetworkConnection = New System.Windows.Forms.Panel()
-        Me.lbConnectStatus = New System.Windows.Forms.Label()
-        Me.pnlBattery = New System.Windows.Forms.Panel()
-        Me.lbBatteryStatus = New System.Windows.Forms.Label()
         Me.tmrChargeAnimate = New System.Windows.Forms.Timer(Me.components)
         Me.tmrUIFresh = New System.Windows.Forms.Timer(Me.components)
-        Me.btnHide = New System.Windows.Forms.Button()
-        Me.btnAdd = New System.Windows.Forms.Button()
         Me.tmrCheckTv = New System.Windows.Forms.Timer(Me.components)
         Me.tmrVol = New System.Windows.Forms.Timer(Me.components)
-        Me.pbBattery = New System.Windows.Forms.PictureBox()
-        Me.pbConnections = New System.Windows.Forms.PictureBox()
         Me.tmrReminder = New System.Windows.Forms.Timer(Me.components)
+        Me.tmrProgressDrawer = New System.Windows.Forms.Timer(Me.components)
+        Me.pbStatus = New System.Windows.Forms.PictureBox()
+        Me.cmsInterfaceMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.加时ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.隐藏ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.返回ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripSeparator()
+        Me.退出ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.cmsRightClick.SuspendLayout()
-        Me.pnlNetworkConnection.SuspendLayout()
-        Me.pnlBattery.SuspendLayout()
-        CType(Me.pbBattery, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbConnections, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbStatus, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.cmsInterfaceMenu.SuspendLayout()
         Me.SuspendLayout()
         '
         'notifyIcon
@@ -75,18 +71,6 @@ Partial Class frmInterface
         '
         Me.animationTimer.Interval = 5
         '
-        'lbInfo
-        '
-        Me.lbInfo.AutoSize = True
-        Me.lbInfo.BackColor = System.Drawing.Color.Transparent
-        Me.lbInfo.Font = New System.Drawing.Font("微软雅黑", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.lbInfo.ForeColor = System.Drawing.Color.White
-        Me.lbInfo.Location = New System.Drawing.Point(7, 176)
-        Me.lbInfo.Name = "lbInfo"
-        Me.lbInfo.Size = New System.Drawing.Size(93, 28)
-        Me.lbInfo.TabIndex = 0
-        Me.lbInfo.Text = "请稍后..."
-        '
         'mainTick
         '
         Me.mainTick.Enabled = True
@@ -97,23 +81,15 @@ Partial Class frmInterface
         Me.tmrAutoHide.Enabled = True
         Me.tmrAutoHide.Interval = 3000
         '
-        'btnExit
+        'btnMenu
         '
-        Me.btnExit.Location = New System.Drawing.Point(232, 12)
-        Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(51, 23)
-        Me.btnExit.TabIndex = 1
-        Me.btnExit.Text = "退出"
-        Me.btnExit.UseVisualStyleBackColor = True
-        '
-        'btnBack
-        '
-        Me.btnBack.Location = New System.Drawing.Point(175, 12)
-        Me.btnBack.Name = "btnBack"
-        Me.btnBack.Size = New System.Drawing.Size(51, 23)
-        Me.btnBack.TabIndex = 2
-        Me.btnBack.Text = "返回"
-        Me.btnBack.UseVisualStyleBackColor = True
+        Me.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMenu.Location = New System.Drawing.Point(261, 12)
+        Me.btnMenu.Name = "btnMenu"
+        Me.btnMenu.Size = New System.Drawing.Size(25, 23)
+        Me.btnMenu.TabIndex = 1
+        Me.btnMenu.Text = "≡"
+        Me.btnMenu.UseVisualStyleBackColor = True
         '
         'cmsRightClick
         '
@@ -200,44 +176,6 @@ Partial Class frmInterface
         Me.QqqToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.QqqToolStripMenuItem.Text = "显示/隐藏 详细界面"
         '
-        'pnlNetworkConnection
-        '
-        Me.pnlNetworkConnection.BackColor = System.Drawing.Color.Transparent
-        Me.pnlNetworkConnection.Controls.Add(Me.lbConnectStatus)
-        Me.pnlNetworkConnection.Controls.Add(Me.pbConnections)
-        Me.pnlNetworkConnection.Location = New System.Drawing.Point(46, 45)
-        Me.pnlNetworkConnection.Name = "pnlNetworkConnection"
-        Me.pnlNetworkConnection.Size = New System.Drawing.Size(96, 128)
-        Me.pnlNetworkConnection.TabIndex = 3
-        '
-        'lbConnectStatus
-        '
-        Me.lbConnectStatus.AutoSize = True
-        Me.lbConnectStatus.Location = New System.Drawing.Point(30, 102)
-        Me.lbConnectStatus.Name = "lbConnectStatus"
-        Me.lbConnectStatus.Size = New System.Drawing.Size(41, 12)
-        Me.lbConnectStatus.TabIndex = 1
-        Me.lbConnectStatus.Text = "请稍后"
-        '
-        'pnlBattery
-        '
-        Me.pnlBattery.BackColor = System.Drawing.Color.Transparent
-        Me.pnlBattery.Controls.Add(Me.lbBatteryStatus)
-        Me.pnlBattery.Controls.Add(Me.pbBattery)
-        Me.pnlBattery.Location = New System.Drawing.Point(148, 45)
-        Me.pnlBattery.Name = "pnlBattery"
-        Me.pnlBattery.Size = New System.Drawing.Size(98, 128)
-        Me.pnlBattery.TabIndex = 4
-        '
-        'lbBatteryStatus
-        '
-        Me.lbBatteryStatus.AutoSize = True
-        Me.lbBatteryStatus.Location = New System.Drawing.Point(25, 102)
-        Me.lbBatteryStatus.Name = "lbBatteryStatus"
-        Me.lbBatteryStatus.Size = New System.Drawing.Size(41, 12)
-        Me.lbBatteryStatus.TabIndex = 1
-        Me.lbBatteryStatus.Text = "请稍后"
-        '
         'tmrChargeAnimate
         '
         Me.tmrChargeAnimate.Interval = 500
@@ -247,24 +185,6 @@ Partial Class frmInterface
         Me.tmrUIFresh.Enabled = True
         Me.tmrUIFresh.Interval = 9000
         '
-        'btnHide
-        '
-        Me.btnHide.Location = New System.Drawing.Point(118, 12)
-        Me.btnHide.Name = "btnHide"
-        Me.btnHide.Size = New System.Drawing.Size(51, 23)
-        Me.btnHide.TabIndex = 5
-        Me.btnHide.Text = "隐藏"
-        Me.btnHide.UseVisualStyleBackColor = True
-        '
-        'btnAdd
-        '
-        Me.btnAdd.Location = New System.Drawing.Point(12, 12)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(51, 23)
-        Me.btnAdd.TabIndex = 6
-        Me.btnAdd.Text = "加时"
-        Me.btnAdd.UseVisualStyleBackColor = True
-        '
         'tmrCheckTv
         '
         Me.tmrCheckTv.Interval = 5000
@@ -273,43 +193,66 @@ Partial Class frmInterface
         '
         Me.tmrVol.Interval = 30000
         '
-        'pbBattery
-        '
-        Me.pbBattery.Image = Global.定时关机Ex.My.Resources.Resources.fullbattery
-        Me.pbBattery.Location = New System.Drawing.Point(0, 3)
-        Me.pbBattery.Name = "pbBattery"
-        Me.pbBattery.Size = New System.Drawing.Size(96, 96)
-        Me.pbBattery.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.pbBattery.TabIndex = 0
-        Me.pbBattery.TabStop = False
-        '
-        'pbConnections
-        '
-        Me.pbConnections.Image = Global.定时关机Ex.My.Resources.Resources.wire
-        Me.pbConnections.Location = New System.Drawing.Point(0, 3)
-        Me.pbConnections.Name = "pbConnections"
-        Me.pbConnections.Size = New System.Drawing.Size(96, 96)
-        Me.pbConnections.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.pbConnections.TabIndex = 0
-        Me.pbConnections.TabStop = False
-        '
         'tmrReminder
         '
         Me.tmrReminder.Interval = 5000
+        '
+        'tmrProgressDrawer
+        '
+        Me.tmrProgressDrawer.Enabled = True
+        Me.tmrProgressDrawer.Interval = 200
+        '
+        'pbStatus
+        '
+        Me.pbStatus.Location = New System.Drawing.Point(0, 0)
+        Me.pbStatus.Name = "pbStatus"
+        Me.pbStatus.Size = New System.Drawing.Size(300, 300)
+        Me.pbStatus.TabIndex = 7
+        Me.pbStatus.TabStop = False
+        '
+        'cmsInterfaceMenu
+        '
+        Me.cmsInterfaceMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.加时ToolStripMenuItem, Me.隐藏ToolStripMenuItem, Me.返回ToolStripMenuItem, Me.ToolStripMenuItem4, Me.退出ToolStripMenuItem1})
+        Me.cmsInterfaceMenu.Name = "cmsInterfaceMenu"
+        Me.cmsInterfaceMenu.Size = New System.Drawing.Size(101, 98)
+        '
+        '加时ToolStripMenuItem
+        '
+        Me.加时ToolStripMenuItem.Name = "加时ToolStripMenuItem"
+        Me.加时ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.加时ToolStripMenuItem.Text = "加时"
+        '
+        '隐藏ToolStripMenuItem
+        '
+        Me.隐藏ToolStripMenuItem.Name = "隐藏ToolStripMenuItem"
+        Me.隐藏ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.隐藏ToolStripMenuItem.Text = "隐藏"
+        '
+        '返回ToolStripMenuItem
+        '
+        Me.返回ToolStripMenuItem.Name = "返回ToolStripMenuItem"
+        Me.返回ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.返回ToolStripMenuItem.Text = "返回"
+        '
+        'ToolStripMenuItem4
+        '
+        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(149, 6)
+        '
+        '退出ToolStripMenuItem1
+        '
+        Me.退出ToolStripMenuItem1.Name = "退出ToolStripMenuItem1"
+        Me.退出ToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.退出ToolStripMenuItem1.Text = "退出"
         '
         'frmInterface
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(295, 211)
+        Me.ClientSize = New System.Drawing.Size(298, 330)
         Me.ControlBox = False
-        Me.Controls.Add(Me.btnAdd)
-        Me.Controls.Add(Me.btnHide)
-        Me.Controls.Add(Me.pnlBattery)
-        Me.Controls.Add(Me.pnlNetworkConnection)
-        Me.Controls.Add(Me.btnBack)
-        Me.Controls.Add(Me.btnExit)
-        Me.Controls.Add(Me.lbInfo)
+        Me.Controls.Add(Me.btnMenu)
+        Me.Controls.Add(Me.pbStatus)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmInterface"
         Me.Opacity = 0.9R
@@ -317,23 +260,16 @@ Partial Class frmInterface
         Me.Text = "详细"
         Me.TopMost = True
         Me.cmsRightClick.ResumeLayout(False)
-        Me.pnlNetworkConnection.ResumeLayout(False)
-        Me.pnlNetworkConnection.PerformLayout()
-        Me.pnlBattery.ResumeLayout(False)
-        Me.pnlBattery.PerformLayout()
-        CType(Me.pbBattery, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbConnections, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbStatus, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.cmsInterfaceMenu.ResumeLayout(False)
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents notifyIcon As System.Windows.Forms.NotifyIcon
     Friend WithEvents animationTimer As System.Windows.Forms.Timer
-    Friend WithEvents lbInfo As System.Windows.Forms.Label
     Friend WithEvents mainTick As System.Windows.Forms.Timer
     Friend WithEvents tmrAutoHide As System.Windows.Forms.Timer
-    Friend WithEvents btnExit As System.Windows.Forms.Button
-    Friend WithEvents btnBack As System.Windows.Forms.Button
+    Friend WithEvents btnMenu As System.Windows.Forms.Button
     Friend WithEvents cmsRightClick As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents QqqToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
@@ -348,17 +284,17 @@ Partial Class frmInterface
     Friend WithEvents ToolStripMenuItem3 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents 自定义ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents add10 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents pnlNetworkConnection As System.Windows.Forms.Panel
-    Friend WithEvents pbConnections As System.Windows.Forms.PictureBox
-    Friend WithEvents lbConnectStatus As System.Windows.Forms.Label
-    Friend WithEvents pnlBattery As System.Windows.Forms.Panel
-    Friend WithEvents lbBatteryStatus As System.Windows.Forms.Label
-    Friend WithEvents pbBattery As System.Windows.Forms.PictureBox
     Friend WithEvents tmrChargeAnimate As System.Windows.Forms.Timer
     Friend WithEvents tmrUIFresh As System.Windows.Forms.Timer
-    Friend WithEvents btnHide As System.Windows.Forms.Button
-    Friend WithEvents btnAdd As System.Windows.Forms.Button
     Friend WithEvents tmrCheckTv As System.Windows.Forms.Timer
     Friend WithEvents tmrVol As System.Windows.Forms.Timer
     Friend WithEvents tmrReminder As System.Windows.Forms.Timer
+    Friend WithEvents pbStatus As System.Windows.Forms.PictureBox
+    Friend WithEvents tmrProgressDrawer As System.Windows.Forms.Timer
+    Friend WithEvents cmsInterfaceMenu As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents 加时ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents 隐藏ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents 返回ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem4 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents 退出ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
 End Class
