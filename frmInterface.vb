@@ -81,11 +81,12 @@ Public Class frmInterface
 
     Private Sub notifyIcon_MouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles notifyIcon.MouseClick
         If e.Button = MouseButtons.Left Then
+            showSwipAnimation()
             Me.Visible = Not Me.Visible
             fullUI(Me.Visible)
             Me.Left = MousePosition.X - Me.Width / 2
             Me.Top = Screen.PrimaryScreen.WorkingArea.Height - Me.Height
-            showSwipAnimation()
+
         ElseIf e.Button = MouseButtons.Right Then
             cmsRightClick.Show(MousePosition.X, MousePosition.Y)
         End If
@@ -287,4 +288,5 @@ Public Class frmInterface
         Me.Dispose()
         frmMain.Show()
     End Sub
+
 End Class

@@ -219,30 +219,30 @@ Partial Class frmInterface
         '加时ToolStripMenuItem
         '
         Me.加时ToolStripMenuItem.Name = "加时ToolStripMenuItem"
-        Me.加时ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.加时ToolStripMenuItem.Size = New System.Drawing.Size(100, 22)
         Me.加时ToolStripMenuItem.Text = "加时"
         '
         '隐藏ToolStripMenuItem
         '
         Me.隐藏ToolStripMenuItem.Name = "隐藏ToolStripMenuItem"
-        Me.隐藏ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.隐藏ToolStripMenuItem.Size = New System.Drawing.Size(100, 22)
         Me.隐藏ToolStripMenuItem.Text = "隐藏"
         '
         '返回ToolStripMenuItem
         '
         Me.返回ToolStripMenuItem.Name = "返回ToolStripMenuItem"
-        Me.返回ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.返回ToolStripMenuItem.Size = New System.Drawing.Size(100, 22)
         Me.返回ToolStripMenuItem.Text = "返回"
         '
         'ToolStripMenuItem4
         '
         Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(149, 6)
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(97, 6)
         '
         '退出ToolStripMenuItem1
         '
         Me.退出ToolStripMenuItem1.Name = "退出ToolStripMenuItem1"
-        Me.退出ToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.退出ToolStripMenuItem1.Size = New System.Drawing.Size(100, 22)
         Me.退出ToolStripMenuItem1.Text = "退出"
         '
         'frmInterface
