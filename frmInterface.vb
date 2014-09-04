@@ -13,14 +13,6 @@ Public Class frmInterface
     Public batteryStatusString As String
     Public batteryStatusImage As Image
     Public currentProgress As Integer
-    Enum originalData As Integer
-        oFrmWidth = 675
-        oFrmHeight = 385
-    End Enum
-    Enum originalDataBackup As Integer
-        oFrmWidth = 533
-        oFrmHeight = 211
-    End Enum
     Private Sub fullUI(ByVal isEnable As Boolean)
         tmrChargeAnimate.Enabled = isEnable
         tmrUIFresh.Enabled = isEnable
