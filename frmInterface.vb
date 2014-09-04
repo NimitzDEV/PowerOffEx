@@ -78,17 +78,19 @@ Public Class frmInterface
         batteryStatusImage = My.Resources.fullbattery
         SaveSettings()
     End Sub
+    Private Sub showUpUI()
+        showSwipAnimation()
+        Me.Visible = Not Me.Visible
+        fullUI(Me.Visible)
+        Me.Left = MousePosition.X - Me.Width / 2
+        Me.Top = Screen.PrimaryScreen.WorkingArea.Height - Me.Height
+    End Sub
 
     Private Sub notifyIcon_MouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles notifyIcon.MouseClick
         If e.Button = MouseButtons.Left Then
-            showSwipAnimation()
-            Me.Visible = Not Me.Visible
-            fullUI(Me.Visible)
-            Me.Left = MousePosition.X - Me.Width / 2
-            Me.Top = Screen.PrimaryScreen.WorkingArea.Height - Me.Height
-
+            showUpUI()
         ElseIf e.Button = MouseButtons.Right Then
-            cmsRightClick.Show(MousePosition.X, MousePosition.Y)
+            cmsRightClick.Show(MousePosition.X - cmsRightClick.Width / 2, MousePosition.Y)
         End If
     End Sub
 
@@ -169,7 +171,8 @@ Public Class frmInterface
     End Sub
 
     Private Sub btnExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMenu.Click
-        cmsInterfaceMenu.Show(btnMenu, 0, btnMenu.Height)
+        cmsInterfaceMenu.Show(btnMenu, btnMenu.Width - cmsInterfaceMenu.Width, 0)
+
     End Sub
 
     Private Sub add10_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles add10.Click
@@ -193,7 +196,7 @@ Public Class frmInterface
     End Sub
 
     Private Sub QqqToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles QqqToolStripMenuItem.Click
-        Me.Visible = Not Me.Visible
+        showUpUI()
     End Sub
 
     Private Sub 退出ToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles 退出ToolStripMenuItem.Click
