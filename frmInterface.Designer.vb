@@ -38,8 +38,6 @@ Partial Class frmInterface
         Me.add50 = New System.Windows.Forms.ToolStripMenuItem()
         Me.add1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.add2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripSeparator()
-        Me.自定义ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.remainTip = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator()
         Me.QqqToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -52,6 +50,11 @@ Partial Class frmInterface
         Me.pbStatus = New System.Windows.Forms.PictureBox()
         Me.cmsInterfaceMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.加时ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.add10min = New System.Windows.Forms.ToolStripMenuItem()
+        Me.add20min = New System.Windows.Forms.ToolStripMenuItem()
+        Me.add30min = New System.Windows.Forms.ToolStripMenuItem()
+        Me.add60min = New System.Windows.Forms.ToolStripMenuItem()
+        Me.add120min = New System.Windows.Forms.ToolStripMenuItem()
         Me.隐藏ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.返回ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripSeparator()
@@ -110,7 +113,7 @@ Partial Class frmInterface
         '
         '延长时间ToolStripMenuItem
         '
-        Me.延长时间ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.add10, Me.add20, Me.add50, Me.add1, Me.add2, Me.ToolStripMenuItem3, Me.自定义ToolStripMenuItem})
+        Me.延长时间ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.add10, Me.add20, Me.add50, Me.add1, Me.add2})
         Me.延长时间ToolStripMenuItem.Name = "延长时间ToolStripMenuItem"
         Me.延长时间ToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.延长时间ToolStripMenuItem.Text = "延长时间"
@@ -131,7 +134,7 @@ Partial Class frmInterface
         '
         Me.add50.Name = "add50"
         Me.add50.Size = New System.Drawing.Size(114, 22)
-        Me.add50.Text = "50分钟"
+        Me.add50.Text = "30分钟"
         '
         'add1
         '
@@ -144,17 +147,6 @@ Partial Class frmInterface
         Me.add2.Name = "add2"
         Me.add2.Size = New System.Drawing.Size(114, 22)
         Me.add2.Text = "2小时"
-        '
-        'ToolStripMenuItem3
-        '
-        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(111, 6)
-        '
-        '自定义ToolStripMenuItem
-        '
-        Me.自定义ToolStripMenuItem.Name = "自定义ToolStripMenuItem"
-        Me.自定义ToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
-        Me.自定义ToolStripMenuItem.Text = "自定义"
         '
         'remainTip
         '
@@ -218,9 +210,40 @@ Partial Class frmInterface
         '
         '加时ToolStripMenuItem
         '
+        Me.加时ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.add10min, Me.add20min, Me.add30min, Me.add60min, Me.add120min})
         Me.加时ToolStripMenuItem.Name = "加时ToolStripMenuItem"
         Me.加时ToolStripMenuItem.Size = New System.Drawing.Size(100, 22)
         Me.加时ToolStripMenuItem.Text = "加时"
+        '
+        'add10min
+        '
+        Me.add10min.Name = "add10min"
+        Me.add10min.Size = New System.Drawing.Size(152, 22)
+        Me.add10min.Text = "10分钟"
+        '
+        'add20min
+        '
+        Me.add20min.Name = "add20min"
+        Me.add20min.Size = New System.Drawing.Size(152, 22)
+        Me.add20min.Text = "20分钟"
+        '
+        'add30min
+        '
+        Me.add30min.Name = "add30min"
+        Me.add30min.Size = New System.Drawing.Size(152, 22)
+        Me.add30min.Text = "30分钟"
+        '
+        'add60min
+        '
+        Me.add60min.Name = "add60min"
+        Me.add60min.Size = New System.Drawing.Size(152, 22)
+        Me.add60min.Text = "1小时"
+        '
+        'add120min
+        '
+        Me.add120min.Name = "add120min"
+        Me.add120min.Size = New System.Drawing.Size(152, 22)
+        Me.add120min.Text = "2小时"
         '
         '隐藏ToolStripMenuItem
         '
@@ -281,8 +304,6 @@ Partial Class frmInterface
     Friend WithEvents add50 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents add1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents add2 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem3 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents 自定义ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents add10 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tmrChargeAnimate As System.Windows.Forms.Timer
     Friend WithEvents tmrUIFresh As System.Windows.Forms.Timer
@@ -297,4 +318,9 @@ Partial Class frmInterface
     Friend WithEvents 返回ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem4 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents 退出ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents add10min As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents add20min As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents add30min As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents add60min As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents add120min As System.Windows.Forms.ToolStripMenuItem
 End Class

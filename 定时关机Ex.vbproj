@@ -119,12 +119,6 @@
     <Compile Include="frmReminder.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTimeAdd.Designer.vb">
-      <DependentUpon>frmTimeAdd.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmTimeAdd.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmNotify.Designer.vb">
       <DependentUpon>frmNotify.vb</DependentUpon>
     </Compile>
@@ -188,9 +182,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReminder.resx">
       <DependentUpon>frmReminder.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmTimeAdd.resx">
-      <DependentUpon>frmTimeAdd.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNotify.resx">
       <DependentUpon>frmNotify.vb</DependentUpon>

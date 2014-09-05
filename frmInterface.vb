@@ -172,23 +172,23 @@ Public Class frmInterface
     End Sub
 
     Private Sub add10_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles add10.Click
-        valSetTime += 10 * 60
+        addTime(10)
     End Sub
 
     Private Sub add20_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles add20.Click
-        valSetTime += 20 * 60
+        addTime(20)
     End Sub
 
     Private Sub add50_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles add50.Click
-        valSetTime += 50 * 60
+        addTime(30)
     End Sub
 
     Private Sub add1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles add1.Click
-        valSetTime += 60 * 60
+        addTime(60)
     End Sub
 
     Private Sub add2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles add2.Click
-        valSetTime += 120 * 60
+        addTime(120)
     End Sub
 
     Private Sub QqqToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles QqqToolStripMenuItem.Click
@@ -199,9 +199,6 @@ Public Class frmInterface
         exitProgram(1)
     End Sub
 
-    Private Sub 自定义ToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles 自定义ToolStripMenuItem.Click
-        frmTimeAdd.Show(Me)
-    End Sub
 
     Private Sub tmrChargeAnimate_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmrChargeAnimate.Tick
         If (batteryChargeStatus = 1 And batteryStatus = 8) Or (batteryChargeStatus = 1 And batteryStatus <> 0) Then
@@ -288,4 +285,29 @@ Public Class frmInterface
         frmMain.Show()
     End Sub
 
+    Private Sub addTime(ByVal min As Integer)
+        valSetTime += min * 60
+        fullTime = valSetTime
+    End Sub
+
+
+    Private Sub add10min_Click(sender As Object, e As EventArgs) Handles add10min.Click
+        addTime(10)
+    End Sub
+
+    Private Sub add20min_Click(sender As Object, e As EventArgs) Handles add20min.Click
+        addTime(20)
+    End Sub
+
+    Private Sub add30min_Click(sender As Object, e As EventArgs) Handles add30min.Click
+        addTime(30)
+    End Sub
+
+    Private Sub add60min_Click(sender As Object, e As EventArgs) Handles add60min.Click
+        addTime(60)
+    End Sub
+
+    Private Sub add120min_Click(sender As Object, e As EventArgs) Handles add120min.Click
+        addTime(120)
+    End Sub
 End Class
