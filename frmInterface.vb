@@ -49,6 +49,10 @@ Public Class frmInterface
         origiWidth = Me.Width
         pbStatus.Left = 0
         pbStatus.Top = 0
+
+        Me.Region = roundedCorner(Me, 20)
+
+
         'pbStatus.Image = DrawProgressBar(My.Resources.res_drawbg_normal, 45, 90, pbStatus, Me, Color.Red, Color.DodgerBlue, "", My.Resources.res_drawbg_normal)
         fullTime = valSetTime
         fullPercent = batteryPercent - valBatteryLifeLB
@@ -94,6 +98,7 @@ Public Class frmInterface
 
     Private Sub frmInterface_Paint(ByVal sender As Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles Me.Paint
         'drawWindowStep2(Me, e, Color.White, Color.DodgerBlue)
+
     End Sub
 
     Private Sub animationTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles animationTimer.Tick
@@ -174,10 +179,8 @@ Public Class frmInterface
     End Sub
 
     Private Sub btnExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMenu.Click
-        cmsInterfaceMenu.Show(btnMenu, btnMenu.Width - cmsInterfaceMenu.Width, -cmsInterfaceMenu.Height + btnMenu.Height)
-
+        cmsInterfaceMenu.Show(btnMenu, -76, -75)
     End Sub
-
     Private Sub add10_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles add10.Click
         addTime(10)
     End Sub

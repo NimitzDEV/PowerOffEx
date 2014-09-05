@@ -4,7 +4,6 @@ Module mdUIElements
     Dim stringformat As New StringFormat
     '常规
     Dim stringFormat2 As New StringFormat
-        
     Public Function DrawProgressBar(ByVal bgImage As Image, ByVal CurrentAngle As Integer, _
                                     ByVal changingAngle As Integer, ByVal drawObject As PictureBox, _
                                     ByVal endColor As Color, ByVal startColor As Color, _
@@ -44,4 +43,17 @@ Module mdUIElements
         Return bmp
     End Function
 
+    Public Function roundedCorner(ByVal rForm As Form, ByVal cAngle As Integer) As System.Drawing.Region
+        Dim p As New Drawing2D.GraphicsPath()
+        p.StartFigure()
+        p.AddArc(New Rectangle(0, 0, cAngle, cAngle), 180, 90)
+        p.AddLine(cAngle, 0, rForm.Width - cAngle, 0)
+        p.AddArc(New Rectangle(rForm.Width - cAngle, 0, cAngle, cAngle), -90, 90)
+        p.AddLine(rForm.Width, cAngle, rForm.Width, rForm.Height - cAngle)
+        p.AddArc(New Rectangle(rForm.Width - cAngle, rForm.Height - cAngle, cAngle, cAngle), 0, 90)
+        p.AddLine(rForm.Width - cAngle, rForm.Height, cAngle, rForm.Height)
+        p.AddArc(New Rectangle(0, rForm.Height - cAngle, cAngle, cAngle), 90, 90)
+        p.CloseFigure()
+        Return New System.Drawing.Region(p)
+    End Function
 End Module

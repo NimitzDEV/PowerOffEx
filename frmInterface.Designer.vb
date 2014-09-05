@@ -56,9 +56,9 @@ Partial Class frmInterface
         Me.add120min = New System.Windows.Forms.ToolStripMenuItem()
         Me.隐藏ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.返回ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripSeparator()
         Me.退出ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.pbStatus = New System.Windows.Forms.PictureBox()
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripSeparator()
         Me.cmsRightClick.SuspendLayout()
         Me.cmsInterfaceMenu.SuspendLayout()
         CType(Me.pbStatus, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -196,16 +196,15 @@ Partial Class frmInterface
         '
         'cmsInterfaceMenu
         '
-        Me.cmsInterfaceMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.加时ToolStripMenuItem, Me.ToolStripMenuItem4, Me.返回ToolStripMenuItem, Me.退出ToolStripMenuItem1, Me.隐藏ToolStripMenuItem})
+        Me.cmsInterfaceMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.加时ToolStripMenuItem, Me.ToolStripMenuItem3, Me.返回ToolStripMenuItem, Me.退出ToolStripMenuItem1, Me.隐藏ToolStripMenuItem})
         Me.cmsInterfaceMenu.Name = "cmsInterfaceMenu"
         Me.cmsInterfaceMenu.Size = New System.Drawing.Size(153, 120)
-        Me.cmsInterfaceMenu.Text = "界面菜单"
         '
         '加时ToolStripMenuItem
         '
         Me.加时ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.add10min, Me.add20min, Me.add30min, Me.add60min, Me.add120min})
         Me.加时ToolStripMenuItem.Name = "加时ToolStripMenuItem"
-        Me.加时ToolStripMenuItem.Size = New System.Drawing.Size(100, 22)
+        Me.加时ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.加时ToolStripMenuItem.Text = "加时"
         '
         'add10min
@@ -241,24 +240,19 @@ Partial Class frmInterface
         '隐藏ToolStripMenuItem
         '
         Me.隐藏ToolStripMenuItem.Name = "隐藏ToolStripMenuItem"
-        Me.隐藏ToolStripMenuItem.Size = New System.Drawing.Size(100, 22)
+        Me.隐藏ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.隐藏ToolStripMenuItem.Text = "隐藏"
         '
         '返回ToolStripMenuItem
         '
         Me.返回ToolStripMenuItem.Name = "返回ToolStripMenuItem"
-        Me.返回ToolStripMenuItem.Size = New System.Drawing.Size(100, 22)
+        Me.返回ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.返回ToolStripMenuItem.Text = "返回"
-        '
-        'ToolStripMenuItem4
-        '
-        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(97, 6)
         '
         '退出ToolStripMenuItem1
         '
         Me.退出ToolStripMenuItem1.Name = "退出ToolStripMenuItem1"
-        Me.退出ToolStripMenuItem1.Size = New System.Drawing.Size(100, 22)
+        Me.退出ToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.退出ToolStripMenuItem1.Text = "退出"
         '
         'pbStatus
@@ -268,6 +262,11 @@ Partial Class frmInterface
         Me.pbStatus.Size = New System.Drawing.Size(300, 300)
         Me.pbStatus.TabIndex = 7
         Me.pbStatus.TabStop = False
+        '
+        'ToolStripMenuItem3
+        '
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(149, 6)
         '
         'frmInterface
         '
@@ -317,11 +316,11 @@ Partial Class frmInterface
     Friend WithEvents 加时ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents 隐藏ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents 返回ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem4 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents 退出ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents add10min As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents add20min As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents add30min As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents add60min As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents add120min As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem3 As System.Windows.Forms.ToolStripSeparator
 End Class
