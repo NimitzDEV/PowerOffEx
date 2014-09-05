@@ -3,6 +3,7 @@ Public Class frmInterface
     Dim batteryAnimateStep As Integer
     Dim targetTime As Integer
     Dim fullTime As Integer
+    Dim fullPercent As Integer
     Private device As MMDevice
     Dim origiHeight As Integer
     Dim origiWidth As Integer
@@ -39,6 +40,7 @@ Public Class frmInterface
         'lbConnectStatus.Left = (pnlNetworkConnection.Width - lbConnectStatus.Width) / 2
     End Sub
     Private Sub frmInterface_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        updateBatteryInfo()
         Me.Width = pbStatus.Width
         Me.Height = pbStatus.Height
         origiHeight = Me.Height
@@ -47,6 +49,7 @@ Public Class frmInterface
         pbStatus.Top = 0
         'pbStatus.Image = DrawProgressBar(My.Resources.res_drawbg_normal, 45, 90, pbStatus, Me, Color.Red, Color.DodgerBlue, "", My.Resources.res_drawbg_normal)
         fullTime = valSetTime
+        fullPercent = batteryPercent - valBatteryLifeLB
         'reconstractUi()
         notifyIcon.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info
         notifyIcon.BalloonTipText = "点击这里打开详细页面"
@@ -62,7 +65,6 @@ Public Class frmInterface
         tmrCheckTv.Enabled = chk_RECORD
         tmrReminder.Enabled = chk_REMINDER
         targetTime = pref_VOL_EFF_HOUR * 60 + pref_VOL_EFF_MIN
-        updateBatteryInfo()
         freshUI()
         tmrVol.Enabled = chk_VOLCTRL
         If frmMain.rbSetTime.Checked = False Then
@@ -136,6 +138,9 @@ Public Class frmInterface
                 exitProgram(0)
             End If
             batteryStatusMode()
+            currentProgress = (batteryPercent - valBatteryLifeLB) / fullPercent * 100
+            showStringMiddle = batteryPercent & "%"
+            showStringDown = ""
         End If
         '///////////////////////////////////////////////////////////////////////////////////////////
 
