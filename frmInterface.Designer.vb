@@ -47,7 +47,6 @@ Partial Class frmInterface
         Me.tmrVol = New System.Windows.Forms.Timer(Me.components)
         Me.tmrReminder = New System.Windows.Forms.Timer(Me.components)
         Me.tmrProgressDrawer = New System.Windows.Forms.Timer(Me.components)
-        Me.pbStatus = New System.Windows.Forms.PictureBox()
         Me.cmsInterfaceMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.加时ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.add10min = New System.Windows.Forms.ToolStripMenuItem()
@@ -59,9 +58,10 @@ Partial Class frmInterface
         Me.返回ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripSeparator()
         Me.退出ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.pbStatus = New System.Windows.Forms.PictureBox()
         Me.cmsRightClick.SuspendLayout()
-        CType(Me.pbStatus, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.cmsInterfaceMenu.SuspendLayout()
+        CType(Me.pbStatus, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'notifyIcon
@@ -87,7 +87,7 @@ Partial Class frmInterface
         'btnMenu
         '
         Me.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnMenu.Location = New System.Drawing.Point(261, 12)
+        Me.btnMenu.Location = New System.Drawing.Point(265, 266)
         Me.btnMenu.Name = "btnMenu"
         Me.btnMenu.Size = New System.Drawing.Size(25, 23)
         Me.btnMenu.TabIndex = 1
@@ -194,19 +194,12 @@ Partial Class frmInterface
         Me.tmrProgressDrawer.Enabled = True
         Me.tmrProgressDrawer.Interval = 200
         '
-        'pbStatus
-        '
-        Me.pbStatus.Location = New System.Drawing.Point(0, 0)
-        Me.pbStatus.Name = "pbStatus"
-        Me.pbStatus.Size = New System.Drawing.Size(300, 300)
-        Me.pbStatus.TabIndex = 7
-        Me.pbStatus.TabStop = False
-        '
         'cmsInterfaceMenu
         '
-        Me.cmsInterfaceMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.加时ToolStripMenuItem, Me.隐藏ToolStripMenuItem, Me.返回ToolStripMenuItem, Me.ToolStripMenuItem4, Me.退出ToolStripMenuItem1})
+        Me.cmsInterfaceMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.加时ToolStripMenuItem, Me.ToolStripMenuItem4, Me.返回ToolStripMenuItem, Me.退出ToolStripMenuItem1, Me.隐藏ToolStripMenuItem})
         Me.cmsInterfaceMenu.Name = "cmsInterfaceMenu"
-        Me.cmsInterfaceMenu.Size = New System.Drawing.Size(101, 98)
+        Me.cmsInterfaceMenu.Size = New System.Drawing.Size(153, 120)
+        Me.cmsInterfaceMenu.Text = "界面菜单"
         '
         '加时ToolStripMenuItem
         '
@@ -268,11 +261,19 @@ Partial Class frmInterface
         Me.退出ToolStripMenuItem1.Size = New System.Drawing.Size(100, 22)
         Me.退出ToolStripMenuItem1.Text = "退出"
         '
+        'pbStatus
+        '
+        Me.pbStatus.Location = New System.Drawing.Point(0, 0)
+        Me.pbStatus.Name = "pbStatus"
+        Me.pbStatus.Size = New System.Drawing.Size(300, 300)
+        Me.pbStatus.TabIndex = 7
+        Me.pbStatus.TabStop = False
+        '
         'frmInterface
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(298, 330)
+        Me.ClientSize = New System.Drawing.Size(337, 330)
         Me.ControlBox = False
         Me.Controls.Add(Me.btnMenu)
         Me.Controls.Add(Me.pbStatus)
@@ -283,8 +284,8 @@ Partial Class frmInterface
         Me.Text = "详细"
         Me.TopMost = True
         Me.cmsRightClick.ResumeLayout(False)
-        CType(Me.pbStatus, System.ComponentModel.ISupportInitialize).EndInit()
         Me.cmsInterfaceMenu.ResumeLayout(False)
+        CType(Me.pbStatus, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

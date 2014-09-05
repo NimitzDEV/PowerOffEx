@@ -163,4 +163,10 @@
   <data name="internet_on_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\res\internet_on_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="internet_connected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\internet_connected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="internet_disconnected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\internet_disconnected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

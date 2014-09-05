@@ -24,10 +24,10 @@ Module mdUIElements
         g = Graphics.FromImage(bmp)
         '网络连接状态
         g.DrawImage(linkStatusImage, 10, bmp.Height - 30, 20, 20)
-        g.DrawString(linkStatusString, New Font("Segoe UI", 8, FontStyle.Regular), Brushes.White, New Point(60, bmp.Height - 15), stringformat)
+        g.DrawString(linkStatusString, New Font("Segoe UI", 8, FontStyle.Regular), Brushes.White, New Point(55, bmp.Height - 20), stringformat)
         '电池状态
-        g.DrawImage(batteryStatusImage, 100, bmp.Height - 30, 30, 30)
-        g.DrawString(batteryStatusString, New Font("Segoe UI", 8, FontStyle.Regular), Brushes.White, New Point(140, bmp.Height - 15), stringFormat2)
+        g.DrawImage(batteryStatusImage, 90, bmp.Height - 35, 30, 30)
+        g.DrawString(batteryStatusString, New Font("Segoe UI", 8, FontStyle.Regular), Brushes.White, New Point(120, bmp.Height - 20), stringFormat2)
         '时间状态
         g.DrawString(showStringMiddle, New Font("Segoe UI", 32, FontStyle.Bold), Brushes.White, New Point(bmp.Width / 2, bmp.Height / 2), stringformat)
         g.DrawString(showStringDown, New Font("Segoe UI", 20, FontStyle.Bold), Brushes.White, New Point(bmp.Width / 2, bmp.Height - 55), stringformat)

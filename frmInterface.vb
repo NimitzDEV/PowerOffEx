@@ -34,8 +34,10 @@ Public Class frmInterface
         networkStatus = System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable
         If networkStatus = True Then
             linkStatusString = " 网络连接"
+            linkStatusImage = My.Resources.internet_connected
         Else
             linkStatusString = " 网络断开"
+            linkStatusImage = My.Resources.internet_disconnected
         End If
         'lbConnectStatus.Left = (pnlNetworkConnection.Width - lbConnectStatus.Width) / 2
     End Sub
@@ -172,7 +174,7 @@ Public Class frmInterface
     End Sub
 
     Private Sub btnExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMenu.Click
-        cmsInterfaceMenu.Show(btnMenu, btnMenu.Width - cmsInterfaceMenu.Width, 0)
+        cmsInterfaceMenu.Show(btnMenu, btnMenu.Width - cmsInterfaceMenu.Width, -cmsInterfaceMenu.Height + btnMenu.Height)
 
     End Sub
 
@@ -273,7 +275,7 @@ Public Class frmInterface
     Private Sub tmrProgressDrawer_Tick(sender As Object, e As EventArgs) Handles tmrProgressDrawer.Tick
         changingAngle += 3
         If changingAngle > 360 Then changingAngle = 0
-        pbStatus.Image = DrawProgressBar(My.Resources.res_drawbg_normal, currentProgress, changingAngle, pbStatus, Color.Orange, Color.DodgerBlue, linkStatusString, My.Resources.internet_on_white, batteryStatusString, batteryStatusImage, showStringMiddle, showStringDown)
+        pbStatus.Image = DrawProgressBar(My.Resources.res_drawbg_normal, currentProgress, changingAngle, pbStatus, Color.Orange, Color.DodgerBlue, linkStatusString, linkStatusImage, batteryStatusString, batteryStatusImage, showStringMiddle, showStringDown)
     End Sub
 
     Private Sub 退出ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles 退出ToolStripMenuItem1.Click
