@@ -57,7 +57,7 @@ Public Class frmInterface
         '绘制阴影
         drawWindowStep1(Me)
         '动画效果
-        'showSwipAnimation()
+        showSwipAnimation()
         '开始
         tmrCheckTv.Enabled = chk_RECORD
         tmrReminder.Enabled = chk_REMINDER
