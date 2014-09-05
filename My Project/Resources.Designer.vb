@@ -83,26 +83,6 @@ Namespace My.Resources
         '''<summary>
         '''  查找 System.Drawing.Bitmap 类型的本地化资源。
         '''</summary>
-        Public ReadOnly Property charging() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("charging", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
-        '''</summary>
-        Public ReadOnly Property charging2() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("charging2", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
-        '''</summary>
         Public ReadOnly Property charging3() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("charging3", resourceCulture)
@@ -116,16 +96,6 @@ Namespace My.Resources
         Public ReadOnly Property clock2() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("clock2", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
-        '''</summary>
-        Public ReadOnly Property disconnect() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("disconnect", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -236,16 +206,6 @@ Namespace My.Resources
         Public ReadOnly Property wait64px() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("wait64px", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
-        '''</summary>
-        Public ReadOnly Property wire() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("wire", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
