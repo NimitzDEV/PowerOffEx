@@ -83,7 +83,7 @@ Partial Class frmInterface
         '
         'btnMenu
         '
-        Me.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnMenu.Location = New System.Drawing.Point(261, 12)
         Me.btnMenu.Name = "btnMenu"
         Me.btnMenu.Size = New System.Drawing.Size(25, 23)

@@ -13,6 +13,8 @@ Public Class frmInterface
     Public batteryStatusString As String
     Public batteryStatusImage As Image
     Public currentProgress As Integer
+    Public showStringMiddle As String
+    Public showStringDown As String
     Private Sub fullUI(ByVal isEnable As Boolean)
         tmrChargeAnimate.Enabled = isEnable
         tmrUIFresh.Enabled = isEnable
@@ -121,6 +123,8 @@ Public Class frmInterface
                 exitProgram(0)
             End If
             currentProgress = (valSetTime) / fullTime * 100
+            showStringMiddle = Split(converTime(valSetTime), "分")(0) & "分"
+            showStringDown = Split(converTime(valSetTime), "分")(1).Replace("秒", "")
             'pbStatus.Image = DrawProgressBar(My.Resources.res_drawbg_normal, (valSetTime) / fullTime * 100, 90, pbStatus, Me, Color.Red, Color.DodgerBlue, "", My.Resources.res_drawbg_normal)
         ElseIf valBatteryLifeLB > 0 Then
             remainTip.Text = "将在电量低于" & valBatteryLifeLB & "%时关机"
@@ -267,7 +271,7 @@ Public Class frmInterface
     Private Sub tmrProgressDrawer_Tick(sender As Object, e As EventArgs) Handles tmrProgressDrawer.Tick
         changingAngle += 3
         If changingAngle > 360 Then changingAngle = 0
-        pbStatus.Image = DrawProgressBar(My.Resources.res_drawbg_normal, currentProgress, changingAngle, pbStatus, Color.Orange, Color.DodgerBlue, linkStatusString, My.Resources.internet_on_white, batteryStatusString, batteryStatusImage)
+        pbStatus.Image = DrawProgressBar(My.Resources.res_drawbg_normal, currentProgress, changingAngle, pbStatus, Color.Orange, Color.DodgerBlue, linkStatusString, My.Resources.internet_on_white, batteryStatusString, batteryStatusImage, showStringMiddle, showStringDown)
     End Sub
 
     Private Sub 退出ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles 退出ToolStripMenuItem1.Click
