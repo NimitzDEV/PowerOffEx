@@ -9,17 +9,22 @@
     Private Sub frmUpdate_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Height = 128
         Me.Top = frmMain.Top
-        wbStart.Navigate("http://nimitzdev.free3v.net/update/update_dsgjex.txt")
+        wbStart.Navigate("ftp://nimitzdev:199512196@002.3vftp.com/update/update_dsgjex.txt")
     End Sub
 
     Private Sub wbStart_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles wbStart.DocumentCompleted
-        Dim gs() As String = (From mt As HtmlElement In wbStart.Document.Links Select System.Text.RegularExpressions.Regex.Match(mt.OuterHtml, "http://[^\x22 >]+").Value).ToArray
-        If gs.Count = 0 Then
-            MsgBox("噢~真不好意思~服务器打了一下小瞌睡，重新试一次叫醒她")
-            Me.Close()
-            Exit Sub
-        End If
-        wbInfo.Navigate(gs(0))
+        'Dim gs() As String = (From mt As HtmlElement In wbStart.Document.Links Select System.Text.RegularExpressions.Regex.Match(mt.OuterHtml, "http://[^\x22 >]+").Value).ToArray
+        'If gs.Count = 0 Then
+        '    MsgBox("噢~真不好意思~服务器打了一下小瞌睡，重新试一次叫醒她")
+        '    Me.Close()
+        '    Exit Sub
+        'End If
+        'wbInfo.Navigate(gs(0))
+        docString = wbStart.DocumentText
+        versionString = Split(docString, "≡")(1).Trim
+        updateString = Split(docString, "≡")(2).Trim
+        linkString = Split(docString, "≡")(3).Trim
+        detectUpdate()
     End Sub
 
     Private Sub wbInfo_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles wbInfo.DocumentCompleted

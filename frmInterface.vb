@@ -74,7 +74,7 @@ Public Class frmInterface
         targetTime = pref_VOL_EFF_HOUR * 60 + pref_VOL_EFF_MIN
         freshUI()
         tmrVol.Enabled = chk_VOLCTRL
-        If frmMain.rbSetTime.Checked = False Then
+        If frmMain.FlatTabControl1.SelectedIndex = 1 Then
             延长时间ToolStripMenuItem.Visible = False
             加时ToolStripMenuItem.Visible = False
         End If

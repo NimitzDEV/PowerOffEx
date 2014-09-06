@@ -2,6 +2,7 @@
 Public Class frmMain
     Dim inputArgument As String = "/input="
     Dim inputName As String = ""
+    Public selectedMode As Integer = 0
     Private Sub frmMain_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         SaveSettings()
     End Sub
@@ -13,67 +14,65 @@ Public Class frmMain
         Me.Text = Application.ProductName & " - " & Application.ProductVersion
         If checkIsLaptop() = True Then
             updateBatteryInfo()
-            rbEvents.Enabled = True
-            nudBattery.Maximum = batteryPercent
+            'rbEvents.Enabled = True
+            'nudBattery.Maximum = batteryPercent
         End If
-        nudHour.Value = pref_HOUR
-        nudMinute.Value = pref_MIN
-        cbRecordTvProgress.Checked = chk_RECORD
-        cbVol.Checked = chk_VOLCTRL
-        chkTimeTip.Checked = chk_REMINDER
+        fNHour.Value = pref_HOUR
+        fNMinute.Value = pref_MIN
+        ftRecord.Checked = chk_RECORD
+        ftVol.Checked = chk_VOLCTRL
+        ftReminder.Checked = chk_REMINDER
         valSetTime = 0
         startArgsChecking()
+        FormSkin1.Text = Me.Text
     End Sub
 
 
     Private Function assResolve(ByVal sender As System.Object, ByVal e As System.ResolveEventArgs) As System.Reflection.Assembly
         Return EmbeddedAssembly.Get(e.Name)
     End Function
-   
 
-    Private Sub rbEvents_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbEvents.CheckedChanged
-        updateBatteryInfo()
-        If batteryChargeStatus = 1 Then
-            lbTip2.Text = "% 时 - 当前正在充电，不可用"
-            nudBattery.Enabled = False
-        Else
-            nudBattery.Enabled = True
-            lbTip2.Text = "% 时 - 当前剩余：" & batteryPercent
-            If batteryLife = 0 Or batteryLife = -1 Then
-                lbTip2.Text &= "% - 暂时无法估算剩余时间"
-            Else
-                lbTip2.Text &= "% - 电池可用" & converTime(batteryLife)
-            End If
-        End If
-        Debug.Print(batteryLife)
+
+    Private Sub tsmiContinue_Click(sender As Object, e As EventArgs) Handles tsmiContinue.Click
+        valBatteryLifeLB = 0
+        frmInterface.Show()
+        Me.Hide()
     End Sub
 
-    Private Sub btnSet_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSet.Click
-        If rbSetTime.Checked = True Then
-            If nudHour.Value = 0 And nudMinute.Value = 0 Then
+    Private Sub tsmiRefresh_Click(sender As Object, e As EventArgs) Handles tsmiRefresh.Click
+        valSetTime = fNHour.Value * 3600 + fNMinute.Value * 60
+        valBatteryLifeLB = 0
+        frmInterface.Show()
+        Me.Hide()
+    End Sub
+
+
+    Private Sub btnStart_Click(sender As Object, e As EventArgs) Handles btnStart.Click
+        If FlatTabControl1.SelectedIndex = 0 Then
+            If fNHour.Value = 0 And fNMinute.Value = 0 Then
                 MsgBox("时间不能为0")
                 Exit Sub
             Else
                 If valSetTime > 0 Then
-                    cmsSelect.Show(btnSet, 0, btnSet.Height)
+                    cmsSelect.Show(btnStart, 0, btnStart.Height)
                     tsmiContinue.Text = "继续刚才（剩余" & converTime(valSetTime) & ")"
                     Exit Sub
                 End If
-                valSetTime = nudHour.Value * 3600 + nudMinute.Value * 60
+                valSetTime = fNHour.Value * 3600 + fNMinute.Value * 60
                 valBatteryLifeLB = 0
             End If
         End If
-        If rbEvents.Checked = True Then
+        If FlatTabControl1.SelectedIndex = 1 Then
             updateBatteryInfo()
             If batteryChargeStatus = 1 Then
                 MsgBox("当前正在充电，无法使用此功能")
                 Exit Sub
             Else
                 valSetTime = 0
-                valBatteryLifeLB = nudBattery.Value
+                valBatteryLifeLB = ftbBattery.Value
             End If
         End If
-        If cbVol.Checked Then
+        If ftVol.Checked Then
             If osMajorVersion > 5 Then
                 Dim device As MMDevice
                 Dim DevEnum As New MMDeviceEnumerator()
@@ -86,22 +85,92 @@ Public Class frmMain
                 End If
             End If
         End If
-        pref_HOUR = nudHour.Value
-        pref_MIN = nudMinute.Value
+        pref_HOUR = fNHour.Value
+        pref_MIN = fNMinute.Value
         frmInterface.Show()
         Me.Hide()
     End Sub
 
-
-    Private Sub llbHistory_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles llbHistory.LinkClicked
-        frmTVP.ShowDialog()
+    Private Sub btnFindNew_Click(sender As Object, e As EventArgs) Handles btnFindNew.Click
+        frmUpdate.ShowDialog()
+        frmUpdate.Dispose()
     End Sub
 
-    Private Sub llbAbout_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles llbAbout.LinkClicked
+    Private Sub FlatClose1_Click(sender As Object, e As EventArgs) Handles FlatClose1.Click
+        Me.Close()
+    End Sub
+
+
+    Private Sub fbAbout_Click(sender As Object, e As EventArgs) Handles fbAbout.Click
         frmAbout.ShowDialog()
     End Sub
 
-    Private Sub llbVolume_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llbVolume.LinkClicked
+    Private Sub tbBatteryMode_Click(sender As Object, e As EventArgs) Handles tbBatteryMode.Click
+
+    End Sub
+
+    Private Sub ftbBattery_Scroll(sender As Object) Handles ftbBattery.Scroll
+        lbBatterySettings.Text = "将在电量低于" & ftbBattery.Value & "%时关机"
+    End Sub
+
+    Private Sub FlatTabControl1_Click(sender As Object, e As EventArgs) Handles FlatTabControl1.Click
+        Select Case FlatTabControl1.SelectedIndex
+            Case 0
+                FlatTabControl1.ActiveColor = Color.FromArgb(35, 168, 109)
+            Case 1
+                fgbError.Visible = False
+                FlatTabControl1.ActiveColor = Color.DodgerBlue
+                updateBatteryInfo()
+                If checkIsLaptop() = False Then
+                    FlatAlertBox1.ShowControl(FlatAlertBox._Kind.Error, "台式机不适用此功能！", 5000)
+                    fgbError.Width = tbBatteryMode.Width
+                    fgbError.Visible = True
+                    Exit Sub
+                End If
+                ftbBattery.Maximum = batteryPercent - 1
+                ftbBattery.Minimum = 5
+                If batteryChargeStatus = 1 Then
+                    FlatAlertBox1.ShowControl(FlatAlertBox._Kind.Error, "当前正在充电不可用！", 5000)
+                    fgbError.Width = tbBatteryMode.Width
+                    fgbError.Visible = True
+                Else
+                    Dim tipString As String
+                    tipString = "剩余：" & batteryPercent & "%"
+                    If batteryLife = 0 Or batteryLife = -1 Then
+                        tipString &= "（暂时无法估算剩余时间）"
+                    Else
+                        tipString &= "（可用" & converTime(batteryLife) & "）"
+                    End If
+                    fpbCurrentBattery.Value = batteryPercent
+                    FlatAlertBox1.ShowControl(FlatAlertBox._Kind.Info, tipString, 6000)
+                End If
+                Debug.Print(batteryLife)
+            Case 2
+                FlatTabControl1.ActiveColor = Color.Orange
+        End Select
+        fsbTime.RectColor = FlatTabControl1.ActiveColor
+        FormSkin1.FlatColor = FlatTabControl1.ActiveColor
+        Me.Refresh()
+        'FlatAlertBox1.ShowControl(FlatAlertBox._Kind.Error, "错误", 5000)
+    End Sub
+
+    Private Sub ftRecord_CheckedChanged(sender As Object) Handles ftRecord.CheckedChanged
+        chk_RECORD = ftRecord.Checked
+    End Sub
+
+    Private Sub ftVol_CheckedChanged(sender As Object) Handles ftVol.CheckedChanged
+        chk_VOLCTRL = ftVol.Checked
+    End Sub
+
+    Private Sub ftReminder_CheckedChanged(sender As Object) Handles ftReminder.CheckedChanged
+        chk_REMINDER = ftReminder.Checked
+    End Sub
+
+    Private Sub fbHistory_Click(sender As Object, e As EventArgs) Handles fbHistory.Click
+        frmTVP.ShowDialog()
+    End Sub
+
+    Private Sub fbVolSettings_Click(sender As Object, e As EventArgs) Handles fbVolSettings.Click
         If osMajorVersion < 6 Then
             frmVolCtrl4XP.ShowDialog()
         Else
@@ -109,34 +178,7 @@ Public Class frmMain
         End If
     End Sub
 
-    Private Sub cbRecordTvProgress_CheckedChanged(sender As Object, e As EventArgs) Handles cbRecordTvProgress.CheckedChanged
-        chk_RECORD = cbRecordTvProgress.Checked
-    End Sub
-
-    Private Sub cbVol_CheckedChanged(sender As Object, e As EventArgs) Handles cbVol.CheckedChanged
-        chk_VOLCTRL = cbVol.Checked
-    End Sub
-
-
-    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
-        frmUpdate.ShowDialog()
-        frmUpdate.Dispose()
-    End Sub
-
-    Private Sub tsmiContinue_Click(sender As Object, e As EventArgs) Handles tsmiContinue.Click
-        valBatteryLifeLB = 0
-        frmInterface.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub tsmiRefresh_Click(sender As Object, e As EventArgs) Handles tsmiRefresh.Click
-        valSetTime = nudHour.Value * 3600 + nudMinute.Value * 60
-        valBatteryLifeLB = 0
-        frmInterface.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub chkTimeTip_CheckedChanged(sender As Object, e As EventArgs) Handles chkTimeTip.CheckedChanged
-        chk_REMINDER = chkTimeTip.Checked
+    Private Sub tmrTime_Tick(sender As Object, e As EventArgs) Handles tmrTime.Tick
+        fsbTime.Text = Date.Today & "- " & TimeOfDay
     End Sub
 End Class

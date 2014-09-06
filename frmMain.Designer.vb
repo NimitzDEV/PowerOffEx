@@ -24,260 +24,52 @@ Partial Class frmMain
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
-        Me.rbSetTime = New System.Windows.Forms.RadioButton()
-        Me.nudHour = New System.Windows.Forms.NumericUpDown()
-        Me.nudMinute = New System.Windows.Forms.NumericUpDown()
-        Me.lbTip1 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.llbVolume = New System.Windows.Forms.LinkLabel()
-        Me.cbVol = New System.Windows.Forms.CheckBox()
-        Me.llbHistory = New System.Windows.Forms.LinkLabel()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.lbTip2 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.nudBattery = New System.Windows.Forms.NumericUpDown()
-        Me.cbRecordTvProgress = New System.Windows.Forms.CheckBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.rbEvents = New System.Windows.Forms.RadioButton()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.btnSet = New System.Windows.Forms.Button()
-        Me.llbAbout = New System.Windows.Forms.LinkLabel()
-        Me.btnUpdate = New System.Windows.Forms.Button()
         Me.cmsSelect = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.tsmiRefresh = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
         Me.tsmiContinue = New System.Windows.Forms.ToolStripMenuItem()
-        Me.chkTimeTip = New System.Windows.Forms.CheckBox()
-        CType(Me.nudHour, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nudMinute, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox1.SuspendLayout()
-        CType(Me.nudBattery, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tmrTime = New System.Windows.Forms.Timer(Me.components)
+        Me.fsbTime = New 定时关机Ex.FlatStatusBar()
+        Me.FormSkin1 = New 定时关机Ex.FormSkin()
+        Me.FlatAlertBox1 = New 定时关机Ex.FlatAlertBox()
+        Me.FlatTabControl1 = New 定时关机Ex.FlatTabControl()
+        Me.tbTimeMode = New System.Windows.Forms.TabPage()
+        Me.FlatLabel4 = New 定时关机Ex.FlatLabel()
+        Me.FlatLabel3 = New 定时关机Ex.FlatLabel()
+        Me.FlatLabel2 = New 定时关机Ex.FlatLabel()
+        Me.fNMinute = New 定时关机Ex.FlatNumeric()
+        Me.fNHour = New 定时关机Ex.FlatNumeric()
+        Me.FlatLabel1 = New 定时关机Ex.FlatLabel()
+        Me.btnStart = New 定时关机Ex.FlatButton()
+        Me.tbBatteryMode = New System.Windows.Forms.TabPage()
+        Me.FlatLabel5 = New 定时关机Ex.FlatLabel()
+        Me.fgbError = New 定时关机Ex.FlatGroupBox()
+        Me.FlatLabel7 = New 定时关机Ex.FlatLabel()
+        Me.lbBatterySettings = New 定时关机Ex.FlatLabel()
+        Me.FlatLabel6 = New 定时关机Ex.FlatLabel()
+        Me.ftbBattery = New 定时关机Ex.FlatTrackBar()
+        Me.FlatButton1 = New 定时关机Ex.FlatButton()
+        Me.fpbCurrentBattery = New 定时关机Ex.FlatProgressBar()
+        Me.tbOptions = New System.Windows.Forms.TabPage()
+        Me.fbVolSettings = New 定时关机Ex.FlatButton()
+        Me.fbHistory = New 定时关机Ex.FlatButton()
+        Me.FlatLabel10 = New 定时关机Ex.FlatLabel()
+        Me.FlatLabel9 = New 定时关机Ex.FlatLabel()
+        Me.FlatLabel8 = New 定时关机Ex.FlatLabel()
+        Me.ftReminder = New 定时关机Ex.FlatToggle()
+        Me.ftVol = New 定时关机Ex.FlatToggle()
+        Me.ftRecord = New 定时关机Ex.FlatToggle()
+        Me.fbAbout = New 定时关机Ex.FlatButton()
+        Me.btnFindNew = New 定时关机Ex.FlatButton()
+        Me.FlatClose1 = New 定时关机Ex.FlatClose()
         Me.cmsSelect.SuspendLayout()
+        Me.FormSkin1.SuspendLayout()
+        Me.FlatTabControl1.SuspendLayout()
+        Me.tbTimeMode.SuspendLayout()
+        Me.tbBatteryMode.SuspendLayout()
+        Me.fgbError.SuspendLayout()
+        Me.tbOptions.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'rbSetTime
-        '
-        Me.rbSetTime.AutoSize = True
-        Me.rbSetTime.Checked = True
-        Me.rbSetTime.Location = New System.Drawing.Point(10, 18)
-        Me.rbSetTime.Name = "rbSetTime"
-        Me.rbSetTime.Size = New System.Drawing.Size(95, 16)
-        Me.rbSetTime.TabIndex = 0
-        Me.rbSetTime.TabStop = True
-        Me.rbSetTime.Text = "设定时间关机"
-        Me.rbSetTime.UseVisualStyleBackColor = True
-        '
-        'nudHour
-        '
-        Me.nudHour.Location = New System.Drawing.Point(29, 42)
-        Me.nudHour.Maximum = New Decimal(New Integer() {24, 0, 0, 0})
-        Me.nudHour.Name = "nudHour"
-        Me.nudHour.Size = New System.Drawing.Size(41, 21)
-        Me.nudHour.TabIndex = 1
-        Me.nudHour.Value = New Decimal(New Integer() {2, 0, 0, 0})
-        '
-        'nudMinute
-        '
-        Me.nudMinute.Location = New System.Drawing.Point(110, 42)
-        Me.nudMinute.Maximum = New Decimal(New Integer() {59, 0, 0, 0})
-        Me.nudMinute.Name = "nudMinute"
-        Me.nudMinute.Size = New System.Drawing.Size(41, 21)
-        Me.nudMinute.TabIndex = 2
-        '
-        'lbTip1
-        '
-        Me.lbTip1.AutoSize = True
-        Me.lbTip1.ForeColor = System.Drawing.Color.Tomato
-        Me.lbTip1.Location = New System.Drawing.Point(108, 20)
-        Me.lbTip1.Name = "lbTip1"
-        Me.lbTip1.Size = New System.Drawing.Size(137, 12)
-        Me.lbTip1.TabIndex = 3
-        Me.lbTip1.Text = "在设定的时间长度内关机"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(76, 44)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(29, 12)
-        Me.Label1.TabIndex = 4
-        Me.Label1.Text = "小时"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(157, 44)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(29, 12)
-        Me.Label2.TabIndex = 5
-        Me.Label2.Text = "分钟"
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.chkTimeTip)
-        Me.GroupBox1.Controls.Add(Me.llbVolume)
-        Me.GroupBox1.Controls.Add(Me.cbVol)
-        Me.GroupBox1.Controls.Add(Me.llbHistory)
-        Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.lbTip2)
-        Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.nudBattery)
-        Me.GroupBox1.Controls.Add(Me.cbRecordTvProgress)
-        Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.rbEvents)
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.rbSetTime)
-        Me.GroupBox1.Controls.Add(Me.nudHour)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.nudMinute)
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.lbTip1)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 2)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(433, 221)
-        Me.GroupBox1.TabIndex = 7
-        Me.GroupBox1.TabStop = False
-        '
-        'llbVolume
-        '
-        Me.llbVolume.AutoSize = True
-        Me.llbVolume.Location = New System.Drawing.Point(136, 197)
-        Me.llbVolume.Name = "llbVolume"
-        Me.llbVolume.Size = New System.Drawing.Size(29, 12)
-        Me.llbVolume.TabIndex = 16
-        Me.llbVolume.TabStop = True
-        Me.llbVolume.Text = "设置"
-        '
-        'cbVol
-        '
-        Me.cbVol.AutoSize = True
-        Me.cbVol.Location = New System.Drawing.Point(10, 197)
-        Me.cbVol.Name = "cbVol"
-        Me.cbVol.Size = New System.Drawing.Size(120, 16)
-        Me.cbVol.TabIndex = 15
-        Me.cbVol.Text = "深夜降低电脑音量"
-        Me.cbVol.UseVisualStyleBackColor = True
-        '
-        'llbHistory
-        '
-        Me.llbHistory.AutoSize = True
-        Me.llbHistory.Location = New System.Drawing.Point(172, 175)
-        Me.llbHistory.Name = "llbHistory"
-        Me.llbHistory.Size = New System.Drawing.Size(53, 12)
-        Me.llbHistory.TabIndex = 11
-        Me.llbHistory.TabStop = True
-        Me.llbHistory.Text = "观看记录"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("宋体", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlLight
-        Me.Label6.Location = New System.Drawing.Point(6, 160)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(418, 12)
-        Me.Label6.TabIndex = 14
-        Me.Label6.Text = "-----------------------------------------------------------"
-        '
-        'lbTip2
-        '
-        Me.lbTip2.AutoSize = True
-        Me.lbTip2.Location = New System.Drawing.Point(141, 129)
-        Me.lbTip2.Name = "lbTip2"
-        Me.lbTip2.Size = New System.Drawing.Size(29, 12)
-        Me.lbTip2.TabIndex = 13
-        Me.lbTip2.Text = "% 时"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.ForeColor = System.Drawing.Color.Tomato
-        Me.Label5.Location = New System.Drawing.Point(26, 129)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(53, 12)
-        Me.Label5.TabIndex = 12
-        Me.Label5.Text = "电量少于"
-        '
-        'nudBattery
-        '
-        Me.nudBattery.Location = New System.Drawing.Point(85, 127)
-        Me.nudBattery.Minimum = New Decimal(New Integer() {5, 0, 0, 0})
-        Me.nudBattery.Name = "nudBattery"
-        Me.nudBattery.Size = New System.Drawing.Size(50, 21)
-        Me.nudBattery.TabIndex = 11
-        Me.nudBattery.Value = New Decimal(New Integer() {5, 0, 0, 0})
-        '
-        'cbRecordTvProgress
-        '
-        Me.cbRecordTvProgress.AutoSize = True
-        Me.cbRecordTvProgress.Location = New System.Drawing.Point(10, 175)
-        Me.cbRecordTvProgress.Name = "cbRecordTvProgress"
-        Me.cbRecordTvProgress.Size = New System.Drawing.Size(156, 16)
-        Me.cbRecordTvProgress.TabIndex = 6
-        Me.cbRecordTvProgress.Text = "同时记录电视剧观看进度"
-        Me.cbRecordTvProgress.UseVisualStyleBackColor = True
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.ForeColor = System.Drawing.Color.Tomato
-        Me.Label4.Location = New System.Drawing.Point(111, 100)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(209, 12)
-        Me.Label4.TabIndex = 10
-        Me.Label4.Text = "在设置的电量时关机（仅笔记本有效）"
-        '
-        'rbEvents
-        '
-        Me.rbEvents.AutoSize = True
-        Me.rbEvents.Enabled = False
-        Me.rbEvents.Location = New System.Drawing.Point(10, 98)
-        Me.rbEvents.Name = "rbEvents"
-        Me.rbEvents.Size = New System.Drawing.Size(95, 16)
-        Me.rbEvents.TabIndex = 9
-        Me.rbEvents.Text = "特定条件关机"
-        Me.rbEvents.UseVisualStyleBackColor = True
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("宋体", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlLight
-        Me.Label3.Location = New System.Drawing.Point(6, 76)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(418, 12)
-        Me.Label3.TabIndex = 8
-        Me.Label3.Text = "-----------------------------------------------------------"
-        '
-        'btnSet
-        '
-        Me.btnSet.Location = New System.Drawing.Point(370, 229)
-        Me.btnSet.Name = "btnSet"
-        Me.btnSet.Size = New System.Drawing.Size(75, 23)
-        Me.btnSet.TabIndex = 8
-        Me.btnSet.Text = " 开始"
-        Me.btnSet.UseVisualStyleBackColor = True
-        '
-        'llbAbout
-        '
-        Me.llbAbout.AutoSize = True
-        Me.llbAbout.Location = New System.Drawing.Point(335, 234)
-        Me.llbAbout.Name = "llbAbout"
-        Me.llbAbout.Size = New System.Drawing.Size(29, 12)
-        Me.llbAbout.TabIndex = 9
-        Me.llbAbout.TabStop = True
-        Me.llbAbout.Text = "关于"
-        '
-        'btnUpdate
-        '
-        Me.btnUpdate.Location = New System.Drawing.Point(12, 229)
-        Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(105, 23)
-        Me.btnUpdate.TabIndex = 10
-        Me.btnUpdate.Text = "查找新版本"
-        Me.btnUpdate.UseVisualStyleBackColor = True
         '
         'cmsSelect
         '
@@ -302,67 +94,537 @@ Partial Class frmMain
         Me.tsmiContinue.Size = New System.Drawing.Size(124, 22)
         Me.tsmiContinue.Text = "继续刚才"
         '
-        'chkTimeTip
+        'tmrTime
         '
-        Me.chkTimeTip.AutoSize = True
-        Me.chkTimeTip.Location = New System.Drawing.Point(250, 175)
-        Me.chkTimeTip.Name = "chkTimeTip"
-        Me.chkTimeTip.Size = New System.Drawing.Size(102, 16)
-        Me.chkTimeTip.TabIndex = 17
-        Me.chkTimeTip.Text = "半点/整点提示"
-        Me.chkTimeTip.UseVisualStyleBackColor = True
+        Me.tmrTime.Enabled = True
+        Me.tmrTime.Interval = 1000
+        '
+        'fsbTime
+        '
+        Me.fsbTime.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.fsbTime.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.fsbTime.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.fsbTime.ForeColor = System.Drawing.Color.White
+        Me.fsbTime.Location = New System.Drawing.Point(0, 308)
+        Me.fsbTime.Name = "fsbTime"
+        Me.fsbTime.RectColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.fsbTime.ShowTimeDate = False
+        Me.fsbTime.Size = New System.Drawing.Size(390, 23)
+        Me.fsbTime.TabIndex = 12
+        Me.fsbTime.Text = "现在时间"
+        Me.fsbTime.TextColor = System.Drawing.Color.White
+        '
+        'FormSkin1
+        '
+        Me.FormSkin1.BackColor = System.Drawing.Color.White
+        Me.FormSkin1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.FormSkin1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.FormSkin1.Controls.Add(Me.FlatAlertBox1)
+        Me.FormSkin1.Controls.Add(Me.FlatTabControl1)
+        Me.FormSkin1.Controls.Add(Me.FlatClose1)
+        Me.FormSkin1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FormSkin1.FlatColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.FormSkin1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.FormSkin1.HeaderColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.FormSkin1.HeaderMaximize = False
+        Me.FormSkin1.Location = New System.Drawing.Point(0, 0)
+        Me.FormSkin1.Name = "FormSkin1"
+        Me.FormSkin1.Size = New System.Drawing.Size(390, 331)
+        Me.FormSkin1.TabIndex = 11
+        Me.FormSkin1.Text = "FormSkin1"
+        '
+        'FlatAlertBox1
+        '
+        Me.FlatAlertBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.FlatAlertBox1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatAlertBox1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.FlatAlertBox1.kind = 定时关机Ex.FlatAlertBox._Kind.Success
+        Me.FlatAlertBox1.Location = New System.Drawing.Point(3, 4)
+        Me.FlatAlertBox1.Name = "FlatAlertBox1"
+        Me.FlatAlertBox1.Size = New System.Drawing.Size(384, 42)
+        Me.FlatAlertBox1.TabIndex = 15
+        Me.FlatAlertBox1.Text = "FlatAlertBox1"
+        Me.FlatAlertBox1.Visible = False
+        '
+        'FlatTabControl1
+        '
+        Me.FlatTabControl1.ActiveColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.FlatTabControl1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.FlatTabControl1.Controls.Add(Me.tbTimeMode)
+        Me.FlatTabControl1.Controls.Add(Me.tbBatteryMode)
+        Me.FlatTabControl1.Controls.Add(Me.tbOptions)
+        Me.FlatTabControl1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.FlatTabControl1.ItemSize = New System.Drawing.Size(120, 40)
+        Me.FlatTabControl1.Location = New System.Drawing.Point(0, 50)
+        Me.FlatTabControl1.Name = "FlatTabControl1"
+        Me.FlatTabControl1.SelectedIndex = 0
+        Me.FlatTabControl1.Size = New System.Drawing.Size(391, 260)
+        Me.FlatTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
+        Me.FlatTabControl1.TabIndex = 14
+        '
+        'tbTimeMode
+        '
+        Me.tbTimeMode.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.tbTimeMode.Controls.Add(Me.FlatLabel4)
+        Me.tbTimeMode.Controls.Add(Me.FlatLabel3)
+        Me.tbTimeMode.Controls.Add(Me.FlatLabel2)
+        Me.tbTimeMode.Controls.Add(Me.fNMinute)
+        Me.tbTimeMode.Controls.Add(Me.fNHour)
+        Me.tbTimeMode.Controls.Add(Me.FlatLabel1)
+        Me.tbTimeMode.Controls.Add(Me.btnStart)
+        Me.tbTimeMode.Location = New System.Drawing.Point(4, 44)
+        Me.tbTimeMode.Name = "tbTimeMode"
+        Me.tbTimeMode.Padding = New System.Windows.Forms.Padding(3)
+        Me.tbTimeMode.Size = New System.Drawing.Size(383, 212)
+        Me.tbTimeMode.TabIndex = 0
+        Me.tbTimeMode.Text = "定时模式"
+        '
+        'FlatLabel4
+        '
+        Me.FlatLabel4.AutoSize = True
+        Me.FlatLabel4.BackColor = System.Drawing.Color.Transparent
+        Me.FlatLabel4.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.FlatLabel4.ForeColor = System.Drawing.Color.White
+        Me.FlatLabel4.Location = New System.Drawing.Point(283, 100)
+        Me.FlatLabel4.Name = "FlatLabel4"
+        Me.FlatLabel4.Size = New System.Drawing.Size(33, 13)
+        Me.FlatLabel4.TabIndex = 17
+        Me.FlatLabel4.Text = "分钟"
+        '
+        'FlatLabel3
+        '
+        Me.FlatLabel3.AutoSize = True
+        Me.FlatLabel3.BackColor = System.Drawing.Color.Transparent
+        Me.FlatLabel3.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.FlatLabel3.ForeColor = System.Drawing.Color.White
+        Me.FlatLabel3.Location = New System.Drawing.Point(169, 100)
+        Me.FlatLabel3.Name = "FlatLabel3"
+        Me.FlatLabel3.Size = New System.Drawing.Size(33, 13)
+        Me.FlatLabel3.TabIndex = 16
+        Me.FlatLabel3.Text = "小时"
+        '
+        'FlatLabel2
+        '
+        Me.FlatLabel2.AutoSize = True
+        Me.FlatLabel2.BackColor = System.Drawing.Color.Transparent
+        Me.FlatLabel2.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.FlatLabel2.ForeColor = System.Drawing.Color.White
+        Me.FlatLabel2.Location = New System.Drawing.Point(56, 53)
+        Me.FlatLabel2.Name = "FlatLabel2"
+        Me.FlatLabel2.Size = New System.Drawing.Size(72, 13)
+        Me.FlatLabel2.TabIndex = 15
+        Me.FlatLabel2.Text = "请设定时间"
+        '
+        'fNMinute
+        '
+        Me.fNMinute.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.fNMinute.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.fNMinute.ButtonColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.fNMinute.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.fNMinute.ForeColor = System.Drawing.Color.White
+        Me.fNMinute.Location = New System.Drawing.Point(208, 91)
+        Me.fNMinute.Maximum = CType(59, Long)
+        Me.fNMinute.Minimum = CType(0, Long)
+        Me.fNMinute.Name = "fNMinute"
+        Me.fNMinute.Size = New System.Drawing.Size(69, 30)
+        Me.fNMinute.TabIndex = 14
+        Me.fNMinute.Text = "FlatNumeric2"
+        Me.fNMinute.Value = CType(0, Long)
+        '
+        'fNHour
+        '
+        Me.fNHour.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.fNHour.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.fNHour.ButtonColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.fNHour.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.fNHour.ForeColor = System.Drawing.Color.White
+        Me.fNHour.Location = New System.Drawing.Point(94, 91)
+        Me.fNHour.Maximum = CType(23, Long)
+        Me.fNHour.Minimum = CType(0, Long)
+        Me.fNHour.Name = "fNHour"
+        Me.fNHour.Size = New System.Drawing.Size(69, 30)
+        Me.fNHour.TabIndex = 13
+        Me.fNHour.Text = "FlatNumeric1"
+        Me.fNHour.Value = CType(0, Long)
+        '
+        'FlatLabel1
+        '
+        Me.FlatLabel1.AutoSize = True
+        Me.FlatLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.FlatLabel1.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.FlatLabel1.ForeColor = System.Drawing.Color.White
+        Me.FlatLabel1.Location = New System.Drawing.Point(253, 13)
+        Me.FlatLabel1.Name = "FlatLabel1"
+        Me.FlatLabel1.Size = New System.Drawing.Size(124, 13)
+        Me.FlatLabel1.TabIndex = 12
+        Me.FlatLabel1.Text = "在设定的时长内关机"
+        '
+        'btnStart
+        '
+        Me.btnStart.BackColor = System.Drawing.Color.Transparent
+        Me.btnStart.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.btnStart.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnStart.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.btnStart.Location = New System.Drawing.Point(291, 175)
+        Me.btnStart.Name = "btnStart"
+        Me.btnStart.Rounded = False
+        Me.btnStart.Size = New System.Drawing.Size(86, 31)
+        Me.btnStart.TabIndex = 11
+        Me.btnStart.Text = "开始"
+        Me.btnStart.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        '
+        'tbBatteryMode
+        '
+        Me.tbBatteryMode.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.tbBatteryMode.Controls.Add(Me.FlatLabel5)
+        Me.tbBatteryMode.Controls.Add(Me.fgbError)
+        Me.tbBatteryMode.Controls.Add(Me.lbBatterySettings)
+        Me.tbBatteryMode.Controls.Add(Me.FlatLabel6)
+        Me.tbBatteryMode.Controls.Add(Me.ftbBattery)
+        Me.tbBatteryMode.Controls.Add(Me.FlatButton1)
+        Me.tbBatteryMode.Controls.Add(Me.fpbCurrentBattery)
+        Me.tbBatteryMode.Location = New System.Drawing.Point(4, 44)
+        Me.tbBatteryMode.Name = "tbBatteryMode"
+        Me.tbBatteryMode.Padding = New System.Windows.Forms.Padding(3)
+        Me.tbBatteryMode.Size = New System.Drawing.Size(383, 212)
+        Me.tbBatteryMode.TabIndex = 1
+        Me.tbBatteryMode.Text = "定电量模式"
+        '
+        'FlatLabel5
+        '
+        Me.FlatLabel5.AutoSize = True
+        Me.FlatLabel5.BackColor = System.Drawing.Color.Transparent
+        Me.FlatLabel5.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.FlatLabel5.ForeColor = System.Drawing.Color.White
+        Me.FlatLabel5.Location = New System.Drawing.Point(240, 12)
+        Me.FlatLabel5.Name = "FlatLabel5"
+        Me.FlatLabel5.Size = New System.Drawing.Size(137, 13)
+        Me.FlatLabel5.TabIndex = 13
+        Me.FlatLabel5.Text = "在低于设定电量时关机"
+        '
+        'fgbError
+        '
+        Me.fgbError.BackColor = System.Drawing.Color.Transparent
+        Me.fgbError.BaseColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.fgbError.Controls.Add(Me.FlatLabel7)
+        Me.fgbError.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.fgbError.ForeColor = System.Drawing.Color.DimGray
+        Me.fgbError.Location = New System.Drawing.Point(6, 6)
+        Me.fgbError.Name = "fgbError"
+        Me.fgbError.ShowText = True
+        Me.fgbError.Size = New System.Drawing.Size(22, 200)
+        Me.fgbError.TabIndex = 19
+        Me.fgbError.Text = "错误"
+        '
+        'FlatLabel7
+        '
+        Me.FlatLabel7.AutoSize = True
+        Me.FlatLabel7.BackColor = System.Drawing.Color.Transparent
+        Me.FlatLabel7.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.FlatLabel7.ForeColor = System.Drawing.Color.OrangeRed
+        Me.FlatLabel7.Location = New System.Drawing.Point(47, 67)
+        Me.FlatLabel7.Name = "FlatLabel7"
+        Me.FlatLabel7.Size = New System.Drawing.Size(137, 13)
+        Me.FlatLabel7.TabIndex = 0
+        Me.FlatLabel7.Text = "当前无法使用此功能！"
+        '
+        'lbBatterySettings
+        '
+        Me.lbBatterySettings.AutoSize = True
+        Me.lbBatterySettings.BackColor = System.Drawing.Color.Transparent
+        Me.lbBatterySettings.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.lbBatterySettings.ForeColor = System.Drawing.Color.White
+        Me.lbBatterySettings.Location = New System.Drawing.Point(186, 140)
+        Me.lbBatterySettings.Name = "lbBatterySettings"
+        Me.lbBatterySettings.Size = New System.Drawing.Size(151, 13)
+        Me.lbBatterySettings.TabIndex = 18
+        Me.lbBatterySettings.Text = "将在电量低于100%时关机"
+        '
+        'FlatLabel6
+        '
+        Me.FlatLabel6.AutoSize = True
+        Me.FlatLabel6.BackColor = System.Drawing.Color.Transparent
+        Me.FlatLabel6.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.FlatLabel6.ForeColor = System.Drawing.Color.White
+        Me.FlatLabel6.Location = New System.Drawing.Point(53, 92)
+        Me.FlatLabel6.Name = "FlatLabel6"
+        Me.FlatLabel6.Size = New System.Drawing.Size(176, 13)
+        Me.FlatLabel6.TabIndex = 17
+        Me.FlatLabel6.Text = "滑动滑竿调节目标电量百分比"
+        '
+        'ftbBattery
+        '
+        Me.ftbBattery.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.ftbBattery.HatchColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.ftbBattery.Location = New System.Drawing.Point(56, 114)
+        Me.ftbBattery.Maximum = 10
+        Me.ftbBattery.Minimum = 0
+        Me.ftbBattery.Name = "ftbBattery"
+        Me.ftbBattery.ShowValue = False
+        Me.ftbBattery.Size = New System.Drawing.Size(281, 23)
+        Me.ftbBattery.Style = 定时关机Ex.FlatTrackBar._Style.Slider
+        Me.ftbBattery.TabIndex = 16
+        Me.ftbBattery.Text = "FlatTrackBar1"
+        Me.ftbBattery.TrackColor = System.Drawing.Color.DodgerBlue
+        Me.ftbBattery.Value = 5
+        '
+        'FlatButton1
+        '
+        Me.FlatButton1.BackColor = System.Drawing.Color.Transparent
+        Me.FlatButton1.BaseColor = System.Drawing.Color.DodgerBlue
+        Me.FlatButton1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatButton1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.FlatButton1.Location = New System.Drawing.Point(291, 175)
+        Me.FlatButton1.Name = "FlatButton1"
+        Me.FlatButton1.Rounded = False
+        Me.FlatButton1.Size = New System.Drawing.Size(86, 31)
+        Me.FlatButton1.TabIndex = 15
+        Me.FlatButton1.Text = "开始"
+        Me.FlatButton1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        '
+        'fpbCurrentBattery
+        '
+        Me.fpbCurrentBattery.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.fpbCurrentBattery.DarkerProgress = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.fpbCurrentBattery.Location = New System.Drawing.Point(56, 44)
+        Me.fpbCurrentBattery.Maximum = 100
+        Me.fpbCurrentBattery.Name = "fpbCurrentBattery"
+        Me.fpbCurrentBattery.ProgressColor = System.Drawing.Color.DodgerBlue
+        Me.fpbCurrentBattery.Size = New System.Drawing.Size(281, 42)
+        Me.fpbCurrentBattery.TabIndex = 14
+        Me.fpbCurrentBattery.Text = "FlatProgressBar1"
+        Me.fpbCurrentBattery.Value = 50
+        '
+        'tbOptions
+        '
+        Me.tbOptions.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.tbOptions.Controls.Add(Me.fbVolSettings)
+        Me.tbOptions.Controls.Add(Me.fbHistory)
+        Me.tbOptions.Controls.Add(Me.FlatLabel10)
+        Me.tbOptions.Controls.Add(Me.FlatLabel9)
+        Me.tbOptions.Controls.Add(Me.FlatLabel8)
+        Me.tbOptions.Controls.Add(Me.ftReminder)
+        Me.tbOptions.Controls.Add(Me.ftVol)
+        Me.tbOptions.Controls.Add(Me.ftRecord)
+        Me.tbOptions.Controls.Add(Me.fbAbout)
+        Me.tbOptions.Controls.Add(Me.btnFindNew)
+        Me.tbOptions.Location = New System.Drawing.Point(4, 44)
+        Me.tbOptions.Name = "tbOptions"
+        Me.tbOptions.Padding = New System.Windows.Forms.Padding(3)
+        Me.tbOptions.Size = New System.Drawing.Size(383, 212)
+        Me.tbOptions.TabIndex = 2
+        Me.tbOptions.Text = "附加选项"
+        '
+        'fbVolSettings
+        '
+        Me.fbVolSettings.BackColor = System.Drawing.Color.Transparent
+        Me.fbVolSettings.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.fbVolSettings.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.fbVolSettings.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.fbVolSettings.Location = New System.Drawing.Point(256, 69)
+        Me.fbVolSettings.Name = "fbVolSettings"
+        Me.fbVolSettings.Rounded = False
+        Me.fbVolSettings.Size = New System.Drawing.Size(106, 32)
+        Me.fbVolSettings.TabIndex = 23
+        Me.fbVolSettings.Text = "设置"
+        Me.fbVolSettings.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        '
+        'fbHistory
+        '
+        Me.fbHistory.BackColor = System.Drawing.Color.Transparent
+        Me.fbHistory.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.fbHistory.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.fbHistory.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.fbHistory.Location = New System.Drawing.Point(256, 29)
+        Me.fbHistory.Name = "fbHistory"
+        Me.fbHistory.Rounded = False
+        Me.fbHistory.Size = New System.Drawing.Size(106, 32)
+        Me.fbHistory.TabIndex = 22
+        Me.fbHistory.Text = "查看记录"
+        Me.fbHistory.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        '
+        'FlatLabel10
+        '
+        Me.FlatLabel10.AutoSize = True
+        Me.FlatLabel10.BackColor = System.Drawing.Color.Transparent
+        Me.FlatLabel10.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.FlatLabel10.ForeColor = System.Drawing.Color.White
+        Me.FlatLabel10.Location = New System.Drawing.Point(111, 118)
+        Me.FlatLabel10.Name = "FlatLabel10"
+        Me.FlatLabel10.Size = New System.Drawing.Size(89, 13)
+        Me.FlatLabel10.TabIndex = 21
+        Me.FlatLabel10.Text = "半点/整点提醒"
+        '
+        'FlatLabel9
+        '
+        Me.FlatLabel9.AutoSize = True
+        Me.FlatLabel9.BackColor = System.Drawing.Color.Transparent
+        Me.FlatLabel9.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.FlatLabel9.ForeColor = System.Drawing.Color.White
+        Me.FlatLabel9.Location = New System.Drawing.Point(111, 77)
+        Me.FlatLabel9.Name = "FlatLabel9"
+        Me.FlatLabel9.Size = New System.Drawing.Size(85, 13)
+        Me.FlatLabel9.TabIndex = 20
+        Me.FlatLabel9.Text = "深夜音量控制"
+        '
+        'FlatLabel8
+        '
+        Me.FlatLabel8.AutoSize = True
+        Me.FlatLabel8.BackColor = System.Drawing.Color.Transparent
+        Me.FlatLabel8.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.FlatLabel8.ForeColor = System.Drawing.Color.White
+        Me.FlatLabel8.Location = New System.Drawing.Point(111, 38)
+        Me.FlatLabel8.Name = "FlatLabel8"
+        Me.FlatLabel8.Size = New System.Drawing.Size(124, 13)
+        Me.FlatLabel8.TabIndex = 19
+        Me.FlatLabel8.Text = "记录电视剧观看记录"
+        '
+        'ftReminder
+        '
+        Me.ftReminder.BackColor = System.Drawing.Color.Transparent
+        Me.ftReminder.Checked = True
+        Me.ftReminder.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ftReminder.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.ftReminder.Location = New System.Drawing.Point(29, 107)
+        Me.ftReminder.Name = "ftReminder"
+        Me.ftReminder.Options = 定时关机Ex.FlatToggle._Options.Style3
+        Me.ftReminder.Size = New System.Drawing.Size(76, 33)
+        Me.ftReminder.TabIndex = 18
+        Me.ftReminder.Text = "FlatToggle1"
+        '
+        'ftVol
+        '
+        Me.ftVol.BackColor = System.Drawing.Color.Transparent
+        Me.ftVol.Checked = True
+        Me.ftVol.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ftVol.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.ftVol.Location = New System.Drawing.Point(29, 68)
+        Me.ftVol.Name = "ftVol"
+        Me.ftVol.Options = 定时关机Ex.FlatToggle._Options.Style3
+        Me.ftVol.Size = New System.Drawing.Size(76, 33)
+        Me.ftVol.TabIndex = 17
+        Me.ftVol.Text = "FlatToggle1"
+        '
+        'ftRecord
+        '
+        Me.ftRecord.BackColor = System.Drawing.Color.Transparent
+        Me.ftRecord.Checked = True
+        Me.ftRecord.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ftRecord.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.ftRecord.Location = New System.Drawing.Point(29, 29)
+        Me.ftRecord.Name = "ftRecord"
+        Me.ftRecord.Options = 定时关机Ex.FlatToggle._Options.Style3
+        Me.ftRecord.Size = New System.Drawing.Size(76, 33)
+        Me.ftRecord.TabIndex = 16
+        Me.ftRecord.Text = "FlatToggle1"
+        '
+        'fbAbout
+        '
+        Me.fbAbout.BackColor = System.Drawing.Color.Transparent
+        Me.fbAbout.BaseColor = System.Drawing.Color.DodgerBlue
+        Me.fbAbout.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.fbAbout.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.fbAbout.Location = New System.Drawing.Point(294, 165)
+        Me.fbAbout.Name = "fbAbout"
+        Me.fbAbout.Rounded = False
+        Me.fbAbout.Size = New System.Drawing.Size(68, 31)
+        Me.fbAbout.TabIndex = 15
+        Me.fbAbout.Text = "关于"
+        Me.fbAbout.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        '
+        'btnFindNew
+        '
+        Me.btnFindNew.BackColor = System.Drawing.Color.Transparent
+        Me.btnFindNew.BaseColor = System.Drawing.Color.Orange
+        Me.btnFindNew.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnFindNew.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.btnFindNew.Location = New System.Drawing.Point(182, 165)
+        Me.btnFindNew.Name = "btnFindNew"
+        Me.btnFindNew.Rounded = False
+        Me.btnFindNew.Size = New System.Drawing.Size(106, 31)
+        Me.btnFindNew.TabIndex = 12
+        Me.btnFindNew.Text = "查找新版本"
+        Me.btnFindNew.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        '
+        'FlatClose1
+        '
+        Me.FlatClose1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.FlatClose1.BackColor = System.Drawing.Color.White
+        Me.FlatClose1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.FlatClose1.Font = New System.Drawing.Font("Marlett", 10.0!)
+        Me.FlatClose1.Location = New System.Drawing.Point(360, 12)
+        Me.FlatClose1.Name = "FlatClose1"
+        Me.FlatClose1.Size = New System.Drawing.Size(18, 18)
+        Me.FlatClose1.TabIndex = 13
+        Me.FlatClose1.Text = "FlatClose1"
+        Me.FlatClose1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(457, 259)
-        Me.Controls.Add(Me.btnUpdate)
-        Me.Controls.Add(Me.llbAbout)
-        Me.Controls.Add(Me.btnSet)
-        Me.Controls.Add(Me.GroupBox1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.ClientSize = New System.Drawing.Size(390, 331)
+        Me.Controls.Add(Me.fsbTime)
+        Me.Controls.Add(Me.FormSkin1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Main"
-        CType(Me.nudHour, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nudMinute, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
-        CType(Me.nudBattery, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TransparencyKey = System.Drawing.Color.Fuchsia
         Me.cmsSelect.ResumeLayout(False)
+        Me.FormSkin1.ResumeLayout(False)
+        Me.FlatTabControl1.ResumeLayout(False)
+        Me.tbTimeMode.ResumeLayout(False)
+        Me.tbTimeMode.PerformLayout()
+        Me.tbBatteryMode.ResumeLayout(False)
+        Me.tbBatteryMode.PerformLayout()
+        Me.fgbError.ResumeLayout(False)
+        Me.fgbError.PerformLayout()
+        Me.tbOptions.ResumeLayout(False)
+        Me.tbOptions.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents rbSetTime As System.Windows.Forms.RadioButton
-    Friend WithEvents nudHour As System.Windows.Forms.NumericUpDown
-    Friend WithEvents nudMinute As System.Windows.Forms.NumericUpDown
-    Friend WithEvents lbTip1 As System.Windows.Forms.Label
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents rbEvents As System.Windows.Forms.RadioButton
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents lbTip2 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents nudBattery As System.Windows.Forms.NumericUpDown
-    Friend WithEvents cbRecordTvProgress As System.Windows.Forms.CheckBox
-    Friend WithEvents btnSet As System.Windows.Forms.Button
-    Friend WithEvents llbAbout As System.Windows.Forms.LinkLabel
-    Friend WithEvents llbHistory As System.Windows.Forms.LinkLabel
-    Friend WithEvents cbVol As System.Windows.Forms.CheckBox
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents llbVolume As System.Windows.Forms.LinkLabel
-    Friend WithEvents btnUpdate As System.Windows.Forms.Button
     Friend WithEvents cmsSelect As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents tsmiRefresh As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents tsmiContinue As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents chkTimeTip As System.Windows.Forms.CheckBox
+    Friend WithEvents FormSkin1 As 定时关机Ex.FormSkin
+    Friend WithEvents btnStart As 定时关机Ex.FlatButton
+    Friend WithEvents btnFindNew As 定时关机Ex.FlatButton
+    Friend WithEvents FlatClose1 As 定时关机Ex.FlatClose
+    Friend WithEvents FlatTabControl1 As 定时关机Ex.FlatTabControl
+    Friend WithEvents tbTimeMode As System.Windows.Forms.TabPage
+    Friend WithEvents tbBatteryMode As System.Windows.Forms.TabPage
+    Friend WithEvents tbOptions As System.Windows.Forms.TabPage
+    Friend WithEvents FlatLabel4 As 定时关机Ex.FlatLabel
+    Friend WithEvents FlatLabel3 As 定时关机Ex.FlatLabel
+    Friend WithEvents FlatLabel2 As 定时关机Ex.FlatLabel
+    Friend WithEvents fNMinute As 定时关机Ex.FlatNumeric
+    Friend WithEvents fNHour As 定时关机Ex.FlatNumeric
+    Friend WithEvents FlatLabel1 As 定时关机Ex.FlatLabel
+    Friend WithEvents FlatButton1 As 定时关机Ex.FlatButton
+    Friend WithEvents fpbCurrentBattery As 定时关机Ex.FlatProgressBar
+    Friend WithEvents FlatLabel5 As 定时关机Ex.FlatLabel
+    Friend WithEvents fbAbout As 定时关机Ex.FlatButton
+    Friend WithEvents ftbBattery As 定时关机Ex.FlatTrackBar
+    Friend WithEvents ftRecord As 定时关机Ex.FlatToggle
+    Friend WithEvents FlatLabel6 As 定时关机Ex.FlatLabel
+    Friend WithEvents lbBatterySettings As 定时关机Ex.FlatLabel
+    Friend WithEvents FlatAlertBox1 As 定时关机Ex.FlatAlertBox
+    Friend WithEvents fgbError As 定时关机Ex.FlatGroupBox
+    Friend WithEvents FlatLabel7 As 定时关机Ex.FlatLabel
+    Friend WithEvents ftReminder As 定时关机Ex.FlatToggle
+    Friend WithEvents ftVol As 定时关机Ex.FlatToggle
+    Friend WithEvents fbVolSettings As 定时关机Ex.FlatButton
+    Friend WithEvents fbHistory As 定时关机Ex.FlatButton
+    Friend WithEvents FlatLabel10 As 定时关机Ex.FlatLabel
+    Friend WithEvents FlatLabel9 As 定时关机Ex.FlatLabel
+    Friend WithEvents FlatLabel8 As 定时关机Ex.FlatLabel
+    Friend WithEvents fsbTime As 定时关机Ex.FlatStatusBar
+    Friend WithEvents tmrTime As System.Windows.Forms.Timer
 
 End Class
