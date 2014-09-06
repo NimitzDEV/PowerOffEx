@@ -153,6 +153,9 @@
     <Compile Include="mdProgram.vb" />
     <Compile Include="mdSettings.vb" />
     <Compile Include="mdUIElements.vb" />
+    <Compile Include="mdUIElementsControls.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
