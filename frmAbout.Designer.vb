@@ -165,7 +165,8 @@ Partial Class frmAbout
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(29, 234)
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Location = New System.Drawing.Point(29, 232)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(311, 12)
         Me.Label5.TabIndex = 27
