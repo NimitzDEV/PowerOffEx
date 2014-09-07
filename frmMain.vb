@@ -1,4 +1,5 @@
 ﻿Imports CoreAudioApi
+Imports System.Text.RegularExpressions.Regex
 Public Class frmMain
     Dim inputArgument As String = "/input="
     Dim inputName As String = ""
@@ -54,7 +55,8 @@ Public Class frmMain
                 End If
                 valSetTime = fNHour.Value * 3600 + fNMinute.Value * 60
                 valBatteryLifeLB = 0
-            End If
+        End If
+        selectedMode = 0
         startActive()
     End Sub
 
@@ -138,7 +140,6 @@ Public Class frmMain
         fsbTime.RectColor = FlatTabControl1.ActiveColor
         FormSkin1.FlatColor = FlatTabControl1.ActiveColor
         Me.Refresh()
-        'FlatAlertBox1.ShowControl(FlatAlertBox._Kind.Error, "错误", 5000)
     End Sub
 
     Private Sub ftRecord_CheckedChanged(sender As Object) Handles ftRecord.CheckedChanged
@@ -178,6 +179,20 @@ Public Class frmMain
             valSetTime = 0
             valBatteryLifeLB = ftbBattery.Value
         End If
+        selectedMode = 1
         startActive()
+    End Sub
+
+    Private Sub help4TVP_MouseHover(sender As Object, e As EventArgs) Handles help4TVP.MouseHover
+        ToolTip1.Show(Unescape("本功能用能够简单的记录您在浏览器或者部分客户端看电视剧的记录\n当浏览器或者客户端的标题中包含\n""第""和""集""两个关键字的时候才会生效"), help4TVP)
+    End Sub
+
+
+    Private Sub help4VOL_MouseHover(sender As Object, e As EventArgs) Handles help4VOL.MouseHover
+        ToolTip1.Show(Unescape("本功能可以在深夜的时候自动降低电脑的音量\n以防打扰别人休息"), help4VOL)
+    End Sub
+
+    Private Sub help4REMINDER_MouseHover(sender As Object, e As EventArgs) Handles help4REMINDER.MouseHover
+        ToolTip1.Show(Unescape("类似电视台的报时功能\n在半点和整点的时候提示当前时间"), help4REMINDER)
     End Sub
 End Class

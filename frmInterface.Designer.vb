@@ -54,11 +54,12 @@ Partial Class frmInterface
         Me.add30min = New System.Windows.Forms.ToolStripMenuItem()
         Me.add60min = New System.Windows.Forms.ToolStripMenuItem()
         Me.add120min = New System.Windows.Forms.ToolStripMenuItem()
-        Me.隐藏ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripSeparator()
         Me.返回ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.退出ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.隐藏ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pbStatus = New System.Windows.Forms.PictureBox()
-        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.cmsRightClick.SuspendLayout()
         Me.cmsInterfaceMenu.SuspendLayout()
         CType(Me.pbStatus, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -198,62 +199,67 @@ Partial Class frmInterface
         '
         Me.cmsInterfaceMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.加时ToolStripMenuItem, Me.ToolStripMenuItem3, Me.返回ToolStripMenuItem, Me.退出ToolStripMenuItem1, Me.隐藏ToolStripMenuItem})
         Me.cmsInterfaceMenu.Name = "cmsInterfaceMenu"
-        Me.cmsInterfaceMenu.Size = New System.Drawing.Size(153, 120)
+        Me.cmsInterfaceMenu.Size = New System.Drawing.Size(101, 98)
         '
         '加时ToolStripMenuItem
         '
         Me.加时ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.add10min, Me.add20min, Me.add30min, Me.add60min, Me.add120min})
         Me.加时ToolStripMenuItem.Name = "加时ToolStripMenuItem"
-        Me.加时ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.加时ToolStripMenuItem.Size = New System.Drawing.Size(100, 22)
         Me.加时ToolStripMenuItem.Text = "加时"
         '
         'add10min
         '
         Me.add10min.Name = "add10min"
-        Me.add10min.Size = New System.Drawing.Size(152, 22)
+        Me.add10min.Size = New System.Drawing.Size(114, 22)
         Me.add10min.Text = "10分钟"
         '
         'add20min
         '
         Me.add20min.Name = "add20min"
-        Me.add20min.Size = New System.Drawing.Size(152, 22)
+        Me.add20min.Size = New System.Drawing.Size(114, 22)
         Me.add20min.Text = "20分钟"
         '
         'add30min
         '
         Me.add30min.Name = "add30min"
-        Me.add30min.Size = New System.Drawing.Size(152, 22)
+        Me.add30min.Size = New System.Drawing.Size(114, 22)
         Me.add30min.Text = "30分钟"
         '
         'add60min
         '
         Me.add60min.Name = "add60min"
-        Me.add60min.Size = New System.Drawing.Size(152, 22)
+        Me.add60min.Size = New System.Drawing.Size(114, 22)
         Me.add60min.Text = "1小时"
         '
         'add120min
         '
         Me.add120min.Name = "add120min"
-        Me.add120min.Size = New System.Drawing.Size(152, 22)
+        Me.add120min.Size = New System.Drawing.Size(114, 22)
         Me.add120min.Text = "2小时"
         '
-        '隐藏ToolStripMenuItem
+        'ToolStripMenuItem3
         '
-        Me.隐藏ToolStripMenuItem.Name = "隐藏ToolStripMenuItem"
-        Me.隐藏ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.隐藏ToolStripMenuItem.Text = "隐藏"
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(97, 6)
         '
         '返回ToolStripMenuItem
         '
         Me.返回ToolStripMenuItem.Name = "返回ToolStripMenuItem"
-        Me.返回ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.返回ToolStripMenuItem.Size = New System.Drawing.Size(100, 22)
         Me.返回ToolStripMenuItem.Text = "返回"
         '
         '退出ToolStripMenuItem1
         '
         Me.退出ToolStripMenuItem1.Name = "退出ToolStripMenuItem1"
-        Me.退出ToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.退出ToolStripMenuItem1.Size = New System.Drawing.Size(100, 22)
         Me.退出ToolStripMenuItem1.Text = "退出"
+        '
+        '隐藏ToolStripMenuItem
+        '
+        Me.隐藏ToolStripMenuItem.Name = "隐藏ToolStripMenuItem"
+        Me.隐藏ToolStripMenuItem.Size = New System.Drawing.Size(100, 22)
+        Me.隐藏ToolStripMenuItem.Text = "隐藏"
         '
         'pbStatus
         '
@@ -263,10 +269,9 @@ Partial Class frmInterface
         Me.pbStatus.TabIndex = 7
         Me.pbStatus.TabStop = False
         '
-        'ToolStripMenuItem3
+        'ToolTip1
         '
-        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(149, 6)
+        Me.ToolTip1.IsBalloon = True
         '
         'frmInterface
         '
@@ -323,4 +328,5 @@ Partial Class frmInterface
     Friend WithEvents add60min As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents add120min As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem3 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
 End Class

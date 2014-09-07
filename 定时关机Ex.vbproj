@@ -247,6 +247,7 @@
   <ItemGroup>
     <Content Include="appicon.ico" />
     <Content Include="appiconv2.ico" />
+    <None Include="res\help.png" />
     <None Include="res\internet_disconnected.png" />
     <None Include="res\internet_connected.png" />
     <None Include="res\internet_on_white.png" />

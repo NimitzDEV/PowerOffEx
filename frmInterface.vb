@@ -72,8 +72,8 @@ Public Class frmInterface
         freshUI()
         tmrVol.Enabled = chk_VOLCTRL
         If frmMain.FlatTabControl1.SelectedIndex = 1 Then
-            延长时间ToolStripMenuItem.Visible = False
-            加时ToolStripMenuItem.Visible = False
+            延长时间ToolStripMenuItem.Enabled = False
+            加时ToolStripMenuItem.Enabled = False
         End If
         batteryStatusImage = My.Resources.fullbattery
         SaveSettings()
@@ -312,5 +312,9 @@ Public Class frmInterface
 
     Private Sub add120min_Click(sender As Object, e As EventArgs) Handles add120min.Click
         addTime(120)
+    End Sub
+
+    Private Sub btnMenu_MouseHover(sender As Object, e As EventArgs) Handles btnMenu.MouseHover
+        ToolTip1.Show("点击此处显示更多的选项", btnMenu)
     End Sub
 End Class
