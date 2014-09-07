@@ -63,7 +63,7 @@ Public Class frmInterface
         Me.Left = (Screen.PrimaryScreen.WorkingArea.Width - Me.Width) / 2
         Me.Top = Screen.PrimaryScreen.WorkingArea.Height - Me.Height
         '绘制阴影
-        drawWindowStep1(Me)
+        'drawWindowStep1(Me)
         '动画效果
         showSwipAnimation()
         '开始

@@ -29,6 +29,7 @@ Partial Class frmMain
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
         Me.tsmiContinue = New System.Windows.Forms.ToolStripMenuItem()
         Me.tmrTime = New System.Windows.Forms.Timer(Me.components)
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.fsbTime = New 定时关机Ex.FlatStatusBar()
         Me.FormSkin1 = New 定时关机Ex.FormSkin()
         Me.FlatAlertBox1 = New 定时关机Ex.FlatAlertBox()
@@ -67,7 +68,7 @@ Partial Class frmMain
         Me.FlatClose1 = New 定时关机Ex.FlatClose()
         Me.FlatContextMenuStrip1 = New 定时关机Ex.FlatContextMenuStrip()
         Me.高规格ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.FlatMini1 = New 定时关机Ex.FlatMini()
         Me.cmsSelect.SuspendLayout()
         Me.FormSkin1.SuspendLayout()
         Me.FlatTabControl1.SuspendLayout()
@@ -129,6 +130,7 @@ Partial Class frmMain
         Me.FormSkin1.BackColor = System.Drawing.Color.White
         Me.FormSkin1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
         Me.FormSkin1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.FormSkin1.Controls.Add(Me.FlatMini1)
         Me.FormSkin1.Controls.Add(Me.FlatAlertBox1)
         Me.FormSkin1.Controls.Add(Me.FlatTabControl1)
         Me.FormSkin1.Controls.Add(Me.FlatClose1)
@@ -149,7 +151,7 @@ Partial Class frmMain
         Me.FlatAlertBox1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FlatAlertBox1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.FlatAlertBox1.kind = 定时关机Ex.FlatAlertBox._Kind.Success
-        Me.FlatAlertBox1.Location = New System.Drawing.Point(3, 4)
+        Me.FlatAlertBox1.Location = New System.Drawing.Point(360, 36)
         Me.FlatAlertBox1.Name = "FlatAlertBox1"
         Me.FlatAlertBox1.Size = New System.Drawing.Size(384, 42)
         Me.FlatAlertBox1.TabIndex = 15
@@ -344,7 +346,7 @@ Partial Class frmMain
         Me.lbBatterySettings.BackColor = System.Drawing.Color.Transparent
         Me.lbBatterySettings.Font = New System.Drawing.Font("Segoe UI", 8.0!)
         Me.lbBatterySettings.ForeColor = System.Drawing.Color.White
-        Me.lbBatterySettings.Location = New System.Drawing.Point(186, 140)
+        Me.lbBatterySettings.Location = New System.Drawing.Point(186, 135)
         Me.lbBatterySettings.Name = "lbBatterySettings"
         Me.lbBatterySettings.Size = New System.Drawing.Size(151, 13)
         Me.lbBatterySettings.TabIndex = 18
@@ -356,7 +358,7 @@ Partial Class frmMain
         Me.FlatLabel6.BackColor = System.Drawing.Color.Transparent
         Me.FlatLabel6.Font = New System.Drawing.Font("Segoe UI", 8.0!)
         Me.FlatLabel6.ForeColor = System.Drawing.Color.White
-        Me.FlatLabel6.Location = New System.Drawing.Point(53, 92)
+        Me.FlatLabel6.Location = New System.Drawing.Point(53, 87)
         Me.FlatLabel6.Name = "FlatLabel6"
         Me.FlatLabel6.Size = New System.Drawing.Size(176, 13)
         Me.FlatLabel6.TabIndex = 17
@@ -366,7 +368,7 @@ Partial Class frmMain
         '
         Me.ftbBattery.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
         Me.ftbBattery.HatchColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.ftbBattery.Location = New System.Drawing.Point(56, 114)
+        Me.ftbBattery.Location = New System.Drawing.Point(56, 109)
         Me.ftbBattery.Maximum = 10
         Me.ftbBattery.Minimum = 0
         Me.ftbBattery.Name = "ftbBattery"
@@ -396,7 +398,7 @@ Partial Class frmMain
         '
         Me.fpbCurrentBattery.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
         Me.fpbCurrentBattery.DarkerProgress = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.fpbCurrentBattery.Location = New System.Drawing.Point(56, 44)
+        Me.fpbCurrentBattery.Location = New System.Drawing.Point(56, 39)
         Me.fpbCurrentBattery.Maximum = 100
         Me.fpbCurrentBattery.Name = "fpbCurrentBattery"
         Me.fpbCurrentBattery.ProgressColor = System.Drawing.Color.DodgerBlue
@@ -595,7 +597,7 @@ Partial Class frmMain
         Me.FlatClose1.BackColor = System.Drawing.Color.White
         Me.FlatClose1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.FlatClose1.Font = New System.Drawing.Font("Marlett", 10.0!)
-        Me.FlatClose1.Location = New System.Drawing.Point(360, 12)
+        Me.FlatClose1.Location = New System.Drawing.Point(365, 16)
         Me.FlatClose1.Name = "FlatClose1"
         Me.FlatClose1.Size = New System.Drawing.Size(18, 18)
         Me.FlatClose1.TabIndex = 13
@@ -616,6 +618,19 @@ Partial Class frmMain
         Me.高规格ToolStripMenuItem.Name = "高规格ToolStripMenuItem"
         Me.高规格ToolStripMenuItem.Size = New System.Drawing.Size(88, 22)
         Me.高规格ToolStripMenuItem.Text = "高规格"
+        '
+        'FlatMini1
+        '
+        Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.FlatMini1.BackColor = System.Drawing.Color.White
+        Me.FlatMini1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini1.Location = New System.Drawing.Point(341, 16)
+        Me.FlatMini1.Name = "FlatMini1"
+        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini1.TabIndex = 16
+        Me.FlatMini1.Text = "FlatMini1"
+        Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
         'frmMain
         '
@@ -694,5 +709,6 @@ Partial Class frmMain
     Friend WithEvents help4VOL As System.Windows.Forms.PictureBox
     Friend WithEvents help4TVP As System.Windows.Forms.PictureBox
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
+    Friend WithEvents FlatMini1 As 定时关机Ex.FlatMini
 
 End Class

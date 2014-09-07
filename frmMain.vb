@@ -21,6 +21,7 @@ Public Class frmMain
         valSetTime = 0
         startArgsChecking()
         FormSkin1.Text = Me.Text
+        FlatAlertBox1.Location = New Point(3, 4)
     End Sub
 
 
@@ -167,7 +168,7 @@ Public Class frmMain
     End Sub
 
     Private Sub tmrTime_Tick(sender As Object, e As EventArgs) Handles tmrTime.Tick
-        fsbTime.Text = Date.Today & "- " & TimeOfDay
+        fsbTime.Text = "现在时间：" & TimeOfDay & " (" & Date.Today & ")"
     End Sub
 
     Private Sub FlatButton1_Click(sender As Object, e As EventArgs) Handles FlatButton1.Click
@@ -194,5 +195,9 @@ Public Class frmMain
 
     Private Sub help4REMINDER_MouseHover(sender As Object, e As EventArgs) Handles help4REMINDER.MouseHover
         ToolTip1.Show(Unescape("类似电视台的报时功能\n在半点和整点的时候提示当前时间"), help4REMINDER)
+    End Sub
+
+    Private Sub FlatMini1_Click(sender As Object, e As EventArgs) Handles FlatMini1.Click
+        Me.WindowState = FormWindowState.Minimized
     End Sub
 End Class
