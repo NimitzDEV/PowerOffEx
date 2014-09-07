@@ -257,12 +257,11 @@ Public Class frmInterface
                 Dim DevEnum As New MMDeviceEnumerator()
                 device = DevEnum.GetDefaultAudioEndpoint(EDataFlow.eRender, ERole.eMultimedia)
                 device.AudioEndpointVolume.MasterVolumeLevelScalar = (CSng(pref_VOL) / 100.0F)
-                tmrVol.Enabled = False
             Else
                 changeVolume4XP(pref_VOL_XP / pref_VOL_XP_MSG)
             End If
+            tmrVol.Enabled = False
         End If
-        tmrVol.Enabled = False
     End Sub
 
     Private Sub tmrReminder_Tick(sender As Object, e As EventArgs) Handles tmrReminder.Tick
