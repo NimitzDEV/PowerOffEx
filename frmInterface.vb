@@ -50,10 +50,7 @@ Public Class frmInterface
         origiWidth = Me.Width
         pbStatus.Left = 0
         pbStatus.Top = 0
-
         Me.Region = roundedCorner(Me, 20)
-
-
         'pbStatus.Image = DrawProgressBar(My.Resources.res_drawbg_normal, 45, 90, pbStatus, Me, Color.Red, Color.DodgerBlue, "", My.Resources.res_drawbg_normal)
         fullTime = valSetTime
         fullPercent = batteryPercent - valBatteryLifeLB
@@ -95,11 +92,6 @@ Public Class frmInterface
         ElseIf e.Button = MouseButtons.Right Then
             cmsRightClick.Show(MousePosition.X - cmsRightClick.Width / 2, MousePosition.Y)
         End If
-    End Sub
-
-    Private Sub frmInterface_Paint(ByVal sender As Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles Me.Paint
-        'drawWindowStep2(Me, e, Color.White, Color.DodgerBlue)
-
     End Sub
 
     Private Sub animationTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles animationTimer.Tick

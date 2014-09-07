@@ -12,11 +12,6 @@ Public Class frmMain
         AddHandler AppDomain.CurrentDomain.AssemblyResolve, New System.ResolveEventHandler(AddressOf assResolve)
         ReadSettings()
         Me.Text = Application.ProductName & " - " & Application.ProductVersion
-        If checkIsLaptop() = True Then
-            updateBatteryInfo()
-            'rbEvents.Enabled = True
-            'nudBattery.Maximum = batteryPercent
-        End If
         fNHour.Value = pref_HOUR
         fNMinute.Value = pref_MIN
         ftRecord.Checked = chk_RECORD
@@ -48,7 +43,6 @@ Public Class frmMain
 
 
     Private Sub btnStart_Click(sender As Object, e As EventArgs) Handles btnStart.Click
-        If FlatTabControl1.SelectedIndex = 0 Then
             If fNHour.Value = 0 And fNMinute.Value = 0 Then
                 MsgBox("时间不能为0")
                 Exit Sub
@@ -61,17 +55,10 @@ Public Class frmMain
                 valSetTime = fNHour.Value * 3600 + fNMinute.Value * 60
                 valBatteryLifeLB = 0
             End If
-        End If
-        If FlatTabControl1.SelectedIndex = 1 Then
-            updateBatteryInfo()
-            If batteryChargeStatus = 1 Then
-                MsgBox("当前正在充电，无法使用此功能")
-                Exit Sub
-            Else
-                valSetTime = 0
-                valBatteryLifeLB = ftbBattery.Value
-            End If
-        End If
+        startActive()
+    End Sub
+
+    Private Sub startActive()
         If ftVol.Checked Then
             If osMajorVersion > 5 Then
                 Dim device As MMDevice
@@ -180,5 +167,17 @@ Public Class frmMain
 
     Private Sub tmrTime_Tick(sender As Object, e As EventArgs) Handles tmrTime.Tick
         fsbTime.Text = Date.Today & "- " & TimeOfDay
+    End Sub
+
+    Private Sub FlatButton1_Click(sender As Object, e As EventArgs) Handles FlatButton1.Click
+        updateBatteryInfo()
+        If batteryChargeStatus = 1 Then
+            MsgBox("当前正在充电，无法使用此功能")
+            Exit Sub
+        Else
+            valSetTime = 0
+            valBatteryLifeLB = ftbBattery.Value
+        End If
+        startActive()
     End Sub
 End Class
