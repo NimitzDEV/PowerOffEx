@@ -8,6 +8,7 @@ Public Class frmInterface
     Dim origiHeight As Integer
     Dim origiWidth As Integer
     Dim changingAngle As Integer
+    Dim speedIndex As Integer
     'SYSINFO
     Public linkStatusString As String
     Public linkStatusImage As Image
@@ -83,7 +84,7 @@ Public Class frmInterface
         Me.Visible = Not Me.Visible
         fullUI(Me.Visible)
         Me.Left = MousePosition.X - Me.Width / 2
-        Me.Top = Screen.PrimaryScreen.WorkingArea.Height - Me.Height
+        'Me.Top = Screen.PrimaryScreen.WorkingArea.Height - Me.Height
     End Sub
 
     Private Sub notifyIcon_MouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles notifyIcon.MouseClick
@@ -95,11 +96,13 @@ Public Class frmInterface
     End Sub
 
     Private Sub animationTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles animationTimer.Tick
-        Me.Height += 15
-        Me.Top = Screen.PrimaryScreen.WorkingArea.Height - Me.Height
+        'Me.Height += 15
+        If speedIndex - 1 > 0 Then speedIndex -= 1
+        Me.Top -= speedIndex
+        Me.Opacity += 0.03
         Me.Refresh()
-        If Me.Height > origiHeight Then
-            Me.Height = origiHeight
+        If Me.Top < (Screen.PrimaryScreen.WorkingArea.Height - Me.Height) Then
+            Me.Top = (Screen.PrimaryScreen.WorkingArea.Height - Me.Height)
             animationTimer.Enabled = False
             Me.Refresh()
         End If
@@ -107,7 +110,10 @@ Public Class frmInterface
     End Sub
 
     Private Sub showSwipAnimation()
-        Me.Height = 0
+        'Me.Height = 0
+        Me.Opacity = 0
+        speedIndex = 15
+        Me.Top = (Screen.PrimaryScreen.WorkingArea.Height - Me.Height * 0.6)
         animationTimer.Enabled = True
     End Sub
 
