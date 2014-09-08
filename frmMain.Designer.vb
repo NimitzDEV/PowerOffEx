@@ -33,6 +33,7 @@ Partial Class frmMain
         Me.fsbTime = New 定时关机Ex.FlatStatusBar()
         Me.FormSkin1 = New 定时关机Ex.FormSkin()
         Me.FlatAlertBox1 = New 定时关机Ex.FlatAlertBox()
+        Me.FlatMini1 = New 定时关机Ex.FlatMini()
         Me.FlatTabControl1 = New 定时关机Ex.FlatTabControl()
         Me.tbTimeMode = New System.Windows.Forms.TabPage()
         Me.FlatLabel4 = New 定时关机Ex.FlatLabel()
@@ -68,7 +69,6 @@ Partial Class frmMain
         Me.FlatClose1 = New 定时关机Ex.FlatClose()
         Me.FlatContextMenuStrip1 = New 定时关机Ex.FlatContextMenuStrip()
         Me.高规格ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.FlatMini1 = New 定时关机Ex.FlatMini()
         Me.cmsSelect.SuspendLayout()
         Me.FormSkin1.SuspendLayout()
         Me.FlatTabControl1.SuspendLayout()
@@ -130,8 +130,8 @@ Partial Class frmMain
         Me.FormSkin1.BackColor = System.Drawing.Color.White
         Me.FormSkin1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
         Me.FormSkin1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.FormSkin1.Controls.Add(Me.FlatMini1)
         Me.FormSkin1.Controls.Add(Me.FlatAlertBox1)
+        Me.FormSkin1.Controls.Add(Me.FlatMini1)
         Me.FormSkin1.Controls.Add(Me.FlatTabControl1)
         Me.FormSkin1.Controls.Add(Me.FlatClose1)
         Me.FormSkin1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -157,6 +157,19 @@ Partial Class frmMain
         Me.FlatAlertBox1.TabIndex = 15
         Me.FlatAlertBox1.Text = "FlatAlertBox1"
         Me.FlatAlertBox1.Visible = False
+        '
+        'FlatMini1
+        '
+        Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.FlatMini1.BackColor = System.Drawing.Color.White
+        Me.FlatMini1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
+        Me.FlatMini1.Location = New System.Drawing.Point(341, 16)
+        Me.FlatMini1.Name = "FlatMini1"
+        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
+        Me.FlatMini1.TabIndex = 16
+        Me.FlatMini1.Text = "FlatMini1"
+        Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
         'FlatTabControl1
         '
@@ -618,19 +631,6 @@ Partial Class frmMain
         Me.高规格ToolStripMenuItem.Name = "高规格ToolStripMenuItem"
         Me.高规格ToolStripMenuItem.Size = New System.Drawing.Size(88, 22)
         Me.高规格ToolStripMenuItem.Text = "高规格"
-        '
-        'FlatMini1
-        '
-        Me.FlatMini1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.FlatMini1.BackColor = System.Drawing.Color.White
-        Me.FlatMini1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.FlatMini1.Font = New System.Drawing.Font("Marlett", 12.0!)
-        Me.FlatMini1.Location = New System.Drawing.Point(341, 16)
-        Me.FlatMini1.Name = "FlatMini1"
-        Me.FlatMini1.Size = New System.Drawing.Size(18, 18)
-        Me.FlatMini1.TabIndex = 16
-        Me.FlatMini1.Text = "FlatMini1"
-        Me.FlatMini1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
         'frmMain
         '

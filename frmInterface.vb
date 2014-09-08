@@ -86,10 +86,32 @@ Public Class frmInterface
         Me.Left = MousePosition.X - Me.Width / 2
         'Me.Top = Screen.PrimaryScreen.WorkingArea.Height - Me.Height
     End Sub
+    Private Sub outAnimationTimer_Tick(sender As Object, e As EventArgs) Handles outAnimationTimer.Tick
+        If speedIndex - 1 > 0 Then speedIndex -= 1
+        Me.Top -= speedIndex
+        Me.Opacity -= 0.03
+        Me.Refresh()
+        If Me.Top < (Screen.PrimaryScreen.WorkingArea.Height - Me.Height - Me.Height * 0.4) Then
+            outAnimationTimer.Enabled = False
+            Me.Refresh()
+            Me.Opacity = 9
+            Me.Hide()
+            fullUI(False)
+        End If
+        Application.DoEvents()
+    End Sub
+    Private Sub hideUI()
+        outAnimationTimer.Enabled = False
+        If Me.Visible = False Then Me.Visible = True
+        Me.Opacity = 9
+        speedIndex = 15
+        outAnimationTimer.Enabled = True
+    End Sub
 
     Private Sub notifyIcon_MouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles notifyIcon.MouseClick
         If e.Button = MouseButtons.Left Then
-            showUpUI()
+            If Me.Visible = True Then hideUI()
+            If Me.Visible = False Then showUpUI()
         ElseIf e.Button = MouseButtons.Right Then
             cmsRightClick.Show(MousePosition.X - cmsRightClick.Width / 2, MousePosition.Y)
         End If
@@ -172,7 +194,8 @@ Public Class frmInterface
     End Sub
 
     Private Sub tmrAutoHide_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmrAutoHide.Tick
-        Me.Visible = False
+        'Me.Visible = False
+        hideUI()
         fullUI(False)
         tmrAutoHide.Enabled = False
     End Sub
@@ -285,7 +308,7 @@ Public Class frmInterface
 
     Private Sub 隐藏ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 隐藏ToolStripMenuItem.Click
         Me.Visible = False
-        fullUI(False)
+        hideUI()
     End Sub
 
     Private Sub 返回ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 返回ToolStripMenuItem.Click
@@ -322,4 +345,6 @@ Public Class frmInterface
     Private Sub btnMenu_MouseHover(sender As Object, e As EventArgs) Handles btnMenu.MouseHover
         ToolTip1.Show("点击此处显示更多的选项", btnMenu)
     End Sub
+
+
 End Class
