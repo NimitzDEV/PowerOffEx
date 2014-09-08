@@ -93,6 +93,7 @@ Public Class frmMain
 
     Private Sub fbAbout_Click(sender As Object, e As EventArgs) Handles fbAbout.Click
         frmAbout.ShowDialog()
+        frmAbout.Dispose()
     End Sub
 
     Private Sub tbBatteryMode_Click(sender As Object, e As EventArgs) Handles tbBatteryMode.Click

@@ -314,6 +314,7 @@ Public Class frmInterface
     Private Sub 返回ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 返回ToolStripMenuItem.Click
         Me.Dispose()
         frmMain.Show()
+        frmMain.Refresh()
     End Sub
 
     Private Sub addTime(ByVal min As Integer)

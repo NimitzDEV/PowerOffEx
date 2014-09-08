@@ -22,196 +22,306 @@ Partial Class frmAbout
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.LinkLabel9 = New System.Windows.Forms.LinkLabel()
-        Me.LinkLabel8 = New System.Windows.Forms.LinkLabel()
-        Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnClose = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.LinkLabel4 = New System.Windows.Forms.LinkLabel()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.LinkLabel5 = New System.Windows.Forms.LinkLabel()
+        Me.formskin1 = New 定时关机Ex.FormSkin()
+        Me.FlatLabel9 = New 定时关机Ex.FlatLabel()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.FlatLabel8 = New 定时关机Ex.FlatLabel()
+        Me.FlatButton1 = New 定时关机Ex.FlatButton()
+        Me.FlatLabel7 = New 定时关机Ex.FlatLabel()
+        Me.FlatLabel6 = New 定时关机Ex.FlatLabel()
+        Me.FlatLabel5 = New 定时关机Ex.FlatLabel()
+        Me.FlatLabel4 = New 定时关机Ex.FlatLabel()
+        Me.FlatLabel3 = New 定时关机Ex.FlatLabel()
+        Me.FlatLabel2 = New 定时关机Ex.FlatLabel()
+        Me.FlatLabel1 = New 定时关机Ex.FlatLabel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.LinkLabel5 = New System.Windows.Forms.LinkLabel()
+        Me.LinkLabel4 = New System.Windows.Forms.LinkLabel()
+        Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
+        Me.LinkLabel8 = New System.Windows.Forms.LinkLabel()
+        Me.LinkLabel9 = New System.Windows.Forms.LinkLabel()
+        Me.formskin1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'LinkLabel9
+        'formskin1
         '
-        Me.LinkLabel9.AutoSize = True
-        Me.LinkLabel9.Location = New System.Drawing.Point(290, 87)
-        Me.LinkLabel9.Name = "LinkLabel9"
-        Me.LinkLabel9.Size = New System.Drawing.Size(47, 12)
-        Me.LinkLabel9.TabIndex = 14
-        Me.LinkLabel9.TabStop = True
-        Me.LinkLabel9.Text = "Google+"
+        Me.formskin1.BackColor = System.Drawing.Color.White
+        Me.formskin1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.formskin1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.formskin1.Controls.Add(Me.FlatLabel9)
+        Me.formskin1.Controls.Add(Me.LinkLabel1)
+        Me.formskin1.Controls.Add(Me.FlatLabel8)
+        Me.formskin1.Controls.Add(Me.FlatButton1)
+        Me.formskin1.Controls.Add(Me.FlatLabel7)
+        Me.formskin1.Controls.Add(Me.FlatLabel6)
+        Me.formskin1.Controls.Add(Me.FlatLabel5)
+        Me.formskin1.Controls.Add(Me.FlatLabel4)
+        Me.formskin1.Controls.Add(Me.FlatLabel3)
+        Me.formskin1.Controls.Add(Me.FlatLabel2)
+        Me.formskin1.Controls.Add(Me.FlatLabel1)
+        Me.formskin1.Controls.Add(Me.PictureBox1)
+        Me.formskin1.Controls.Add(Me.LinkLabel5)
+        Me.formskin1.Controls.Add(Me.LinkLabel4)
+        Me.formskin1.Controls.Add(Me.LinkLabel2)
+        Me.formskin1.Controls.Add(Me.LinkLabel8)
+        Me.formskin1.Controls.Add(Me.LinkLabel9)
+        Me.formskin1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.formskin1.FlatColor = System.Drawing.Color.Orange
+        Me.formskin1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.formskin1.HeaderColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.formskin1.HeaderMaximize = False
+        Me.formskin1.Location = New System.Drawing.Point(0, 0)
+        Me.formskin1.Name = "formskin1"
+        Me.formskin1.Size = New System.Drawing.Size(280, 312)
+        Me.formskin1.TabIndex = 28
+        Me.formskin1.Text = "关于"
         '
-        'LinkLabel8
+        'FlatLabel9
         '
-        Me.LinkLabel8.AutoSize = True
-        Me.LinkLabel8.Location = New System.Drawing.Point(255, 87)
-        Me.LinkLabel8.Name = "LinkLabel8"
-        Me.LinkLabel8.Size = New System.Drawing.Size(29, 12)
-        Me.LinkLabel8.TabIndex = 13
-        Me.LinkLabel8.TabStop = True
-        Me.LinkLabel8.Text = "知乎"
+        Me.FlatLabel9.AutoSize = True
+        Me.FlatLabel9.BackColor = System.Drawing.Color.Transparent
+        Me.FlatLabel9.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.FlatLabel9.ForeColor = System.Drawing.Color.White
+        Me.FlatLabel9.Location = New System.Drawing.Point(65, 541)
+        Me.FlatLabel9.Name = "FlatLabel9"
+        Me.FlatLabel9.Size = New System.Drawing.Size(144, 13)
+        Me.FlatLabel9.TabIndex = 37
+        Me.FlatLabel9.Text = "nimitzdevteam@gmail.com"
         '
-        'LinkLabel2
+        'LinkLabel1
         '
-        Me.LinkLabel2.AutoSize = True
-        Me.LinkLabel2.Location = New System.Drawing.Point(196, 87)
-        Me.LinkLabel2.Name = "LinkLabel2"
-        Me.LinkLabel2.Size = New System.Drawing.Size(53, 12)
-        Me.LinkLabel2.TabIndex = 9
-        Me.LinkLabel2.TabStop = True
-        Me.LinkLabel2.Text = "新浪微博"
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.LinkLabel1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel1.LinkColor = System.Drawing.Color.DarkOrange
+        Me.LinkLabel1.Location = New System.Drawing.Point(65, 279)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(137, 15)
+        Me.LinkLabel1.TabIndex = 36
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "通过支付宝二维码捐助"
         '
-        'Label1
+        'FlatLabel8
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("微软雅黑", 42.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.DodgerBlue
-        Me.Label1.Location = New System.Drawing.Point(18, 12)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(336, 75)
-        Me.Label1.TabIndex = 16
-        Me.Label1.Text = "NimitzDEV"
+        Me.FlatLabel8.AutoSize = True
+        Me.FlatLabel8.BackColor = System.Drawing.Color.Transparent
+        Me.FlatLabel8.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.FlatLabel8.ForeColor = System.Drawing.Color.White
+        Me.FlatLabel8.Location = New System.Drawing.Point(36, 255)
+        Me.FlatLabel8.Name = "FlatLabel8"
+        Me.FlatLabel8.Size = New System.Drawing.Size(202, 13)
+        Me.FlatLabel8.TabIndex = 35
+        Me.FlatLabel8.Text = "如果你喜欢本应用，欢迎捐助我哦"
         '
-        'Label2
+        'FlatButton1
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("宋体", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label2.Location = New System.Drawing.Point(28, 12)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(107, 16)
-        Me.Label2.TabIndex = 18
-        Me.Label2.Text = "Powered by "
+        Me.FlatButton1.BackColor = System.Drawing.Color.Transparent
+        Me.FlatButton1.BaseColor = System.Drawing.Color.OrangeRed
+        Me.FlatButton1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FlatButton1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.FlatButton1.Location = New System.Drawing.Point(211, 9)
+        Me.FlatButton1.Name = "FlatButton1"
+        Me.FlatButton1.Rounded = False
+        Me.FlatButton1.Size = New System.Drawing.Size(51, 32)
+        Me.FlatButton1.TabIndex = 34
+        Me.FlatButton1.Text = "OK"
+        Me.FlatButton1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
-        'btnClose
+        'FlatLabel7
         '
-        Me.btnClose.Location = New System.Drawing.Point(298, 259)
-        Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(75, 23)
-        Me.btnClose.TabIndex = 19
-        Me.btnClose.Text = "关闭"
-        Me.btnClose.UseVisualStyleBackColor = True
+        Me.FlatLabel7.AutoSize = True
+        Me.FlatLabel7.BackColor = System.Drawing.Color.Transparent
+        Me.FlatLabel7.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.FlatLabel7.ForeColor = System.Drawing.Color.White
+        Me.FlatLabel7.Location = New System.Drawing.Point(15, 231)
+        Me.FlatLabel7.Name = "FlatLabel7"
+        Me.FlatLabel7.Size = New System.Drawing.Size(249, 13)
+        Me.FlatLabel7.TabIndex = 33
+        Me.FlatLabel7.Text = "——————————————————————"
         '
-        'Label3
+        'FlatLabel6
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("宋体", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.OliveDrab
-        Me.Label3.Location = New System.Drawing.Point(28, 124)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(71, 16)
-        Me.Label3.TabIndex = 21
-        Me.Label3.Text = "Credits"
+        Me.FlatLabel6.AutoSize = True
+        Me.FlatLabel6.BackColor = System.Drawing.Color.Transparent
+        Me.FlatLabel6.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FlatLabel6.ForeColor = System.Drawing.Color.White
+        Me.FlatLabel6.Location = New System.Drawing.Point(141, 176)
+        Me.FlatLabel6.Name = "FlatLabel6"
+        Me.FlatLabel6.Size = New System.Drawing.Size(69, 30)
+        Me.FlatLabel6.TabIndex = 32
+        Me.FlatLabel6.Text = "ImTail"
         '
-        'Label4
+        'FlatLabel5
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("微软雅黑", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.DodgerBlue
-        Me.Label4.Location = New System.Drawing.Point(26, 140)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(116, 28)
-        Me.Label4.TabIndex = 20
-        Me.Label4.Text = "want_旺旺"
+        Me.FlatLabel5.AutoSize = True
+        Me.FlatLabel5.BackColor = System.Drawing.Color.Transparent
+        Me.FlatLabel5.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FlatLabel5.ForeColor = System.Drawing.Color.White
+        Me.FlatLabel5.Location = New System.Drawing.Point(24, 176)
+        Me.FlatLabel5.Name = "FlatLabel5"
+        Me.FlatLabel5.Size = New System.Drawing.Size(111, 30)
+        Me.FlatLabel5.TabIndex = 31
+        Me.FlatLabel5.Text = "want_旺旺"
         '
-        'LinkLabel4
+        'FlatLabel4
         '
-        Me.LinkLabel4.AutoSize = True
-        Me.LinkLabel4.Location = New System.Drawing.Point(82, 168)
-        Me.LinkLabel4.Name = "LinkLabel4"
-        Me.LinkLabel4.Size = New System.Drawing.Size(53, 12)
-        Me.LinkLabel4.TabIndex = 22
-        Me.LinkLabel4.TabStop = True
-        Me.LinkLabel4.Text = "百度空间"
+        Me.FlatLabel4.AutoSize = True
+        Me.FlatLabel4.BackColor = System.Drawing.Color.Transparent
+        Me.FlatLabel4.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FlatLabel4.ForeColor = System.Drawing.Color.White
+        Me.FlatLabel4.Location = New System.Drawing.Point(197, 147)
+        Me.FlatLabel4.Name = "FlatLabel4"
+        Me.FlatLabel4.Size = New System.Drawing.Size(59, 21)
+        Me.FlatLabel4.TabIndex = 30
+        Me.FlatLabel4.Text = "Credits"
         '
-        'Label6
+        'FlatLabel3
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("微软雅黑", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.DodgerBlue
-        Me.Label6.Location = New System.Drawing.Point(151, 140)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(77, 28)
-        Me.Label6.TabIndex = 24
-        Me.Label6.Text = "ImTail"
+        Me.FlatLabel3.AutoSize = True
+        Me.FlatLabel3.BackColor = System.Drawing.Color.Transparent
+        Me.FlatLabel3.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.FlatLabel3.ForeColor = System.Drawing.Color.White
+        Me.FlatLabel3.Location = New System.Drawing.Point(15, 134)
+        Me.FlatLabel3.Name = "FlatLabel3"
+        Me.FlatLabel3.Size = New System.Drawing.Size(249, 13)
+        Me.FlatLabel3.TabIndex = 29
+        Me.FlatLabel3.Text = "——————————————————————"
         '
-        'LinkLabel5
+        'FlatLabel2
         '
-        Me.LinkLabel5.AutoSize = True
-        Me.LinkLabel5.Location = New System.Drawing.Point(166, 168)
-        Me.LinkLabel5.Name = "LinkLabel5"
-        Me.LinkLabel5.Size = New System.Drawing.Size(53, 12)
-        Me.LinkLabel5.TabIndex = 25
-        Me.LinkLabel5.TabStop = True
-        Me.LinkLabel5.Text = "新浪微博"
+        Me.FlatLabel2.AutoSize = True
+        Me.FlatLabel2.BackColor = System.Drawing.Color.Transparent
+        Me.FlatLabel2.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FlatLabel2.ForeColor = System.Drawing.Color.White
+        Me.FlatLabel2.Location = New System.Drawing.Point(15, 89)
+        Me.FlatLabel2.Name = "FlatLabel2"
+        Me.FlatLabel2.Size = New System.Drawing.Size(171, 45)
+        Me.FlatLabel2.TabIndex = 28
+        Me.FlatLabel2.Text = "NimitzDEV"
+        '
+        'FlatLabel1
+        '
+        Me.FlatLabel1.AutoSize = True
+        Me.FlatLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.FlatLabel1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FlatLabel1.ForeColor = System.Drawing.Color.White
+        Me.FlatLabel1.Location = New System.Drawing.Point(19, 68)
+        Me.FlatLabel1.Name = "FlatLabel1"
+        Me.FlatLabel1.Size = New System.Drawing.Size(92, 21)
+        Me.FlatLabel1.TabIndex = 27
+        Me.FlatLabel1.Text = "Powered by"
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.定时关机Ex.My.Resources.Resources.alipayqrcode
-        Me.PictureBox1.Location = New System.Drawing.Point(379, 12)
+        Me.PictureBox1.Location = New System.Drawing.Point(23, 314)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(270, 270)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.Size = New System.Drawing.Size(234, 224)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 26
         Me.PictureBox1.TabStop = False
         '
-        'Label5
+        'LinkLabel5
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Location = New System.Drawing.Point(29, 232)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(311, 12)
-        Me.Label5.TabIndex = 27
-        Me.Label5.Text = "喜欢本应用，可以用手机支付宝扫描右边的二维码捐助我~"
+        Me.LinkLabel5.AutoSize = True
+        Me.LinkLabel5.BackColor = System.Drawing.Color.Transparent
+        Me.LinkLabel5.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel5.LinkColor = System.Drawing.Color.DarkOrange
+        Me.LinkLabel5.Location = New System.Drawing.Point(143, 206)
+        Me.LinkLabel5.Name = "LinkLabel5"
+        Me.LinkLabel5.Size = New System.Drawing.Size(59, 15)
+        Me.LinkLabel5.TabIndex = 25
+        Me.LinkLabel5.TabStop = True
+        Me.LinkLabel5.Text = "新浪微博"
+        '
+        'LinkLabel4
+        '
+        Me.LinkLabel4.AutoSize = True
+        Me.LinkLabel4.BackColor = System.Drawing.Color.Transparent
+        Me.LinkLabel4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel4.LinkColor = System.Drawing.Color.DarkOrange
+        Me.LinkLabel4.Location = New System.Drawing.Point(26, 206)
+        Me.LinkLabel4.Name = "LinkLabel4"
+        Me.LinkLabel4.Size = New System.Drawing.Size(59, 15)
+        Me.LinkLabel4.TabIndex = 22
+        Me.LinkLabel4.TabStop = True
+        Me.LinkLabel4.Text = "百度空间"
+        '
+        'LinkLabel2
+        '
+        Me.LinkLabel2.AutoSize = True
+        Me.LinkLabel2.BackColor = System.Drawing.Color.Transparent
+        Me.LinkLabel2.Font = New System.Drawing.Font("Segoe UI", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel2.LinkColor = System.Drawing.Color.DarkOrange
+        Me.LinkLabel2.Location = New System.Drawing.Point(187, 70)
+        Me.LinkLabel2.Name = "LinkLabel2"
+        Me.LinkLabel2.Size = New System.Drawing.Size(65, 19)
+        Me.LinkLabel2.TabIndex = 9
+        Me.LinkLabel2.TabStop = True
+        Me.LinkLabel2.Text = "新浪微博"
+        '
+        'LinkLabel8
+        '
+        Me.LinkLabel8.AutoSize = True
+        Me.LinkLabel8.BackColor = System.Drawing.Color.Transparent
+        Me.LinkLabel8.Font = New System.Drawing.Font("Segoe UI", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel8.LinkColor = System.Drawing.Color.DarkOrange
+        Me.LinkLabel8.Location = New System.Drawing.Point(187, 89)
+        Me.LinkLabel8.Name = "LinkLabel8"
+        Me.LinkLabel8.Size = New System.Drawing.Size(37, 19)
+        Me.LinkLabel8.TabIndex = 13
+        Me.LinkLabel8.TabStop = True
+        Me.LinkLabel8.Text = "知乎"
+        '
+        'LinkLabel9
+        '
+        Me.LinkLabel9.AutoSize = True
+        Me.LinkLabel9.BackColor = System.Drawing.Color.Transparent
+        Me.LinkLabel9.Font = New System.Drawing.Font("Segoe UI", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel9.LinkColor = System.Drawing.Color.DarkOrange
+        Me.LinkLabel9.Location = New System.Drawing.Point(187, 110)
+        Me.LinkLabel9.Name = "LinkLabel9"
+        Me.LinkLabel9.Size = New System.Drawing.Size(63, 19)
+        Me.LinkLabel9.TabIndex = 14
+        Me.LinkLabel9.TabStop = True
+        Me.LinkLabel9.Text = "Google+"
         '
         'frmAbout
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(659, 296)
+        Me.ClientSize = New System.Drawing.Size(280, 312)
         Me.ControlBox = False
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.LinkLabel5)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.LinkLabel4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.btnClose)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.LinkLabel9)
-        Me.Controls.Add(Me.LinkLabel8)
-        Me.Controls.Add(Me.LinkLabel2)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Controls.Add(Me.formskin1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmAbout"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "关于"
         Me.TopMost = True
+        Me.TransparencyKey = System.Drawing.Color.Fuchsia
+        Me.formskin1.ResumeLayout(False)
+        Me.formskin1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents LinkLabel9 As System.Windows.Forms.LinkLabel
     Friend WithEvents LinkLabel8 As System.Windows.Forms.LinkLabel
     Friend WithEvents LinkLabel2 As System.Windows.Forms.LinkLabel
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents btnClose As System.Windows.Forms.Button
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents LinkLabel4 As System.Windows.Forms.LinkLabel
-    Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents LinkLabel5 As System.Windows.Forms.LinkLabel
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents formskin1 As 定时关机Ex.FormSkin
+    Friend WithEvents FlatButton1 As 定时关机Ex.FlatButton
+    Friend WithEvents FlatLabel7 As 定时关机Ex.FlatLabel
+    Friend WithEvents FlatLabel6 As 定时关机Ex.FlatLabel
+    Friend WithEvents FlatLabel5 As 定时关机Ex.FlatLabel
+    Friend WithEvents FlatLabel4 As 定时关机Ex.FlatLabel
+    Friend WithEvents FlatLabel3 As 定时关机Ex.FlatLabel
+    Friend WithEvents FlatLabel2 As 定时关机Ex.FlatLabel
+    Friend WithEvents FlatLabel1 As 定时关机Ex.FlatLabel
+    Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
+    Friend WithEvents FlatLabel8 As 定时关机Ex.FlatLabel
+    Friend WithEvents FlatLabel9 As 定时关机Ex.FlatLabel
 End Class
