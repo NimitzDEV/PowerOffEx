@@ -68,9 +68,6 @@ Module mdProgram
         mins2 = (inputSecs - (inputSecs Mod 60)) / 60
         hours = (mins2 - (mins2 Mod 60)) / 60
         mins2 = mins2 - hours * 60
-        'If hours <> 0 Then buildStr &= hours & "时"
-        'If mins2 <> 0 Then buildStr &= mins2 & "分"
-        'If secs <> 0 Then buildStr &= secs & "秒"
         buildStr &= hours & "时"
         buildStr &= mins2 & "分"
         buildStr &= secs & "秒"
@@ -87,15 +84,6 @@ Module mdProgram
             End If
         End With
     End Sub
-    'Public Sub reconstractUi()
-    '    With frmInterface
-    '        '////  检查是否为台式机
-    '        If batteryStatus = 128 Then
-    '            .pnlBattery.Visible = False
-    '            .pnlNetworkConnection.Left = (.Width - .pnlNetworkConnection.Width) / 2
-    '        End If
-    '    End With
-    'End Sub
     Public Sub exitProgram(ByVal askFirst As Integer)
         If askFirst = 1 Then
             If MsgBox("确定要退出吗？", vbOKCancel) <> vbOK Then Exit Sub
