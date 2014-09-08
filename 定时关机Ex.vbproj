@@ -69,7 +69,7 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>appiconv2.ico</ApplicationIcon>
+    <ApplicationIcon>appiconv4.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CoreAudioApi">
@@ -245,8 +245,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="appicon.ico" />
-    <Content Include="appiconv2.ico" />
+    <Content Include="appiconv4.ico" />
     <None Include="res\help.png" />
     <None Include="res\internet_disconnected.png" />
     <None Include="res\internet_connected.png" />
