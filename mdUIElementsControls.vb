@@ -182,13 +182,17 @@ Class FormSkin : Inherits ContainerControl
     End Sub
 
     Protected Overrides Sub OnCreateControl()
-        MyBase.OnCreateControl()
-        ParentForm.FormBorderStyle = FormBorderStyle.None
-        ParentForm.AllowTransparency = False
-        ParentForm.TransparencyKey = Color.Fuchsia
-        ParentForm.FindForm.StartPosition = FormStartPosition.CenterScreen
-        Dock = DockStyle.Fill
-        Invalidate()
+        Try
+            MyBase.OnCreateControl()
+            ParentForm.FormBorderStyle = FormBorderStyle.None
+            ParentForm.AllowTransparency = False
+            ParentForm.TransparencyKey = Color.Fuchsia
+            ParentForm.FindForm.StartPosition = FormStartPosition.CenterScreen
+            Dock = DockStyle.Fill
+            Invalidate()
+        Catch ex As Exception
+            Debug.Print(ex.Message)
+        End Try
     End Sub
 
 #End Region
