@@ -41,7 +41,6 @@ Partial Class frmMain
         Me.tbTimeMode = New System.Windows.Forms.TabPage()
         Me.pnlSetTime = New System.Windows.Forms.Panel()
         Me.llbDay = New System.Windows.Forms.LinkLabel()
-        Me.FlatLabel13 = New 定时关机Ex.FlatLabel()
         Me.fnSTMinute = New 定时关机Ex.FlatNumeric()
         Me.FlatLabel11 = New 定时关机Ex.FlatLabel()
         Me.fnSTHour = New 定时关机Ex.FlatNumeric()
@@ -169,7 +168,7 @@ Partial Class frmMain
         Me.FormSkin1.Controls.Add(Me.FlatTabControl1)
         Me.FormSkin1.Controls.Add(Me.FlatClose1)
         Me.FormSkin1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FormSkin1.FlatColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.FormSkin1.FlatColor = System.Drawing.Color.Orange
         Me.FormSkin1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.FormSkin1.HeaderColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.FormSkin1.HeaderMaximize = False
@@ -240,7 +239,6 @@ Partial Class frmMain
         'pnlSetTime
         '
         Me.pnlSetTime.Controls.Add(Me.llbDay)
-        Me.pnlSetTime.Controls.Add(Me.FlatLabel13)
         Me.pnlSetTime.Controls.Add(Me.fnSTMinute)
         Me.pnlSetTime.Controls.Add(Me.FlatLabel11)
         Me.pnlSetTime.Controls.Add(Me.fnSTHour)
@@ -255,26 +253,14 @@ Partial Class frmMain
         '
         Me.llbDay.AutoSize = True
         Me.llbDay.BackColor = System.Drawing.Color.Transparent
-        Me.llbDay.Font = New System.Drawing.Font("Segoe UI", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.llbDay.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.llbDay.LinkColor = System.Drawing.Color.DarkOrange
-        Me.llbDay.Location = New System.Drawing.Point(104, 16)
+        Me.llbDay.Location = New System.Drawing.Point(29, 11)
         Me.llbDay.Name = "llbDay"
-        Me.llbDay.Size = New System.Drawing.Size(25, 19)
+        Me.llbDay.Size = New System.Drawing.Size(52, 25)
         Me.llbDay.TabIndex = 20
         Me.llbDay.TabStop = True
-        Me.llbDay.Text = "00"
-        '
-        'FlatLabel13
-        '
-        Me.FlatLabel13.AutoSize = True
-        Me.FlatLabel13.BackColor = System.Drawing.Color.Transparent
-        Me.FlatLabel13.Font = New System.Drawing.Font("Segoe UI", 8.0!)
-        Me.FlatLabel13.ForeColor = System.Drawing.Color.White
-        Me.FlatLabel13.Location = New System.Drawing.Point(135, 20)
-        Me.FlatLabel13.Name = "FlatLabel13"
-        Me.FlatLabel13.Size = New System.Drawing.Size(20, 13)
-        Me.FlatLabel13.TabIndex = 19
-        Me.FlatLabel13.Text = "日"
+        Me.llbDay.Text = "今天"
         '
         'fnSTMinute
         '
@@ -878,7 +864,6 @@ Partial Class frmMain
     Friend WithEvents tsmiCountdown As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsmiSetTime As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents pnlSetTime As System.Windows.Forms.Panel
-    Friend WithEvents FlatLabel13 As 定时关机Ex.FlatLabel
     Friend WithEvents fnSTMinute As 定时关机Ex.FlatNumeric
     Friend WithEvents FlatLabel11 As 定时关机Ex.FlatLabel
     Friend WithEvents fnSTHour As 定时关机Ex.FlatNumeric

@@ -3,6 +3,7 @@ Imports System.Text.RegularExpressions.Regex
 Public Class frmMain
     Dim inputArgument As String = "/input="
     Dim inputName As String = ""
+    Dim tmp As String
     Public selectedMode As Integer = 0
     Private Sub frmMain_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         SaveSettings()
@@ -26,15 +27,20 @@ Public Class frmMain
         pnlCountdown.Location = New Point((tbTimeMode.Width - pnlCountdown.Width) / 2, (tbTimeMode.Height - pnlCountdown.Height) / 2)
         pnlSetTime.Location = New Point((tbTimeMode.Width - pnlSetTime.Width) / 2, (tbTimeMode.Height - pnlSetTime.Height) / 2)
         'date
-        llbDay.Text = Today.Day
+        llbDay.Text = "今天"
+        llbDay.Tag = Today.Day
         For i = 0 To 2
-            cmsTime.Items.Add(Today.Day + i, _
+            If i = 0 Then tmp = "今天"
+            If i = 1 Then tmp = "明天"
+            If i = 2 Then tmp = "后天"
+            cmsTime.Items.Add(tmp, _
                                Nothing, AddressOf dateSelectHandler).Tag = Today.Day + i
         Next
     End Sub
 
     Private Sub dateSelectHandler(sender As Object, e As EventArgs)
-        llbDay.Text = sender.tag
+        llbDay.Text = sender.text
+        llbDay.Tag = sender.tag
     End Sub
 
     Private Function assResolve(ByVal sender As System.Object, ByVal e As System.ResolveEventArgs) As System.Reflection.Assembly
@@ -75,7 +81,7 @@ Public Class frmMain
         End If
         If pnlSetTime.Visible = True Then
             Dim datediffV As Integer
-            datediffV = DateDiff("s", Date.Today & "" & TimeOfDay, Year(Now) & "-" & Month(Now) & "-" & llbDay.Text & " " & fnSTHour.Value & ":" & fnSTMinute.Value & ":00")
+            datediffV = DateDiff("s", Year(Now) & "-" & Month(Now) & "-" & Today.Day & " " & TimeOfDay, Year(Now) & "-" & Month(Now) & "-" & llbDay.Tag & " " & fnSTHour.Value & ":" & fnSTMinute.Value & ":00")
             If datediffV < 0 Then
                 MsgBox("时间设定不能设定在目前时间之前")
                 Exit Sub
