@@ -48,13 +48,15 @@
     Private Sub detectUpdate()
         If isNew() = False Then
             ProgressBar1.Visible = False
-            FormSkin1.Text = "当前已经是最新版本 （" & Application.ProductVersion & "）"
+            txtDetails.Text = "当前已经是最新版本!" & vbCrLf & Application.ProductVersion
+            FormSkin1.Text = "OK！"
             FormSkin1.FlatColor = Color.DodgerBlue
             FormSkin1.Refresh()
             'lbStatus.ForeColor = Color.DodgerBlue
             'btnClose.Top = 51
             'PictureBox1.Image = My.Resources.uptodate64px
         Else
+            fbDownload.Visible = True
             If listLoaded() = True Then
                 fbDownload.Enabled = True
             Else
@@ -62,7 +64,7 @@
                 fbDownload.Text = "无法下载"
                 fbDownload.Refresh()
             End If
-
+            txtDetails.ScrollBars = ScrollBars.Vertical
             'Me.Height = 260
             'txtDetails.Visible = True
             'txtDetails.Text = updateString

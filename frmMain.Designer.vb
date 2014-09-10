@@ -30,17 +30,29 @@ Partial Class frmMain
         Me.tsmiContinue = New System.Windows.Forms.ToolStripMenuItem()
         Me.tmrTime = New System.Windows.Forms.Timer(Me.components)
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.cmsMode = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.tsmiCountdown = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiSetTime = New System.Windows.Forms.ToolStripMenuItem()
         Me.fsbTime = New 定时关机Ex.FlatStatusBar()
         Me.FormSkin1 = New 定时关机Ex.FormSkin()
         Me.FlatAlertBox1 = New 定时关机Ex.FlatAlertBox()
         Me.FlatMini1 = New 定时关机Ex.FlatMini()
         Me.FlatTabControl1 = New 定时关机Ex.FlatTabControl()
         Me.tbTimeMode = New System.Windows.Forms.TabPage()
+        Me.pnlSetTime = New System.Windows.Forms.Panel()
+        Me.llbDay = New System.Windows.Forms.LinkLabel()
+        Me.FlatLabel13 = New 定时关机Ex.FlatLabel()
+        Me.fnSTMinute = New 定时关机Ex.FlatNumeric()
+        Me.FlatLabel11 = New 定时关机Ex.FlatLabel()
+        Me.fnSTHour = New 定时关机Ex.FlatNumeric()
+        Me.FlatLabel12 = New 定时关机Ex.FlatLabel()
+        Me.llbMode = New System.Windows.Forms.LinkLabel()
+        Me.pnlCountdown = New System.Windows.Forms.Panel()
+        Me.fNMinute = New 定时关机Ex.FlatNumeric()
         Me.FlatLabel4 = New 定时关机Ex.FlatLabel()
+        Me.fNHour = New 定时关机Ex.FlatNumeric()
         Me.FlatLabel3 = New 定时关机Ex.FlatLabel()
         Me.FlatLabel2 = New 定时关机Ex.FlatLabel()
-        Me.fNMinute = New 定时关机Ex.FlatNumeric()
-        Me.fNHour = New 定时关机Ex.FlatNumeric()
         Me.FlatLabel1 = New 定时关机Ex.FlatLabel()
         Me.btnStart = New 定时关机Ex.FlatButton()
         Me.tbBatteryMode = New System.Windows.Forms.TabPage()
@@ -69,10 +81,14 @@ Partial Class frmMain
         Me.FlatClose1 = New 定时关机Ex.FlatClose()
         Me.FlatContextMenuStrip1 = New 定时关机Ex.FlatContextMenuStrip()
         Me.高规格ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.cmsTime = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.cmsSelect.SuspendLayout()
+        Me.cmsMode.SuspendLayout()
         Me.FormSkin1.SuspendLayout()
         Me.FlatTabControl1.SuspendLayout()
         Me.tbTimeMode.SuspendLayout()
+        Me.pnlSetTime.SuspendLayout()
+        Me.pnlCountdown.SuspendLayout()
         Me.tbBatteryMode.SuspendLayout()
         Me.fgbError.SuspendLayout()
         Me.tbOptions.SuspendLayout()
@@ -109,6 +125,24 @@ Partial Class frmMain
         '
         Me.tmrTime.Enabled = True
         Me.tmrTime.Interval = 1000
+        '
+        'cmsMode
+        '
+        Me.cmsMode.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiCountdown, Me.tsmiSetTime})
+        Me.cmsMode.Name = "cmsMode"
+        Me.cmsMode.Size = New System.Drawing.Size(125, 48)
+        '
+        'tsmiCountdown
+        '
+        Me.tsmiCountdown.Name = "tsmiCountdown"
+        Me.tsmiCountdown.Size = New System.Drawing.Size(124, 22)
+        Me.tsmiCountdown.Text = "固定时长"
+        '
+        'tsmiSetTime
+        '
+        Me.tsmiSetTime.Name = "tsmiSetTime"
+        Me.tsmiSetTime.Size = New System.Drawing.Size(124, 22)
+        Me.tsmiSetTime.Text = "确定时刻"
         '
         'fsbTime
         '
@@ -190,11 +224,10 @@ Partial Class frmMain
         'tbTimeMode
         '
         Me.tbTimeMode.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
-        Me.tbTimeMode.Controls.Add(Me.FlatLabel4)
-        Me.tbTimeMode.Controls.Add(Me.FlatLabel3)
+        Me.tbTimeMode.Controls.Add(Me.pnlSetTime)
+        Me.tbTimeMode.Controls.Add(Me.llbMode)
+        Me.tbTimeMode.Controls.Add(Me.pnlCountdown)
         Me.tbTimeMode.Controls.Add(Me.FlatLabel2)
-        Me.tbTimeMode.Controls.Add(Me.fNMinute)
-        Me.tbTimeMode.Controls.Add(Me.fNHour)
         Me.tbTimeMode.Controls.Add(Me.FlatLabel1)
         Me.tbTimeMode.Controls.Add(Me.btnStart)
         Me.tbTimeMode.Location = New System.Drawing.Point(4, 44)
@@ -204,17 +237,168 @@ Partial Class frmMain
         Me.tbTimeMode.TabIndex = 0
         Me.tbTimeMode.Text = "定时模式"
         '
+        'pnlSetTime
+        '
+        Me.pnlSetTime.Controls.Add(Me.llbDay)
+        Me.pnlSetTime.Controls.Add(Me.FlatLabel13)
+        Me.pnlSetTime.Controls.Add(Me.fnSTMinute)
+        Me.pnlSetTime.Controls.Add(Me.FlatLabel11)
+        Me.pnlSetTime.Controls.Add(Me.fnSTHour)
+        Me.pnlSetTime.Controls.Add(Me.FlatLabel12)
+        Me.pnlSetTime.Location = New System.Drawing.Point(12, 97)
+        Me.pnlSetTime.Name = "pnlSetTime"
+        Me.pnlSetTime.Size = New System.Drawing.Size(252, 93)
+        Me.pnlSetTime.TabIndex = 20
+        Me.pnlSetTime.Visible = False
+        '
+        'llbDay
+        '
+        Me.llbDay.AutoSize = True
+        Me.llbDay.BackColor = System.Drawing.Color.Transparent
+        Me.llbDay.Font = New System.Drawing.Font("Segoe UI", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.llbDay.LinkColor = System.Drawing.Color.DarkOrange
+        Me.llbDay.Location = New System.Drawing.Point(104, 16)
+        Me.llbDay.Name = "llbDay"
+        Me.llbDay.Size = New System.Drawing.Size(25, 19)
+        Me.llbDay.TabIndex = 20
+        Me.llbDay.TabStop = True
+        Me.llbDay.Text = "00"
+        '
+        'FlatLabel13
+        '
+        Me.FlatLabel13.AutoSize = True
+        Me.FlatLabel13.BackColor = System.Drawing.Color.Transparent
+        Me.FlatLabel13.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.FlatLabel13.ForeColor = System.Drawing.Color.White
+        Me.FlatLabel13.Location = New System.Drawing.Point(135, 20)
+        Me.FlatLabel13.Name = "FlatLabel13"
+        Me.FlatLabel13.Size = New System.Drawing.Size(20, 13)
+        Me.FlatLabel13.TabIndex = 19
+        Me.FlatLabel13.Text = "日"
+        '
+        'fnSTMinute
+        '
+        Me.fnSTMinute.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.fnSTMinute.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.fnSTMinute.ButtonColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.fnSTMinute.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.fnSTMinute.ForeColor = System.Drawing.Color.White
+        Me.fnSTMinute.Location = New System.Drawing.Point(135, 42)
+        Me.fnSTMinute.Maximum = CType(59, Long)
+        Me.fnSTMinute.Minimum = CType(0, Long)
+        Me.fnSTMinute.Name = "fnSTMinute"
+        Me.fnSTMinute.Size = New System.Drawing.Size(69, 30)
+        Me.fnSTMinute.TabIndex = 14
+        Me.fnSTMinute.Text = "FlatNumeric2"
+        Me.fnSTMinute.Value = CType(0, Long)
+        '
+        'FlatLabel11
+        '
+        Me.FlatLabel11.AutoSize = True
+        Me.FlatLabel11.BackColor = System.Drawing.Color.Transparent
+        Me.FlatLabel11.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.FlatLabel11.ForeColor = System.Drawing.Color.White
+        Me.FlatLabel11.Location = New System.Drawing.Point(210, 50)
+        Me.FlatLabel11.Name = "FlatLabel11"
+        Me.FlatLabel11.Size = New System.Drawing.Size(20, 13)
+        Me.FlatLabel11.TabIndex = 17
+        Me.FlatLabel11.Text = "分"
+        '
+        'fnSTHour
+        '
+        Me.fnSTHour.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.fnSTHour.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.fnSTHour.ButtonColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.fnSTHour.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.fnSTHour.ForeColor = System.Drawing.Color.White
+        Me.fnSTHour.Location = New System.Drawing.Point(34, 42)
+        Me.fnSTHour.Maximum = CType(23, Long)
+        Me.fnSTHour.Minimum = CType(0, Long)
+        Me.fnSTHour.Name = "fnSTHour"
+        Me.fnSTHour.Size = New System.Drawing.Size(69, 30)
+        Me.fnSTHour.TabIndex = 13
+        Me.fnSTHour.Text = "FlatNumeric1"
+        Me.fnSTHour.Value = CType(0, Long)
+        '
+        'FlatLabel12
+        '
+        Me.FlatLabel12.AutoSize = True
+        Me.FlatLabel12.BackColor = System.Drawing.Color.Transparent
+        Me.FlatLabel12.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.FlatLabel12.ForeColor = System.Drawing.Color.White
+        Me.FlatLabel12.Location = New System.Drawing.Point(109, 50)
+        Me.FlatLabel12.Name = "FlatLabel12"
+        Me.FlatLabel12.Size = New System.Drawing.Size(20, 13)
+        Me.FlatLabel12.TabIndex = 16
+        Me.FlatLabel12.Text = "时"
+        '
+        'llbMode
+        '
+        Me.llbMode.AutoSize = True
+        Me.llbMode.BackColor = System.Drawing.Color.Transparent
+        Me.llbMode.Font = New System.Drawing.Font("Segoe UI", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.llbMode.LinkColor = System.Drawing.Color.DarkOrange
+        Me.llbMode.Location = New System.Drawing.Point(8, 9)
+        Me.llbMode.Name = "llbMode"
+        Me.llbMode.Size = New System.Drawing.Size(65, 19)
+        Me.llbMode.TabIndex = 19
+        Me.llbMode.TabStop = True
+        Me.llbMode.Text = "设定模式"
+        '
+        'pnlCountdown
+        '
+        Me.pnlCountdown.Controls.Add(Me.fNMinute)
+        Me.pnlCountdown.Controls.Add(Me.FlatLabel4)
+        Me.pnlCountdown.Controls.Add(Me.fNHour)
+        Me.pnlCountdown.Controls.Add(Me.FlatLabel3)
+        Me.pnlCountdown.Location = New System.Drawing.Point(131, 19)
+        Me.pnlCountdown.Name = "pnlCountdown"
+        Me.pnlCountdown.Size = New System.Drawing.Size(252, 91)
+        Me.pnlCountdown.TabIndex = 18
+        '
+        'fNMinute
+        '
+        Me.fNMinute.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.fNMinute.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.fNMinute.ButtonColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.fNMinute.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.fNMinute.ForeColor = System.Drawing.Color.White
+        Me.fNMinute.Location = New System.Drawing.Point(133, 29)
+        Me.fNMinute.Maximum = CType(59, Long)
+        Me.fNMinute.Minimum = CType(0, Long)
+        Me.fNMinute.Name = "fNMinute"
+        Me.fNMinute.Size = New System.Drawing.Size(69, 30)
+        Me.fNMinute.TabIndex = 14
+        Me.fNMinute.Text = "FlatNumeric2"
+        Me.fNMinute.Value = CType(0, Long)
+        '
         'FlatLabel4
         '
         Me.FlatLabel4.AutoSize = True
         Me.FlatLabel4.BackColor = System.Drawing.Color.Transparent
         Me.FlatLabel4.Font = New System.Drawing.Font("Segoe UI", 8.0!)
         Me.FlatLabel4.ForeColor = System.Drawing.Color.White
-        Me.FlatLabel4.Location = New System.Drawing.Point(283, 100)
+        Me.FlatLabel4.Location = New System.Drawing.Point(208, 38)
         Me.FlatLabel4.Name = "FlatLabel4"
         Me.FlatLabel4.Size = New System.Drawing.Size(33, 13)
         Me.FlatLabel4.TabIndex = 17
         Me.FlatLabel4.Text = "分钟"
+        '
+        'fNHour
+        '
+        Me.fNHour.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.fNHour.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.fNHour.ButtonColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.fNHour.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.fNHour.ForeColor = System.Drawing.Color.White
+        Me.fNHour.Location = New System.Drawing.Point(19, 29)
+        Me.fNHour.Maximum = CType(23, Long)
+        Me.fNHour.Minimum = CType(0, Long)
+        Me.fNHour.Name = "fNHour"
+        Me.fNHour.Size = New System.Drawing.Size(69, 30)
+        Me.fNHour.TabIndex = 13
+        Me.fNHour.Text = "FlatNumeric1"
+        Me.fNHour.Value = CType(0, Long)
         '
         'FlatLabel3
         '
@@ -222,7 +406,7 @@ Partial Class frmMain
         Me.FlatLabel3.BackColor = System.Drawing.Color.Transparent
         Me.FlatLabel3.Font = New System.Drawing.Font("Segoe UI", 8.0!)
         Me.FlatLabel3.ForeColor = System.Drawing.Color.White
-        Me.FlatLabel3.Location = New System.Drawing.Point(169, 100)
+        Me.FlatLabel3.Location = New System.Drawing.Point(94, 38)
         Me.FlatLabel3.Name = "FlatLabel3"
         Me.FlatLabel3.Size = New System.Drawing.Size(33, 13)
         Me.FlatLabel3.TabIndex = 16
@@ -234,43 +418,11 @@ Partial Class frmMain
         Me.FlatLabel2.BackColor = System.Drawing.Color.Transparent
         Me.FlatLabel2.Font = New System.Drawing.Font("Segoe UI", 8.0!)
         Me.FlatLabel2.ForeColor = System.Drawing.Color.White
-        Me.FlatLabel2.Location = New System.Drawing.Point(56, 53)
+        Me.FlatLabel2.Location = New System.Drawing.Point(8, 48)
         Me.FlatLabel2.Name = "FlatLabel2"
         Me.FlatLabel2.Size = New System.Drawing.Size(72, 13)
         Me.FlatLabel2.TabIndex = 15
         Me.FlatLabel2.Text = "请设定时间"
-        '
-        'fNMinute
-        '
-        Me.fNMinute.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
-        Me.fNMinute.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.fNMinute.ButtonColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.fNMinute.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.fNMinute.ForeColor = System.Drawing.Color.White
-        Me.fNMinute.Location = New System.Drawing.Point(208, 91)
-        Me.fNMinute.Maximum = CType(59, Long)
-        Me.fNMinute.Minimum = CType(0, Long)
-        Me.fNMinute.Name = "fNMinute"
-        Me.fNMinute.Size = New System.Drawing.Size(69, 30)
-        Me.fNMinute.TabIndex = 14
-        Me.fNMinute.Text = "FlatNumeric2"
-        Me.fNMinute.Value = CType(0, Long)
-        '
-        'fNHour
-        '
-        Me.fNHour.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
-        Me.fNHour.BaseColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.fNHour.ButtonColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.fNHour.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.fNHour.ForeColor = System.Drawing.Color.White
-        Me.fNHour.Location = New System.Drawing.Point(94, 91)
-        Me.fNHour.Maximum = CType(23, Long)
-        Me.fNHour.Minimum = CType(0, Long)
-        Me.fNHour.Name = "fNHour"
-        Me.fNHour.Size = New System.Drawing.Size(69, 30)
-        Me.fNHour.TabIndex = 13
-        Me.fNHour.Text = "FlatNumeric1"
-        Me.fNHour.Value = CType(0, Long)
         '
         'FlatLabel1
         '
@@ -632,6 +784,11 @@ Partial Class frmMain
         Me.高规格ToolStripMenuItem.Size = New System.Drawing.Size(88, 22)
         Me.高规格ToolStripMenuItem.Text = "高规格"
         '
+        'cmsTime
+        '
+        Me.cmsTime.Name = "cmsTime"
+        Me.cmsTime.Size = New System.Drawing.Size(61, 4)
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -648,10 +805,15 @@ Partial Class frmMain
         Me.Text = "Main"
         Me.TransparencyKey = System.Drawing.Color.Fuchsia
         Me.cmsSelect.ResumeLayout(False)
+        Me.cmsMode.ResumeLayout(False)
         Me.FormSkin1.ResumeLayout(False)
         Me.FlatTabControl1.ResumeLayout(False)
         Me.tbTimeMode.ResumeLayout(False)
         Me.tbTimeMode.PerformLayout()
+        Me.pnlSetTime.ResumeLayout(False)
+        Me.pnlSetTime.PerformLayout()
+        Me.pnlCountdown.ResumeLayout(False)
+        Me.pnlCountdown.PerformLayout()
         Me.tbBatteryMode.ResumeLayout(False)
         Me.tbBatteryMode.PerformLayout()
         Me.fgbError.ResumeLayout(False)
@@ -710,5 +872,18 @@ Partial Class frmMain
     Friend WithEvents help4TVP As System.Windows.Forms.PictureBox
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
     Friend WithEvents FlatMini1 As 定时关机Ex.FlatMini
+    Friend WithEvents pnlCountdown As System.Windows.Forms.Panel
+    Friend WithEvents llbMode As System.Windows.Forms.LinkLabel
+    Friend WithEvents cmsMode As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents tsmiCountdown As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmiSetTime As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents pnlSetTime As System.Windows.Forms.Panel
+    Friend WithEvents FlatLabel13 As 定时关机Ex.FlatLabel
+    Friend WithEvents fnSTMinute As 定时关机Ex.FlatNumeric
+    Friend WithEvents FlatLabel11 As 定时关机Ex.FlatLabel
+    Friend WithEvents fnSTHour As 定时关机Ex.FlatNumeric
+    Friend WithEvents FlatLabel12 As 定时关机Ex.FlatLabel
+    Friend WithEvents llbDay As System.Windows.Forms.LinkLabel
+    Friend WithEvents cmsTime As System.Windows.Forms.ContextMenuStrip
 
 End Class

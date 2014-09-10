@@ -27,11 +27,11 @@ Partial Class frmUpdate
         Me.tmrTimeOut = New System.Windows.Forms.Timer(Me.components)
         Me.cmsDownloadList = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.FormSkin1 = New 定时关机Ex.FormSkin()
+        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.fbClose = New 定时关机Ex.FlatButton()
         Me.fbDownload = New 定时关机Ex.FlatButton()
         Me.wbStart = New System.Windows.Forms.WebBrowser()
         Me.txtDetails = New System.Windows.Forms.TextBox()
-        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.FormSkin1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -66,6 +66,16 @@ Partial Class frmUpdate
         Me.FormSkin1.TabIndex = 8
         Me.FormSkin1.Text = "正在检查更新..."
         '
+        'ProgressBar1
+        '
+        Me.ProgressBar1.Location = New System.Drawing.Point(154, 12)
+        Me.ProgressBar1.MarqueeAnimationSpeed = 3
+        Me.ProgressBar1.Name = "ProgressBar1"
+        Me.ProgressBar1.Size = New System.Drawing.Size(157, 23)
+        Me.ProgressBar1.Step = 3
+        Me.ProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee
+        Me.ProgressBar1.TabIndex = 2
+        '
         'fbClose
         '
         Me.fbClose.BackColor = System.Drawing.Color.Transparent
@@ -93,6 +103,7 @@ Partial Class frmUpdate
         Me.fbDownload.TabIndex = 8
         Me.fbDownload.Text = "立即下载"
         Me.fbDownload.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        Me.fbDownload.Visible = False
         '
         'wbStart
         '
@@ -113,20 +124,9 @@ Partial Class frmUpdate
         Me.txtDetails.Multiline = True
         Me.txtDetails.Name = "txtDetails"
         Me.txtDetails.ReadOnly = True
-        Me.txtDetails.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtDetails.Size = New System.Drawing.Size(351, 130)
         Me.txtDetails.TabIndex = 4
         Me.txtDetails.Text = "请稍后......"
-        '
-        'ProgressBar1
-        '
-        Me.ProgressBar1.Location = New System.Drawing.Point(91, 86)
-        Me.ProgressBar1.MarqueeAnimationSpeed = 3
-        Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(157, 23)
-        Me.ProgressBar1.Step = 3
-        Me.ProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee
-        Me.ProgressBar1.TabIndex = 2
         '
         'frmUpdate
         '

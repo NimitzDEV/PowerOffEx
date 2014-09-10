@@ -22,8 +22,20 @@ Public Class frmMain
         startArgsChecking()
         FormSkin1.Text = Me.Text
         FlatAlertBox1.Location = New Point(3, 4)
+        'PNL
+        pnlCountdown.Location = New Point((tbTimeMode.Width - pnlCountdown.Width) / 2, (tbTimeMode.Height - pnlCountdown.Height) / 2)
+        pnlSetTime.Location = New Point((tbTimeMode.Width - pnlSetTime.Width) / 2, (tbTimeMode.Height - pnlSetTime.Height) / 2)
+        'date
+        llbDay.Text = Today.Day
+        For i = 0 To 2
+            cmsTime.Items.Add(Today.Day + i, _
+                               Nothing, AddressOf dateSelectHandler).Tag = Today.Day + i
+        Next
     End Sub
 
+    Private Sub dateSelectHandler(sender As Object, e As EventArgs)
+        llbDay.Text = sender.tag
+    End Sub
 
     Private Function assResolve(ByVal sender As System.Object, ByVal e As System.ResolveEventArgs) As System.Reflection.Assembly
         Return EmbeddedAssembly.Get(e.Name)
@@ -45,6 +57,7 @@ Public Class frmMain
 
 
     Private Sub btnStart_Click(sender As Object, e As EventArgs) Handles btnStart.Click
+        If pnlCountdown.Visible = True Then
             If fNHour.Value = 0 And fNMinute.Value = 0 Then
                 MsgBox("时间不能为0")
                 Exit Sub
@@ -56,9 +69,22 @@ Public Class frmMain
                 End If
                 valSetTime = fNHour.Value * 3600 + fNMinute.Value * 60
                 valBatteryLifeLB = 0
+                selectedMode = 0
+                startActive()
+            End If
         End If
-        selectedMode = 0
-        startActive()
+        If pnlSetTime.Visible = True Then
+            Dim datediffV As Integer
+            datediffV = DateDiff("s", Date.Today & "" & TimeOfDay, Year(Now) & "-" & Month(Now) & "-" & llbDay.Text & " " & fnSTHour.Value & ":" & fnSTMinute.Value & ":00")
+            If datediffV < 0 Then
+                MsgBox("时间设定不能设定在目前时间之前")
+                Exit Sub
+            End If
+            valSetTime = datediffV
+            valBatteryLifeLB = 0
+            selectedMode = 0
+            startActive()
+        End If
     End Sub
 
     Private Sub startActive()
@@ -200,5 +226,26 @@ Public Class frmMain
 
     Private Sub FlatMini1_Click(sender As Object, e As EventArgs) Handles FlatMini1.Click
         Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+    Private Sub llbMode_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llbMode.LinkClicked
+        cmsMode.Show(llbMode, 0, llbMode.Height)
+    End Sub
+
+    Private Sub tsmiCountdown_Click(sender As Object, e As EventArgs) Handles tsmiCountdown.Click
+        pnlCountdown.Visible = True
+        pnlSetTime.Visible = False
+        valSetTime = 0
+    End Sub
+
+    Private Sub tsmiSetTime_Click(sender As Object, e As EventArgs) Handles tsmiSetTime.Click
+        pnlCountdown.Visible = False
+        pnlSetTime.Visible = True
+        valSetTime = 0
+    End Sub
+
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llbDay.LinkClicked
+        cmsTime.Show(llbDay, 0, llbDay.Height)
     End Sub
 End Class
