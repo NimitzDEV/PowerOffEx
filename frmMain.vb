@@ -114,6 +114,10 @@ Public Class frmMain
     End Sub
 
     Private Sub btnFindNew_Click(sender As Object, e As EventArgs) Handles btnFindNew.Click
+        If System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable = False Then
+            MsgBox("当前没有网络连接，无法使用OTA功能！")
+            Exit Sub
+        End If
         frmUpdate.ShowDialog()
         frmUpdate.Dispose()
     End Sub

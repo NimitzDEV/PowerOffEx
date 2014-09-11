@@ -33,6 +33,7 @@ Partial Class frmMain
         Me.cmsMode = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.tsmiCountdown = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiSetTime = New System.Windows.Forms.ToolStripMenuItem()
+        Me.cmsTime = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.fsbTime = New 定时关机Ex.FlatStatusBar()
         Me.FormSkin1 = New 定时关机Ex.FormSkin()
         Me.FlatAlertBox1 = New 定时关机Ex.FlatAlertBox()
@@ -80,7 +81,6 @@ Partial Class frmMain
         Me.FlatClose1 = New 定时关机Ex.FlatClose()
         Me.FlatContextMenuStrip1 = New 定时关机Ex.FlatContextMenuStrip()
         Me.高规格ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.cmsTime = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.cmsSelect.SuspendLayout()
         Me.cmsMode.SuspendLayout()
         Me.FormSkin1.SuspendLayout()
@@ -142,6 +142,11 @@ Partial Class frmMain
         Me.tsmiSetTime.Name = "tsmiSetTime"
         Me.tsmiSetTime.Size = New System.Drawing.Size(124, 22)
         Me.tsmiSetTime.Text = "确定时刻"
+        '
+        'cmsTime
+        '
+        Me.cmsTime.Name = "cmsTime"
+        Me.cmsTime.Size = New System.Drawing.Size(61, 4)
         '
         'fsbTime
         '
@@ -769,11 +774,6 @@ Partial Class frmMain
         Me.高规格ToolStripMenuItem.Name = "高规格ToolStripMenuItem"
         Me.高规格ToolStripMenuItem.Size = New System.Drawing.Size(88, 22)
         Me.高规格ToolStripMenuItem.Text = "高规格"
-        '
-        'cmsTime
-        '
-        Me.cmsTime.Name = "cmsTime"
-        Me.cmsTime.Size = New System.Drawing.Size(61, 4)
         '
         'frmMain
         '
