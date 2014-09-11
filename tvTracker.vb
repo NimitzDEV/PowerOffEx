@@ -49,11 +49,11 @@
         tmpChar = getTitle()
         If tmpChar = "" Then Exit Sub
         tvTitle = tmpChar.Substring(0, InStr(tmpChar, "第") - 1)
-        tvTitle.Trim()
-        tvTitle.Replace(" ", "")
+        tvTitle = tvTitle.Trim()
         Debug.Print("标题" & tvTitle)
         Debug.Print(InStr(tmpChar, "集") + 1)
         tvProgress = tmpChar.Substring(InStr(tmpChar, "第") - 1, InStr(tmpChar, "集") - InStr(tmpChar, "第") + 1)
+        tvProgress = tvProgress.Trim
         Debug.Print("集数" & tvProgress)
     End Sub
 End Module
