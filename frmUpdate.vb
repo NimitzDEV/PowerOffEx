@@ -24,7 +24,7 @@
         fbClose.Width = Me.Width / 2
         fbDownload.Left = Me.Width / 2
         fbDownload.Width = Me.Width / 2
-        wbStart.Navigate("http://nimitzdev.free3v.net/update/update_dsgjex.html")
+        wbTry.Navigate("http://nimitzdev.free3v.net/update/update_dsgjex.html")
     End Sub
 
     Private Sub wbStart_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles wbStart.DocumentCompleted
@@ -131,5 +131,9 @@
 
     Private Sub fbClose_Click(sender As Object, e As EventArgs) Handles fbClose.Click
         Me.Close()
+    End Sub
+
+    Private Sub wbTry_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles wbTry.DocumentCompleted
+        wbStart.Navigate("http://nimitzdev.free3v.net/update/update_dsgjex.html")
     End Sub
 End Class

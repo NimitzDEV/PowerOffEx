@@ -32,6 +32,7 @@ Partial Class frmUpdate
         Me.fbDownload = New 定时关机Ex.FlatButton()
         Me.wbStart = New System.Windows.Forms.WebBrowser()
         Me.txtDetails = New System.Windows.Forms.TextBox()
+        Me.wbTry = New System.Windows.Forms.WebBrowser()
         Me.FormSkin1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -55,6 +56,7 @@ Partial Class frmUpdate
         Me.FormSkin1.Controls.Add(Me.fbDownload)
         Me.FormSkin1.Controls.Add(Me.wbStart)
         Me.FormSkin1.Controls.Add(Me.txtDetails)
+        Me.FormSkin1.Controls.Add(Me.wbTry)
         Me.FormSkin1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FormSkin1.FlatColor = System.Drawing.Color.Orange
         Me.FormSkin1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
@@ -128,6 +130,16 @@ Partial Class frmUpdate
         Me.txtDetails.TabIndex = 4
         Me.txtDetails.Text = "请稍后......"
         '
+        'wbTry
+        '
+        Me.wbTry.Location = New System.Drawing.Point(154, 60)
+        Me.wbTry.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.wbTry.Name = "wbTry"
+        Me.wbTry.ScriptErrorsSuppressed = True
+        Me.wbTry.Size = New System.Drawing.Size(127, 77)
+        Me.wbTry.TabIndex = 9
+        Me.wbTry.Visible = False
+        '
         'frmUpdate
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -155,4 +167,5 @@ Partial Class frmUpdate
     Friend WithEvents FormSkin1 As 定时关机Ex.FormSkin
     Friend WithEvents fbDownload As 定时关机Ex.FlatButton
     Friend WithEvents fbClose As 定时关机Ex.FlatButton
+    Friend WithEvents wbTry As System.Windows.Forms.WebBrowser
 End Class
