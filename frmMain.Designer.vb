@@ -383,7 +383,7 @@ Partial Class frmMain
         Me.fNHour.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.fNHour.ForeColor = System.Drawing.Color.White
         Me.fNHour.Location = New System.Drawing.Point(19, 29)
-        Me.fNHour.Maximum = CType(23, Long)
+        Me.fNHour.Maximum = CType(100, Long)
         Me.fNHour.Minimum = CType(0, Long)
         Me.fNHour.Name = "fNHour"
         Me.fNHour.Size = New System.Drawing.Size(69, 30)
