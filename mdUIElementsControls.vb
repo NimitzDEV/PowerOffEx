@@ -191,7 +191,13 @@ Class FormSkin : Inherits ContainerControl
             Dock = DockStyle.Fill
             Invalidate()
         Catch ex As Exception
-            Debug.Print(ex.Message)
+            'MyBase.OnCreateControl()
+            'ParentForm.FormBorderStyle = FormBorderStyle.None
+            'ParentForm.AllowTransparency = False
+            'ParentForm.TransparencyKey = Color.Fuchsia
+            'ParentForm.FindForm.StartPosition = FormStartPosition.CenterScreen
+            'Dock = DockStyle.Fill
+            Invalidate()
         End Try
     End Sub
 

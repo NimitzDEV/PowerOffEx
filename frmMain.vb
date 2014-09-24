@@ -41,6 +41,7 @@ Public Class frmMain
     Private Sub dateSelectHandler(sender As Object, e As EventArgs)
         llbDay.Text = sender.text
         llbDay.Tag = sender.tag
+        Call timeUpdate()
     End Sub
 
     Private Function assResolve(ByVal sender As System.Object, ByVal e As System.ResolveEventArgs) As System.Reflection.Assembly
@@ -168,7 +169,7 @@ Public Class frmMain
                     Else
                         tipString &= "（可用" & converTime(batteryLife) & "）"
                     End If
-                    fpbCurrentBattery.Value = batteryPercent
+                    fbBatteryre.Text = "当前剩余电量：" & batteryPercent & "%"
                     FlatAlertBox1.ShowControl(FlatAlertBox._Kind.Info, tipString, 6000)
                 End If
                 Debug.Print(batteryLife)
@@ -252,8 +253,21 @@ Public Class frmMain
         pnlCountdown.Visible = False
         pnlSetTime.Visible = True
         valSetTime = 0
+        fnSTHour.Value = Hour(Now)
+        fnSTMinute.Value = Minute(Now)
     End Sub
 
+    Private Sub timeUpdate() Handles tsmiSetTime.Click, fnSTHour.Click, fnSTMinute.Click
+        Dim datediffV As Integer
+        datediffV = DateDiff("s", Year(Now) & "-" & Month(Now) & "-" & Today.Day & " " & TimeOfDay, Year(Now) & "-" & Month(Now) & "-" & llbDay.Tag & " " & fnSTHour.Value & ":" & fnSTMinute.Value & ":00")
+        If datediffV < 0 Then
+            'lbTime.Visible = False
+            lbTime.Text = "时间设置不正确"
+        Else
+            lbTime.Visible = True
+            lbTime.Text = "总时长:" & converTime(datediffV).Split("分")(0) & "分"
+        End If
+    End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llbDay.LinkClicked
         cmsTime.Show(llbDay, 0, llbDay.Height)
