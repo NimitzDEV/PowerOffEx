@@ -274,4 +274,15 @@ Public Class frmMain
     End Sub
 
 
+    Private Sub fbWeb_Click(sender As Object, e As EventArgs) Handles fbWeb.Click
+        Process.Start("http://ndev.cu.cc")
+    End Sub
+
+    Private Sub timeUpdate(sender As Object, e As EventArgs) Handles fnSTMinute.Click, fnSTHour.Click
+
+    End Sub
+
+    Private Sub fbHelp_Click(sender As Object, e As EventArgs) Handles fbHelp.Click
+        Process.Start("http://nimitzdev.byethost12.com/?page_id=100")
+    End Sub
 End Class
