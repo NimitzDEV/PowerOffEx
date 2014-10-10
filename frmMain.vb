@@ -1,8 +1,8 @@
 ﻿Imports CoreAudioApi
 Imports System.Text.RegularExpressions.Regex
 Public Class frmMain
-    Dim inputArgument As String = "/input="
-    Dim inputName As String = ""
+    'Dim inputArgument As String = "/input="
+    'Dim inputName As String = ""
     Dim tmp As String
     Public selectedMode As Integer = 0
     Private Sub frmMain_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing

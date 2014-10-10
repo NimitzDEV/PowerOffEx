@@ -299,7 +299,7 @@ Public Class frmInterface
     Private Sub tmrProgressDrawer_Tick(sender As Object, e As EventArgs) Handles tmrProgressDrawer.Tick
         changingAngle += 3
         If changingAngle > 360 Then changingAngle = 0
-        pbStatus.Image = DrawProgressBar(bgImage, currentProgress, changingAngle, pbStatus, Color.Orange, Color.DodgerBlue, linkStatusString, linkStatusImage, batteryStatusString, batteryStatusImage, showStringMiddle, showStringDown)
+        pbStatus.Image = DrawProgressBar(bgImage, currentProgress, changingAngle, pbStatus, Color.Orange, Color.DodgerBlue, linkStatusString, linkStatusImage, batteryStatusString, batteryStatusImage, showStringMiddle, showStringDown, "剩余")
     End Sub
 
     Private Sub 退出ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles 退出ToolStripMenuItem1.Click
