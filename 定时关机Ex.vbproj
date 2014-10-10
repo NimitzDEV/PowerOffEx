@@ -150,6 +150,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="mdDebugArgs.vb" />
+    <Compile Include="mdNotify.vb" />
     <Compile Include="mdProgram.vb" />
     <Compile Include="mdSettings.vb" />
     <Compile Include="mdUIElements.vb" />

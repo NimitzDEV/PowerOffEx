@@ -25,6 +25,7 @@ Partial Class frmNotify
         Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'Label1
@@ -44,17 +45,22 @@ Partial Class frmNotify
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 5000
         '
-        'frmTvNotify
+        'Timer2
+        '
+        Me.Timer2.Interval = 10
+        '
+        'frmNotify
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(642, 89)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "frmTvNotify"
+        Me.Name = "frmNotify"
         Me.Opacity = 0.9R
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "frmTvNotify"
         Me.TopMost = True
         Me.ResumeLayout(False)
@@ -63,4 +69,5 @@ Partial Class frmNotify
     End Sub
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
+    Friend WithEvents Timer2 As System.Windows.Forms.Timer
 End Class
