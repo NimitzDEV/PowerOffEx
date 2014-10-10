@@ -61,6 +61,8 @@ Partial Class frmInterface
         Me.pbStatus = New System.Windows.Forms.PictureBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.outAnimationTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.tmrTimeMode = New System.Windows.Forms.Timer(Me.components)
+        Me.tmrBatteryMode = New System.Windows.Forms.Timer(Me.components)
         Me.cmsRightClick.SuspendLayout()
         Me.cmsInterfaceMenu.SuspendLayout()
         CType(Me.pbStatus, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -78,7 +80,6 @@ Partial Class frmInterface
         '
         'mainTick
         '
-        Me.mainTick.Enabled = True
         Me.mainTick.Interval = 1000
         '
         'tmrAutoHide
@@ -278,6 +279,14 @@ Partial Class frmInterface
         '
         Me.outAnimationTimer.Interval = 5
         '
+        'tmrTimeMode
+        '
+        Me.tmrTimeMode.Interval = 1000
+        '
+        'tmrBatteryMode
+        '
+        Me.tmrBatteryMode.Interval = 1000
+        '
         'frmInterface
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -335,4 +344,6 @@ Partial Class frmInterface
     Friend WithEvents ToolStripMenuItem3 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
     Friend WithEvents outAnimationTimer As System.Windows.Forms.Timer
+    Friend WithEvents tmrTimeMode As System.Windows.Forms.Timer
+    Friend WithEvents tmrBatteryMode As System.Windows.Forms.Timer
 End Class

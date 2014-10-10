@@ -78,6 +78,12 @@ Public Class frmInterface
         End If
         batteryStatusImage = My.Resources.fullbattery
         SaveSettings()
+        '确定模式
+        If selectedMode = 0 Then
+            tmrTimeMode.Enabled = True
+        ElseIf selectedMode = 1 Then
+            tmrBatteryMode.Enabled = True
+        End If
     End Sub
     Private Sub showUpUI()
         showSwipAnimation()
@@ -139,40 +145,7 @@ Public Class frmInterface
         animationTimer.Enabled = True
     End Sub
 
-    Private Sub mainTick_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mainTick.Tick
-        updateBatteryInfo()
-        If valSetTime > 0 Then
-            valSetTime -= 1
-            'lbInfo.Text = "将在 " & converTime(valSetTime) & " 后关机"
-            remainTip.Text = "将在 " & converTime(valSetTime) & " 后关机"
-            If valSetTime = 180 Then showNotify("剩余3分钟关机")
-            If valSetTime = 30 Then showNotify("即将关机")
-            If valSetTime = 0 Then
-                mainTick.Enabled = False
-                shutdownWindows()
-                exitProgram(0)
-            End If
-            currentProgress = (valSetTime) / fullTime * 100
-            showStringMiddle = Split(converTime(valSetTime), "分")(0) & "分"
-            showStringDown = Split(converTime(valSetTime), "分")(1).Replace("秒", "")
-            'pbStatus.Image = DrawProgressBar(My.Resources.res_drawbg_normal, (valSetTime) / fullTime * 100, 90, pbStatus, Me, Color.Red, Color.DodgerBlue, "", My.Resources.res_drawbg_normal)
-        ElseIf valBatteryLifeLB > 0 Then
-            remainTip.Text = "将在电量低于" & valBatteryLifeLB & "%时关机"
-            If batteryPercent - valBatteryLifeLB = 3 Then showNotify("再下降3%的电量将关机")
-            If batteryPercent - valBatteryLifeLB = 0 Then showNotify("即将关机")
-            If batteryPercent < valBatteryLifeLB Then
-                mainTick.Enabled = False
-                shutdownWindows()
-                exitProgram(0)
-            End If
-            batteryStatusMode()
-            currentProgress = (batteryPercent - valBatteryLifeLB) / fullPercent * 100
-            showStringMiddle = batteryPercent & "%"
-            showStringDown = ""
-        End If
-        '///////////////////////////////////////////////////////////////////////////////////////////
-
-        '///////////////////////////////////////////////////////////////////////////////////////////
+    Private Sub drawStatus()
         If batteryChargeStatus = 1 And batteryStatus = 8 Then
             batteryStatusString = "正在充电"
             tmrChargeAnimate.Enabled = True
@@ -187,11 +160,60 @@ Public Class frmInterface
             batteryStatusString = "正在充电"
             tmrChargeAnimate.Enabled = True
         End If
-        'lbBatteryStatus.Left = (pnlBattery.Width - lbBatteryStatus.Width) / 2
-        '///////////////////////////////////////////////////////////////////////////////////////////
-        'lbInfo.Left = (Me.Width - lbInfo.Width) / 2
-
     End Sub
+    'Private Sub mainTick_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mainTick.Tick
+    '    updateBatteryInfo()
+    '    If valSetTime > 0 Then
+    '        valSetTime -= 1
+    '        'lbInfo.Text = "将在 " & converTime(valSetTime) & " 后关机"
+    '        remainTip.Text = "将在 " & converTime(valSetTime) & " 后关机"
+    '        If valSetTime = 180 Then showNotify("剩余3分钟关机")
+    '        If valSetTime = 30 Then showNotify("即将关机")
+    '        If valSetTime = 0 Then
+    '            mainTick.Enabled = False
+    '            shutdownWindows()
+    '            exitProgram(0)
+    '        End If
+    '        currentProgress = (valSetTime) / fullTime * 100
+    '        showStringMiddle = Split(converTime(valSetTime), "分")(0) & "分"
+    '        showStringDown = Split(converTime(valSetTime), "分")(1).Replace("秒", "")
+    '        'pbStatus.Image = DrawProgressBar(My.Resources.res_drawbg_normal, (valSetTime) / fullTime * 100, 90, pbStatus, Me, Color.Red, Color.DodgerBlue, "", My.Resources.res_drawbg_normal)
+    '    ElseIf valBatteryLifeLB > 0 Then
+    '        remainTip.Text = "将在电量低于" & valBatteryLifeLB & "%时关机"
+    '        If batteryPercent - valBatteryLifeLB = 3 Then showNotify("再下降3%的电量将关机")
+    '        If batteryPercent - valBatteryLifeLB = 0 Then showNotify("即将关机")
+    '        If batteryPercent < valBatteryLifeLB Then
+    '            mainTick.Enabled = False
+    '            shutdownWindows()
+    '            exitProgram(0)
+    '        End If
+    '        batteryStatusMode()
+    '        currentProgress = (batteryPercent - valBatteryLifeLB) / fullPercent * 100
+    '        showStringMiddle = batteryPercent & "%"
+    '        showStringDown = ""
+    '    End If
+    '    '///////////////////////////////////////////////////////////////////////////////////////////
+
+    '    '///////////////////////////////////////////////////////////////////////////////////////////
+    '    If batteryChargeStatus = 1 And batteryStatus = 8 Then
+    '        batteryStatusString = "正在充电"
+    '        tmrChargeAnimate.Enabled = True
+    '    ElseIf batteryChargeStatus = 0 Then
+    '        tmrChargeAnimate.Enabled = False
+    '        batteryStatusString = "电池剩余" & batteryPercent & "%"
+    '    ElseIf (batteryChargeStatus = 1 And batteryStatus = 0) Or (batteryChargeStatus = 1 And batteryStatus = 1 And batteryPercent > 95) Then
+    '        tmrChargeAnimate.Enabled = False
+    '        batteryStatusString = "电源接通，但未充电"
+    '        batteryStatusImage = My.Resources.charging3
+    '    ElseIf batteryChargeStatus = 1 And batteryStatus <> 0 Then
+    '        batteryStatusString = "正在充电"
+    '        tmrChargeAnimate.Enabled = True
+    '    End If
+    '    'lbBatteryStatus.Left = (pnlBattery.Width - lbBatteryStatus.Width) / 2
+    '    '///////////////////////////////////////////////////////////////////////////////////////////
+    '    'lbInfo.Left = (Me.Width - lbInfo.Width) / 2
+
+    'End Sub
 
     Private Sub tmrAutoHide_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmrAutoHide.Tick
         'Me.Visible = False
@@ -348,4 +370,36 @@ Public Class frmInterface
     End Sub
 
 
+    Private Sub tmrTimeMode_Tick(sender As Object, e As EventArgs) Handles tmrTimeMode.Tick
+        valSetTime -= 1
+        'lbInfo.Text = "将在 " & converTime(valSetTime) & " 后关机"
+        remainTip.Text = "将在 " & converTime(valSetTime) & " 后关机"
+        If valSetTime = 180 Then showNotify("剩余3分钟关机")
+        If valSetTime = 30 Then showNotify("即将关机")
+        If valSetTime = 0 Then
+            mainTick.Enabled = False
+            shutdownWindows()
+            exitProgram(0)
+        End If
+        currentProgress = (valSetTime) / fullTime * 100
+        showStringMiddle = Split(converTime(valSetTime), "分")(0) & "分"
+        showStringDown = Split(converTime(valSetTime), "分")(1).Replace("秒", "")
+        drawStatus()
+    End Sub
+
+    Private Sub tmrBatteryMode_Tick(sender As Object, e As EventArgs) Handles tmrBatteryMode.Tick
+        remainTip.Text = "将在电量低于" & valBatteryLifeLB & "%时关机"
+        If batteryPercent - valBatteryLifeLB = 3 Then showNotify("再下降3%的电量将关机")
+        If batteryPercent - valBatteryLifeLB = 0 Then showNotify("即将关机")
+        If batteryPercent < valBatteryLifeLB Then
+            mainTick.Enabled = False
+            shutdownWindows()
+            exitProgram(0)
+        End If
+        batteryStatusMode()
+        currentProgress = (batteryPercent - valBatteryLifeLB) / fullPercent * 100
+        showStringMiddle = batteryPercent & "%"
+        showStringDown = ""
+        drawStatus()
+    End Sub
 End Class
