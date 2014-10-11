@@ -63,6 +63,7 @@ Partial Class frmInterface
         Me.outAnimationTimer = New System.Windows.Forms.Timer(Me.components)
         Me.tmrTimeMode = New System.Windows.Forms.Timer(Me.components)
         Me.tmrBatteryMode = New System.Windows.Forms.Timer(Me.components)
+        Me.tmrVChecker = New System.Windows.Forms.Timer(Me.components)
         Me.cmsRightClick.SuspendLayout()
         Me.cmsInterfaceMenu.SuspendLayout()
         CType(Me.pbStatus, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -287,6 +288,10 @@ Partial Class frmInterface
         '
         Me.tmrBatteryMode.Interval = 1000
         '
+        'tmrVChecker
+        '
+        Me.tmrVChecker.Interval = 10000
+        '
         'frmInterface
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -346,4 +351,5 @@ Partial Class frmInterface
     Friend WithEvents outAnimationTimer As System.Windows.Forms.Timer
     Friend WithEvents tmrTimeMode As System.Windows.Forms.Timer
     Friend WithEvents tmrBatteryMode As System.Windows.Forms.Timer
+    Friend WithEvents tmrVChecker As System.Windows.Forms.Timer
 End Class

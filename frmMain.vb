@@ -10,6 +10,8 @@ Public Class frmMain
     End Sub
 
     Private Sub frmMain_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Me.Width = 398
+        Me.Height = 354
         EmbeddedAssembly.Load("定时关机Ex.CoreAudioApi.dll", "CoreAudioApi.dll")
         AddHandler AppDomain.CurrentDomain.AssemblyResolve, New System.ResolveEventHandler(AddressOf assResolve)
         ReadSettings()
@@ -22,7 +24,9 @@ Public Class frmMain
         valSetTime = 0
         startArgsChecking()
         FormSkin1.Text = Me.Text
+        FlatAlertBox1.Width = Me.Width - 6
         FlatAlertBox1.Location = New Point(3, 4)
+        pnlExtend.Location = New Point(tbAll.Left, tbAll.Top)
         'PNL
         pnlCountdown.Location = New Point((tbTimeMode.Width - pnlCountdown.Width) / 2, (tbTimeMode.Height - pnlCountdown.Height) / 2)
         pnlSetTime.Location = New Point((tbTimeMode.Width - pnlSetTime.Width) / 2, (tbTimeMode.Height - pnlSetTime.Height) / 2)
@@ -133,21 +137,18 @@ Public Class frmMain
         frmAbout.Dispose()
     End Sub
 
-    Private Sub tbBatteryMode_Click(sender As Object, e As EventArgs) Handles tbBatteryMode.Click
-
-    End Sub
 
     Private Sub ftbBattery_Scroll(sender As Object) Handles ftbBattery.Scroll
         lbBatterySettings.Text = "将在电量低于" & ftbBattery.Value & "%时关机"
     End Sub
 
-    Private Sub FlatTabControl1_Click(sender As Object, e As EventArgs) Handles FlatTabControl1.Click
-        Select Case FlatTabControl1.SelectedIndex
+    Private Sub FlatTabControl1_Click(sender As Object, e As EventArgs) Handles tbAll.Click
+        Select Case tbAll.SelectedIndex
             Case 0
-                FlatTabControl1.ActiveColor = Color.FromArgb(35, 168, 109)
+                tbAll.ActiveColor = Color.FromArgb(35, 168, 109)
             Case 1
                 fgbError.Visible = False
-                FlatTabControl1.ActiveColor = Color.DodgerBlue
+                tbAll.ActiveColor = Color.DodgerBlue
                 updateBatteryInfo()
                 If checkIsLaptop() = False Then
                     FlatAlertBox1.ShowControl(FlatAlertBox._Kind.Error, "台式机不适用此功能！", 5000)
@@ -174,10 +175,16 @@ Public Class frmMain
                 End If
                 Debug.Print(batteryLife)
             Case 2
-                FlatTabControl1.ActiveColor = Color.Orange
+                tbAll.ActiveColor = Color.Orange
+                If osMajorVersion < 6 Then
+                    fgbNotCpb.Width = tbVolumeMode.Width
+                    fgbNotCpb.Visible = True
+                Else
+                    fgbNotCpb.Visible = False
+                End If
         End Select
-        fsbTime.RectColor = FlatTabControl1.ActiveColor
-        FormSkin1.FlatColor = FlatTabControl1.ActiveColor
+        fsbTime.RectColor = tbAll.ActiveColor
+        FormSkin1.FlatColor = tbAll.ActiveColor
         Me.Refresh()
     End Sub
 
@@ -284,5 +291,28 @@ Public Class frmMain
 
     Private Sub fbHelp_Click(sender As Object, e As EventArgs) Handles fbHelp.Click
         Process.Start("http://nimitzdev.byethost12.com/?page_id=100")
+    End Sub
+
+    Private Sub fbExtend_Click(sender As Object, e As EventArgs) Handles fbExtend.Click
+        If fbExtend.Text = "附加选项" Then
+            tbAll.Visible = False
+            pnlExtend.Visible = True
+            fbExtend.Text = "返回"
+        ElseIf fbExtend.Text = "返回" Then
+            tbAll.Visible = True
+            pnlExtend.Visible = False
+            fbExtend.Text = "附加选项"
+        End If
+        Me.Refresh()
+    End Sub
+
+    Private Sub FlatTrackBar1_Scroll(sender As Object) Handles tbSt.Scroll
+        lbSel.Text = "电脑持续 " & tbSt.Value + 5 & " 分钟没有声音后关机"
+    End Sub
+
+    Private Sub btnStartVMode_Click(sender As Object, e As EventArgs) Handles btnStartVMode.Click
+        valStime = (tbSt.Value + 5)
+        selectedMode = 2
+        startActive()
     End Sub
 End Class

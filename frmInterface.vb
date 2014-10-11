@@ -1,5 +1,7 @@
 ﻿Imports CoreAudioApi
+
 Public Class frmInterface
+    Dim currentData As Integer
     Dim batteryAnimateStep As Integer
     Dim targetTime As Integer
     Dim fullTime As Integer
@@ -10,6 +12,8 @@ Public Class frmInterface
     Dim changingAngle As Integer
     Dim speedIndex As Integer
     'SYSINFO
+    Public ticker_SL As Integer = 0
+    Public smallTitle As String = ""
     Public linkStatusString As String
     Public linkStatusImage As Image
     Public batteryStatusString As String
@@ -45,6 +49,7 @@ Public Class frmInterface
     End Sub
     Private Sub frmInterface_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         updateBatteryInfo()
+        drawStatus()
         Me.Width = pbStatus.Width
         Me.Height = pbStatus.Height
         origiHeight = Me.Height
@@ -72,10 +77,6 @@ Public Class frmInterface
         targetTime = pref_VOL_EFF_HOUR * 60 + pref_VOL_EFF_MIN
         freshUI()
         tmrVol.Enabled = chk_VOLCTRL
-        If frmMain.FlatTabControl1.SelectedIndex = 1 Then
-            延长时间ToolStripMenuItem.Enabled = False
-            加时ToolStripMenuItem.Enabled = False
-        End If
         batteryStatusImage = My.Resources.fullbattery
         SaveSettings()
         '确定模式
@@ -83,8 +84,26 @@ Public Class frmInterface
             tmrTimeMode.Enabled = True
         ElseIf selectedMode = 1 Then
             tmrBatteryMode.Enabled = True
+            延长时间ToolStripMenuItem.Enabled = False
+            加时ToolStripMenuItem.Enabled = False
+        ElseIf selectedMode = 2 Then
+            Dim DevEnum As New MMDeviceEnumerator()
+            device = DevEnum.GetDefaultAudioEndpoint(EDataFlow.eRender, ERole.eMultimedia)
+            'AddHandler device.AudioEndpointVolume.OnVolumeNotification, New AudioEndpointVolumeNotificationDelegate(AddressOf AudioEndpointVolume_OnVolumeNotification)
+            tmrVChecker.Enabled = True
+            延长时间ToolStripMenuItem.Enabled = False
+            加时ToolStripMenuItem.Enabled = False
         End If
     End Sub
+    'Private Sub AudioEndpointVolume_OnVolumeNotification(data As AudioVolumeNotificationData)
+    '    If Me.InvokeRequired Then
+    '        Dim Params As Object() = New Object(0) {}
+    '        Params(0) = data
+    '        Me.Invoke(New AudioEndpointVolumeNotificationDelegate(AddressOf AudioEndpointVolume_OnVolumeNotification), Params)
+    '    Else
+    '        'currentData = CInt(device.AudioMeterInformation.MasterPeakValue * 100)
+    '    End If
+    'End Sub
     Private Sub showUpUI()
         showSwipAnimation()
         Me.Visible = Not Me.Visible
@@ -256,9 +275,18 @@ Public Class frmInterface
     End Sub
 
     Private Sub tmrProgressDrawer_Tick(sender As Object, e As EventArgs) Handles tmrProgressDrawer.Tick
+        If selectedMode = 2 And tmrTimeMode.Enabled = False Then
+            currentProgress = CInt(device.AudioMeterInformation.MasterPeakValue * 100)
+            If currentProgress > 0 Then
+                showStringMiddle = "有声音~"
+            ElseIf currentProgress = 0 Then
+                showStringMiddle = "没声音~"
+            End If
+            remainTip.Text = showStringMiddle
+        End If
         changingAngle += 3
         If changingAngle > 360 Then changingAngle = 0
-        pbStatus.Image = DrawProgressBar(bgImage, currentProgress, changingAngle, pbStatus, Color.Orange, Color.DodgerBlue, linkStatusString, linkStatusImage, batteryStatusString, batteryStatusImage, showStringMiddle, showStringDown, "剩余")
+        pbStatus.Image = DrawProgressBar(bgImage, currentProgress, changingAngle, pbStatus, Color.Orange, Color.DodgerBlue, linkStatusString, linkStatusImage, batteryStatusString, batteryStatusImage, showStringMiddle, showStringDown, smallTitle)
     End Sub
 
     Private Sub 退出ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles 退出ToolStripMenuItem1.Click
@@ -308,6 +336,7 @@ Public Class frmInterface
 
 
     Private Sub tmrTimeMode_Tick(sender As Object, e As EventArgs) Handles tmrTimeMode.Tick
+        updateBatteryInfo()
         valSetTime -= 1
         'lbInfo.Text = "将在 " & converTime(valSetTime) & " 后关机"
         remainTip.Text = "将在 " & converTime(valSetTime) & " 后关机"
@@ -322,9 +351,11 @@ Public Class frmInterface
         showStringMiddle = Split(converTime(valSetTime), "分")(0) & "分"
         showStringDown = Split(converTime(valSetTime), "分")(1).Replace("秒", "")
         drawStatus()
+        smallTitle = "剩余"
     End Sub
 
     Private Sub tmrBatteryMode_Tick(sender As Object, e As EventArgs) Handles tmrBatteryMode.Tick
+        updateBatteryInfo()
         remainTip.Text = "将在电量低于" & valBatteryLifeLB & "%时关机"
         If batteryPercent - valBatteryLifeLB = 3 Then showNotify("再下降3%的电量将关机", Color.Orange)
         If batteryPercent - valBatteryLifeLB = 0 Then showNotify("即将关机", Color.Red)
@@ -338,5 +369,25 @@ Public Class frmInterface
         showStringMiddle = batteryPercent & "%"
         showStringDown = ""
         drawStatus()
+        smallTitle = "剩余"
+    End Sub
+
+    Private Sub tmrVChecker_Tick(sender As Object, e As EventArgs) Handles tmrVChecker.Tick
+        updateBatteryInfo()
+        If CInt(device.AudioMeterInformation.MasterPeakValue * 100) = 0 Then
+            If tmrTimeMode.Enabled = True Then Exit Sub
+            ticker_SL += 1
+            If ticker_SL < 2 Then Exit Sub
+            showNotify("电脑当前无声，持续" & valStime & "分钟后将关机", Color.Orange)
+            valSetTime = valStime * 60
+            fullTime = valSetTime
+            tmrTimeMode.Enabled = True
+        Else
+            remainTip.Text = "有声音~"
+            ticker_SL = 0
+            tmrTimeMode.Enabled = False
+            showStringDown = ""
+            smallTitle = ""
+        End If
     End Sub
 End Class

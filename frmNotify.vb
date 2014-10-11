@@ -14,10 +14,6 @@
         Me.Close()
     End Sub
 
-    'Private Sub frmTvNotify_Paint(ByVal sender As Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles Me.Paint
-    '    drawWindowStep2(Me, e, Color.Gray, Color.Transparent)
-    'End Sub
-
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
         If Me.Top > 15 Then
             Me.Top = 15

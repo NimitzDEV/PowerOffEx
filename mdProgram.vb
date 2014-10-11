@@ -21,6 +21,7 @@ Module mdProgram
     '---------全局设置
     Public valSetTime As Long
     Public valBatteryLifeLB As Integer
+    Public valStime As Integer
     '---------时间转换
     Dim secs As Long
     Dim mins2 As Integer
