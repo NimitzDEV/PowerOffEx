@@ -79,6 +79,12 @@ Public Class frmInterface
         tmrVol.Enabled = chk_VOLCTRL
         batteryStatusImage = My.Resources.fullbattery
         SaveSettings()
+        '是否初始化CAAPI
+        If selectedMode = 2 Or chk_VOLCTRL Then
+            If osMajorVersion < 6 Then Exit Sub
+            Dim DevEnum As New MMDeviceEnumerator()
+            device = DevEnum.GetDefaultAudioEndpoint(EDataFlow.eRender, ERole.eMultimedia)
+        End If
         '确定模式
         If selectedMode = 0 Then
             tmrTimeMode.Enabled = True
@@ -87,23 +93,12 @@ Public Class frmInterface
             延长时间ToolStripMenuItem.Enabled = False
             加时ToolStripMenuItem.Enabled = False
         ElseIf selectedMode = 2 Then
-            Dim DevEnum As New MMDeviceEnumerator()
-            device = DevEnum.GetDefaultAudioEndpoint(EDataFlow.eRender, ERole.eMultimedia)
             'AddHandler device.AudioEndpointVolume.OnVolumeNotification, New AudioEndpointVolumeNotificationDelegate(AddressOf AudioEndpointVolume_OnVolumeNotification)
             tmrVChecker.Enabled = True
             延长时间ToolStripMenuItem.Enabled = False
             加时ToolStripMenuItem.Enabled = False
         End If
     End Sub
-    'Private Sub AudioEndpointVolume_OnVolumeNotification(data As AudioVolumeNotificationData)
-    '    If Me.InvokeRequired Then
-    '        Dim Params As Object() = New Object(0) {}
-    '        Params(0) = data
-    '        Me.Invoke(New AudioEndpointVolumeNotificationDelegate(AddressOf AudioEndpointVolume_OnVolumeNotification), Params)
-    '    Else
-    '        'currentData = CInt(device.AudioMeterInformation.MasterPeakValue * 100)
-    '    End If
-    'End Sub
     Private Sub showUpUI()
         showSwipAnimation()
         Me.Visible = Not Me.Visible
@@ -255,8 +250,6 @@ Public Class frmInterface
     Private Sub tmrVol_Tick(sender As Object, e As EventArgs) Handles tmrVol.Tick
         If Hour(Now) * 60 + Minute(Now) >= targetTime Then
             If osMajorVersion > 5 Then
-                Dim DevEnum As New MMDeviceEnumerator()
-                device = DevEnum.GetDefaultAudioEndpoint(EDataFlow.eRender, ERole.eMultimedia)
                 device.AudioEndpointVolume.MasterVolumeLevelScalar = (CSng(pref_VOL) / 100.0F)
             Else
                 changeVolume4XP(pref_VOL_XP / pref_VOL_XP_MSG)
