@@ -225,6 +225,11 @@ Public Class frmMain
         Else
             valSetTime = 0
             valBatteryLifeLB = ftbBattery.Value
+            If batteryPercent <= valBatteryLifeLB Then
+                MsgBox("当前电池电量发生了变化，请重新设置")
+                Call FlatTabControl1_Click(FlatButton1, e)
+                Exit Sub
+            End If
         End If
         selectedMode = 1
         startActive()
@@ -255,6 +260,7 @@ Public Class frmMain
         pnlCountdown.Visible = True
         pnlSetTime.Visible = False
         valSetTime = 0
+        lbTipsTextDS.Text = "在设定的时长内关机"
     End Sub
 
     Private Sub tsmiSetTime_Click(sender As Object, e As EventArgs) Handles tsmiSetTime.Click
@@ -263,6 +269,7 @@ Public Class frmMain
         valSetTime = 0
         fnSTHour.Value = Hour(Now)
         fnSTMinute.Value = Minute(Now)
+        lbTipsTextDS.Text = "在确定的时间关机"
     End Sub
 
     Private Sub timeUpdate() Handles tsmiSetTime.Click, fnSTHour.Click, fnSTMinute.Click

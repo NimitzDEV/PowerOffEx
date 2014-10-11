@@ -104,6 +104,7 @@ Public Class frmInterface
         Me.Visible = Not Me.Visible
         fullUI(Me.Visible)
         Me.Left = MousePosition.X - Me.Width / 2
+        If Me.Left > (Screen.PrimaryScreen.WorkingArea.Width - Me.Width) Then Me.Left = Screen.PrimaryScreen.WorkingArea.Width - Me.Width
         'Me.Top = Screen.PrimaryScreen.WorkingArea.Height - Me.Height
     End Sub
     Private Sub outAnimationTimer_Tick(sender As Object, e As EventArgs) Handles outAnimationTimer.Tick
@@ -383,4 +384,5 @@ Public Class frmInterface
             smallTitle = ""
         End If
     End Sub
+
 End Class

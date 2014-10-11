@@ -59,13 +59,13 @@ Partial Class frmMain
         Me.fNHour = New 定时关机Ex.FlatNumeric()
         Me.FlatLabel3 = New 定时关机Ex.FlatLabel()
         Me.FlatLabel2 = New 定时关机Ex.FlatLabel()
-        Me.FlatLabel1 = New 定时关机Ex.FlatLabel()
+        Me.lbTipsTextDS = New 定时关机Ex.FlatLabel()
         Me.btnStart = New 定时关机Ex.FlatButton()
         Me.tbBatteryMode = New System.Windows.Forms.TabPage()
         Me.fgbError = New 定时关机Ex.FlatGroupBox()
         Me.FlatLabel7 = New 定时关机Ex.FlatLabel()
         Me.fbBatteryre = New 定时关机Ex.FlatLabel()
-        Me.FlatLabel5 = New 定时关机Ex.FlatLabel()
+        Me.lbTipsText = New 定时关机Ex.FlatLabel()
         Me.lbBatterySettings = New 定时关机Ex.FlatLabel()
         Me.FlatLabel6 = New 定时关机Ex.FlatLabel()
         Me.ftbBattery = New 定时关机Ex.FlatTrackBar()
@@ -319,7 +319,7 @@ Partial Class frmMain
         Me.tbTimeMode.Controls.Add(Me.llbMode)
         Me.tbTimeMode.Controls.Add(Me.pnlCountdown)
         Me.tbTimeMode.Controls.Add(Me.FlatLabel2)
-        Me.tbTimeMode.Controls.Add(Me.FlatLabel1)
+        Me.tbTimeMode.Controls.Add(Me.lbTipsTextDS)
         Me.tbTimeMode.Controls.Add(Me.btnStart)
         Me.tbTimeMode.Location = New System.Drawing.Point(4, 44)
         Me.tbTimeMode.Name = "tbTimeMode"
@@ -515,17 +515,17 @@ Partial Class frmMain
         Me.FlatLabel2.TabIndex = 15
         Me.FlatLabel2.Text = "请设定时间"
         '
-        'FlatLabel1
+        'lbTipsTextDS
         '
-        Me.FlatLabel1.AutoSize = True
-        Me.FlatLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.FlatLabel1.Font = New System.Drawing.Font("Segoe UI", 8.0!)
-        Me.FlatLabel1.ForeColor = System.Drawing.Color.White
-        Me.FlatLabel1.Location = New System.Drawing.Point(253, 13)
-        Me.FlatLabel1.Name = "FlatLabel1"
-        Me.FlatLabel1.Size = New System.Drawing.Size(124, 13)
-        Me.FlatLabel1.TabIndex = 12
-        Me.FlatLabel1.Text = "在设定的时长内关机"
+        Me.lbTipsTextDS.AutoSize = True
+        Me.lbTipsTextDS.BackColor = System.Drawing.Color.Transparent
+        Me.lbTipsTextDS.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.lbTipsTextDS.ForeColor = System.Drawing.Color.White
+        Me.lbTipsTextDS.Location = New System.Drawing.Point(253, 13)
+        Me.lbTipsTextDS.Name = "lbTipsTextDS"
+        Me.lbTipsTextDS.Size = New System.Drawing.Size(124, 13)
+        Me.lbTipsTextDS.TabIndex = 12
+        Me.lbTipsTextDS.Text = "在设定的时长内关机"
         '
         'btnStart
         '
@@ -546,7 +546,7 @@ Partial Class frmMain
         Me.tbBatteryMode.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
         Me.tbBatteryMode.Controls.Add(Me.fgbError)
         Me.tbBatteryMode.Controls.Add(Me.fbBatteryre)
-        Me.tbBatteryMode.Controls.Add(Me.FlatLabel5)
+        Me.tbBatteryMode.Controls.Add(Me.lbTipsText)
         Me.tbBatteryMode.Controls.Add(Me.lbBatterySettings)
         Me.tbBatteryMode.Controls.Add(Me.FlatLabel6)
         Me.tbBatteryMode.Controls.Add(Me.ftbBattery)
@@ -596,17 +596,17 @@ Partial Class frmMain
         Me.fbBatteryre.TabIndex = 20
         Me.fbBatteryre.Text = "FlatLabel13"
         '
-        'FlatLabel5
+        'lbTipsText
         '
-        Me.FlatLabel5.AutoSize = True
-        Me.FlatLabel5.BackColor = System.Drawing.Color.Transparent
-        Me.FlatLabel5.Font = New System.Drawing.Font("Segoe UI", 8.0!)
-        Me.FlatLabel5.ForeColor = System.Drawing.Color.White
-        Me.FlatLabel5.Location = New System.Drawing.Point(240, 12)
-        Me.FlatLabel5.Name = "FlatLabel5"
-        Me.FlatLabel5.Size = New System.Drawing.Size(137, 13)
-        Me.FlatLabel5.TabIndex = 13
-        Me.FlatLabel5.Text = "在低于设定电量时关机"
+        Me.lbTipsText.AutoSize = True
+        Me.lbTipsText.BackColor = System.Drawing.Color.Transparent
+        Me.lbTipsText.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.lbTipsText.ForeColor = System.Drawing.Color.White
+        Me.lbTipsText.Location = New System.Drawing.Point(240, 12)
+        Me.lbTipsText.Name = "lbTipsText"
+        Me.lbTipsText.Size = New System.Drawing.Size(137, 13)
+        Me.lbTipsText.TabIndex = 13
+        Me.lbTipsText.Text = "在低于设定电量时关机"
         '
         'lbBatterySettings
         '
@@ -993,9 +993,9 @@ Partial Class frmMain
     Friend WithEvents FlatLabel2 As 定时关机Ex.FlatLabel
     Friend WithEvents fNMinute As 定时关机Ex.FlatNumeric
     Friend WithEvents fNHour As 定时关机Ex.FlatNumeric
-    Friend WithEvents FlatLabel1 As 定时关机Ex.FlatLabel
+    Friend WithEvents lbTipsTextDS As 定时关机Ex.FlatLabel
     Friend WithEvents FlatButton1 As 定时关机Ex.FlatButton
-    Friend WithEvents FlatLabel5 As 定时关机Ex.FlatLabel
+    Friend WithEvents lbTipsText As 定时关机Ex.FlatLabel
     Friend WithEvents fbAbout As 定时关机Ex.FlatButton
     Friend WithEvents ftbBattery As 定时关机Ex.FlatTrackBar
     Friend WithEvents ftRecord As 定时关机Ex.FlatToggle
