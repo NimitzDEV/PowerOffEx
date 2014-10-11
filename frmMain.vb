@@ -10,8 +10,6 @@ Public Class frmMain
     End Sub
 
     Private Sub frmMain_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Me.Width = 398
-        Me.Height = 354
         EmbeddedAssembly.Load("定时关机Ex.CoreAudioApi.dll", "CoreAudioApi.dll")
         AddHandler AppDomain.CurrentDomain.AssemblyResolve, New System.ResolveEventHandler(AddressOf assResolve)
         ReadSettings()
@@ -40,6 +38,9 @@ Public Class frmMain
             cmsTime.Items.Add(tmp, _
                                Nothing, AddressOf dateSelectHandler).Tag = Today.Day + i
         Next
+        Me.Width = 398
+        Me.Height = 354
+        Me.Location = New Point((Screen.PrimaryScreen.WorkingArea.Width - Me.Width) / 2, (Screen.PrimaryScreen.WorkingArea.Height - Me.Height) / 2)
     End Sub
 
     Private Sub dateSelectHandler(sender As Object, e As EventArgs)
