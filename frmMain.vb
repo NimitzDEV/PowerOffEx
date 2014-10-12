@@ -1,8 +1,6 @@
 ﻿Imports CoreAudioApi
 Imports System.Text.RegularExpressions.Regex
 Public Class frmMain
-    'Dim inputArgument As String = "/input="
-    'Dim inputName As String = ""
     Dim tmp As String
 
     Private Sub frmMain_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
@@ -66,7 +64,6 @@ Public Class frmMain
         frmInterface.Show()
         Me.Hide()
     End Sub
-
 
     Private Sub btnStart_Click(sender As Object, e As EventArgs) Handles btnStart.Click
         If pnlCountdown.Visible = True Then
@@ -147,6 +144,7 @@ Public Class frmMain
         Select Case tbAll.SelectedIndex
             Case 0
                 tbAll.ActiveColor = Color.FromArgb(35, 168, 109)
+                valSetTime = 0
             Case 1
                 fgbError.Visible = False
                 tbAll.ActiveColor = Color.DodgerBlue
@@ -276,7 +274,6 @@ Public Class frmMain
         Dim datediffV As Integer
         datediffV = DateDiff("s", Year(Now) & "-" & Month(Now) & "-" & Today.Day & " " & TimeOfDay, Year(Now) & "-" & Month(Now) & "-" & llbDay.Tag & " " & fnSTHour.Value & ":" & fnSTMinute.Value & ":00")
         If datediffV < 0 Then
-            'lbTime.Visible = False
             lbTime.Text = "时间设置不正确"
         Else
             lbTime.Visible = True
@@ -291,10 +288,6 @@ Public Class frmMain
 
     Private Sub fbWeb_Click(sender As Object, e As EventArgs) Handles fbWeb.Click
         Process.Start("http://ndev.cu.cc")
-    End Sub
-
-    Private Sub timeUpdate(sender As Object, e As EventArgs) Handles fnSTMinute.Click, fnSTHour.Click
-
     End Sub
 
     Private Sub fbHelp_Click(sender As Object, e As EventArgs) Handles fbHelp.Click

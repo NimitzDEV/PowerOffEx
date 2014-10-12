@@ -45,7 +45,6 @@ Public Class frmInterface
             linkStatusString = " 网络断开"
             linkStatusImage = My.Resources.internet_disconnected
         End If
-        'lbConnectStatus.Left = (pnlNetworkConnection.Width - lbConnectStatus.Width) / 2
     End Sub
     Private Sub frmInterface_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         updateBatteryInfo()
@@ -57,18 +56,14 @@ Public Class frmInterface
         pbStatus.Left = 0
         pbStatus.Top = 0
         Me.Region = roundedCorner(Me, 20)
-        'pbStatus.Image = DrawProgressBar(My.Resources.res_drawbg_normal, 45, 90, pbStatus, Me, Color.Red, Color.DodgerBlue, "", My.Resources.res_drawbg_normal)
         fullTime = valSetTime
         fullPercent = batteryPercent - valBatteryLifeLB
-        'reconstractUi()
         notifyIcon.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info
         notifyIcon.BalloonTipText = "点击这里打开详细页面"
         notifyIcon.BalloonTipTitle = frmMain.Text
         notifyIcon.ShowBalloonTip(1000)
         Me.Left = (Screen.PrimaryScreen.WorkingArea.Width - Me.Width) / 2
         Me.Top = Screen.PrimaryScreen.WorkingArea.Height - Me.Height
-        '绘制阴影
-        'drawWindowStep1(Me)
         '动画效果
         showSwipAnimation()
         '开始
@@ -93,7 +88,6 @@ Public Class frmInterface
             延长时间ToolStripMenuItem.Enabled = False
             加时ToolStripMenuItem.Enabled = False
         ElseIf selectedMode = 2 Then
-            'AddHandler device.AudioEndpointVolume.OnVolumeNotification, New AudioEndpointVolumeNotificationDelegate(AddressOf AudioEndpointVolume_OnVolumeNotification)
             tmrVChecker.Enabled = True
             延长时间ToolStripMenuItem.Enabled = False
             加时ToolStripMenuItem.Enabled = False
@@ -106,7 +100,6 @@ Public Class frmInterface
         Me.Left = MousePosition.X - Me.Width / 2
         If Me.Left > (Screen.PrimaryScreen.WorkingArea.Width - Me.Width) Then Me.Left = Screen.PrimaryScreen.WorkingArea.Width - Me.Width
         If Me.Left < 0 Then Me.Left = 0
-        'Me.Top = Screen.PrimaryScreen.WorkingArea.Height - Me.Height
     End Sub
     Private Sub outAnimationTimer_Tick(sender As Object, e As EventArgs) Handles outAnimationTimer.Tick
         If speedIndex - 1 > 0 Then speedIndex -= 1
@@ -140,7 +133,6 @@ Public Class frmInterface
     End Sub
 
     Private Sub animationTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles animationTimer.Tick
-        'Me.Height += 15
         If speedIndex - 1 > 0 Then speedIndex -= 1
         Me.Top -= speedIndex
         Me.Opacity += 0.03
@@ -234,10 +226,6 @@ Public Class frmInterface
         freshUI()
     End Sub
 
-
-
-
-
     Private Sub tmrCheckTv_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmrCheckTv.Tick
         getTvTitleAndPg()
         If oldTvProgress <> tvProgress Or oldTvTitle <> tvTitle Then
@@ -303,7 +291,6 @@ Public Class frmInterface
         valSetTime += min * 60
         fullTime = valSetTime
     End Sub
-
 
     Private Sub add10min_Click(sender As Object, e As EventArgs) Handles add10min.Click
         addTime(10)

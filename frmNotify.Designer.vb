@@ -25,7 +25,8 @@ Partial Class frmNotify
         Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.tmrIn = New System.Windows.Forms.Timer(Me.components)
+        Me.tmrOut = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'Label1
@@ -45,9 +46,13 @@ Partial Class frmNotify
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 5000
         '
-        'Timer2
+        'tmrIn
         '
-        Me.Timer2.Interval = 10
+        Me.tmrIn.Interval = 10
+        '
+        'tmrOut
+        '
+        Me.tmrOut.Interval = 10
         '
         'frmNotify
         '
@@ -69,5 +74,6 @@ Partial Class frmNotify
     End Sub
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
-    Friend WithEvents Timer2 As System.Windows.Forms.Timer
+    Friend WithEvents tmrIn As System.Windows.Forms.Timer
+    Friend WithEvents tmrOut As System.Windows.Forms.Timer
 End Class

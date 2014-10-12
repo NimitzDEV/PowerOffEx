@@ -40,6 +40,8 @@ Partial Class frmAbout
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel8 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel9 = New System.Windows.Forms.LinkLabel()
+        Me.FlatLabel10 = New 定时关机Ex.FlatLabel()
+        Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
         Me.formskin1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -49,6 +51,8 @@ Partial Class frmAbout
         Me.formskin1.BackColor = System.Drawing.Color.White
         Me.formskin1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
         Me.formskin1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.formskin1.Controls.Add(Me.LinkLabel3)
+        Me.formskin1.Controls.Add(Me.FlatLabel10)
         Me.formskin1.Controls.Add(Me.FlatLabel9)
         Me.formskin1.Controls.Add(Me.LinkLabel1)
         Me.formskin1.Controls.Add(Me.FlatLabel8)
@@ -144,11 +148,11 @@ Partial Class frmAbout
         '
         Me.FlatLabel6.AutoSize = True
         Me.FlatLabel6.BackColor = System.Drawing.Color.Transparent
-        Me.FlatLabel6.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FlatLabel6.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FlatLabel6.ForeColor = System.Drawing.Color.White
-        Me.FlatLabel6.Location = New System.Drawing.Point(141, 176)
+        Me.FlatLabel6.Location = New System.Drawing.Point(110, 176)
         Me.FlatLabel6.Name = "FlatLabel6"
-        Me.FlatLabel6.Size = New System.Drawing.Size(69, 30)
+        Me.FlatLabel6.Size = New System.Drawing.Size(52, 21)
         Me.FlatLabel6.TabIndex = 32
         Me.FlatLabel6.Text = "ImTail"
         '
@@ -156,11 +160,11 @@ Partial Class frmAbout
         '
         Me.FlatLabel5.AutoSize = True
         Me.FlatLabel5.BackColor = System.Drawing.Color.Transparent
-        Me.FlatLabel5.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FlatLabel5.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FlatLabel5.ForeColor = System.Drawing.Color.White
-        Me.FlatLabel5.Location = New System.Drawing.Point(24, 176)
+        Me.FlatLabel5.Location = New System.Drawing.Point(19, 176)
         Me.FlatLabel5.Name = "FlatLabel5"
-        Me.FlatLabel5.Size = New System.Drawing.Size(111, 30)
+        Me.FlatLabel5.Size = New System.Drawing.Size(85, 21)
         Me.FlatLabel5.TabIndex = 31
         Me.FlatLabel5.Text = "want_旺旺"
         '
@@ -228,7 +232,7 @@ Partial Class frmAbout
         Me.LinkLabel5.BackColor = System.Drawing.Color.Transparent
         Me.LinkLabel5.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LinkLabel5.LinkColor = System.Drawing.Color.DarkOrange
-        Me.LinkLabel5.Location = New System.Drawing.Point(143, 206)
+        Me.LinkLabel5.Location = New System.Drawing.Point(103, 206)
         Me.LinkLabel5.Name = "LinkLabel5"
         Me.LinkLabel5.Size = New System.Drawing.Size(59, 15)
         Me.LinkLabel5.TabIndex = 25
@@ -241,7 +245,7 @@ Partial Class frmAbout
         Me.LinkLabel4.BackColor = System.Drawing.Color.Transparent
         Me.LinkLabel4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LinkLabel4.LinkColor = System.Drawing.Color.DarkOrange
-        Me.LinkLabel4.Location = New System.Drawing.Point(26, 206)
+        Me.LinkLabel4.Location = New System.Drawing.Point(20, 206)
         Me.LinkLabel4.Name = "LinkLabel4"
         Me.LinkLabel4.Size = New System.Drawing.Size(59, 15)
         Me.LinkLabel4.TabIndex = 22
@@ -287,6 +291,31 @@ Partial Class frmAbout
         Me.LinkLabel9.TabStop = True
         Me.LinkLabel9.Text = "Google+"
         '
+        'FlatLabel10
+        '
+        Me.FlatLabel10.AutoSize = True
+        Me.FlatLabel10.BackColor = System.Drawing.Color.Transparent
+        Me.FlatLabel10.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FlatLabel10.ForeColor = System.Drawing.Color.White
+        Me.FlatLabel10.Location = New System.Drawing.Point(168, 176)
+        Me.FlatLabel10.Name = "FlatLabel10"
+        Me.FlatLabel10.Size = New System.Drawing.Size(94, 21)
+        Me.FlatLabel10.TabIndex = 38
+        Me.FlatLabel10.Text = "VirginiaILBX"
+        '
+        'LinkLabel3
+        '
+        Me.LinkLabel3.AutoSize = True
+        Me.LinkLabel3.BackColor = System.Drawing.Color.Transparent
+        Me.LinkLabel3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel3.LinkColor = System.Drawing.Color.DarkOrange
+        Me.LinkLabel3.Location = New System.Drawing.Point(179, 206)
+        Me.LinkLabel3.Name = "LinkLabel3"
+        Me.LinkLabel3.Size = New System.Drawing.Size(59, 15)
+        Me.LinkLabel3.TabIndex = 39
+        Me.LinkLabel3.TabStop = True
+        Me.LinkLabel3.Text = "新浪微博"
+        '
         'frmAbout
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -324,4 +353,6 @@ Partial Class frmAbout
     Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
     Friend WithEvents FlatLabel8 As 定时关机Ex.FlatLabel
     Friend WithEvents FlatLabel9 As 定时关机Ex.FlatLabel
+    Friend WithEvents LinkLabel3 As System.Windows.Forms.LinkLabel
+    Friend WithEvents FlatLabel10 As 定时关机Ex.FlatLabel
 End Class
