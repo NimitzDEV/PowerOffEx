@@ -109,7 +109,7 @@ Partial Class frmUpdate
         '
         'wbStart
         '
-        Me.wbStart.Location = New System.Drawing.Point(32, 230)
+        Me.wbStart.Location = New System.Drawing.Point(121, 70)
         Me.wbStart.MinimumSize = New System.Drawing.Size(20, 20)
         Me.wbStart.Name = "wbStart"
         Me.wbStart.ScriptErrorsSuppressed = True

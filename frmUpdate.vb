@@ -24,7 +24,7 @@
         fbClose.Width = Me.Width / 2
         fbDownload.Left = Me.Width / 2
         fbDownload.Width = Me.Width / 2
-        wbTry.Navigate("http://nimitzdev.free3v.net/update/update_dsgjex.html")
+        wbStart.Navigate("http://nimitzdev.byethost12.com/update/update_dsgjex.txt")
     End Sub
 
     Private Sub wbStart_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles wbStart.DocumentCompleted
@@ -36,6 +36,7 @@
         'End If
         'wbInfo.Navigate(gs(0))
         docString = New System.IO.StreamReader(wbStart.DocumentStream, System.Text.Encoding.Default).ReadToEnd
+        'docString = wbStart.DocumentText
         versionString = Split(docString, "≡")(1).Trim
         updateString = Split(docString, "≡")(2).Trim
         linkString = Split(docString, "≡")(3).Trim
@@ -134,6 +135,6 @@
     End Sub
 
     Private Sub wbTry_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles wbTry.DocumentCompleted
-        wbStart.Navigate("http://nimitzdev.free3v.net/update/update_dsgjex.html")
+        wbStart.Navigate("http://nimitzdev.byethost12.com/update/update_dsgjex.txt")
     End Sub
 End Class

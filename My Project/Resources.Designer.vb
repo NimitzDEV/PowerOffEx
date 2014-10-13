@@ -163,26 +163,6 @@ Namespace My.Resources
         '''<summary>
         '''  查找 System.Drawing.Bitmap 类型的本地化资源。
         '''</summary>
-        Public ReadOnly Property new64px() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("new64px", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
-        '''</summary>
-        Public ReadOnly Property nocharging() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("nocharging", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
-        '''</summary>
         Public ReadOnly Property res_drawbg_normal() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("res_drawbg_normal", resourceCulture)
@@ -196,26 +176,6 @@ Namespace My.Resources
         Public ReadOnly Property uibg() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("uibg", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
-        '''</summary>
-        Public ReadOnly Property uptodate64px() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("uptodate64px", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
-        '''</summary>
-        Public ReadOnly Property wait64px() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("wait64px", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
