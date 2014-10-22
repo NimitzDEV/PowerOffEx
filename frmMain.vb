@@ -20,8 +20,7 @@ Public Class frmMain
         valSetTime = 0
         startArgsChecking()
         FormSkin1.Text = Me.Text
-        FlatAlertBox1.Width = Me.Width - 6
-        FlatAlertBox1.Location = New Point(3, 4)
+
         pnlExtend.Location = New Point(tbAll.Left, tbAll.Top)
         'PNL
         pnlCountdown.Location = New Point((tbTimeMode.Width - pnlCountdown.Width) / 2, (tbTimeMode.Height - pnlCountdown.Height) / 2)
@@ -39,6 +38,8 @@ Public Class frmMain
         Me.Width = 398
         Me.Height = 354
         Me.Location = New Point((Screen.PrimaryScreen.WorkingArea.Width - Me.Width) / 2, (Screen.PrimaryScreen.WorkingArea.Height - Me.Height) / 2)
+        FlatAlertBox1.Width = Me.Width - 6
+        FlatAlertBox1.Location = New Point(3, 4)
     End Sub
 
     Private Sub dateSelectHandler(sender As Object, e As EventArgs)
