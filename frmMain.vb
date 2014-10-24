@@ -20,7 +20,6 @@ Public Class frmMain
         valSetTime = 0
         startArgsChecking()
         FormSkin1.Text = Me.Text
-
         pnlExtend.Location = New Point(tbAll.Left, tbAll.Top)
         'PNL
         pnlCountdown.Location = New Point((tbTimeMode.Width - pnlCountdown.Width) / 2, (tbTimeMode.Height - pnlCountdown.Height) / 2)
