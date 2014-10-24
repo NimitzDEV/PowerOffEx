@@ -3,6 +3,11 @@ PowerOffEx
 ==========
 当前版本：2.6.x.y
 
+![Example of Buttons](http://nimitzdev.byethost12.com/wp-content/uploads/2014/09/QQ截图20140920184223.png "Example of Buttons")
+
+Recently Update
+
+![Example of Buttons](http://nimitzdev.byethost12.com/wp-content/uploads/2014/10/poex_2605_2.png "Example of Buttons")
 功能列表
 ==========
 -按照设定时间关机
