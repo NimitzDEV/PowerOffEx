@@ -78,20 +78,20 @@ Module mdUIElements
         nowBG = dtBG
         Select Case nowBG
             Case 1
-                bgImage = My.Resources.bg_midnight_01
-                showNowStatus = "凌晨"
+                bgImage = bgImageList(0)
+                showNowStatus = wrd(0)
             Case 2
-                bgImage = My.Resources.bg_morning_01
-                showNowStatus = "早上"
+                bgImage = bgImageList(1)
+                showNowStatus = wrd(1)
             Case 3
-                bgImage = My.Resources.bg_noon_01
-                showNowStatus = "中午"
+                bgImage = bgImageList(2)
+                showNowStatus = wrd(2)
             Case 4
-                bgImage = My.Resources.bg_afternoon_01
-                showNowStatus = "下午"
+                bgImage = bgImageList(3)
+                showNowStatus = wrd(3)
             Case 5
-                bgImage = My.Resources.bg_evening_01
-                showNowStatus = "晚上"
+                bgImage = bgImageList(4)
+                showNowStatus = wrd(4)
         End Select
     End Sub
 End Module

@@ -50,14 +50,14 @@ Module mdSettings
         WriteINI("funcenable", "VOLC", chk_VOLCTRL)
         WriteINI("set", "TVP", set_TVP)
     End Sub
-    Public Function GetINI(ByVal Section As String, ByVal AppName As String, ByVal lpDefault As String) As String
+    Public Function GetINI(ByVal Section As String, ByVal AppName As String, ByVal lpDefault As String, Optional ByVal iniName As String = "\config.ini") As String
         Dim Str As String = ""
         Str = LSet(Str, 256)
-        GetPrivateProfileString(Section, AppName, lpDefault, Str, Len(Str), folderPath & "\config.ini")
+        GetPrivateProfileString(Section, AppName, lpDefault, Str, Len(Str), folderPath & iniName)
         Return Microsoft.VisualBasic.Left(Str, InStr(Str, Chr(0)) - 1)
     End Function
 
-    Public Function WriteINI(ByVal Section As String, ByVal AppName As String, ByVal lpDefault As String) As Long
-        WriteINI = WritePrivateProfileString(Section, AppName, lpDefault, folderPath & "\config.ini")
+    Public Function WriteINI(ByVal Section As String, ByVal AppName As String, ByVal lpDefault As String, Optional ByVal iniName As String = "\config.ini") As Long
+        WriteINI = WritePrivateProfileString(Section, AppName, lpDefault, folderPath & iniName)
     End Function
 End Module

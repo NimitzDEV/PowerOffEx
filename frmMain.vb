@@ -8,6 +8,7 @@ Public Class frmMain
     End Sub
 
     Private Sub frmMain_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        cstBGDownloadStarter()
         EmbeddedAssembly.Load("定时关机Ex.CoreAudioApi.dll", "CoreAudioApi.dll")
         AddHandler AppDomain.CurrentDomain.AssemblyResolve, New System.ResolveEventHandler(AddressOf assResolve)
         ReadSettings()
@@ -315,5 +316,9 @@ Public Class frmMain
         valStime = (tbSt.Value + 5)
         selectedMode = 2
         startActive()
+    End Sub
+
+    Private Sub timeUpdate(sender As Object, e As EventArgs) Handles fnSTMinute.Click, fnSTHour.Click
+
     End Sub
 End Class

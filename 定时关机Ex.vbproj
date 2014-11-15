@@ -149,6 +149,7 @@
     <Compile Include="frmVolCtrl4XP.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="mdCstBg.vb" />
     <Compile Include="mdDebugArgs.vb" />
     <Compile Include="mdNotify.vb" />
     <Compile Include="mdProgram.vb" />
