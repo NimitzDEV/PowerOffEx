@@ -11,17 +11,7 @@ Public Class frmInterface
     Dim origiWidth As Integer
     Dim changingAngle As Integer
     Dim speedIndex As Integer
-    'SYSINFO
-    Public ticker_SL As Integer = 0
-    Public smallTitle As String = ""
-    Public linkStatusString As String
-    Public linkStatusImage As Image
-    Public batteryStatusString As String
-    Public batteryStatusImage As Image
-    Public currentProgress As Integer
-    Public showStringMiddle As String
-    Public showStringDown As String
-    Dim bgImage As Image = My.Resources.bg_evening_01
+
     Private Sub fullUI(ByVal isEnable As Boolean)
         tmrChargeAnimate.Enabled = isEnable
         tmrUIFresh.Enabled = isEnable
@@ -45,6 +35,7 @@ Public Class frmInterface
             linkStatusString = " 网络断开"
             linkStatusImage = My.Resources.internet_disconnected
         End If
+        selectBG()
     End Sub
     Private Sub frmInterface_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         updateBatteryInfo()
@@ -66,6 +57,7 @@ Public Class frmInterface
         Me.Top = Screen.PrimaryScreen.WorkingArea.Height - Me.Height
         '动画效果
         showSwipAnimation()
+        selectBG()
         '开始
         tmrCheckTv.Enabled = chk_RECORD
         tmrReminder.Enabled = chk_REMINDER

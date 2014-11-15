@@ -1,9 +1,24 @@
 ﻿Imports System.Drawing.Drawing2D
 Module mdUIElements
     '居中style
-    Dim stringformat As New StringFormat
-    '常规
-    Dim stringFormat2 As New StringFormat
+    Dim sfCenter As New StringFormat With {.Alignment = StringAlignment.Center, .LineAlignment = StringAlignment.Center}
+    '左对齐
+    Dim sfNear As New StringFormat With {.Alignment = StringAlignment.Near, .LineAlignment = StringAlignment.Center}
+    '右对齐
+    Dim sfFar As New StringFormat With {.Alignment = StringAlignment.Far, .LineAlignment = StringAlignment.Near}
+    'SYSINFO
+    Public ticker_SL As Integer = 0
+    Public smallTitle As String = ""
+    Public linkStatusString As String
+    Public linkStatusImage As Image
+    Public batteryStatusString As String
+    Public batteryStatusImage As Image
+    Public currentProgress As Integer
+    Public showStringMiddle As String
+    Public showStringDown As String
+    Public showNowStatus As String
+    Public bgImage As Image
+    Dim dtBG, nowBG As Integer
     Public Function DrawProgressBar(ByVal bgImage As Image, ByVal CurrentAngle As Integer, _
                                     ByVal changingAngle As Integer, ByVal drawObject As PictureBox, _
                                     ByVal endColor As Color, ByVal startColor As Color, _
@@ -13,25 +28,25 @@ Module mdUIElements
                                     ByVal remainString As String) As Bitmap
         Dim bmp As New Bitmap(bgImage, drawObject.ClientRectangle.Width, drawObject.ClientRectangle.Height)
         Dim g As Graphics
-        stringformat.Alignment = StringAlignment.Center
-        stringformat.LineAlignment = StringAlignment.Center
-        stringFormat2.Alignment = StringAlignment.Near
-        stringFormat2.LineAlignment = StringAlignment.Center
         '100分制转换
         CurrentAngle *= 3.2
         Dim path As New GraphicsPath
-        Dim rec As Rectangle = New Rectangle(30, bmp.Height - (bmp.Width - 22.5), bmp.Width - 60, bmp.Width - 60)
+        Dim rec As Rectangle = New Rectangle(25, bmp.Height - (bmp.Width - 22.5) - 15, bmp.Width - 50, bmp.Width - 50)
         g = Graphics.FromImage(bmp)
+        '状态标语
+        g.DrawString(showNowStatus, New Font("Segoe UI", 30, FontStyle.Regular), Brushes.White, New Point(20, 50), sfNear)
+        g.DrawString(Hour(Now) & "时", New Font("Segoe UI", 17, FontStyle.Regular), Brushes.White, New Point(bmp.Width - 20, 20), sfFar)
+        g.DrawString(Minute(Now) & "分", New Font("Segoe UI", 17, FontStyle.Regular), Brushes.White, New Point(bmp.Width - 20, 45), sfFar)
         '网络连接状态
         g.DrawImage(linkStatusImage, 10, bmp.Height - 30, 20, 20)
-        g.DrawString(linkStatusString, New Font("Segoe UI", 8, FontStyle.Regular), Brushes.White, New Point(55, bmp.Height - 20), stringformat)
+        g.DrawString(linkStatusString, New Font("Segoe UI", 8, FontStyle.Regular), Brushes.White, New Point(55, bmp.Height - 20), sfCenter)
         '电池状态
         g.DrawImage(batteryStatusImage, 90, bmp.Height - 35, 30, 30)
-        g.DrawString(batteryStatusString, New Font("Segoe UI", 8, FontStyle.Regular), Brushes.White, New Point(120, bmp.Height - 20), stringFormat2)
+        g.DrawString(batteryStatusString, New Font("Segoe UI", 8, FontStyle.Regular), Brushes.White, New Point(120, bmp.Height - 20), sfNear)
         '时间状态
-        g.DrawString(showStringMiddle, New Font("Segoe UI", 32, FontStyle.Bold), Brushes.White, New Point(bmp.Width / 2, bmp.Height / 2 + 45), stringformat)
-        g.DrawString(showStringDown, New Font("Segoe UI", 20, FontStyle.Bold), Brushes.White, New Point(bmp.Width / 2, bmp.Height - 55), stringformat)
-        g.DrawString(remainString, New Font("Segoe UI", 16, FontStyle.Regular), Brushes.White, New Point(bmp.Width / 2, bmp.Height / 2 - 15), stringformat)
+        g.DrawString(showStringMiddle, New Font("Segoe UI", 32, FontStyle.Bold), Brushes.White, New Point(bmp.Width / 2, bmp.Height / 2 + 30), sfCenter)
+        g.DrawString(showStringDown, New Font("Segoe UI", 20, FontStyle.Bold), Brushes.White, New Point(bmp.Width / 2, bmp.Height - 55), sfCenter)
+        g.DrawString(remainString, New Font("Segoe UI", 16, FontStyle.Regular), Brushes.White, New Point(bmp.Width / 2, bmp.Height / 2 - 15), sfCenter)
         'g.DrawEllipse(Pens.White, rec)
         path.AddPie(rec, 110, CurrentAngle)
         Dim holeRect As Rectangle = New Rectangle(rec.X + 15, rec.Y + 15, rec.Width - 30, rec.Height - 30)
@@ -57,4 +72,29 @@ Module mdUIElements
         p.CloseFigure()
         Return New System.Drawing.Region(p)
     End Function
+
+    Public Sub selectBG(Optional nh As Integer = 0)
+        nh = Hour(Now)
+        If nh < 7 Then dtBG = 1
+        If nh > 6 And nh < 12 Then dtBG = 2
+        If nh > 11 And nh < 14 Then dtBG = 3
+        If nh > 13 And nh < 19 Then dtBG = 4
+        If nh > 18 Then dtBG = 5
+        If dtBG = nowBG Then Exit Sub
+        nowBG = dtBG
+        Select Case nowBG
+            Case 1
+                bgImage = My.Resources.bg_midnight_01
+                showNowStatus = "凌晨"
+            Case 3
+                bgImage = My.Resources.bg_noon_01
+                showNowStatus = "中午"
+            Case 4
+                bgImage = My.Resources.bg_afternoon_01
+                showNowStatus = "下午"
+            Case 5
+                bgImage = My.Resources.bg_evening_01
+                showNowStatus = "晚上"
+        End Select
+    End Sub
 End Module
