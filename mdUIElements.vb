@@ -86,6 +86,9 @@ Module mdUIElements
             Case 1
                 bgImage = My.Resources.bg_midnight_01
                 showNowStatus = "凌晨"
+            Case 2
+                bgImage = My.Resources.bg_morning_01
+                showNowStatus = "早上"
             Case 3
                 bgImage = My.Resources.bg_noon_01
                 showNowStatus = "中午"

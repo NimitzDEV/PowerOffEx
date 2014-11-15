@@ -247,6 +247,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="appiconv4.ico" />
+    <None Include="res\bg_morning_01.png" />
     <None Include="res\bg_noon_01.png" />
     <None Include="res\bg_nm_rnd2.png" />
     <None Include="res\bg_nm_rnd1.png" />

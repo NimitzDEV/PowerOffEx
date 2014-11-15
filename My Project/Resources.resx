@@ -139,9 +139,6 @@
   <data name="clock2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\res\clock2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="res_drawbg_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\res_drawbg_normal.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="charging3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\res\charging3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -162,6 +159,9 @@
   </data>
   <data name="bg_midnight_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\res\bg_midnight_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bg_morning_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\bg_morning_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bg_nm_rnd1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\res\bg_nm_rnd1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
