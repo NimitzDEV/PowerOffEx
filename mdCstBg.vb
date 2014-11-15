@@ -21,17 +21,14 @@ Module mdCstBg
         trdBGTrd.Start()
     End Sub
     Private Sub cstConfig()
+        '初始化
+        initDefault()
         '下载配置信息
         downloadFile("http://ndev.cu.cc/cfgol/config_dsgjex.ndev", folderPath & "\webcfg.ini")
-        If FileExists(folderPath & "\webcfg.ini") = False Then
-            initDefault()
-            Exit Sub
-        End If
+        If FileExists(folderPath & "\webcfg.ini") = False Then Exit Sub
         '读取配置信息
         '-判断日期
-        If GetINI("cfg", "date", "0", "\webcfg.ini") <> Year(Now) & Month(Now) & Date.Today Then
-            initDefault()
-        End If
+        If GetINI("cfg", "date", "0", "\webcfg.ini") <> Year(Now) & Month(Now) & Date.Today Then Exit Sub
         '-载入文字和图片
         For i = 0 To 4
             srcStr4 = GetINI("cfg", "wrd" & i + 1, "", "\webcfg.ini")
