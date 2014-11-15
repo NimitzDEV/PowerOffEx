@@ -19,17 +19,11 @@ Module mdUIElements
     Public showNowStatus As String
     Public bgImage As Image
     Dim dtBG, nowBG As Integer
-    Public Function DrawProgressBar(ByVal bgImage As Image, ByVal CurrentAngle As Integer, _
-                                    ByVal changingAngle As Integer, ByVal drawObject As PictureBox, _
-                                    ByVal endColor As Color, ByVal startColor As Color, _
-                                    ByVal linkStatusString As String, ByVal linkStatusImage As Image, _
-                                    ByVal batteryStatusString As String, ByVal batteryStatusImage As Image, _
-                                    ByVal showStringMiddle As String, ByVal showStringDown As String, _
-                                    ByVal remainString As String) As Bitmap
-        Dim bmp As New Bitmap(bgImage, drawObject.ClientRectangle.Width, drawObject.ClientRectangle.Height)
-        Dim g As Graphics
-        '100分制转换
-        CurrentAngle *= 3.2
+    '===
+    Dim g As Graphics
+    Public Function DrawProgressBar(ByVal changingAngle As Integer, _
+                                    ByVal endColor As Color, ByVal startColor As Color) As Bitmap
+        Dim bmp As New Bitmap(bgImage, frmInterface.pbStatus.ClientRectangle.Width, frmInterface.pbStatus.ClientRectangle.Height)
         Dim path As New GraphicsPath
         Dim rec As Rectangle = New Rectangle(25, bmp.Height - (bmp.Width - 22.5) - 15, bmp.Width - 50, bmp.Width - 50)
         g = Graphics.FromImage(bmp)
@@ -46,13 +40,13 @@ Module mdUIElements
         '时间状态
         g.DrawString(showStringMiddle, New Font("Segoe UI", 32, FontStyle.Bold), Brushes.White, New Point(bmp.Width / 2, bmp.Height / 2 + 30), sfCenter)
         g.DrawString(showStringDown, New Font("Segoe UI", 20, FontStyle.Bold), Brushes.White, New Point(bmp.Width / 2, bmp.Height - 55), sfCenter)
-        g.DrawString(remainString, New Font("Segoe UI", 16, FontStyle.Regular), Brushes.White, New Point(bmp.Width / 2, bmp.Height / 2 - 15), sfCenter)
+        g.DrawString(smallTitle, New Font("Segoe UI", 16, FontStyle.Regular), Brushes.White, New Point(bmp.Width / 2, bmp.Height / 2 - 15), sfCenter)
         'g.DrawEllipse(Pens.White, rec)
-        path.AddPie(rec, 110, CurrentAngle)
+        path.AddPie(rec, 110, currentProgress * 3.2)
         Dim holeRect As Rectangle = New Rectangle(rec.X + 15, rec.Y + 15, rec.Width - 30, rec.Height - 30)
         'g.DrawEllipse(Pens.White, holeRect)
         g.Clip = (New Region(path))
-        path.AddPie(holeRect, 110, CurrentAngle)
+        path.AddPie(holeRect, 110, currentProgress * 3.2)
         Dim gradiant As New LinearGradientBrush(rec, endColor, startColor, changingAngle)
         g.FillPath(gradiant, path)
         frmInterface.Invalidate(rec)

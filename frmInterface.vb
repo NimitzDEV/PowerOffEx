@@ -262,7 +262,7 @@ Public Class frmInterface
         End If
         changingAngle += 3
         If changingAngle > 360 Then changingAngle = 0
-        pbStatus.Image = DrawProgressBar(bgImage, currentProgress, changingAngle, pbStatus, Color.Orange, Color.DodgerBlue, linkStatusString, linkStatusImage, batteryStatusString, batteryStatusImage, showStringMiddle, showStringDown, smallTitle)
+        pbStatus.Image = DrawProgressBar(changingAngle, Color.Orange, Color.DodgerBlue)
     End Sub
 
     Private Sub 退出ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles 退出ToolStripMenuItem1.Click
