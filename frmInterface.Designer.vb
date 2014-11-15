@@ -58,12 +58,12 @@ Partial Class frmInterface
         Me.返回ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.退出ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.隐藏ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.pbStatus = New System.Windows.Forms.PictureBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.outAnimationTimer = New System.Windows.Forms.Timer(Me.components)
         Me.tmrTimeMode = New System.Windows.Forms.Timer(Me.components)
         Me.tmrBatteryMode = New System.Windows.Forms.Timer(Me.components)
         Me.tmrVChecker = New System.Windows.Forms.Timer(Me.components)
+        Me.pbStatus = New System.Windows.Forms.PictureBox()
         Me.cmsRightClick.SuspendLayout()
         Me.cmsInterfaceMenu.SuspendLayout()
         CType(Me.pbStatus, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -91,7 +91,7 @@ Partial Class frmInterface
         'btnMenu
         '
         Me.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnMenu.Location = New System.Drawing.Point(265, 266)
+        Me.btnMenu.Location = New System.Drawing.Point(285, 367)
         Me.btnMenu.Name = "btnMenu"
         Me.btnMenu.Size = New System.Drawing.Size(25, 23)
         Me.btnMenu.TabIndex = 1
@@ -264,14 +264,6 @@ Partial Class frmInterface
         Me.隐藏ToolStripMenuItem.Size = New System.Drawing.Size(100, 22)
         Me.隐藏ToolStripMenuItem.Text = "隐藏"
         '
-        'pbStatus
-        '
-        Me.pbStatus.Location = New System.Drawing.Point(0, 0)
-        Me.pbStatus.Name = "pbStatus"
-        Me.pbStatus.Size = New System.Drawing.Size(300, 300)
-        Me.pbStatus.TabIndex = 7
-        Me.pbStatus.TabStop = False
-        '
         'ToolTip1
         '
         Me.ToolTip1.IsBalloon = True
@@ -292,11 +284,19 @@ Partial Class frmInterface
         '
         Me.tmrVChecker.Interval = 10000
         '
+        'pbStatus
+        '
+        Me.pbStatus.Location = New System.Drawing.Point(0, 0)
+        Me.pbStatus.Name = "pbStatus"
+        Me.pbStatus.Size = New System.Drawing.Size(321, 400)
+        Me.pbStatus.TabIndex = 7
+        Me.pbStatus.TabStop = False
+        '
         'frmInterface
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(337, 330)
+        Me.ClientSize = New System.Drawing.Size(423, 434)
         Me.ControlBox = False
         Me.Controls.Add(Me.btnMenu)
         Me.Controls.Add(Me.pbStatus)

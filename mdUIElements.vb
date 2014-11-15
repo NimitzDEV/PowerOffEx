@@ -20,7 +20,7 @@ Module mdUIElements
         '100分制转换
         CurrentAngle *= 3.2
         Dim path As New GraphicsPath
-        Dim rec As Rectangle = New Rectangle((bmp.Width - bmp.Height + 60) / 2, (bmp.Height - bmp.Height + 20) / 2 + 10, bmp.Height - 60, bmp.Height - 60)
+        Dim rec As Rectangle = New Rectangle(30, bmp.Height - (bmp.Width - 22.5), bmp.Width - 60, bmp.Width - 60)
         g = Graphics.FromImage(bmp)
         '网络连接状态
         g.DrawImage(linkStatusImage, 10, bmp.Height - 30, 20, 20)
@@ -29,9 +29,9 @@ Module mdUIElements
         g.DrawImage(batteryStatusImage, 90, bmp.Height - 35, 30, 30)
         g.DrawString(batteryStatusString, New Font("Segoe UI", 8, FontStyle.Regular), Brushes.White, New Point(120, bmp.Height - 20), stringFormat2)
         '时间状态
-        g.DrawString(showStringMiddle, New Font("Segoe UI", 32, FontStyle.Bold), Brushes.White, New Point(bmp.Width / 2, bmp.Height / 2), stringformat)
+        g.DrawString(showStringMiddle, New Font("Segoe UI", 32, FontStyle.Bold), Brushes.White, New Point(bmp.Width / 2, bmp.Height / 2 + 45), stringformat)
         g.DrawString(showStringDown, New Font("Segoe UI", 20, FontStyle.Bold), Brushes.White, New Point(bmp.Width / 2, bmp.Height - 55), stringformat)
-        g.DrawString(remainString, New Font("Segoe UI", 16, FontStyle.Regular), Brushes.White, New Point(bmp.Width / 2, bmp.Height / 2 - 60), stringformat)
+        g.DrawString(remainString, New Font("Segoe UI", 16, FontStyle.Regular), Brushes.White, New Point(bmp.Width / 2, bmp.Height / 2 - 15), stringformat)
         'g.DrawEllipse(Pens.White, rec)
         path.AddPie(rec, 110, CurrentAngle)
         Dim holeRect As Rectangle = New Rectangle(rec.X + 15, rec.Y + 15, rec.Width - 30, rec.Height - 30)

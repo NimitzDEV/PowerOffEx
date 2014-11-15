@@ -154,4 +154,22 @@
   <data name="help" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\res\help.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bg_afternoon_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\bg_afternoon_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bg_evening_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\bg_evening_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bg_midnight_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\bg_midnight_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bg_nm_rnd1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\bg_nm_rnd1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bg_nm_rnd2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\bg_nm_rnd2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bg_noon_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\bg_noon_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

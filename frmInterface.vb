@@ -21,7 +21,7 @@ Public Class frmInterface
     Public currentProgress As Integer
     Public showStringMiddle As String
     Public showStringDown As String
-    Dim bgImage As Image = My.Resources.res_drawbg_normal
+    Dim bgImage As Image = My.Resources.bg_evening_01
     Private Sub fullUI(ByVal isEnable As Boolean)
         tmrChargeAnimate.Enabled = isEnable
         tmrUIFresh.Enabled = isEnable
@@ -104,7 +104,7 @@ Public Class frmInterface
     Private Sub outAnimationTimer_Tick(sender As Object, e As EventArgs) Handles outAnimationTimer.Tick
         If speedIndex - 1 > 0 Then speedIndex -= 1
         Me.Top -= speedIndex
-        Me.Opacity -= 0.03
+        Me.Opacity -= 0.04
         Me.Refresh()
         If Me.Top < (Screen.PrimaryScreen.WorkingArea.Height - Me.Height - Me.Height * 0.4) Then
             outAnimationTimer.Enabled = False
@@ -119,7 +119,7 @@ Public Class frmInterface
         outAnimationTimer.Enabled = False
         If Me.Visible = False Then Me.Visible = True
         Me.Opacity = 9
-        speedIndex = 15
+        speedIndex = 18
         outAnimationTimer.Enabled = True
     End Sub
 
@@ -135,20 +135,21 @@ Public Class frmInterface
     Private Sub animationTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles animationTimer.Tick
         If speedIndex - 1 > 0 Then speedIndex -= 1
         Me.Top -= speedIndex
-        Me.Opacity += 0.03
+        Me.Opacity += 0.04
         Me.Refresh()
         If Me.Top < (Screen.PrimaryScreen.WorkingArea.Height - Me.Height) Then
             Me.Top = (Screen.PrimaryScreen.WorkingArea.Height - Me.Height)
             animationTimer.Enabled = False
             Me.Refresh()
         End If
+
         Application.DoEvents()
     End Sub
 
     Private Sub showSwipAnimation()
         'Me.Height = 0
         Me.Opacity = 0
-        speedIndex = 15
+        speedIndex = 18
         Me.Top = (Screen.PrimaryScreen.WorkingArea.Height - Me.Height * 0.6)
         animationTimer.Enabled = True
     End Sub
@@ -372,5 +373,6 @@ Public Class frmInterface
             smallTitle = ""
         End If
     End Sub
+
 
 End Class
