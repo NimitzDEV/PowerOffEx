@@ -18,11 +18,11 @@ Module mdUIElements
     Public showStringDown As String
     Public showNowStatus As String
     Public bgImage As Image
+    Public endColor, startColor As Color
     Dim dtBG As Integer
     '===
     Dim g As Graphics
-    Public Function DrawProgressBar(ByVal changingAngle As Integer, _
-                                    ByVal endColor As Color, ByVal startColor As Color) As Bitmap
+    Public Function DrawProgressBar(ByVal changingAngle As Integer) As Bitmap
         Dim bmp As New Bitmap(bgImage, frmInterface.pbStatus.ClientRectangle.Width, frmInterface.pbStatus.ClientRectangle.Height)
         Dim path As New GraphicsPath
         Dim rec As Rectangle = New Rectangle(25, bmp.Height - (bmp.Width - 22.5) - 15, bmp.Width - 50, bmp.Width - 50)
@@ -78,18 +78,28 @@ Module mdUIElements
             Case 1
                 bgImage = bgImageList(0)
                 showNowStatus = wrd(0)
+                startColor = cirColor(0, 0)
+                endColor = cirColor(0, 1)
             Case 2
                 bgImage = bgImageList(1)
                 showNowStatus = wrd(1)
+                startColor = cirColor(1, 0)
+                endColor = cirColor(1, 1)
             Case 3
                 bgImage = bgImageList(2)
                 showNowStatus = wrd(2)
+                startColor = cirColor(2, 0)
+                endColor = cirColor(2, 1)
             Case 4
                 bgImage = bgImageList(3)
                 showNowStatus = wrd(3)
+                startColor = cirColor(3, 0)
+                endColor = cirColor(3, 1)
             Case 5
                 bgImage = bgImageList(4)
                 showNowStatus = wrd(4)
+                startColor = cirColor(4, 0)
+                endColor = cirColor(4, 1)
         End Select
     End Sub
 End Module

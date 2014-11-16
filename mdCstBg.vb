@@ -5,11 +5,16 @@ Module mdCstBg
     '公共变量
     Public wrd(4) As String
     Public bgImageList(4) As Image
+    Public cirColor(4, 1) As Color
     Dim srcStr As String
     Dim srcStr2 As String
     Dim srcStr3 As String
     Dim srcStr4 As String
+    Dim clrIn As String
+    Dim clrIn2 As String
+    Dim clrIn3 As String
     Public Sub downloadFile(ByVal Url As String, ByVal Path As String)
+        If Url = "-" Then Exit Sub
         Try
             fileDld = New Net.WebClient
             fileDld.DownloadFile(New Uri(Url), Path)
@@ -35,18 +40,31 @@ Module mdCstBg
             wrd(i) = IIf(srcStr4 = "", getWrd(i), srcStr4)
         Next
         For i = 0 To 4
+            clrIn = GetINI("cfg", "clr" & i + 1, "", "\webcfg.ini")
+            If clrIn <> "" Then
+                clrIn2 = Split(clrIn, ";")(0)
+                clrIn3 = Split(clrIn, ";")(1)
+                cirColor(i, 0) = IIf(clrIn2 = "", Color.Orange.ToArgb, Color.FromArgb(clrIn2))
+                cirColor(i, 1) = IIf(clrIn3 = "", Color.DodgerBlue.ToArgb, Color.FromArgb(clrIn3))
+            End If
+        Next
+        For i = 0 To 4
             srcStr = GetINI("cfg", "src" & i + 1, "", "\webcfg.ini")
-            srcStr2 = Split(srcStr, ";")(0)
-            srcStr3 = Split(srcStr, ";")(1)
-            downloadFile(srcStr2, folderPath & srcStr3)
-            bgImageList(i) = IIf(srcStr2 = "", getImg(i), _
-                             IIf(FileExists(folderPath & srcStr3), Image.FromFile(folderPath & srcStr3), getImg(i)))
+            If srcStr <> "" Then
+                srcStr2 = Split(srcStr, ";")(0)
+                srcStr3 = Split(srcStr, ";")(1)
+                downloadFile(srcStr2, folderPath & srcStr3)
+                bgImageList(i) = IIf(srcStr2 = "", getImg(i), _
+                                 IIf(FileExists(folderPath & srcStr3), Image.FromFile(folderPath & srcStr3), getImg(i)))
+            End If
         Next
     End Sub
     Private Sub initDefault()
         For i = 0 To 4
             bgImageList(i) = getImg(i)
             wrd(i) = getWrd(i)
+            cirColor(i, 0) = Color.Orange
+            cirColor(i, 1) = Color.DodgerBlue
         Next
     End Sub
     Private Function getWrd(ByVal idx As Integer) As String
