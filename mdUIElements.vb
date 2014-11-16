@@ -18,7 +18,7 @@ Module mdUIElements
     Public showStringDown As String
     Public showNowStatus As String
     Public bgImage As Image
-    Dim dtBG, nowBG As Integer
+    Dim dtBG As Integer
     '===
     Dim g As Graphics
     Public Function DrawProgressBar(ByVal changingAngle As Integer, _
@@ -74,9 +74,7 @@ Module mdUIElements
         If nh > 11 And nh < 14 Then dtBG = 3
         If nh > 13 And nh < 19 Then dtBG = 4
         If nh > 18 Then dtBG = 5
-        If dtBG = nowBG Then Exit Sub
-        nowBG = dtBG
-        Select Case nowBG
+        Select Case dtBG
             Case 1
                 bgImage = bgImageList(0)
                 showNowStatus = wrd(0)

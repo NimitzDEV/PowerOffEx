@@ -28,7 +28,7 @@ Module mdCstBg
         If FileExists(folderPath & "\webcfg.ini") = False Then Exit Sub
         '读取配置信息
         '-判断日期
-        If GetINI("cfg", "date", "0", "\webcfg.ini") <> Year(Now) & Month(Now) & Date.Today Then Exit Sub
+        If GetINI("cfg", "date", "0", "\webcfg.ini") <> Year(Now) & Month(Now) & Date.Today.Day Then Exit Sub
         '-载入文字和图片
         For i = 0 To 4
             srcStr4 = GetINI("cfg", "wrd" & i + 1, "", "\webcfg.ini")
