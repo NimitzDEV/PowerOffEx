@@ -8,18 +8,10 @@ Module mdUIElements
     Dim sfFar As New StringFormat With {.Alignment = StringAlignment.Far, .LineAlignment = StringAlignment.Near}
     'SYSINFO
     Public ticker_SL As Integer = 0
-    Public smallTitle As String = ""
-    Public linkStatusString As String
-    Public linkStatusImage As Image
-    Public batteryStatusString As String
-    Public batteryStatusImage As Image
-    Public currentProgress As Integer
-    Public showStringMiddle As String
-    Public showStringDown As String
-    Public showNowStatus As String
-    Public bgImage As Image
+    Public linkStatusString, batteryStatusString, showNowStatus, showStringDown, showStringMiddle, smallTitle As String
+    Public linkStatusImage, batteryStatusImage, bgImage As Image
+    Public currentProgress, dtBG As Integer
     Public endColor, startColor As Color
-    Dim dtBG As Integer
     '===
     Dim g As Graphics
     Public Function DrawProgressBar(ByVal changingAngle As Integer) As Bitmap

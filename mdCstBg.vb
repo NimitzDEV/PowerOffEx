@@ -6,13 +6,8 @@ Module mdCstBg
     Public wrd(4) As String
     Public bgImageList(4) As Image
     Public cirColor(4, 1) As Color
-    Dim srcStr As String
-    Dim srcStr2 As String
-    Dim srcStr3 As String
-    Dim srcStr4 As String
-    Dim clrIn As String
-    Dim clrIn2 As String
-    Dim clrIn3 As String
+    Dim srcStr, srcStr2, srcStr3, srcStr4 As String
+    Dim clrIn, clrIn2, clrIn3 As String
     Public Sub downloadFile(ByVal Url As String, ByVal Path As String)
         If Url = "-" Then Exit Sub
         Try
