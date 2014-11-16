@@ -33,6 +33,8 @@ Module mdCstBg
         For i = 0 To 4
             srcStr4 = GetINI("cfg", "wrd" & i + 1, "", "\webcfg.ini")
             wrd(i) = IIf(srcStr4 = "", getWrd(i), srcStr4)
+        Next
+        For i = 0 To 4
             srcStr = GetINI("cfg", "src" & i + 1, "", "\webcfg.ini")
             srcStr2 = Split(srcStr, ";")(0)
             srcStr3 = Split(srcStr, ";")(1)
