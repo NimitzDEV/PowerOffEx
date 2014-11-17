@@ -26,7 +26,6 @@ Partial Class frmInterface
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmInterface))
         Me.notifyIcon = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.animationTimer = New System.Windows.Forms.Timer(Me.components)
-        Me.mainTick = New System.Windows.Forms.Timer(Me.components)
         Me.tmrAutoHide = New System.Windows.Forms.Timer(Me.components)
         Me.btnMenu = New System.Windows.Forms.Button()
         Me.cmsRightClick = New System.Windows.Forms.ContextMenuStrip(Me.components)
@@ -58,7 +57,6 @@ Partial Class frmInterface
         Me.返回ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.退出ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.隐藏ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.outAnimationTimer = New System.Windows.Forms.Timer(Me.components)
         Me.tmrTimeMode = New System.Windows.Forms.Timer(Me.components)
         Me.tmrBatteryMode = New System.Windows.Forms.Timer(Me.components)
@@ -78,10 +76,6 @@ Partial Class frmInterface
         'animationTimer
         '
         Me.animationTimer.Interval = 5
-        '
-        'mainTick
-        '
-        Me.mainTick.Interval = 1000
         '
         'tmrAutoHide
         '
@@ -264,10 +258,6 @@ Partial Class frmInterface
         Me.隐藏ToolStripMenuItem.Size = New System.Drawing.Size(100, 22)
         Me.隐藏ToolStripMenuItem.Text = "隐藏"
         '
-        'ToolTip1
-        '
-        Me.ToolTip1.IsBalloon = True
-        '
         'outAnimationTimer
         '
         Me.outAnimationTimer.Interval = 5
@@ -314,7 +304,6 @@ Partial Class frmInterface
     End Sub
     Friend WithEvents notifyIcon As System.Windows.Forms.NotifyIcon
     Friend WithEvents animationTimer As System.Windows.Forms.Timer
-    Friend WithEvents mainTick As System.Windows.Forms.Timer
     Friend WithEvents tmrAutoHide As System.Windows.Forms.Timer
     Friend WithEvents btnMenu As System.Windows.Forms.Button
     Friend WithEvents cmsRightClick As System.Windows.Forms.ContextMenuStrip
@@ -347,7 +336,6 @@ Partial Class frmInterface
     Friend WithEvents add60min As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents add120min As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem3 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
     Friend WithEvents outAnimationTimer As System.Windows.Forms.Timer
     Friend WithEvents tmrTimeMode As System.Windows.Forms.Timer
     Friend WithEvents tmrBatteryMode As System.Windows.Forms.Timer

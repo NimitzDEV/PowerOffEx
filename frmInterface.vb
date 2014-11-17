@@ -81,6 +81,7 @@ Public Class frmInterface
             加时ToolStripMenuItem.Enabled = False
         ElseIf selectedMode = 2 Then
             tmrVChecker.Enabled = True
+            smallTitle = "目前"
             延长时间ToolStripMenuItem.Enabled = False
             加时ToolStripMenuItem.Enabled = False
         End If
@@ -309,11 +310,6 @@ Public Class frmInterface
         addTime(120)
     End Sub
 
-    Private Sub btnMenu_MouseHover(sender As Object, e As EventArgs) Handles btnMenu.MouseHover
-        ToolTip1.Show("点击此处显示更多的选项", btnMenu)
-    End Sub
-
-
     Private Sub tmrTimeMode_Tick(sender As Object, e As EventArgs) Handles tmrTimeMode.Tick
         updateBatteryInfo()
         valSetTime -= 1
@@ -322,7 +318,6 @@ Public Class frmInterface
         If valSetTime = 180 Then showNotify("剩余3分钟关机", Color.Orange)
         If valSetTime = 30 Then showNotify("即将关机", Color.Red)
         If valSetTime = 0 Then
-            mainTick.Enabled = False
             shutdownWindows()
             exitProgram(0)
         End If
@@ -339,7 +334,6 @@ Public Class frmInterface
         If batteryPercent - valBatteryLifeLB = 3 Then showNotify("再下降3%的电量将关机", Color.Orange)
         If batteryPercent - valBatteryLifeLB = 0 Then showNotify("即将关机", Color.Red)
         If batteryPercent < valBatteryLifeLB Then
-            mainTick.Enabled = False
             shutdownWindows()
             exitProgram(0)
         End If
@@ -366,7 +360,7 @@ Public Class frmInterface
             ticker_SL = 0
             tmrTimeMode.Enabled = False
             showStringDown = ""
-            smallTitle = ""
+            smallTitle = "目前"
         End If
     End Sub
 
