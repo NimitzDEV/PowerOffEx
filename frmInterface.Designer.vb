@@ -173,7 +173,7 @@ Partial Class frmInterface
         'tmrUIFresh
         '
         Me.tmrUIFresh.Enabled = True
-        Me.tmrUIFresh.Interval = 9000
+        Me.tmrUIFresh.Interval = 5000
         '
         'tmrCheckTv
         '
