@@ -172,7 +172,7 @@ Public Class frmInterface
     End Sub
 
     Private Sub btnExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMenu.Click
-        cmsInterfaceMenu.Show(btnMenu, -76, -75)
+        cmsInterfaceMenu.Show(Me, btnMenu.Left - (cmsInterfaceMenu.Width - btnMenu.Width), btnMenu.Top - cmsInterfaceMenu.Height)
     End Sub
     Private Sub add10_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles add10.Click
         addTime(10)
@@ -195,7 +195,11 @@ Public Class frmInterface
     End Sub
 
     Private Sub QqqToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles QqqToolStripMenuItem.Click
-        showUpUI()
+        If Me.Visible = False Then
+            showUpUI()
+        Else
+            hideUI()
+        End If
     End Sub
 
     Private Sub 退出ToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles 退出ToolStripMenuItem.Click

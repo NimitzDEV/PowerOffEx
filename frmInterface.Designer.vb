@@ -91,11 +91,11 @@ Partial Class frmInterface
         'btnMenu
         '
         Me.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnMenu.Location = New System.Drawing.Point(285, 367)
+        Me.btnMenu.Location = New System.Drawing.Point(250, 367)
         Me.btnMenu.Name = "btnMenu"
-        Me.btnMenu.Size = New System.Drawing.Size(25, 23)
+        Me.btnMenu.Size = New System.Drawing.Size(60, 23)
         Me.btnMenu.TabIndex = 1
-        Me.btnMenu.Text = "≡"
+        Me.btnMenu.Text = "≡ 菜单"
         Me.btnMenu.UseVisualStyleBackColor = True
         '
         'cmsRightClick
@@ -154,7 +154,7 @@ Partial Class frmInterface
         '
         'remainTip
         '
-        Me.remainTip.BackColor = System.Drawing.Color.Orange
+        Me.remainTip.BackColor = System.Drawing.Color.DodgerBlue
         Me.remainTip.Font = New System.Drawing.Font("微软雅黑", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.remainTip.ForeColor = System.Drawing.Color.White
         Me.remainTip.Name = "remainTip"
