@@ -19,7 +19,7 @@ Public Class frmMain
         ftVol.Checked = chk_VOLCTRL
         ftReminder.Checked = chk_REMINDER
         valSetTime = 0
-        startArgsChecking()
+        'startArgsChecking()
         FormSkin1.Text = Me.Text
         pnlExtend.Location = New Point(tbAll.Left, tbAll.Top)
         'PNL
@@ -318,7 +318,4 @@ Public Class frmMain
         startActive()
     End Sub
 
-    Private Sub timeUpdate(sender As Object, e As EventArgs) Handles fnSTMinute.Click, fnSTHour.Click
-
-    End Sub
 End Class
