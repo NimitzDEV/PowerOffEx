@@ -10,6 +10,7 @@ Module mdSettings
     Public chk_REMINDER As Boolean = False
     Public chk_RECORD As Boolean = False
     Public chk_VOLCTRL As Boolean = False
+    Public chk_Cst As Boolean = True
     Public set_TVP As String = ""
     '====
     Public folderPath As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) & "\定时关机Ex\"
@@ -34,6 +35,7 @@ Module mdSettings
         chk_REMINDER = GetINI("funcenable", "REMINDER", chk_REMINDER)
         chk_RECORD = GetINI("funcenable", "TVP", chk_RECORD)
         chk_VOLCTRL = GetINI("funcenable", "VOLC", chk_VOLCTRL)
+        chk_Cst = GetINI("funcenable", "cst", chk_Cst)
         set_TVP = GetINI("set", "TVP", "")
     End Sub
     Public Sub SaveSettings()
@@ -48,6 +50,7 @@ Module mdSettings
         WriteINI("funcenable", "REMINDER", chk_REMINDER)
         WriteINI("funcenable", "TVP", chk_RECORD)
         WriteINI("funcenable", "VOLC", chk_VOLCTRL)
+        WriteINI("funcenable", "cst", chk_Cst)
         WriteINI("set", "TVP", set_TVP)
     End Sub
     Public Function GetINI(ByVal Section As String, ByVal AppName As String, ByVal lpDefault As String, Optional ByVal iniName As String = "\config.ini") As String

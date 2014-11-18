@@ -94,4 +94,8 @@ Module mdUIElements
                 endColor = cirColor(4, 1)
         End Select
     End Sub
+ 
+    Public Sub showUpForm(ByVal frm As Form)
+
+    End Sub
 End Module

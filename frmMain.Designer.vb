@@ -80,6 +80,9 @@ Partial Class frmMain
         Me.FlatLabel13 = New 定时关机Ex.FlatLabel()
         Me.FlatClose1 = New 定时关机Ex.FlatClose()
         Me.pnlExtend = New System.Windows.Forms.Panel()
+        Me.ftCstHis = New 定时关机Ex.FlatButton()
+        Me.FlatLabel1 = New 定时关机Ex.FlatLabel()
+        Me.ftCst = New 定时关机Ex.FlatToggle()
         Me.help4REMINDER = New System.Windows.Forms.PictureBox()
         Me.help4VOL = New System.Windows.Forms.PictureBox()
         Me.help4TVP = New System.Windows.Forms.PictureBox()
@@ -786,6 +789,9 @@ Partial Class frmMain
         'pnlExtend
         '
         Me.pnlExtend.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.pnlExtend.Controls.Add(Me.ftCstHis)
+        Me.pnlExtend.Controls.Add(Me.FlatLabel1)
+        Me.pnlExtend.Controls.Add(Me.ftCst)
         Me.pnlExtend.Controls.Add(Me.help4REMINDER)
         Me.pnlExtend.Controls.Add(Me.help4VOL)
         Me.pnlExtend.Controls.Add(Me.help4TVP)
@@ -802,6 +808,45 @@ Partial Class frmMain
         Me.pnlExtend.Size = New System.Drawing.Size(398, 258)
         Me.pnlExtend.TabIndex = 20
         Me.pnlExtend.Visible = False
+        '
+        'ftCstHis
+        '
+        Me.ftCstHis.BackColor = System.Drawing.Color.Transparent
+        Me.ftCstHis.BaseColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.ftCstHis.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ftCstHis.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.ftCstHis.Location = New System.Drawing.Point(271, 126)
+        Me.ftCstHis.Name = "ftCstHis"
+        Me.ftCstHis.Rounded = False
+        Me.ftCstHis.Size = New System.Drawing.Size(106, 32)
+        Me.ftCstHis.TabIndex = 29
+        Me.ftCstHis.Text = "查看往期节日装扮"
+        Me.ftCstHis.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
+        '
+        'FlatLabel1
+        '
+        Me.FlatLabel1.AutoSize = True
+        Me.FlatLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.FlatLabel1.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.FlatLabel1.ForeColor = System.Drawing.Color.White
+        Me.FlatLabel1.Location = New System.Drawing.Point(125, 138)
+        Me.FlatLabel1.Name = "FlatLabel1"
+        Me.FlatLabel1.Size = New System.Drawing.Size(85, 13)
+        Me.FlatLabel1.TabIndex = 28
+        Me.FlatLabel1.Text = "节日装扮功能"
+        '
+        'ftCst
+        '
+        Me.ftCst.BackColor = System.Drawing.Color.Transparent
+        Me.ftCst.Checked = True
+        Me.ftCst.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ftCst.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.ftCst.Location = New System.Drawing.Point(43, 129)
+        Me.ftCst.Name = "ftCst"
+        Me.ftCst.Options = 定时关机Ex.FlatToggle._Options.Style3
+        Me.ftCst.Size = New System.Drawing.Size(76, 33)
+        Me.ftCst.TabIndex = 27
+        Me.ftCst.Text = "FlatToggle1"
         '
         'help4REMINDER
         '
@@ -1044,5 +1089,8 @@ Partial Class frmMain
     Friend WithEvents FlatLabel15 As 定时关机Ex.FlatLabel
     Friend WithEvents lbSel As 定时关机Ex.FlatLabel
     Friend WithEvents btnStartVMode As 定时关机Ex.FlatButton
+    Friend WithEvents ftCst As 定时关机Ex.FlatToggle
+    Friend WithEvents ftCstHis As 定时关机Ex.FlatButton
+    Friend WithEvents FlatLabel1 As 定时关机Ex.FlatLabel
 
 End Class
