@@ -95,7 +95,10 @@ Module mdUIElements
         End Select
     End Sub
  
-    Public Sub showUpForm(ByVal frm As Form)
-
+    Public Sub showNotify2(ByVal info As String, ByVal link As String)
+        If frmTips.Handle <> Nothing Then frmTips.Close()
+        frmTips.Show()
+        frmTips.lbInfo.Text = System.Text.RegularExpressions.Regex.Unescape(info)
+        frmTips.llbMore.Tag = link
     End Sub
 End Module

@@ -6,8 +6,10 @@ Module mdCstBg
     Public wrd(4) As String
     Public bgImageList(4) As Image
     Public cirColor(4, 1) As Color
+    Public ntfCtn(4, 1) As String
     Dim srcStr, srcStr2, srcStr3, srcStr4 As String
     Dim clrIn, clrIn2, clrIn3 As String
+    Dim ntfStr, ntfStr2, ntfStr3 As String
     Public Sub downloadFile(ByVal Url As String, ByVal Path As String)
         If Url = "-" Then Exit Sub
         Try
@@ -39,8 +41,17 @@ Module mdCstBg
             If clrIn <> "" Then
                 clrIn2 = Split(clrIn, ";")(0)
                 clrIn3 = Split(clrIn, ";")(1)
-                cirColor(i, 0) = IIf(clrIn2 = "", Color.Orange.ToArgb, Color.FromArgb(clrIn2))
-                cirColor(i, 1) = IIf(clrIn3 = "", Color.DodgerBlue.ToArgb, Color.FromArgb(clrIn3))
+                cirColor(i, 0) = Color.FromArgb(clrIn2)
+                cirColor(i, 1) = Color.FromArgb(clrIn3)
+            End If
+        Next
+        For i = 0 To 4
+            ntfStr = GetINI("cfg", "ntf" & i + 1, "", "\webcfg.ini")
+            If ntfStr <> "" Then
+                ntfStr2 = Split(ntfStr, ";")(0)
+                ntfStr3 = Split(ntfStr, ";")(1)
+                ntfCtn(i, 0) = ntfStr2
+                ntfCtn(i, 1) = ntfStr3
             End If
         Next
         For i = 0 To 4
@@ -60,6 +71,8 @@ Module mdCstBg
             wrd(i) = getWrd(i)
             cirColor(i, 0) = Color.Orange
             cirColor(i, 1) = Color.DodgerBlue
+            ntfCtn(i, 0) = ""
+            ntfCtn(i, 1) = ""
         Next
     End Sub
     Private Function getWrd(ByVal idx As Integer) As String
@@ -90,6 +103,6 @@ Module mdCstBg
             Case 4
                 Return My.Resources.bg_evening_01
         End Select
-        Return My.Resources.bg_nm_rnd1
+        Return My.Resources.bg_evening_01
     End Function
 End Module

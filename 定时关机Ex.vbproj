@@ -125,6 +125,12 @@
     <Compile Include="frmNotify.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmTips.Designer.vb">
+      <DependentUpon>frmTips.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTips.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmTVP.Designer.vb">
       <DependentUpon>frmTVP.vb</DependentUpon>
     </Compile>
@@ -191,6 +197,9 @@
     <EmbeddedResource Include="frmNotify.resx">
       <DependentUpon>frmNotify.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmTips.resx">
+      <DependentUpon>frmTips.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTVP.resx">
       <DependentUpon>frmTVP.vb</DependentUpon>
     </EmbeddedResource>
@@ -248,6 +257,8 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="appiconv4.ico" />
+    <None Include="res\bg_frmtips2.png" />
+    <None Include="res\bg_frmtips.png" />
     <None Include="res\bg_morning_01.png" />
     <None Include="res\bg_noon_01.png" />
     <None Include="res\bg_nm_rnd2.png" />

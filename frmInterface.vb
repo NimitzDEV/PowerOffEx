@@ -93,6 +93,9 @@ Public Class frmInterface
         Me.Left = MousePosition.X - Me.Width / 2
         If Me.Left > (Screen.PrimaryScreen.WorkingArea.Width - Me.Width) Then Me.Left = Screen.PrimaryScreen.WorkingArea.Width - Me.Width
         If Me.Left < 0 Then Me.Left = 0
+        If chk_Cst Then
+            If ntfCtn(dtBG - 1, 0) <> "" Then showNotify2(ntfCtn(dtBG - 1, 0), ntfCtn(dtBG - 1, 1))
+        End If
     End Sub
     Private Sub outAnimationTimer_Tick(sender As Object, e As EventArgs) Handles outAnimationTimer.Tick
         If speedIndex - 1 > 0 Then speedIndex -= 1
@@ -109,6 +112,7 @@ Public Class frmInterface
         Application.DoEvents()
     End Sub
     Private Sub hideUI()
+        If frmTips.Handle <> Nothing Then frmTips.Close()
         outAnimationTimer.Enabled = False
         If Me.Visible = False Then Me.Visible = True
         Me.Opacity = 9
