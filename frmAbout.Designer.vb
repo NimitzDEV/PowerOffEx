@@ -23,6 +23,8 @@ Partial Class frmAbout
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.formskin1 = New 定时关机Ex.FormSkin()
+        Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
+        Me.FlatLabel10 = New 定时关机Ex.FlatLabel()
         Me.FlatLabel9 = New 定时关机Ex.FlatLabel()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.FlatLabel8 = New 定时关机Ex.FlatLabel()
@@ -40,8 +42,6 @@ Partial Class frmAbout
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel8 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel9 = New System.Windows.Forms.LinkLabel()
-        Me.FlatLabel10 = New 定时关机Ex.FlatLabel()
-        Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
         Me.formskin1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -51,9 +51,10 @@ Partial Class frmAbout
         Me.formskin1.BackColor = System.Drawing.Color.White
         Me.formskin1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
         Me.formskin1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.formskin1.Controls.Add(Me.FlatLabel9)
+        Me.formskin1.Controls.Add(Me.PictureBox1)
         Me.formskin1.Controls.Add(Me.LinkLabel3)
         Me.formskin1.Controls.Add(Me.FlatLabel10)
-        Me.formskin1.Controls.Add(Me.FlatLabel9)
         Me.formskin1.Controls.Add(Me.LinkLabel1)
         Me.formskin1.Controls.Add(Me.FlatLabel8)
         Me.formskin1.Controls.Add(Me.FlatButton1)
@@ -64,7 +65,6 @@ Partial Class frmAbout
         Me.formskin1.Controls.Add(Me.FlatLabel3)
         Me.formskin1.Controls.Add(Me.FlatLabel2)
         Me.formskin1.Controls.Add(Me.FlatLabel1)
-        Me.formskin1.Controls.Add(Me.PictureBox1)
         Me.formskin1.Controls.Add(Me.LinkLabel5)
         Me.formskin1.Controls.Add(Me.LinkLabel4)
         Me.formskin1.Controls.Add(Me.LinkLabel2)
@@ -77,9 +77,34 @@ Partial Class frmAbout
         Me.formskin1.HeaderMaximize = False
         Me.formskin1.Location = New System.Drawing.Point(0, 0)
         Me.formskin1.Name = "formskin1"
-        Me.formskin1.Size = New System.Drawing.Size(280, 312)
+        Me.formskin1.Size = New System.Drawing.Size(280, 342)
         Me.formskin1.TabIndex = 28
         Me.formskin1.Text = "关于"
+        '
+        'LinkLabel3
+        '
+        Me.LinkLabel3.AutoSize = True
+        Me.LinkLabel3.BackColor = System.Drawing.Color.Transparent
+        Me.LinkLabel3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel3.LinkColor = System.Drawing.Color.DarkOrange
+        Me.LinkLabel3.Location = New System.Drawing.Point(179, 206)
+        Me.LinkLabel3.Name = "LinkLabel3"
+        Me.LinkLabel3.Size = New System.Drawing.Size(59, 15)
+        Me.LinkLabel3.TabIndex = 39
+        Me.LinkLabel3.TabStop = True
+        Me.LinkLabel3.Text = "新浪微博"
+        '
+        'FlatLabel10
+        '
+        Me.FlatLabel10.AutoSize = True
+        Me.FlatLabel10.BackColor = System.Drawing.Color.Transparent
+        Me.FlatLabel10.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FlatLabel10.ForeColor = System.Drawing.Color.White
+        Me.FlatLabel10.Location = New System.Drawing.Point(168, 176)
+        Me.FlatLabel10.Name = "FlatLabel10"
+        Me.FlatLabel10.Size = New System.Drawing.Size(94, 21)
+        Me.FlatLabel10.TabIndex = 38
+        Me.FlatLabel10.Text = "VirginiaILBX"
         '
         'FlatLabel9
         '
@@ -87,11 +112,12 @@ Partial Class frmAbout
         Me.FlatLabel9.BackColor = System.Drawing.Color.Transparent
         Me.FlatLabel9.Font = New System.Drawing.Font("Segoe UI", 8.0!)
         Me.FlatLabel9.ForeColor = System.Drawing.Color.White
-        Me.FlatLabel9.Location = New System.Drawing.Point(65, 541)
+        Me.FlatLabel9.Location = New System.Drawing.Point(65, 279)
         Me.FlatLabel9.Name = "FlatLabel9"
         Me.FlatLabel9.Size = New System.Drawing.Size(144, 13)
         Me.FlatLabel9.TabIndex = 37
         Me.FlatLabel9.Text = "nimitzdevteam@gmail.com"
+        Me.FlatLabel9.Visible = False
         '
         'LinkLabel1
         '
@@ -124,10 +150,10 @@ Partial Class frmAbout
         Me.FlatButton1.BaseColor = System.Drawing.Color.OrangeRed
         Me.FlatButton1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FlatButton1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.FlatButton1.Location = New System.Drawing.Point(211, 9)
+        Me.FlatButton1.Location = New System.Drawing.Point(0, 310)
         Me.FlatButton1.Name = "FlatButton1"
         Me.FlatButton1.Rounded = False
-        Me.FlatButton1.Size = New System.Drawing.Size(51, 32)
+        Me.FlatButton1.Size = New System.Drawing.Size(280, 32)
         Me.FlatButton1.TabIndex = 34
         Me.FlatButton1.Text = "OK"
         Me.FlatButton1.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
@@ -219,12 +245,13 @@ Partial Class frmAbout
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.定时关机Ex.My.Resources.Resources.alipayqrcode
-        Me.PictureBox1.Location = New System.Drawing.Point(23, 314)
+        Me.PictureBox1.Location = New System.Drawing.Point(18, 51)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(234, 224)
+        Me.PictureBox1.Size = New System.Drawing.Size(244, 253)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 26
         Me.PictureBox1.TabStop = False
+        Me.PictureBox1.Visible = False
         '
         'LinkLabel5
         '
@@ -291,36 +318,11 @@ Partial Class frmAbout
         Me.LinkLabel9.TabStop = True
         Me.LinkLabel9.Text = "Google+"
         '
-        'FlatLabel10
-        '
-        Me.FlatLabel10.AutoSize = True
-        Me.FlatLabel10.BackColor = System.Drawing.Color.Transparent
-        Me.FlatLabel10.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FlatLabel10.ForeColor = System.Drawing.Color.White
-        Me.FlatLabel10.Location = New System.Drawing.Point(168, 176)
-        Me.FlatLabel10.Name = "FlatLabel10"
-        Me.FlatLabel10.Size = New System.Drawing.Size(94, 21)
-        Me.FlatLabel10.TabIndex = 38
-        Me.FlatLabel10.Text = "VirginiaILBX"
-        '
-        'LinkLabel3
-        '
-        Me.LinkLabel3.AutoSize = True
-        Me.LinkLabel3.BackColor = System.Drawing.Color.Transparent
-        Me.LinkLabel3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel3.LinkColor = System.Drawing.Color.DarkOrange
-        Me.LinkLabel3.Location = New System.Drawing.Point(179, 206)
-        Me.LinkLabel3.Name = "LinkLabel3"
-        Me.LinkLabel3.Size = New System.Drawing.Size(59, 15)
-        Me.LinkLabel3.TabIndex = 39
-        Me.LinkLabel3.TabStop = True
-        Me.LinkLabel3.Text = "新浪微博"
-        '
         'frmAbout
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(280, 312)
+        Me.ClientSize = New System.Drawing.Size(280, 342)
         Me.ControlBox = False
         Me.Controls.Add(Me.formskin1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
