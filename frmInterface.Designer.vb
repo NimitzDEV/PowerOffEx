@@ -62,6 +62,7 @@ Partial Class frmInterface
         Me.tmrBatteryMode = New System.Windows.Forms.Timer(Me.components)
         Me.tmrVChecker = New System.Windows.Forms.Timer(Me.components)
         Me.pbStatus = New System.Windows.Forms.PictureBox()
+        Me.llbMore = New System.Windows.Forms.LinkLabel()
         Me.cmsRightClick.SuspendLayout()
         Me.cmsInterfaceMenu.SuspendLayout()
         CType(Me.pbStatus, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -282,12 +283,25 @@ Partial Class frmInterface
         Me.pbStatus.TabIndex = 7
         Me.pbStatus.TabStop = False
         '
+        'llbMore
+        '
+        Me.llbMore.AutoSize = True
+        Me.llbMore.BackColor = System.Drawing.Color.Transparent
+        Me.llbMore.Location = New System.Drawing.Point(97, 119)
+        Me.llbMore.Name = "llbMore"
+        Me.llbMore.Size = New System.Drawing.Size(29, 12)
+        Me.llbMore.TabIndex = 8
+        Me.llbMore.TabStop = True
+        Me.llbMore.Text = "More"
+        Me.llbMore.Visible = False
+        '
         'frmInterface
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(423, 434)
         Me.ControlBox = False
+        Me.Controls.Add(Me.llbMore)
         Me.Controls.Add(Me.btnMenu)
         Me.Controls.Add(Me.pbStatus)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -300,6 +314,7 @@ Partial Class frmInterface
         Me.cmsInterfaceMenu.ResumeLayout(False)
         CType(Me.pbStatus, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents notifyIcon As System.Windows.Forms.NotifyIcon
@@ -340,4 +355,5 @@ Partial Class frmInterface
     Friend WithEvents tmrTimeMode As System.Windows.Forms.Timer
     Friend WithEvents tmrBatteryMode As System.Windows.Forms.Timer
     Friend WithEvents tmrVChecker As System.Windows.Forms.Timer
+    Friend WithEvents llbMore As System.Windows.Forms.LinkLabel
 End Class

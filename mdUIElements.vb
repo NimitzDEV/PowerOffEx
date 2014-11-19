@@ -93,6 +93,13 @@ Module mdUIElements
                 startColor = cirColor(4, 0)
                 endColor = cirColor(4, 1)
         End Select
+        If ntfCtn(dtBG - 1, 0) = "" Then
+            frmInterface.llbMore.Visible = False
+        Else
+            frmInterface.llbMore.Visible = True
+            frmInterface.llbMore.Text = ntfCtn(dtBG - 1, 0)
+            frmInterface.llbMore.Tag = ntfCtn(dtBG - 1, 1)
+        End If
     End Sub
  
 End Module

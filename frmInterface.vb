@@ -38,6 +38,8 @@ Public Class frmInterface
         selectBG()
     End Sub
     Private Sub frmInterface_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        llbMore.Parent = pbStatus
+        llbMore.Location = New Point(25, 10)
         updateBatteryInfo()
         drawStatus()
         Me.Width = pbStatus.Width
@@ -365,4 +367,7 @@ Public Class frmInterface
     End Sub
 
 
+    Private Sub llbMore_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llbMore.LinkClicked
+        Process.Start(llbMore.Tag)
+    End Sub
 End Class
