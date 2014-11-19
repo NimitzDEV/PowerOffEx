@@ -125,12 +125,6 @@
     <Compile Include="frmNotify.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTips.Designer.vb">
-      <DependentUpon>frmTips.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmTips.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmTVP.Designer.vb">
       <DependentUpon>frmTVP.vb</DependentUpon>
     </Compile>
@@ -196,9 +190,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNotify.resx">
       <DependentUpon>frmNotify.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmTips.resx">
-      <DependentUpon>frmTips.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTVP.resx">
       <DependentUpon>frmTVP.vb</DependentUpon>
