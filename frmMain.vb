@@ -322,4 +322,8 @@ Public Class frmMain
     Private Sub timeUpdate(sender As Object, e As EventArgs) Handles fnSTMinute.Click, fnSTHour.Click
 
     End Sub
+
+    Private Sub ftCstHis_Click(sender As Object, e As EventArgs) Handles ftCstHis.Click
+        Process.Start("http://ndev.cu.cc/?cat=16")
+    End Sub
 End Class
