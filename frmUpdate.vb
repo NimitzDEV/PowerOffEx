@@ -24,7 +24,7 @@
         fbClose.Width = Me.Width / 2
         fbDownload.Left = Me.Width / 2
         fbDownload.Width = Me.Width / 2
-        wbStart.Navigate("http://nimitzdev.byethost12.com/update/update_dsgjex.txt")
+        wbStart.Navigate("http://nimitzdev.byethost12.com/update/update_dsgjex.txt?" & Date.Now)
     End Sub
 
     Private Sub wbStart_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles wbStart.DocumentCompleted

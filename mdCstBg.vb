@@ -18,6 +18,7 @@ Module mdCstBg
         Catch ex As Exception
         End Try
     End Sub
+
     Public Sub cstBGDownloadStarter()
         trdBGTrd = New Threading.Thread(New System.Threading.ThreadStart(AddressOf cstConfig))
         trdBGTrd.Start()
