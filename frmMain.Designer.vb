@@ -185,7 +185,7 @@ Partial Class frmMain
         '
         Me.FormSkin1.BackColor = System.Drawing.Color.White
         Me.FormSkin1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
-        Me.FormSkin1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.FormSkin1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(73, Byte), Integer))
         Me.FormSkin1.Controls.Add(Me.fbExtend)
         Me.FormSkin1.Controls.Add(Me.FlatAlertBox1)
         Me.FormSkin1.Controls.Add(Me.btnFindNew)
@@ -199,6 +199,7 @@ Partial Class frmMain
         Me.FormSkin1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FormSkin1.FlatColor = System.Drawing.Color.Orange
         Me.FormSkin1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.FormSkin1.ForeColor = System.Drawing.SystemColors.ControlLight
         Me.FormSkin1.HeaderColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.FormSkin1.HeaderMaximize = False
         Me.FormSkin1.Location = New System.Drawing.Point(0, 0)

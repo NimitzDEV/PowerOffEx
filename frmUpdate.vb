@@ -35,15 +35,20 @@
         '    Exit Sub
         'End If
         'wbInfo.Navigate(gs(0))
-        docString = New System.IO.StreamReader(wbStart.DocumentStream, System.Text.Encoding.Default).ReadToEnd
-        'docString = wbStart.DocumentText
-        versionString = Split(docString, "≡")(1).Trim
-        updateString = Split(docString, "≡")(2).Trim
-        linkString = Split(docString, "≡")(3).Trim
-        detectUpdate()
-        ProgressBar1.Visible = False
-        fbClose.Text = "关闭"
-        fbClose.Refresh()
+        Try
+            docString = New System.IO.StreamReader(wbStart.DocumentStream, System.Text.Encoding.Default).ReadToEnd
+            'docString = wbStart.DocumentText
+            versionString = Split(docString, "≡")(1).Trim
+            updateString = Split(docString, "≡")(2).Trim
+            linkString = Split(docString, "≡")(3).Trim
+            detectUpdate()
+            ProgressBar1.Visible = False
+            fbClose.Text = "关闭"
+            fbClose.Refresh()
+        Catch ex As Exception
+            MsgBox("数据接收错误")
+            Me.Close()
+        End Try
     End Sub
 
     Private Sub detectUpdate()

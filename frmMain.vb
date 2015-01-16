@@ -319,7 +319,7 @@ Public Class frmMain
         startActive()
     End Sub
 
-    Private Sub timeUpdate(sender As Object, e As EventArgs)
+    Private Sub timeUpdate(sender As Object, e As EventArgs) Handles fnSTMinute.Click, fnSTHour.Click
 
     End Sub
 
