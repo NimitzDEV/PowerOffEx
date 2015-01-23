@@ -309,7 +309,7 @@ Public Class frmMain
     End Sub
 
     Private Sub ftCstHis_Click(sender As Object, e As EventArgs) Handles ftCstHis.Click
-        Process.Start("http://ndev.cu.cc/?cat=16")
+        Process.Start("http://nimitzdev.org/?cat=16")
     End Sub
 
     Private Sub btnFindNew_Click(sender As Object, e As EventArgs) Handles btnFindNew.Click

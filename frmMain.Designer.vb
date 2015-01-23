@@ -82,6 +82,9 @@ Partial Class frmMain
         Me.ftCstHis = New 定时关机Ex.FlatButton()
         Me.FlatLabel1 = New 定时关机Ex.FlatLabel()
         Me.ftCst = New 定时关机Ex.FlatToggle()
+        Me.help4REMINDER = New System.Windows.Forms.PictureBox()
+        Me.help4VOL = New System.Windows.Forms.PictureBox()
+        Me.help4TVP = New System.Windows.Forms.PictureBox()
         Me.fbVolSettings = New 定时关机Ex.FlatButton()
         Me.ftRecord = New 定时关机Ex.FlatToggle()
         Me.fbHistory = New 定时关机Ex.FlatButton()
@@ -90,9 +93,6 @@ Partial Class frmMain
         Me.ftReminder = New 定时关机Ex.FlatToggle()
         Me.FlatLabel9 = New 定时关机Ex.FlatLabel()
         Me.FlatLabel8 = New 定时关机Ex.FlatLabel()
-        Me.help4REMINDER = New System.Windows.Forms.PictureBox()
-        Me.help4VOL = New System.Windows.Forms.PictureBox()
-        Me.help4TVP = New System.Windows.Forms.PictureBox()
         Me.cmsSelect.SuspendLayout()
         Me.cmsMode.SuspendLayout()
         Me.FormSkin1.SuspendLayout()
@@ -813,6 +813,36 @@ Partial Class frmMain
         Me.ftCst.TabIndex = 27
         Me.ftCst.Text = "FlatToggle1"
         '
+        'help4REMINDER
+        '
+        Me.help4REMINDER.Image = Global.定时关机Ex.My.Resources.Resources.help
+        Me.help4REMINDER.Location = New System.Drawing.Point(13, 94)
+        Me.help4REMINDER.Name = "help4REMINDER"
+        Me.help4REMINDER.Size = New System.Drawing.Size(24, 24)
+        Me.help4REMINDER.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.help4REMINDER.TabIndex = 26
+        Me.help4REMINDER.TabStop = False
+        '
+        'help4VOL
+        '
+        Me.help4VOL.Image = Global.定时关机Ex.My.Resources.Resources.help
+        Me.help4VOL.Location = New System.Drawing.Point(13, 55)
+        Me.help4VOL.Name = "help4VOL"
+        Me.help4VOL.Size = New System.Drawing.Size(24, 24)
+        Me.help4VOL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.help4VOL.TabIndex = 25
+        Me.help4VOL.TabStop = False
+        '
+        'help4TVP
+        '
+        Me.help4TVP.Image = Global.定时关机Ex.My.Resources.Resources.help
+        Me.help4TVP.Location = New System.Drawing.Point(13, 15)
+        Me.help4TVP.Name = "help4TVP"
+        Me.help4TVP.Size = New System.Drawing.Size(24, 24)
+        Me.help4TVP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.help4TVP.TabIndex = 24
+        Me.help4TVP.TabStop = False
+        '
         'fbVolSettings
         '
         Me.fbVolSettings.BackColor = System.Drawing.Color.Transparent
@@ -915,36 +945,6 @@ Partial Class frmMain
         Me.FlatLabel8.Size = New System.Drawing.Size(124, 13)
         Me.FlatLabel8.TabIndex = 19
         Me.FlatLabel8.Text = "记录电视剧观看进度"
-        '
-        'help4REMINDER
-        '
-        Me.help4REMINDER.Image = Global.定时关机Ex.My.Resources.Resources.help
-        Me.help4REMINDER.Location = New System.Drawing.Point(13, 94)
-        Me.help4REMINDER.Name = "help4REMINDER"
-        Me.help4REMINDER.Size = New System.Drawing.Size(24, 24)
-        Me.help4REMINDER.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.help4REMINDER.TabIndex = 26
-        Me.help4REMINDER.TabStop = False
-        '
-        'help4VOL
-        '
-        Me.help4VOL.Image = Global.定时关机Ex.My.Resources.Resources.help
-        Me.help4VOL.Location = New System.Drawing.Point(13, 55)
-        Me.help4VOL.Name = "help4VOL"
-        Me.help4VOL.Size = New System.Drawing.Size(24, 24)
-        Me.help4VOL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.help4VOL.TabIndex = 25
-        Me.help4VOL.TabStop = False
-        '
-        'help4TVP
-        '
-        Me.help4TVP.Image = Global.定时关机Ex.My.Resources.Resources.help
-        Me.help4TVP.Location = New System.Drawing.Point(13, 15)
-        Me.help4TVP.Name = "help4TVP"
-        Me.help4TVP.Size = New System.Drawing.Size(24, 24)
-        Me.help4TVP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.help4TVP.TabIndex = 24
-        Me.help4TVP.TabStop = False
         '
         'frmMain
         '
