@@ -118,25 +118,10 @@ Public Class frmMain
         Me.Hide()
     End Sub
 
-    Private Sub btnFindNew_Click(sender As Object, e As EventArgs) Handles btnFindNew.Click
-        If System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable = False Then
-            MsgBox("当前没有网络连接，无法使用OTA功能！")
-            Exit Sub
-        End If
-        frmUpdate.ShowDialog()
-        frmUpdate.Dispose()
-    End Sub
 
     Private Sub FlatClose1_Click(sender As Object, e As EventArgs) Handles FlatClose1.Click
         Me.Close()
     End Sub
-
-
-    Private Sub fbAbout_Click(sender As Object, e As EventArgs) Handles fbAbout.Click
-        frmAbout.ShowDialog()
-        frmAbout.Dispose()
-    End Sub
-
 
     Private Sub ftbBattery_Scroll(sender As Object) Handles ftbBattery.Scroll
         lbBatterySettings.Text = "将在电量低于" & ftbBattery.Value & "%时关机"
@@ -289,11 +274,11 @@ Public Class frmMain
 
 
     Private Sub fbWeb_Click(sender As Object, e As EventArgs) Handles fbWeb.Click
-        Process.Start("http://ndev.cu.cc")
+        Process.Start("http://nimitzdev.org")
     End Sub
 
     Private Sub fbHelp_Click(sender As Object, e As EventArgs) Handles fbHelp.Click
-        Process.Start("http://nimitzdev.byethost12.com/?page_id=100")
+        Process.Start("http://nimitzdev.org/?page_id=100")
     End Sub
 
     Private Sub fbExtend_Click(sender As Object, e As EventArgs) Handles fbExtend.Click
@@ -325,5 +310,10 @@ Public Class frmMain
 
     Private Sub ftCstHis_Click(sender As Object, e As EventArgs) Handles ftCstHis.Click
         Process.Start("http://ndev.cu.cc/?cat=16")
+    End Sub
+
+    Private Sub btnFindNew_Click(sender As Object, e As EventArgs) Handles btnFindNew.Click
+        frmUpdate2.ShowDialog(Me)
+        frmUpdate2.Dispose()
     End Sub
 End Class

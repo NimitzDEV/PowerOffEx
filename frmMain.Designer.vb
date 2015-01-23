@@ -39,7 +39,6 @@ Partial Class frmMain
         Me.fbExtend = New 定时关机Ex.FlatButton()
         Me.FlatAlertBox1 = New 定时关机Ex.FlatAlertBox()
         Me.btnFindNew = New 定时关机Ex.FlatButton()
-        Me.fbAbout = New 定时关机Ex.FlatButton()
         Me.fbHelp = New 定时关机Ex.FlatButton()
         Me.fbWeb = New 定时关机Ex.FlatButton()
         Me.FlatMini1 = New 定时关机Ex.FlatMini()
@@ -83,9 +82,6 @@ Partial Class frmMain
         Me.ftCstHis = New 定时关机Ex.FlatButton()
         Me.FlatLabel1 = New 定时关机Ex.FlatLabel()
         Me.ftCst = New 定时关机Ex.FlatToggle()
-        Me.help4REMINDER = New System.Windows.Forms.PictureBox()
-        Me.help4VOL = New System.Windows.Forms.PictureBox()
-        Me.help4TVP = New System.Windows.Forms.PictureBox()
         Me.fbVolSettings = New 定时关机Ex.FlatButton()
         Me.ftRecord = New 定时关机Ex.FlatToggle()
         Me.fbHistory = New 定时关机Ex.FlatButton()
@@ -94,6 +90,9 @@ Partial Class frmMain
         Me.ftReminder = New 定时关机Ex.FlatToggle()
         Me.FlatLabel9 = New 定时关机Ex.FlatLabel()
         Me.FlatLabel8 = New 定时关机Ex.FlatLabel()
+        Me.help4REMINDER = New System.Windows.Forms.PictureBox()
+        Me.help4VOL = New System.Windows.Forms.PictureBox()
+        Me.help4TVP = New System.Windows.Forms.PictureBox()
         Me.cmsSelect.SuspendLayout()
         Me.cmsMode.SuspendLayout()
         Me.FormSkin1.SuspendLayout()
@@ -189,7 +188,6 @@ Partial Class frmMain
         Me.FormSkin1.Controls.Add(Me.fbExtend)
         Me.FormSkin1.Controls.Add(Me.FlatAlertBox1)
         Me.FormSkin1.Controls.Add(Me.btnFindNew)
-        Me.FormSkin1.Controls.Add(Me.fbAbout)
         Me.FormSkin1.Controls.Add(Me.fbHelp)
         Me.FormSkin1.Controls.Add(Me.fbWeb)
         Me.FormSkin1.Controls.Add(Me.FlatMini1)
@@ -246,22 +244,8 @@ Partial Class frmMain
         Me.btnFindNew.Rounded = False
         Me.btnFindNew.Size = New System.Drawing.Size(80, 22)
         Me.btnFindNew.TabIndex = 12
-        Me.btnFindNew.Text = "查找新版本"
+        Me.btnFindNew.Text = "关于/更新"
         Me.btnFindNew.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
-        '
-        'fbAbout
-        '
-        Me.fbAbout.BackColor = System.Drawing.Color.Transparent
-        Me.fbAbout.BaseColor = System.Drawing.Color.DodgerBlue
-        Me.fbAbout.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.fbAbout.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.fbAbout.Location = New System.Drawing.Point(90, 308)
-        Me.fbAbout.Name = "fbAbout"
-        Me.fbAbout.Rounded = False
-        Me.fbAbout.Size = New System.Drawing.Size(53, 22)
-        Me.fbAbout.TabIndex = 15
-        Me.fbAbout.Text = "关于"
-        Me.fbAbout.TextColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(243, Byte), Integer))
         '
         'fbHelp
         '
@@ -829,36 +813,6 @@ Partial Class frmMain
         Me.ftCst.TabIndex = 27
         Me.ftCst.Text = "FlatToggle1"
         '
-        'help4REMINDER
-        '
-        Me.help4REMINDER.Image = Global.定时关机Ex.My.Resources.Resources.help
-        Me.help4REMINDER.Location = New System.Drawing.Point(13, 94)
-        Me.help4REMINDER.Name = "help4REMINDER"
-        Me.help4REMINDER.Size = New System.Drawing.Size(24, 24)
-        Me.help4REMINDER.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.help4REMINDER.TabIndex = 26
-        Me.help4REMINDER.TabStop = False
-        '
-        'help4VOL
-        '
-        Me.help4VOL.Image = Global.定时关机Ex.My.Resources.Resources.help
-        Me.help4VOL.Location = New System.Drawing.Point(13, 55)
-        Me.help4VOL.Name = "help4VOL"
-        Me.help4VOL.Size = New System.Drawing.Size(24, 24)
-        Me.help4VOL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.help4VOL.TabIndex = 25
-        Me.help4VOL.TabStop = False
-        '
-        'help4TVP
-        '
-        Me.help4TVP.Image = Global.定时关机Ex.My.Resources.Resources.help
-        Me.help4TVP.Location = New System.Drawing.Point(13, 15)
-        Me.help4TVP.Name = "help4TVP"
-        Me.help4TVP.Size = New System.Drawing.Size(24, 24)
-        Me.help4TVP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.help4TVP.TabIndex = 24
-        Me.help4TVP.TabStop = False
-        '
         'fbVolSettings
         '
         Me.fbVolSettings.BackColor = System.Drawing.Color.Transparent
@@ -962,6 +916,36 @@ Partial Class frmMain
         Me.FlatLabel8.TabIndex = 19
         Me.FlatLabel8.Text = "记录电视剧观看进度"
         '
+        'help4REMINDER
+        '
+        Me.help4REMINDER.Image = Global.定时关机Ex.My.Resources.Resources.help
+        Me.help4REMINDER.Location = New System.Drawing.Point(13, 94)
+        Me.help4REMINDER.Name = "help4REMINDER"
+        Me.help4REMINDER.Size = New System.Drawing.Size(24, 24)
+        Me.help4REMINDER.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.help4REMINDER.TabIndex = 26
+        Me.help4REMINDER.TabStop = False
+        '
+        'help4VOL
+        '
+        Me.help4VOL.Image = Global.定时关机Ex.My.Resources.Resources.help
+        Me.help4VOL.Location = New System.Drawing.Point(13, 55)
+        Me.help4VOL.Name = "help4VOL"
+        Me.help4VOL.Size = New System.Drawing.Size(24, 24)
+        Me.help4VOL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.help4VOL.TabIndex = 25
+        Me.help4VOL.TabStop = False
+        '
+        'help4TVP
+        '
+        Me.help4TVP.Image = Global.定时关机Ex.My.Resources.Resources.help
+        Me.help4TVP.Location = New System.Drawing.Point(13, 15)
+        Me.help4TVP.Name = "help4TVP"
+        Me.help4TVP.Size = New System.Drawing.Size(24, 24)
+        Me.help4TVP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.help4TVP.TabIndex = 24
+        Me.help4TVP.TabStop = False
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -1024,7 +1008,6 @@ Partial Class frmMain
     Friend WithEvents lbTipsTextDS As 定时关机Ex.FlatLabel
     Friend WithEvents FlatButton1 As 定时关机Ex.FlatButton
     Friend WithEvents lbTipsText As 定时关机Ex.FlatLabel
-    Friend WithEvents fbAbout As 定时关机Ex.FlatButton
     Friend WithEvents ftbBattery As 定时关机Ex.FlatTrackBar
     Friend WithEvents ftRecord As 定时关机Ex.FlatToggle
     Friend WithEvents FlatLabel6 As 定时关机Ex.FlatLabel

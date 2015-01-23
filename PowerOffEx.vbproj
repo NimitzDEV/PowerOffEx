@@ -94,12 +94,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EmbeddedAssembly.vb" />
-    <Compile Include="frmAbout.Designer.vb">
-      <DependentUpon>frmAbout.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmAbout.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmInterface.Designer.vb">
       <DependentUpon>frmInterface.vb</DependentUpon>
     </Compile>
@@ -131,10 +125,10 @@
     <Compile Include="frmTVP.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUpdate.Designer.vb">
-      <DependentUpon>frmUpdate.vb</DependentUpon>
+    <Compile Include="frmUpdate2.Designer.vb">
+      <DependentUpon>frmUpdate2.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmUpdate.vb">
+    <Compile Include="frmUpdate2.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmVolCtrl.Designer.vb">
@@ -175,9 +169,6 @@
     <Compile Include="tvTracker.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmAbout.resx">
-      <DependentUpon>frmAbout.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmInterface.resx">
       <DependentUpon>frmInterface.vb</DependentUpon>
     </EmbeddedResource>
@@ -193,8 +184,8 @@
     <EmbeddedResource Include="frmTVP.resx">
       <DependentUpon>frmTVP.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUpdate.resx">
-      <DependentUpon>frmUpdate.vb</DependentUpon>
+    <EmbeddedResource Include="frmUpdate2.resx">
+      <DependentUpon>frmUpdate2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVolCtrl.resx">
       <DependentUpon>frmVolCtrl.vb</DependentUpon>
@@ -247,6 +238,8 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="appiconv4.ico" />
+    <None Include="Resources\off.png" />
+    <None Include="Resources\n_48.png" />
     <None Include="res\bg_morning_01.png" />
     <None Include="res\bg_noon_01.png" />
     <None Include="res\bg_nm_rnd2.png" />
