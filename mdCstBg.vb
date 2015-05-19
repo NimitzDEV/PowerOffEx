@@ -27,7 +27,7 @@ Module mdCstBg
         '初始化
         initDefault()
         '下载配置信息
-        downloadFile("http://ndev.cu.cc/cfgol/config_dsgjex.ndev", folderPath & "\webcfg.ini")
+        downloadFile("http://dl.nimitzdev.org/cfg/cfg_dsgjex.ini", folderPath & "\webcfg.ini")
         If FileExists(folderPath & "\webcfg.ini") = False Then Exit Sub
         '读取配置信息
         '-判断日期
